@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "nixos": {
+      "command": "uvx",
+      "args": ["mcp-nixos"],
+      "lifecycle": "lazy"
+    },
+    "railway": {
+      "command": "railway",
+      "args": ["mcp"],
+      "lifecycle": "lazy"
+    },
+    "exa": {
+      "url": "https://mcp.exa.ai/mcp"
+    },
+    "websets": {
+      "url": "https://websetsmcp.exa.ai/mcp?exaApiKey=a0ba944a-054d-4a1a-900b-626e53d69a20"
+    }
+  }
+}
