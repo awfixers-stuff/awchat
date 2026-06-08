@@ -35,6 +35,10 @@ gradlePlugin {
             id = "awchat.detekt"
             implementationClass = "AwchatDetektConventionPlugin"
         }
+        register("kotlinLibrary") {
+            id = "awchat.kotlin.library"
+            implementationClass = "AwchatKotlinLibraryConventionPlugin"
+        }
     }
 }
 

@@ -24,40 +24,42 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T00:36:34.067Z
-**Branch:** `master` @ `e9ef11fd1607`
+**Last updated:** 2026-06-08T01:23:53.668Z
+**Branch:** `master` @ `a657b698f233`
 
 ### In progress
-- PR 3: libsignal-android packaging spike
+- PR 5: server:relay skeleton (parallel) / PR 6: core:crypto SessionManager
 
 ### Completed
 - PR 1: build-logic + catalog + repo hygiene
 - PR 2: Android Compose shell + minimal CI
+- PR 3: libsignal-android packaging spike
+- PR 4: core:common, core:model, core:designsystem, core:proto
 
 ### Next up
-- PR 3: libsignal-android packaging spike
+- PR 5: server:relay skeleton (parallel) / PR 6: core:crypto SessionManager
 
 ### Blockers
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T00:36:34.067Z
+**roadmap-phase** at 2026-06-08T01:23:53.668Z
 
-Foundation phase complete: build-logic convention plugins, Android Compose shell (me.awfixer.awchat), Blacksmith CI workflow; fixed Grok hook bun PATH + no-op sync
+Added JVM common/model/proto modules, designsystem with AwChatTheme + X-Lite primitives, inner_message.proto with round-trip tests; MaterialExpressiveTheme APIs still internal in current M3
 
 ### Recently touched
-- `grok/hooks/agents-continuity.json`
-- `grok/skills/session-handoff/SKILL.md`
-- `oxlintrc.json`
 - `AGENTS.md`
-- `ICENSE.md`
 - `pp/build.gradle.kts`
-- `pp/src/main/kotlin/org/example/App.kt`
-- `pp/src/test/kotlin/org/example/AppTest.kt`
-- `unfig.toml`
-- `ocs/DESIGN.md`
-- `lake.nix`
+- `pp/src/main/kotlin/me/awfixer/awchat/MainActivity.kt`
+- `uild-logic/convention/build.gradle.kts`
+- `uild.gradle.kts`
 - `radle.properties`
+- `radle/libs.versions.toml`
+- `ledgers/roadmap-state.json`
+- `ettings.gradle.kts`
+- `build-logic/convention/src/main/kotlin/AwchatKotlinLibraryConventionPlugin.kt`
+- `core/`
+- `java_pid29877.hprof`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
