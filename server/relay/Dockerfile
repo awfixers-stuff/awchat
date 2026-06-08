@@ -1,12 +1,13 @@
 # syntax=docker/dockerfile:1
 
-FROM hexpm/elixir:1.18.4-erlang-27.3.4.9-alpine-3.21.7 AS build
+FROM hexpm/elixir:1.18.4-erlang-27.3.4.9-ubuntu-noble-20260509.1 AS build
 
-RUN apk add --no-cache build-base curl git
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential curl git pkg-config \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Rust toolchain for libsignal NIF
 RUN curl -fsSL https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
@@ -23,9 +24,11 @@ RUN mix deps.get --only prod
 RUN mix compile
 RUN mix release
 
-FROM alpine:3.21.7 AS runtime
+FROM debian:bookworm-slim AS runtime
 
-RUN apk add --no-cache libstdc++ openssl ncurses-libs
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libstdc++6 openssl ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
