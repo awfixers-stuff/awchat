@@ -6,16 +6,8 @@ RUN apk add --no-cache build-base curl git
 
 WORKDIR /app
 
-# Gleam toolchain
-RUN curl -fsSL https://github.com/gleam-lang/gleam/releases/download/v1.16.0/gleam-v1.16.0-linux-amd64.tar.gz \
-  | tar -xz -C /usr/local/bin
-
-# Rust toolchain for libsignal NIF
 RUN curl -fsSL https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
-
-COPY packages/core packages/core
-RUN cd packages/core && gleam build
 
 COPY mix.exs mix.lock ./
 COPY config config
@@ -37,12 +29,12 @@ RUN apk add --no-cache libstdc++ openssl ncurses-libs
 WORKDIR /app
 
 ENV MIX_ENV=prod
-ENV PORT=8080
+ENV PORT=8081
 
-COPY --from=build /app/_build/prod/rel/relay ./
+COPY --from=build /app/_build/prod/rel/auth ./
 
 RUN chmod +x bin/server
 
-EXPOSE 8080
+EXPOSE 8081
 
 CMD ["bin/server"]

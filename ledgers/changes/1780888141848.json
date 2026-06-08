@@ -1,0 +1,307 @@
+{
+  "recorded_at": "2026-06-08T03:09:01.848Z",
+  "head": "48e006c10c1d51bf1cac93e2b8d0810938ffd1d1",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".github/workflows/auth.yml",
+      "added": 68,
+      "removed": 0
+    },
+    {
+      "path": ".github/workflows/relay.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/auth/.formatter.exs",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/.gitignore",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/Dockerfile",
+      "added": 40,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/README.md",
+      "added": 51,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/.formatter.exs",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway.ex",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/addresses.ex",
+      "added": 126,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/application.ex",
+      "added": 15,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/auth.ex",
+      "added": 62,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/auth_core.ex",
+      "added": 18,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/base32.ex",
+      "added": 39,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/connection_requests.ex",
+      "added": 59,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/controllers/addresses_controller.ex",
+      "added": 53,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/controllers/connection_requests_controller.ex",
+      "added": 29,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/controllers/health_controller.ex",
+      "added": 30,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/controllers/helpers.ex",
+      "added": 16,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/controllers/identities_controller.ex",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/controllers/invites_controller.ex",
+      "added": 39,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/endpoint.ex",
+      "added": 19,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/identities.ex",
+      "added": 77,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/invites.ex",
+      "added": 112,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/native/crypto.ex",
+      "added": 18,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/plugs/json_parser.ex",
+      "added": 19,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/plugs/raw_body.ex",
+      "added": 18,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/release.ex",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/repo.ex",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/router.ex",
+      "added": 73,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/schemas/address.ex",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/schemas/connection_request.ex",
+      "added": 15,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/schemas/identity.ex",
+      "added": 9,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/schemas/invite.ex",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/time.ex",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/lib/gateway/tokens.ex",
+      "added": 16,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/mix.exs",
+      "added": 56,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/native/awchat_crypto/Cargo.toml",
+      "added": 17,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/native/awchat_crypto/examples/gen_vectors.rs",
+      "added": 46,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/native/awchat_crypto/src/lib.rs",
+      "added": 122,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/priv/repo/migrations/20260608000001_init_schema.exs",
+      "added": 54,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/test/controllers_test.exs",
+      "added": 35,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/test/flows_test.exs",
+      "added": 120,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/test/gateway_test.exs",
+      "added": 23,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/test/integration_test.exs",
+      "added": 20,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/test/support/data_case.ex",
+      "added": 23,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/test/test_helper.exs",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/config/config.exs",
+      "added": 15,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/config/dev.exs",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/config/prod.exs",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/config/test.exs",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/docker-compose.yml",
+      "added": 33,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/mix.exs",
+      "added": 27,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/railway.toml",
+      "added": 9,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/rel/overlays/bin/server",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/.gitignore",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/Dockerfile",
+      "added": 5,
+      "removed": 3
+    },
+    {
+      "path": "server/relay/README.md",
+      "added": 12,
+      "removed": 15
+    },
+    {
+      "path": "server/relay/mix.exs",
+      "added": 2,
+      "removed": 1
+    },
+    {
+      "path": "server/relay/rel/overlays/bin/server",
+      "added": 7,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 59,
+    "added": 1805,
+    "removed": 20
+  }
+}

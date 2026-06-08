@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: awchat
+      POSTGRES_PASSWORD: awchat
+      POSTGRES_DB: awchat_auth_dev
+    ports:
+      - "5433:5432"
+    volumes:
+      - auth_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U awchat -d awchat_auth_dev"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  auth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MIX_ENV: prod
+      DATABASE_URL: postgres://awchat:awchat@postgres:5432/awchat_auth_dev
+      PORT: "8081"
+    ports:
+      - "8081:8081"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  auth_pg_data:
