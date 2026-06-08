@@ -1,13 +1,14 @@
 {
-  "updated_at": "2026-06-08T01:40:59.551Z",
+  "updated_at": "2026-06-08T02:35:25.261Z",
   "branch": "master",
-  "head": "09c25fcd34341a2608448400a586010e3222240a",
+  "head": "11da9d1a01eb67cfc88e066f936038160496539c",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
     "PR 3: libsignal-android packaging spike",
     "PR 4: core:common, core:model, core:designsystem, core:proto",
-    "PR 6: core:crypto SessionManager + identity sealing"
+    "PR 6: core:crypto SessionManager + identity sealing",
+    "PR 5: server:relay Gleam/Elixir/Rust skeleton"
   ],
   "in_progress": "PR 7: core:security Keystore sealing",
   "next_up": [
@@ -15,15 +16,14 @@
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T01:40:59.551Z",
+    "at": "2026-06-08T02:35:25.261Z",
     "reason": "roadmap-phase",
-    "summary": "LibSignalSessionManager with PQXDH establish/encrypt/decrypt, IdentityGenerator + UserId derivation, AES-GCM SealedIdentityStore; androidTest round-trip + sealing tests"
+    "summary": "Elixir/Bandit relay with Gleam protocol package, Rust libsignal XEdDSA NIF, Ecto schema, WS+REST v1 API, ack-driven delete, Fly/Railway deploy files"
   },
   "recent_files": [
-    "ore/crypto/build.gradle.kts",
-    "radle/libs.versions.toml",
-    "core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt",
-    "core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/SessionManagerRoundTripTest.kt",
-    "core/crypto/src/main/kotlin/"
+    "ocs/DESIGN.md",
+    "lans/server/current-baseline.md",
+    ".github/workflows/relay.yml",
+    "server/"
   ]
 }

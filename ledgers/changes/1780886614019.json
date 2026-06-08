@@ -1,0 +1,357 @@
+{
+  "recorded_at": "2026-06-08T02:43:34.019Z",
+  "head": "11da9d1a01eb67cfc88e066f936038160496539c",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".github/workflows/relay.yml",
+      "added": 67,
+      "removed": 0
+    },
+    {
+      "path": "AGENTS.md",
+      "added": 9,
+      "removed": 9
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "added": 5,
+      "removed": 5
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 10,
+      "removed": 10
+    },
+    {
+      "path": "plans/server/current-baseline.md",
+      "added": 12,
+      "removed": 12
+    },
+    {
+      "path": "server/relay/.formatter.exs",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/.gitignore",
+      "added": 20,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/Dockerfile",
+      "added": 46,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/README.md",
+      "added": 47,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/.formatter.exs",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/.gitignore",
+      "added": 23,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/README.md",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway.ex",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/application.ex",
+      "added": 28,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/auth.ex",
+      "added": 138,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/chats.ex",
+      "added": 157,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/connection_registry.ex",
+      "added": 47,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/controllers/chats_controller.ex",
+      "added": 91,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/controllers/health_controller.ex",
+      "added": 30,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/controllers/prekeys_controller.ex",
+      "added": 25,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/controllers/purge_controller.ex",
+      "added": 23,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/controllers/register_controller.ex",
+      "added": 25,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/delivery.ex",
+      "added": 184,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/endpoint.ex",
+      "added": 19,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/jobs.ex",
+      "added": 42,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/native/crypto.ex",
+      "added": 14,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/plugs/json_parser.ex",
+      "added": 19,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/plugs/raw_body.ex",
+      "added": 17,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/prekeys.ex",
+      "added": 67,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/purge.ex",
+      "added": 70,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/register.ex",
+      "added": 148,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/relay_core.ex",
+      "added": 38,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/release.ex",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/repo.ex",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/router.ex",
+      "added": 61,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/scheduler.ex",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/auth_nonce.ex",
+      "added": 9,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/chat.ex",
+      "added": 9,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/chat_member.ex",
+      "added": 9,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/kyber_prekey.ex",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/prekey.ex",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/purge_audit.ex",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/signed_prekey.ex",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/user.ex",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/time.ex",
+      "added": 28,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/web_socket_handler.ex",
+      "added": 118,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/mix.exs",
+      "added": 61,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/native/awchat_crypto/Cargo.toml",
+      "added": 14,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/native/awchat_crypto/src/lib.rs",
+      "added": 95,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/priv/native/awchat_crypto.so",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/priv/repo/migrations/20260608000001_init_schema.exs",
+      "added": 93,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/test/gateway_test.exs",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/test/test_helper.exs",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/config/config.exs",
+      "added": 22,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/config/dev.exs",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/config/prod.exs",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/config/test.exs",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/docker-compose.yml",
+      "added": 33,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/mix.exs",
+      "added": 26,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/.github/workflows/test.yml",
+      "added": 23,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/.gitignore",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/README.md",
+      "added": 24,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/gleam.toml",
+      "added": 8,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/manifest.toml",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/src/relay_core.gleam",
+      "added": 50,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/src/relay_core/crypto.gleam",
+      "added": 31,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/src/relay_core/frames.gleam",
+      "added": 34,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/test/relay_core_test.gleam",
+      "added": 24,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/railway.toml",
+      "added": 9,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 69,
+    "added": 2384,
+    "removed": 36
+  }
+}

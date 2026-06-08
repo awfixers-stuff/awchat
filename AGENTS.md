@@ -24,8 +24,8 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T01:40:59.551Z
-**Branch:** `master` @ `09c25fcd3434`
+**Last updated:** 2026-06-08T02:35:25.261Z
+**Branch:** `master` @ `11da9d1a01eb`
 
 ### In progress
 - PR 7: core:security Keystore sealing
@@ -36,6 +36,7 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - PR 3: libsignal-android packaging spike
 - PR 4: core:common, core:model, core:designsystem, core:proto
 - PR 6: core:crypto SessionManager + identity sealing
+- PR 5: server:relay Gleam/Elixir/Rust skeleton
 
 ### Next up
 - PR 7: core:security Keystore sealing
@@ -44,16 +45,15 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T01:40:59.551Z
+**roadmap-phase** at 2026-06-08T02:35:25.261Z
 
-LibSignalSessionManager with PQXDH establish/encrypt/decrypt, IdentityGenerator + UserId derivation, AES-GCM SealedIdentityStore; androidTest round-trip + sealing tests
+Elixir/Bandit relay with Gleam protocol package, Rust libsignal XEdDSA NIF, Ecto schema, WS+REST v1 API, ack-driven delete, Fly/Railway deploy files
 
 ### Recently touched
-- `ore/crypto/build.gradle.kts`
-- `radle/libs.versions.toml`
-- `core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt`
-- `core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/SessionManagerRoundTripTest.kt`
-- `core/crypto/src/main/kotlin/`
+- `ocs/DESIGN.md`
+- `lans/server/current-baseline.md`
+- `.github/workflows/relay.yml`
+- `server/`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 

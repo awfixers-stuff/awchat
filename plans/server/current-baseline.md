@@ -22,14 +22,14 @@ This document is the handoff surface for server enhancement work: it states the 
 
 | Artifact                         | State                                              |
 | -------------------------------- | -------------------------------------------------- |
-| `server/relay/`                  | **Missing**                                        |
-| Flyway migrations                | **Missing** (`V1__init.sql` planned in PR 5)       |
-| Docker Compose for local relay   | **Missing** (planned in PR 5)                      |
-| Ktor application                 | **Missing**                                        |
-| PostgreSQL schema                | **Specified only** (see Data model)                |
-| `libsignal-client` JVM on server | **Specified only** (XEdDSA verify; no decrypt)     |
+| `server/relay/`                  | **Shipped** (Elixir/Gleam/Rust umbrella)           |
+| Ecto migrations                  | **Shipped** (`apps/gateway/priv/repo/migrations/`) |
+| Docker Compose for local relay   | **Shipped** (`server/relay/docker-compose.yml`)    |
+| Elixir gateway application       | **Shipped** (`apps/gateway`)                       |
+| PostgreSQL schema                | **Implemented** (+ signed/kyber prekey tables)     |
+| Rust `libsignal-core` verify NIF | **Shipped** (XEdDSA REST + WS; no decrypt)         |
 | Client network layer             | **Missing** (`core:network` in PR 11)              |
-| CI for relay                     | **Missing** (Testcontainers test planned in PR 5)  |
+| CI for relay                     | **Shipped** (`.github/workflows/relay.yml`)        |
 
 **Related client work already shipped:** `core:crypto` (SessionManager, identity sealing, `UserId` derivation) — the Android side can encrypt/decrypt; it has nothing to talk to yet.
 
@@ -55,11 +55,11 @@ The relay is a **dumb encrypted relay**. It is the entire AWChat backend in v1 �
 
 | Layer | Choice |
 | ----- | ------ |
-| Runtime | Kotlin **Ktor** |
+| Runtime | **Elixir** (Bandit/OTP) + **Gleam** (`packages/core`) + **Rust** NIF |
 | Database | **PostgreSQL only** (no Redis in v1) |
-| Migrations | **Flyway** on container start (blocks readiness until complete) |
-| Crypto library | `org.signal:libsignal-client` (JVM) — verify only |
-| Deploy (default) | Single **Fly.io** machine + Fly Postgres |
+| Migrations | **Ecto** (`mix ecto.migrate` / `Gateway.Release.migrate/0`) |
+| Crypto library | `libsignal-core` (Rust, v0.86.x) — XEdDSA verify only |
+| Deploy (default) | Single **Railway** project (relay service + Railway Postgres) |
 | Secrets | `DATABASE_URL`, TLS cert — **no server keystore** |
 | Health | `GET /v1/health` (liveness), `GET /v1/ready` (DB + migration version) |
 | TTL job | Cron every **15 min** — hard-delete expired envelopes |
@@ -77,7 +77,7 @@ The relay is a **dumb encrypted relay**. It is the entire AWChat backend in v1 �
 | Pre-key hosting | Public one-time pre-keys | `GET /v1/prekeys/{userId}` — no auth |
 | Ciphertext storage | Opaque blobs + routing fields | `message_envelopes` table |
 | Live delivery | Fan-out via in-memory WS map | Per connected `userId` |
-| Offline queue | Same ciphertext in Postgres | Max **48h** (`created_at` / `purge_after`) |
+| Offline queue | Same ciphertext in Postgres | Max **48h** (`created_at` / `purge_after`); **deleted immediately on full ack** |
 | Chat membership | Member IDs, chat type, size ≤ 5 | Direct + group; no plaintext chat names on server in v1 spec |
 | Group size enforcement | Member count | Reject > 5 on create/patch |
 | Delivery tracking | `envelope_recipients.delivered_at` | Updated on client `ack` |
