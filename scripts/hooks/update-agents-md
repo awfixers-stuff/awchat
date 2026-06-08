@@ -2,4 +2,4 @@
 set -e
 
 root="$(git rev-parse --show-toplevel)"
-cat | bun "$root/scripts/update-agents-md.ts" --reason "grok-hook"
+exec bun "$root/scripts/update-agents-md.ts" --reason "grok-hook"
