@@ -50,13 +50,9 @@ Railway can defer deploys until GitHub Actions succeed. For each service (`broke
 
 1. **Settings → Deploy:** enable **Wait for CI**.
 2. Ensure the repo has the root [`.github/workflows/ci.yml`](.github/workflows/ci.yml) workflow (runs on every `master` push).
-3. After the workflow is on `master`, apply branch protection so merges cannot bypass the gate:
+3. The required status check name is **`gate`** (final job in the CI workflow). Railway waits for all push-triggered workflows to succeed; keep only the unified `CI` workflow as the deploy gate.
 
-```bash
-./scripts/ops/github-branch-protection.sh
-```
-
-The required status check name is **`gate`** (final job in the CI workflow). Railway waits for all push-triggered workflows to succeed; keep only the unified `CI` workflow as the deploy gate.
+Optional: `./scripts/ops/github-branch-protection.sh` adds classic branch protection for `gate` (admins can bypass by default). The repo already has a **ruleset** (`base`) with its own checks and org-admin bypass — do not stack `enforce_admins=true` on top unless you intend to block yourself.
 
 ## Verify
 

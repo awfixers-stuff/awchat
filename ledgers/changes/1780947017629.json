@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-06-08T19:30:17.629Z",
+  "head": "dbffb2b78a85947e0f5fb53548b9c1414744baa1",
+  "branch": "master",
+  "files": [
+    {
+      "path": "RAILWAY.md",
+      "added": 2,
+      "removed": 6
+    },
+    {
+      "path": "scripts/ops/github-branch-protection.sh",
+      "added": 10,
+      "removed": 5
+    }
+  ],
+  "totals": {
+    "files": 2,
+    "added": 12,
+    "removed": 11
+  }
+}
