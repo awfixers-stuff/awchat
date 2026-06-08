@@ -33,6 +33,7 @@ defmodule Broker.MixProject do
       {:bandit, "~> 1.6"},
       {:gun, "~> 2.1"},
       {:hammer, "~> 7.0"},
+      {:redix, "~> 1.5"},
       {:jason, "~> 1.4"},
       {:plug, "~> 1.16"},
       {:req, "~> 0.5"},

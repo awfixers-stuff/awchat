@@ -10,6 +10,12 @@ This repository is an **isolated monorepo**: three deployable server services un
 
 Postgres plugins (add in Railway): **Postgres** → relay, **Postgres-Auth** → auth.
 
+**Redis** plugin (shared): attach to **`broker`** and **`awchat`** via `REDIS_URL=${{Redis.REDIS_URL}}` (confirm reference name in dashboard). See [Plan 002](plans/server/002-redis-durable-encrypted-pipeline.md).
+
+### Serverless and teardown (bring-up)
+
+During initial deployment, **serverless** and **teardown** may stay **enabled** on all services (including `broker`, `auth`, `awchat`) to limit idle cost. **Disable serverless/teardown on `broker` when the public API is production-ready** so clients always hit a warm edge. Internal `auth` / `awchat` may remain serverless longer; ciphertext durability relies on **Postgres** + **Redis**, not relay process memory.
+
 ## GitHub push-to-deploy (recommended bootstrap)
 
 1. Create an **empty** Railway project (do not deploy the whole repo as one service).

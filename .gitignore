@@ -4,6 +4,8 @@ java*
 .direnv
 .kotlin
 
+.venv
+
 # Ignore Gradle build output directory
 build
 

@@ -8,6 +8,8 @@ config :gateway, Gateway.Repo,
 config :gateway, Gateway.Endpoint,
   port: String.to_integer(System.get_env("PORT") || "8080")
 
+config :gateway, :redis_url, System.get_env("REDIS_URL")
+
 config :gateway, Gateway.Scheduler,
   jobs: [
     {"*/15 * * * *", {Gateway.Jobs, :purge_expired_envelopes, []}},

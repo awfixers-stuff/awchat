@@ -123,6 +123,12 @@ else
   echo "Postgres plugin(s) already exist"
 fi
 
+if ! railway service list --json | jq -e '.[] | select(.name | test("^Redis"; "i"))' >/dev/null 2>&1; then
+  railway add --database redis --json >/dev/null 2>&1 || echo "note: add Redis plugin manually in dashboard if railway add --database redis is unavailable"
+else
+  echo "Redis plugin already exists"
+fi
+
 echo "== variables =="
 railway variable set --service auth \
   DATABASE_URL='${{Postgres-Auth.DATABASE_URL}}' \
@@ -135,10 +141,20 @@ railway variable set --service auth \
 
 railway variable set --service awchat \
   DATABASE_URL='${{Postgres.DATABASE_URL}}' \
+  REDIS_URL='${{Redis.REDIS_URL}}' \
+  --json >/dev/null 2>&1 || \
+  railway variable set --service awchat \
+  DATABASE_URL='${{Postgres.DATABASE_URL}}' \
   --json >/dev/null
 
 OPS_TOKEN="$(openssl rand -hex 24)"
 railway variable set --service broker \
+  RELAY_UPSTREAM='awchat.railway.internal:8080' \
+  AUTH_UPSTREAM='auth.railway.internal:8081' \
+  BROKER_OPS_TOKEN="$OPS_TOKEN" \
+  REDIS_URL='${{Redis.REDIS_URL}}' \
+  --json >/dev/null 2>&1 || \
+  railway variable set --service broker \
   RELAY_UPSTREAM='awchat.railway.internal:8080' \
   AUTH_UPSTREAM='auth.railway.internal:8081' \
   BROKER_OPS_TOKEN="$OPS_TOKEN" \

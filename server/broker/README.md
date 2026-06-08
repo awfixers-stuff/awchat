@@ -34,6 +34,7 @@ Relay and auth are **not** exposed publicly — only the broker has a Railway pu
 | `USER_RATE_LIMIT` | No | `60` |
 | `RATE_LIMIT_WINDOW_MS` | No | `60000` |
 | `MAX_BODY_BYTES` | No | `1048576` |
+| `REDIS_URL` | Recommended (prod) | `redis://…` — shared rate limits across broker restarts; see [Plan 002](../../plans/server/002-redis-durable-encrypted-pipeline.md) |
 
 ## Ops health
 

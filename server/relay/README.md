@@ -41,6 +41,7 @@ Migrations run automatically on container boot.
 **Required env on relay service:**
 
 - `DATABASE_URL=${{Postgres.DATABASE_URL}}`
+- `REDIS_URL=${{Redis.REDIS_URL}}` (hosted stack; hot pending envelope index — see [Plan 002](../../plans/server/002-redis-durable-encrypted-pipeline.md))
 
 **Health:** `GET /v1/health` (liveness), `GET /v1/ready` (DB + migrations). Reachable via broker at the public URL.
 

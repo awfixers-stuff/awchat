@@ -58,7 +58,7 @@ The relay is a **dumb encrypted relay**. It is the entire AWChat backend in v1 �
 | Layer | Choice |
 | ----- | ------ |
 | Runtime | **Elixir** (Bandit/OTP) + **Gleam** (`packages/core`) + **Rust** NIF |
-| Database | **PostgreSQL only** (no Redis in v1) |
+| Database | **PostgreSQL** (envelope source of truth); **Redis** on hosted stack per [Plan 002](./002-redis-durable-encrypted-pipeline.md) |
 | Migrations | **Ecto** (`mix ecto.migrate` / `Gateway.Release.migrate/0`) |
 | Crypto library | `libsignal-core` (Rust, v0.86.x) — XEdDSA verify only |
 | Deploy (default) | Single **Railway** project (relay service + Railway Postgres) |
@@ -288,7 +288,8 @@ These are **out of scope** for the current design baseline but appear in adjacen
 | ------ | --------- |
 | [Plan 001 — Support & bug reporting](../001-support-and-bug-reporting.md) | `POST /v1/feedback/bug`, `POST /v1/feedback/support` on relay; Linear + email; rate-limited |
 | `docs/DESIGN.md` v1.1 appendix | FCM wake-up, attachments |
-| v2 (deferred) | Multi-node HA, Redis/sticky sessions, shared pub/sub |
+| [Plan 002](./002-redis-durable-encrypted-pipeline.md) | Redis hot pending index, broker Redis rate limits, aggressive PG durability, serverless/teardown ops |
+| v2 (deferred) | Multi-node HA, sticky sessions, shared pub/sub beyond Plan 002 |
 
 ---
 

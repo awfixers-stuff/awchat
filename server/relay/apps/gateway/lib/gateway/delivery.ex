@@ -3,6 +3,7 @@ defmodule Gateway.Delivery do
   import Ecto.Query
 
   alias Gateway.ConnectionRegistry
+  alias Gateway.EnvelopeHotQueue
   alias Gateway.Repo
   alias Gateway.Schemas.{EnvelopeRecipient, MessageEnvelope}
   alias Gateway.Chats
@@ -20,6 +21,7 @@ defmodule Gateway.Delivery do
   @spec handle_ack(String.t(), map()) :: :ok | {:error, atom()}
   def handle_ack(recipient_id, %{"envelopeId" => envelope_id}) do
     now = Gateway.Time.now()
+    EnvelopeHotQueue.ack(recipient_id, envelope_id)
 
     Repo.transaction(fn ->
       Repo.update_all(
@@ -48,16 +50,35 @@ defmodule Gateway.Delivery do
 
   @spec redeliver_pending(String.t()) :: :ok
   def redeliver_pending(recipient_id) do
+    hot_ids = EnvelopeHotQueue.pop_ids(recipient_id) |> MapSet.new()
+
     pending =
       from(e in MessageEnvelope,
         join: r in EnvelopeRecipient,
         on: r.envelope_id == e.id,
         where: r.recipient_id == ^recipient_id and is_nil(r.delivered_at),
-        select: {e, r}
+        select: e
       )
       |> Repo.all()
 
-    Enum.each(pending, fn {envelope, _recipient} ->
+    pending_by_id = Map.new(pending, &{&1.id, &1})
+
+    extra_ids =
+      hot_ids
+      |> MapSet.to_list()
+      |> Enum.reject(&Map.has_key?(pending_by_id, &1))
+
+    extra_envelopes =
+      if extra_ids == [] do
+        []
+      else
+        from(e in MessageEnvelope, where: e.id in ^extra_ids)
+        |> Repo.all()
+      end
+
+    (pending ++ extra_envelopes)
+    |> Enum.uniq_by(& &1.id)
+    |> Enum.each(fn envelope ->
       send_to_user(recipient_id, envelope_to_frame(envelope))
     end)
 
@@ -120,18 +141,30 @@ defmodule Gateway.Delivery do
     end)
 
     frame = envelope_to_frame(envelope)
-    {:ok, Map.put(frame, "_recipients", recipients)}
+
+    {:ok,
+     frame
+     |> Map.put("_recipients", recipients)
+     |> Map.put("_purge_after", envelope.purge_after)}
   end
 
   defp fanout_or_queue(%{"id" => _} = frame) do
     recipients = Map.get(frame, "_recipients", [])
+    purge_after = Map.get(frame, "_purge_after") || Gateway.Time.add_hours(Gateway.Time.now(), Gateway.RelayCore.envelope_ttl_hours())
 
-    payload = Map.delete(frame, "_recipients")
+    payload =
+      frame
+      |> Map.delete("_recipients")
+      |> Map.delete("_purge_after")
 
     Enum.each(recipients, fn recipient_id ->
       case ConnectionRegistry.lookup(recipient_id) do
-        nil -> :queued
-        _pid -> send_to_user(recipient_id, payload)
+        nil ->
+          EnvelopeHotQueue.push(recipient_id, payload["id"], purge_after)
+          :queued
+
+        _pid ->
+          send_to_user(recipient_id, payload)
       end
     end)
 
