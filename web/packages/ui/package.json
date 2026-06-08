@@ -29,7 +29,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@oxfmt/binding-linux-x64-gnu": "0.53.0",
+    "@oxfmt/binding-linux-x64-gnu": "0.54.0",
     "@oxlint/binding-linux-x64-gnu": "1.68.0",
     "@tailwindcss/oxide-linux-x64-gnu": "4.3.0",
     "@tailwindcss/postcss": "^4",
