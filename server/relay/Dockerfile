@@ -11,8 +11,12 @@ WORKDIR /app
 RUN curl -fsSL https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
+RUN curl -fsSL https://github.com/gleam-lang/gleam/releases/download/v1.16.0/gleam-v1.16.0-linux-amd64.tar.gz \
+  | tar xz -C /usr/local/bin
+
 COPY mix.exs mix.lock ./
 COPY config config
+COPY packages/core packages/core
 COPY apps/gateway/mix.exs apps/gateway/
 COPY apps/gateway/lib apps/gateway/lib
 COPY apps/gateway/native apps/gateway/native
@@ -21,6 +25,7 @@ COPY apps/gateway/priv apps/gateway/priv
 ENV MIX_ENV=prod
 RUN mix local.hex --force && mix local.rebar --force
 RUN mix deps.get --only prod
+RUN cd packages/core && gleam build
 RUN mix compile
 RUN mix release
 

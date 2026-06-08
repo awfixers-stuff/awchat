@@ -5,8 +5,8 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import me.awfixer.awchat.core.database.entity.MessageEntity
 import kotlinx.coroutines.flow.Flow
+import me.awfixer.awchat.core.database.entity.MessageEntity
 
 @Dao
 interface MessageDao {

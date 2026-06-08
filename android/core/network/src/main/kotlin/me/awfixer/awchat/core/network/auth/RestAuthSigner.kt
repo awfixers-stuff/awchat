@@ -7,6 +7,7 @@ import java.security.MessageDigest
 
 object RestAuthSigner {
 
+    @Suppress("LongParameterList")
     fun signRequest(
         identityPrivateKey: ECPrivateKey,
         method: String,

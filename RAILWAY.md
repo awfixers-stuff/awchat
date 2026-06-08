@@ -44,6 +44,20 @@ For each service (`broker`, `auth`, `awchat`):
 
 `watchPatterns` in config-as-code are repo-root paths (e.g. `/server/broker/**`), so only the affected service redeploys on push.
 
+## Wait for CI
+
+Railway can defer deploys until GitHub Actions succeed. For each service (`broker`, `auth`, `awchat`):
+
+1. **Settings → Deploy:** enable **Wait for CI**.
+2. Ensure the repo has the root [`.github/workflows/ci.yml`](.github/workflows/ci.yml) workflow (runs on every `master` push).
+3. After the workflow is on `master`, apply branch protection so merges cannot bypass the gate:
+
+```bash
+./scripts/ops/github-branch-protection.sh
+```
+
+The required status check name is **`gate`** (final job in the CI workflow). Railway waits for all push-triggered workflows to succeed; keep only the unified `CI` workflow as the deploy gate.
+
 ## Verify
 
 ```bash

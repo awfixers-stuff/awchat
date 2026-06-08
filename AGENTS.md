@@ -26,15 +26,13 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T07:12:09.859Z
-**Branch:** `master` @ `847982cbb51f`
+**Last updated:** 2026-06-08T19:27:48.183Z
+**Branch:** `master` @ `44ed347a7135`
 
 ### In progress
-
-- PR 12: CI expansion — detekt, oxlint, emulator
+- PR 13: feature:onboarding
 
 ### Completed
-
 - PR 1: build-logic + catalog + repo hygiene
 - PR 2: Android Compose shell + minimal CI
 - PR 3: libsignal-android packaging spike
@@ -46,27 +44,23 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - PR 9: core:domain — repository interfaces + use case stubs
 - PR 10: core:database — repository implementations
 - PR 11: core:network — Ktor client + WS + auth handshake
+- PR 12: CI expansion — detekt, oxlint, emulator
 
 ### Next up
-
-- PR 12: CI expansion — detekt, oxlint, emulator
 - PR 13: feature:onboarding
-- PR 14: feature:lock
 
 ### Blockers
-
 - _(none)_
 
 ### Last handoff
+**roadmap-phase** at 2026-06-08T19:27:48.183Z
 
-**session-handoff** at 2026-06-08T05:13:48.991Z
-
-Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing
+Unified CI workflow on Blacksmith; android/ path; server docker builds; branch protection gate
 
 ### Recently touched
-
-- `README.md`
-- `docs/DESIGN.md`
+- `.github/workflows/ci.yml`
+- `android/detekt.yml`
+- `scripts/ops/github-branch-protection.sh`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 

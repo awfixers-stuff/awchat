@@ -70,6 +70,7 @@ class KeystoreMasterKeyProvider @Inject constructor(
         }
     }
 
+    @Suppress("SwallowedException")
     private fun getOrCreateKeystoreKey(): SecretKey {
         val existing = keyStore.getEntry(keyAlias, null) as? KeyStore.SecretKeyEntry
         if (existing != null) {

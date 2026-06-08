@@ -8,12 +8,8 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import me.awfixer.awchat.core.network.model.AuthChallenge
-import me.awfixer.awchat.core.network.model.AuthResponse
 import me.awfixer.awchat.core.network.model.EnvelopeFrame
 import me.awfixer.awchat.core.network.model.PurgeNotifyFrame
 import me.awfixer.awchat.core.network.model.WsFrame

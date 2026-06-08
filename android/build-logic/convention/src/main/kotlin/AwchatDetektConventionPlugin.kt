@@ -12,6 +12,8 @@ class AwchatDetektConventionPlugin : Plugin<Project> {
 
             extensions.configure<DetektExtension> {
                 buildUponDefaultConfig = true
+                allRules = false
+                autoCorrect = true
                 config.setFrom(rootProject.file("detekt.yml"))
             }
 

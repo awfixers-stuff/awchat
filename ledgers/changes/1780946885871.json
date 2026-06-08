@@ -1,0 +1,292 @@
+{
+  "recorded_at": "2026-06-08T19:28:05.871Z",
+  "head": "44ed347a71359ffbe3e03010965006cfccf492e6",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".github/workflows/android.yml",
+      "added": 0,
+      "removed": 19
+    },
+    {
+      "path": ".github/workflows/auth.yml",
+      "added": 0,
+      "removed": 68
+    },
+    {
+      "path": ".github/workflows/broker.yml",
+      "added": 0,
+      "removed": 36
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "added": 198,
+      "removed": 0
+    },
+    {
+      "path": ".github/workflows/relay.yml",
+      "added": 0,
+      "removed": 67
+    },
+    {
+      "path": "AGENTS.md",
+      "added": 9,
+      "removed": 15
+    },
+    {
+      "path": "Justfile",
+      "added": 2,
+      "removed": 2
+    },
+    {
+      "path": "RAILWAY.md",
+      "added": 14,
+      "removed": 0
+    },
+    {
+      "path": "ROADMAP.md",
+      "added": 29,
+      "removed": 34
+    },
+    {
+      "path": "android/app/src/main/kotlin/me/awfixer/awchat/MainActivity.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/app/src/test/kotlin/me/awfixer/awchat/PlaceholderTest.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/build-logic/convention/src/main/kotlin/AwchatAndroidApplicationConventionPlugin.kt",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "android/build-logic/convention/src/main/kotlin/AwchatAndroidLibraryConventionPlugin.kt",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "android/build-logic/convention/src/main/kotlin/AwchatDetektConventionPlugin.kt",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "android/build-logic/convention/src/main/kotlin/AwchatKotlinLibraryConventionPlugin.kt",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "android/core/common/src/main/kotlin/me/awfixer/awchat/core/common/dispatcher/AwChatDispatchers.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/common/src/main/kotlin/me/awfixer/awchat/core/common/result/Result.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/common/src/test/kotlin/me/awfixer/awchat/core/common/result/ResultTest.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/EncryptedEnvelope.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/LibSignalSessionManager.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/SessionManager.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/Base32.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/IdentityGenerator.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/IdentityMaterial.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/UserIdDeriver.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/PreKeyBundleFactory.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/ProtocolStoreFactory.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/SignalProtocolAddresses.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/AesGcmSealer.kt",
+      "added": 1,
+      "removed": 2
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/InMemoryMasterKeyProvider.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/SealedIdentityStore.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/ChatDao.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/ContactDao.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/MessageDao.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ChatMapper.kt",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "android/core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ChatRepositoryImpl.kt",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "android/core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ContactRepositoryImpl.kt",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "android/core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/MessageRepositoryImpl.kt",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "android/core/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/ComposerBar.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/ConversationRow.kt",
+      "added": 5,
+      "removed": 5
+    },
+    {
+      "path": "android/core/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/MessageBubble.kt",
+      "added": 11,
+      "removed": 11
+    },
+    {
+      "path": "android/core/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/theme/AwChatTheme.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/model/src/main/kotlin/me/awfixer/awchat/core/model/ChatId.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/model/src/main/kotlin/me/awfixer/awchat/core/model/MessageId.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/model/src/main/kotlin/me/awfixer/awchat/core/model/UserId.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/model/src/test/kotlin/me/awfixer/awchat/core/model/UserIdTest.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/network/src/main/kotlin/me/awfixer/awchat/core/network/auth/RestAuthSigner.kt",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "android/core/network/src/main/kotlin/me/awfixer/awchat/core/network/model/WsFrame.kt",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "android/core/network/src/main/kotlin/me/awfixer/awchat/core/network/websocket/AwChatWebSocketClient.kt",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "android/core/proto/src/test/kotlin/me/awfixer/awchat/core/proto/InnerMessageProtoTest.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "android/core/security/src/main/kotlin/me/awfixer/awchat/core/security/keystore/KeystoreMasterKeyProvider.kt",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "android/detekt.yml",
+      "added": 33,
+      "removed": 0
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 14,
+      "removed": 11
+    },
+    {
+      "path": "scripts/ops/github-branch-protection.sh",
+      "added": 33,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/Dockerfile",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/.github/workflows/test.yml",
+      "added": 0,
+      "removed": 23
+    }
+  ],
+  "totals": {
+    "files": 56,
+    "added": 388,
+    "removed": 329
+  }
+}

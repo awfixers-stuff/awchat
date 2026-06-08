@@ -1,0 +1,33 @@
+build:
+  maxIssues: 0
+
+config:
+  validation: true
+
+processors:
+  active: true
+
+console-reports:
+  active: true
+
+naming:
+  FunctionNaming:
+    active: false
+
+style:
+  ForbiddenComment:
+    active: false
+  MagicNumber:
+    active: false
+
+formatting:
+  Indentation:
+    active: false
+  FinalNewline:
+    active: false
+  NewLineAtEndOfFile:
+    active: false
+
+exceptions:
+  TooGenericExceptionCaught:
+    active: false

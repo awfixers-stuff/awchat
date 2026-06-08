@@ -1,7 +1,6 @@
 package me.awfixer.awchat.core.network.model
 
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.JsonElement
 
 @Serializable
 sealed interface WsFrame {

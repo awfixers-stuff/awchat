@@ -6,8 +6,8 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import me.awfixer.awchat.core.database.entity.ContactEntity
 import kotlinx.coroutines.flow.Flow
+import me.awfixer.awchat.core.database.entity.ContactEntity
 
 @Dao
 interface ContactDao {

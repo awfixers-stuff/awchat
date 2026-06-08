@@ -10,52 +10,47 @@ Central, human-readable progress tracker for the [24-PR implementation plan](doc
 
 <!-- ROADMAP_STATE_START -->
 
-**Last updated:** 2026-06-08T07:12:09.859Z
+**Last updated:** 2026-06-08T19:27:48.183Z
 **Branch:** `master`
-**Progress:** 11 / 24 PRs complete
+**Progress:** 12 / 24 PRs complete
 
 ### In progress
-
-- PR 12: CI expansion — detekt, oxlint, emulator
+- PR 13: feature:onboarding
 
 ### Next up
-
-- PR 12: CI expansion — detekt, oxlint, emulator
 - PR 13: feature:onboarding
-- PR 14: feature:lock
 
 ### Blockers
-
 - _(none)_
 
 ### PR status
 
-| PR  | Title                                                      | Status          |
-| --- | ---------------------------------------------------------- | --------------- |
-| 1   | build-logic + catalog + repo hygiene                       | done            |
-| 2   | Android Compose shell + minimal CI                         | done            |
-| 3   | libsignal-android packaging spike                          | done            |
-| 4   | core:common, core:model, core:designsystem, core:proto     | done            |
-| 5   | server:relay skeleton (parallel track)                     | done            |
-| 6   | core:crypto — SessionManager + identity sealing            | done            |
-| 7   | core:security — Keystore sealing                           | done            |
-| 8   | core:database — Room + SQLCipher (entities + DAOs)         | done            |
-| 9   | core:domain — repository interfaces + use cases            | done            |
-| 10  | core:database — repository implementations                 | done            |
-| 11  | core:network — Ktor client + WS + auth handshake           | done            |
-| 12  | CI expansion — detekt, oxlint, emulator                    | **in progress** |
-| 13  | feature:onboarding                                         | pending         |
-| 14  | feature:lock                                               | pending         |
-| 15  | feature:chat — conversation list UI                        | pending         |
-| 16  | feature:settings — account drawer                          | pending         |
-| 17  | feature:contacts                                           | pending         |
-| 18  | Conversation lifecycle — create/join/sync + membership API | pending         |
-| 19  | feature:chat — thread + E2EE send/receive                  | pending         |
-| 20  | Client ephemeral receipts + seen-by-all                    | pending         |
-| 21  | Server purge + TTL cron + purge_notify broadcast           | pending         |
-| 22  | Group chat — per-member sender keys + membership rotation  | pending         |
-| 23  | Security hardening + release CI signing                    | pending         |
-| 24  | Polish + observability + relay deploy docs                 | pending         |
+| PR | Title | Status |
+| --- | --- | --- |
+| 1 | build-logic + catalog + repo hygiene | done |
+| 2 | Android Compose shell + minimal CI | done |
+| 3 | libsignal-android packaging spike | done |
+| 4 | core:common, core:model, core:designsystem, core:proto | done |
+| 5 | server:relay skeleton (parallel track) | done |
+| 6 | core:crypto — SessionManager + identity sealing | done |
+| 7 | core:security — Keystore sealing | done |
+| 8 | core:database — Room + SQLCipher (entities + DAOs) | done |
+| 9 | core:domain — repository interfaces + use cases | done |
+| 10 | core:database — repository implementations | done |
+| 11 | core:network — Ktor client + WS + auth handshake | done |
+| 12 | CI expansion — detekt, oxlint, emulator | done |
+| 13 | feature:onboarding | **in progress** |
+| 14 | feature:lock | pending |
+| 15 | feature:chat — conversation list UI | pending |
+| 16 | feature:settings — account drawer | pending |
+| 17 | feature:contacts | pending |
+| 18 | Conversation lifecycle — create/join/sync + membership API | pending |
+| 19 | feature:chat — thread + E2EE send/receive | pending |
+| 20 | Client ephemeral receipts + seen-by-all | pending |
+| 21 | Server purge + TTL cron + purge_notify broadcast | pending |
+| 22 | Group chat — per-member sender keys + membership rotation | pending |
+| 23 | Security hardening + release CI signing | pending |
+| 24 | Polish + observability + relay deploy docs | pending |
 
 _Auto-synced by `scripts/update-agents-md.ts`._
 

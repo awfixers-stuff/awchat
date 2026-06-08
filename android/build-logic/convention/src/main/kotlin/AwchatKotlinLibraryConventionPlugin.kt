@@ -10,6 +10,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 class AwchatKotlinLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
+            pluginManager.apply("awchat.detekt")
             pluginManager.apply("org.jetbrains.kotlin.jvm")
 
             extensions.configure<JavaPluginExtension> {

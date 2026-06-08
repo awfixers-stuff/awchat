@@ -4,7 +4,6 @@ import me.awfixer.awchat.core.database.entity.ChatEntity
 import me.awfixer.awchat.core.domain.model.Chat
 import me.awfixer.awchat.core.domain.model.ChatType
 import me.awfixer.awchat.core.model.ChatId
-import me.awfixer.awchat.core.model.UserId
 
 object ChatMapper {
 

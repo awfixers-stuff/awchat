@@ -25,22 +25,22 @@ fun MessageBubble(
         Surface(
             shape = RoundedCornerShape(20.dp),
             color =
-                if (isOutgoing) {
-                    MaterialTheme.colorScheme.primary
-                } else {
-                    MaterialTheme.colorScheme.surfaceContainerHigh
-                },
+            if (isOutgoing) {
+                MaterialTheme.colorScheme.primary
+            } else {
+                MaterialTheme.colorScheme.surfaceContainerHigh
+            },
             modifier = Modifier.fillMaxWidth(0.8f),
         ) {
             Text(
                 text = text,
                 style = MaterialTheme.typography.bodyLarge,
                 color =
-                    if (isOutgoing) {
-                        MaterialTheme.colorScheme.onPrimary
-                    } else {
-                        MaterialTheme.colorScheme.onSurface
-                    },
+                if (isOutgoing) {
+                    MaterialTheme.colorScheme.onPrimary
+                } else {
+                    MaterialTheme.colorScheme.onSurface
+                },
                 modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
             )
         }

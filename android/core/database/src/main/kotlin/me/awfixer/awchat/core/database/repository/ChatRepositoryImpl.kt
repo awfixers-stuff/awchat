@@ -3,7 +3,6 @@ package me.awfixer.awchat.core.database.repository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import me.awfixer.awchat.core.common.result.Result
-
 import me.awfixer.awchat.core.database.dao.ChatDao
 import me.awfixer.awchat.core.database.mapper.ChatMapper
 import me.awfixer.awchat.core.domain.model.Chat

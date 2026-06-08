@@ -1,7 +1,6 @@
 package me.awfixer.awchat.core.crypto.sealing
 
 import me.awfixer.awchat.core.common.security.MasterKeyProvider
-
 import java.nio.ByteBuffer
 import java.security.SecureRandom
 import javax.crypto.Cipher

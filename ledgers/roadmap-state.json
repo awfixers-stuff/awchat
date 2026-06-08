@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-08T07:12:09.859Z",
+  "updated_at": "2026-06-08T19:27:48.183Z",
   "branch": "master",
-  "head": "847982cbb51f4ad77557a61e1a81ea49b9e02d9d",
+  "head": "44ed347a71359ffbe3e03010965006cfccf492e6",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
@@ -13,19 +13,22 @@
     "PR 8: core:database — Room + SQLCipher (entities + DAOs only)",
     "PR 9: core:domain — repository interfaces + use case stubs",
     "PR 10: core:database — repository implementations",
-    "PR 11: core:network — Ktor client + WS + auth handshake"
+    "PR 11: core:network — Ktor client + WS + auth handshake",
+    "PR 12: CI expansion — detekt, oxlint, emulator"
   ],
-  "in_progress": "PR 12: CI expansion — detekt, oxlint, emulator",
+  "in_progress": "PR 13: feature:onboarding",
   "next_up": [
-    "PR 12: CI expansion — detekt, oxlint, emulator",
-    "PR 13: feature:onboarding",
-    "PR 14: feature:lock"
+    "PR 13: feature:onboarding"
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T05:13:48.991Z",
-    "reason": "session-handoff",
-    "summary": "Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing"
+    "at": "2026-06-08T19:27:48.183Z",
+    "reason": "roadmap-phase",
+    "summary": "Unified CI workflow on Blacksmith; android/ path; server docker builds; branch protection gate"
   },
-  "recent_files": ["README.md", "docs/DESIGN.md"]
+  "recent_files": [
+    ".github/workflows/ci.yml",
+    "android/detekt.yml",
+    "scripts/ops/github-branch-protection.sh"
+  ]
 }

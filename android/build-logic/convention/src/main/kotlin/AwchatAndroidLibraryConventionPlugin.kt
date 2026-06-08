@@ -11,6 +11,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 class AwchatAndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
+            pluginManager.apply("awchat.detekt")
             pluginManager.apply("com.android.library")
             pluginManager.apply("org.jetbrains.kotlin.android")
 
