@@ -21,3 +21,4 @@ erl_crash.dump
 
 # Rust NIF build artifacts
 apps/gateway/native/**/target/
+apps/gateway/priv/native/

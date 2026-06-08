@@ -16,8 +16,9 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 4. **Crypto is libsignal-native.** No custom protocols. Server never decrypts message bodies.
 5. **Default branch is `master`.** Blacksmith runners (`blacksmith-8vcpu-ubuntu-2404`) for CI.
 6. **Dev tooling:** Nix shell + Gradle + Bun (oxlint/oxfmt only). Run `just build` / `just test` once `Justfile` exists (PR 1).
-7. **Session handoff is mandatory.** After completing a roadmap phase, todo, or bugfix, run the handoff command (see [Session Handoff](#session-handoff)).
+7. **Session handoff is mandatory.** After completing a roadmap phase, todo, or bugfix, run the handoff command (see [Session Handoff](#session-handoff)). This syncs `ledgers/roadmap-state.json`, `ROADMAP.md`, and the Session Continuity block below.
 8. **CodeRabbit every turn.** After every agent turn, run the CodeRabbit gate and fix critical/major findings before you stop (see [CodeRabbit gate](#coderabbit-gate-turn--git)).
+9. **Never commit secrets.** See [Security & secrets](#security--secrets). If you find credentials in the tree or history, remove them and purge git history before stopping.
 
 ---
 
@@ -25,8 +26,8 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T04:13:28.473Z
-**Branch:** `master` @ `10e4cc06f95a`
+**Last updated:** 2026-06-08T04:18:02.622Z
+**Branch:** `master` @ `15179bcc3201`
 
 ### In progress
 - PR 12: CI expansion — detekt, oxlint, emulator
@@ -46,28 +47,25 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 ### Next up
 - PR 12: CI expansion — detekt, oxlint, emulator
+- PR 13: feature:onboarding
+- PR 14: feature:lock
 
 ### Blockers
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T04:13:28.473Z
+**session-handoff** at 2026-06-08T04:17:53.176Z
 
-Completed: PR 11: core:network — Ktor client + WS + auth handshake
+Pre-public audit: secrets purged, README + ROADMAP added
 
 ### Recently touched
-- `.gitignore`
-- `.grok/hooks/coderabbit-turn.json`
-- `.grok/skills/session-handoff/SKILL.md`
-- `.omp/hooks/post/agent-turn-coderabbit.ts`
-- `.pi/extensions/coderabbit-turn-gate.ts`
+- `grok/skills/session-handoff/SKILL.md`
 - `AGENTS.md`
-- `core/database/build.gradle.kts`
-- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/di/RepositoryModule.kt`
-- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ChatMapper.kt`
-- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ContactMapper.kt`
-- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/MessageMapper.kt`
-- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ChatRepositoryImpl.kt`
+- `ROADMAP.md`
+- `ledgers/roadmap-state.json`
+- `cripts/update-agents-md.ts`
+- `.mcp.json.example`
+- `README.md`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
@@ -75,15 +73,17 @@ _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun
 
 ---
 
-## Current Repo State (2026-06-07)
+## Current Repo State (2026-06-08)
 
 | Artifact                     | State                                           |
 | ---------------------------- | ----------------------------------------------- |
 | `docs/DESIGN.md`             | Authoritative system design (rev 4)             |
-| `app/`                       | Kotlin JVM CLI scaffold — not yet Android       |
-| `build-logic/`               | Missing (PR 1)                                  |
-| `Justfile`                   | Missing (PR 1)                                  |
-| `.github/workflows/`         | Missing (PR 2)                                  |
+| `ROADMAP.md`                 | Central human-readable roadmap (auto-synced)    |
+| `README.md`                  | Project overview and quick start                |
+| `app/`                       | Android Compose shell                           |
+| `build-logic/`               | Convention plugins (PR 1)                       |
+| `Justfile`                   | `just build` / `just test`                      |
+| `.github/workflows/`         | Android, auth, relay CI                         |
 | `AGENTS.md`                  | This file                                       |
 | `ledgers/changes/`           | Per-commit JSON changelog (lefthook pre-commit) |
 | `ledgers/roadmap-state.json` | Machine-readable roadmap progress               |
@@ -92,7 +92,7 @@ _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun
 
 ## Roadmap Summary (24 PRs)
 
-Full detail: `docs/DESIGN.md` § PR Plan.
+Live progress: [`ROADMAP.md`](ROADMAP.md). Full specification: `docs/DESIGN.md` PR Plan.
 
 | Phase        | PRs   | Focus                                                     |
 | ------------ | ----- | --------------------------------------------------------- |
@@ -126,9 +126,33 @@ Flags:
 | `--summary`     | One-line handoff note for the next session           |
 | `--reason`      | Handoff category (`roadmap-phase`, `bugfix`, `todo`) |
 
-Grok Build hooks also sync AGENTS.md automatically on `Stop` and `SessionEnd` when there are local changes.
+Grok Build hooks also sync `AGENTS.md`, `ROADMAP.md`, and `ledgers/roadmap-state.json` automatically on `Stop` and `SessionEnd` when there are local changes.
 
 **Trust project hooks:** add this repo path to `~/.grok/trusted-hook-projects` so `.grok/hooks/` runs.
+
+---
+
+## Security & secrets
+
+This repo is public-facing. **Do not commit credentials, keys, or local-only config.**
+
+| Never commit | Use instead |
+| --- | --- |
+| `.env`, `.env.local` | `.env` is gitignored; document vars in design/plan docs only |
+| `.mcp.json` (API keys in URLs) | Copy `.mcp.json.example` → `.mcp.json` locally |
+| Android keystores, `*.jks`, `*.p12` | CI secrets in PR 23 workflow only |
+| `AWCHAT_KEYSTORE_PASSWORD`, release signing passwords | GitHub Actions secrets |
+| `DATABASE_URL`, TLS private keys, `LINEAR_API_KEY`, SMTP/API keys | Railway/Fly deployment secrets |
+| Compiled NIF blobs (`priv/native/*.so`) | Built by Mix/Rust in CI and local dev |
+
+**Pre-publish checklist (agents):**
+
+1. `git grep -iE '(api[_-]?key|secret|password|token|BEGIN PRIVATE)'` across tracked files — investigate every hit.
+2. Confirm `.gitignore` covers new secret-bearing paths before adding them.
+3. If a secret was ever committed: remove the file, add to `.gitignore`, and **rewrite git history** (`git filter-repo`) — then rotate the exposed credential.
+4. Docker Compose `POSTGRES_PASSWORD=awchat` values are **local dev only** — never reuse in production.
+
+**History note:** An Exa API key was removed from `.mcp.json` and purged from git history before public release. Rotate that key if it was ever used outside this machine.
 
 ---
 

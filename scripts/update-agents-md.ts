@@ -6,6 +6,8 @@ import { join } from "node:path";
 
 const SESSION_START = "<!-- SESSION_STATE_START -->";
 const SESSION_END = "<!-- SESSION_STATE_END -->";
+const ROADMAP_START = "<!-- ROADMAP_STATE_START -->";
+const ROADMAP_END = "<!-- ROADMAP_STATE_END -->";
 
 interface RoadmapState {
   updated_at: string;
@@ -265,6 +267,78 @@ async function latestLedgerEntry(repoRoot: string): Promise<ChangelogEntry | nul
   return JSON.parse(raw) as ChangelogEntry;
 }
 
+function prNumber(item: string): string | null {
+  const match = item.match(/^PR\s+(\d+)/);
+  return match?.[1] ?? null;
+}
+
+function prTitle(item: string): string {
+  const colon = item.indexOf(":");
+  return colon === -1 ? item : item.slice(colon + 1).trim();
+}
+
+function prStatus(
+  item: string,
+  completedSet: Set<string>,
+  inProgress: string | null,
+): "done" | "in progress" | "pending" {
+  const number = prNumber(item);
+  if (number && completedSet.has(`PR ${number}`)) {
+    return "done";
+  }
+  if (inProgress && prNumber(item) === prNumber(inProgress)) {
+    return "in progress";
+  }
+  return "pending";
+}
+
+function renderRoadmapState(state: RoadmapState): string {
+  const completedSet = new Set(
+    state.completed
+      .map((item) => item.split(":")[0]?.trim())
+      .filter((pr): pr is string => Boolean(pr)),
+  );
+  const completedCount = ROADMAP_ITEMS.filter((item) => {
+    const number = prNumber(item);
+    return number && completedSet.has(`PR ${number}`);
+  }).length;
+
+  const nextUp = state.next_up.map((item) => `- ${item}`).join("\n");
+  const blockers =
+    state.blockers.length > 0 ? state.blockers.map((item) => `- ${item}`).join("\n") : "- _(none)_";
+
+  const rows = ROADMAP_ITEMS.map((item) => {
+    const number = prNumber(item) ?? "?";
+    const title = prTitle(item);
+    const status = prStatus(item, completedSet, state.in_progress);
+    const label = status === "in progress" ? "**in progress**" : status;
+    return `| ${number} | ${title} | ${label} |`;
+  }).join("\n");
+
+  return [
+    `**Last updated:** ${state.updated_at}`,
+    `**Branch:** \`${state.branch}\``,
+    `**Progress:** ${completedCount} / ${ROADMAP_ITEMS.length} PRs complete`,
+    "",
+    "### In progress",
+    state.in_progress ? `- ${state.in_progress}` : "- _(unset)_",
+    "",
+    "### Next up",
+    nextUp,
+    "",
+    "### Blockers",
+    blockers,
+    "",
+    "### PR status",
+    "",
+    "| PR | Title | Status |",
+    "| --- | --- | --- |",
+    rows,
+    "",
+    "_Auto-synced by `scripts/update-agents-md.ts`._",
+  ].join("\n");
+}
+
 function renderSessionState(state: RoadmapState): string {
   const completed =
     state.completed.length > 0
@@ -311,17 +385,31 @@ function renderSessionState(state: RoadmapState): string {
   ].join("\n");
 }
 
-function replaceSessionBlock(agentsMd: string, sessionBlock: string): string {
-  const start = agentsMd.indexOf(SESSION_START);
-  const end = agentsMd.indexOf(SESSION_END);
+function replaceMarkedBlock(
+  markdown: string,
+  startMarker: string,
+  endMarker: string,
+  block: string,
+  label: string,
+): string {
+  const start = markdown.indexOf(startMarker);
+  const end = markdown.indexOf(endMarker);
 
   if (start === -1 || end === -1 || end < start) {
-    throw new Error(`AGENTS.md is missing ${SESSION_START} / ${SESSION_END} markers`);
+    throw new Error(`${label} is missing ${startMarker} / ${endMarker} markers`);
   }
 
-  const before = agentsMd.slice(0, start + SESSION_START.length);
-  const after = agentsMd.slice(end);
-  return `${before}\n\n${sessionBlock}\n\n${after}`;
+  const before = markdown.slice(0, start + startMarker.length);
+  const after = markdown.slice(end);
+  return `${before}\n\n${block}\n\n${after}`;
+}
+
+function replaceSessionBlock(agentsMd: string, sessionBlock: string): string {
+  return replaceMarkedBlock(agentsMd, SESSION_START, SESSION_END, sessionBlock, "AGENTS.md");
+}
+
+function replaceRoadmapBlock(roadmapMd: string, roadmapBlock: string): string {
+  return replaceMarkedBlock(roadmapMd, ROADMAP_START, ROADMAP_END, roadmapBlock, "ROADMAP.md");
 }
 
 async function readHookInput(): Promise<HookInput | null> {
@@ -376,6 +464,7 @@ async function main(): Promise<void> {
 
   const statePath = join(repoRoot, "ledgers", "roadmap-state.json");
   const agentsPath = join(repoRoot, "AGENTS.md");
+  const roadmapPath = join(repoRoot, "ROADMAP.md");
 
   const previousStateRaw = existsSync(statePath) ? await readFile(statePath, "utf8") : null;
   const nextStateRaw = `${JSON.stringify(state, null, 2)}\n`;
@@ -385,7 +474,15 @@ async function main(): Promise<void> {
   const nextAgents = replaceSessionBlock(previousAgents, renderSessionState(state));
   const agentsChanged = previousAgents !== nextAgents;
 
-  if (!stateChanged && !agentsChanged) {
+  let roadmapChanged = false;
+  let nextRoadmap: string | null = null;
+  if (existsSync(roadmapPath)) {
+    const previousRoadmap = await readFile(roadmapPath, "utf8");
+    nextRoadmap = replaceRoadmapBlock(previousRoadmap, renderRoadmapState(state));
+    roadmapChanged = previousRoadmap !== nextRoadmap;
+  }
+
+  if (!stateChanged && !agentsChanged && !roadmapChanged) {
     return;
   }
 
@@ -397,9 +494,15 @@ async function main(): Promise<void> {
     await writeFile(agentsPath, nextAgents);
   }
 
-  const pathsToStage = [stateChanged ? statePath : null, agentsChanged ? agentsPath : null].filter(
-    (path): path is string => path !== null,
-  );
+  if (roadmapChanged && nextRoadmap) {
+    await writeFile(roadmapPath, nextRoadmap);
+  }
+
+  const pathsToStage = [
+    stateChanged ? statePath : null,
+    agentsChanged ? agentsPath : null,
+    roadmapChanged ? roadmapPath : null,
+  ].filter((path): path is string => path !== null);
 
   if (pathsToStage.length === 0) {
     return;

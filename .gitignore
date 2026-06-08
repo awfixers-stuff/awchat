@@ -11,6 +11,7 @@ build
 .env.*
 !.envrc
 !.env.vars
+.mcp.json
 node_modules
 ledgers/coderabbit/
 dist

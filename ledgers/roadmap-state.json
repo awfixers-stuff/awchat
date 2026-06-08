@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-08T04:13:28.473Z",
+  "updated_at": "2026-06-08T04:18:02.622Z",
   "branch": "master",
-  "head": "10e4cc06f95aac87ba104f55dcd65f112e8b335b",
+  "head": "15179bcc3201a6199c85f4fa04f7a5f21279646c",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
@@ -17,26 +17,23 @@
   ],
   "in_progress": "PR 12: CI expansion — detekt, oxlint, emulator",
   "next_up": [
-    "PR 12: CI expansion — detekt, oxlint, emulator"
+    "PR 12: CI expansion — detekt, oxlint, emulator",
+    "PR 13: feature:onboarding",
+    "PR 14: feature:lock"
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T04:13:28.473Z",
-    "reason": "roadmap-phase",
-    "summary": "Completed: PR 11: core:network — Ktor client + WS + auth handshake"
+    "at": "2026-06-08T04:17:53.176Z",
+    "reason": "session-handoff",
+    "summary": "Pre-public audit: secrets purged, README + ROADMAP added"
   },
   "recent_files": [
-    ".gitignore",
-    ".grok/hooks/coderabbit-turn.json",
-    ".grok/skills/session-handoff/SKILL.md",
-    ".omp/hooks/post/agent-turn-coderabbit.ts",
-    ".pi/extensions/coderabbit-turn-gate.ts",
+    "grok/skills/session-handoff/SKILL.md",
     "AGENTS.md",
-    "core/database/build.gradle.kts",
-    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/di/RepositoryModule.kt",
-    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ChatMapper.kt",
-    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ContactMapper.kt",
-    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/MessageMapper.kt",
-    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ChatRepositoryImpl.kt"
+    "ROADMAP.md",
+    "ledgers/roadmap-state.json",
+    "cripts/update-agents-md.ts",
+    ".mcp.json.example",
+    "README.md"
   ]
 }

@@ -28,9 +28,10 @@ Optional flags: `--in-progress`, `--blocker`, `--reason roadmap-phase|bugfix|tod
 ## What it updates
 
 1. `ledgers/roadmap-state.json` — machine-readable progress
-2. `AGENTS.md` — **Session Continuity** block between `<!-- SESSION_STATE_START -->` / `<!-- SESSION_STATE_END -->`
+2. `ROADMAP.md` — central human-readable roadmap (`<!-- ROADMAP_STATE_START -->` / `<!-- ROADMAP_STATE_END -->`)
+3. `AGENTS.md` — **Session Continuity** block between `<!-- SESSION_STATE_START -->` / `<!-- SESSION_STATE_END -->`
 
-Old session detail is replaced, not appended. The static charter sections in `AGENTS.md` stay intact.
+Old session detail is replaced, not appended. Static charter sections in `AGENTS.md` and the phase table in `ROADMAP.md` stay intact.
 
 ## Grok hooks
 
