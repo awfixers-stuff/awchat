@@ -86,7 +86,7 @@ Because NG8 defers FCM (OQ1 default), v1 chat is **not realtime when the app is 
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **1:1 crypto**                  | Signal Protocol (X3DH + Double Ratchet) via **`libsignal-android`**                                                                  | Battle-tested; correct Android AAR with bundled JNI                                                                                                          |
 | **Group crypto (≤5)**           | Signal **Sender Keys** (not MLS)                                                                                                     | Simpler ops for ≤5 members; libsignal-native; MLS adds complexity without benefit at this scale                                                              |
-| **Relay server stack**          | Kotlin **Ktor** + **PostgreSQL only** (v1)                                                                                           | Shares Kotlin ecosystem; no Redis in v1 — offline queue in Postgres, online routing via in-memory WS map                                                     |
+| **Relay server stack**          | **Elixir** (Bandit/OTP) + **Gleam** (protocol core) + **Rust** (libsignal verify NIF) + **PostgreSQL only** (v1)                   | Lightweight BEAM relay; no Redis in v1 — offline queue in Postgres, online routing via in-memory WS map                                                     |
 | **Transport**                   | WebSocket primary, HTTP for registration/prekeys                                                                                     | Low latency when foreground; no push in v1 (NG8)                                                                                                             |
 | **Local DB**                    | Room + **SQLCipher 4**                                                                                                               | Full-DB encryption; plaintext message bodies inside SQLCipher (see Local Storage Threat Boundary)                                                            |
 | **Key storage**                 | libsignal keys in **encrypted local files** sealed by Keystore-derived AES keys; Keystore/StrongBox for DB passphrase + unlock gates | libsignal requires in-process private key access; cannot use non-exportable EC keys in Keystore as ratchet backend (Signal-Android `KeyStoreHelper` pattern) |
@@ -877,7 +877,7 @@ sequenceDiagram
 
 | Topic                 | v1 MVP                                                                           |
 | --------------------- | -------------------------------------------------------------------------------- |
-| **Deployment**        | Single Fly.io machine (OQ4 default) + Fly Postgres                               |
+| **Deployment**        | Single Railway project: relay container + Railway Postgres (OQ4 default)       |
 | **Secrets**           | Fly secrets: `DATABASE_URL`, `TLS_CERT`; no keystore on server                   |
 | **Migrations**        | Flyway on container start (blocking readiness until complete)                    |
 | **Health**            | `/v1/health` liveness; `/v1/ready` checks DB + migration version                 |
@@ -1233,7 +1233,7 @@ assemble-release:
 | OQ1 | FCM for background delivery?             | Product         | **Defer** — NG8 documents limitation         |
 | OQ2 | Contact discovery (QR only vs username)? | Product         | QR + manual safety number                    |
 | OQ3 | Play Store vs sideload?                  | Product / Legal | Play Internal → Production; AGPL review      |
-| OQ4 | Relay hosting?                           | Infra           | Fly.io + Fly Postgres                        |
+| OQ4 | Relay hosting?                           | Infra           | Railway (relay + Postgres in one project)    |
 | OQ5 | Root block vs warn?                      | Security        | Warn-only                                    |
 | OQ6 | Attachments in v1?                       | Product         | **Text-only** — frozen schema; v1.1 appendix |
 
@@ -1296,11 +1296,11 @@ Reordered for early CI, parallel server work, crypto spike before Room, split pu
 
 ### PR 5: `server:relay` skeleton (parallel track)
 
-**Files**: `server/relay/`, Flyway `V1__init.sql`, Docker Compose
+**Files**: `server/relay/` (Elixir umbrella `apps/gateway`, Gleam `packages/core`, Rust NIF `native/awchat_crypto`), Ecto migrations, Docker Compose, `railway.toml`
 
 **Dependencies**: PR 1 only
 
-**Description**: Ktor register, prekeys, health/ready, Postgres schema (incl. `auth_nonces`, `ON DELETE CASCADE`), `libsignal-client` JVM dep, REST auth middleware + WS frame parsing per catalogs, Testcontainers test. **Can merge in parallel with PR 3–4.**
+**Description**: Elixir/Bandit register, prekeys, health/ready, chats, purge, WS frame catalog, Ecto Postgres schema (incl. `auth_nonces`, `ON DELETE CASCADE`), Rust `libsignal-core` XEdDSA verify, ack-driven envelope delete + Quantum TTL crons, Gleam protocol package, relay CI workflow. **Can merge in parallel with PR 3–4.**
 
 ---
 

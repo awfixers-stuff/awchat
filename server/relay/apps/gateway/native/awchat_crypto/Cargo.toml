@@ -1,0 +1,14 @@
+[package]
+name = "awchat_crypto"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "awchat_crypto"
+crate-type = ["cdylib"]
+
+[dependencies]
+base64 = "0.22"
+libsignal-core = { git = "https://github.com/signalapp/libsignal.git", tag = "v0.86.7", package = "libsignal-core" }
+rustler = "0.36"
+sha2 = "0.10"
