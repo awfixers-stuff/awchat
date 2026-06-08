@@ -1,10 +1,14 @@
 java*
-# Ignore Gradle project-specific cache directory
+
 .gradle
 .direnv
 .kotlin
-
+.next
 .venv
+.nuxt
+.vercel
+.railway
+.astro
 
 # Ignore Gradle build output directory
 build
