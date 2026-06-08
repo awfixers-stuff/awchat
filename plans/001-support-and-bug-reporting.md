@@ -1,12 +1,12 @@
 # Plan 001 — Support & bug reporting
 
-| Field | Value |
-|-------|-------|
-| **Status** | Draft |
-| **Created** | 2026-06-07 |
-| **Trigger** | First post-foundation user-facing feature after the basic Android app shell compiles |
-| **Linear target** | AWChat project (to be created) on team **Awtools** |
-| **Support inbox** | `save-b8dA1iGELfV7@app.basecamp.com` |
+| Field             | Value                                                                                |
+| ----------------- | ------------------------------------------------------------------------------------ |
+| **Status**        | Draft                                                                                |
+| **Created**       | 2026-06-07                                                                           |
+| **Trigger**       | First post-foundation user-facing feature after the basic Android app shell compiles |
+| **Linear target** | AWChat project (to be created) on team **Awtools**                                   |
+| **Support inbox** | `save-b8dA1iGELfV7@app.basecamp.com`                                                 |
 
 ---
 
@@ -23,13 +23,13 @@ Both flows live in the account drawer / settings area. Neither path may expose s
 
 ## Goals
 
-| ID | Goal |
-|----|------|
-| G1 | In-app bug report creates a Linear issue in the AWChat project without embedding API keys in the APK |
-| G2 | In-app support request delivers to `save-b8dA1iGELfV7@app.basecamp.com` without requiring the user to configure an email client |
-| G3 | Diagnostics attached to bug reports are privacy-safe (no plaintext messages, contacts, or crypto material) |
-| G4 | Works on debug and release builds; degrades gracefully when relay is unreachable |
-| G5 | Reuses existing relay auth where possible; rate-limited server-side |
+| ID  | Goal                                                                                                                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------- |
+| G1  | In-app bug report creates a Linear issue in the AWChat project without embedding API keys in the APK                            |
+| G2  | In-app support request delivers to `save-b8dA1iGELfV7@app.basecamp.com` without requiring the user to configure an email client |
+| G3  | Diagnostics attached to bug reports are privacy-safe (no plaintext messages, contacts, or crypto material)                      |
+| G4  | Works on debug and release builds; degrades gracefully when relay is unreachable                                                |
+| G5  | Reuses existing relay auth where possible; rate-limited server-side                                                             |
 
 ## Non-goals (v1)
 
@@ -42,13 +42,13 @@ Both flows live in the account drawer / settings area. Neither path may expose s
 
 ## Roadmap placement
 
-| Milestone | PR / phase | What it unlocks |
-|-----------|------------|-----------------|
-| **Minimum** | PR 2 — Android Compose shell + CI | `feature:feedback` module can compile; stub screens |
-| **UI home** | PR 16 — `feature:settings` account drawer | Natural placement for "Report a bug" and "Contact support" rows |
-| **Network** | PR 11 — `core:network` | Ktor client, auth handshake patterns to copy |
-| **Server** | PR 5 — `server:relay` skeleton | Extend relay with feedback endpoints |
-| **Recommended ship** | New plan PR after PR 16 (before or parallel to PR 17) | Drawer exists; users can reach support early in beta |
+| Milestone            | PR / phase                                            | What it unlocks                                                 |
+| -------------------- | ----------------------------------------------------- | --------------------------------------------------------------- |
+| **Minimum**          | PR 2 — Android Compose shell + CI                     | `feature:feedback` module can compile; stub screens             |
+| **UI home**          | PR 16 — `feature:settings` account drawer             | Natural placement for "Report a bug" and "Contact support" rows |
+| **Network**          | PR 11 — `core:network`                                | Ktor client, auth handshake patterns to copy                    |
+| **Server**           | PR 5 — `server:relay` skeleton                        | Extend relay with feedback endpoints                            |
+| **Recommended ship** | New plan PR after PR 16 (before or parallel to PR 17) | Drawer exists; users can reach support early in beta            |
 
 This plan does **not** modify the ordered 24-PR design doc until we decide to insert a numbered PR. Treat it as **Plan PR A** (feedback) until promoted.
 
@@ -83,12 +83,12 @@ flowchart LR
 
 ### Why server-mediated?
 
-| Concern | Client-direct | Relay proxy |
-|---------|---------------|-------------|
-| Linear API key in APK | Exposed via reverse engineering | Stays in server env |
+| Concern               | Client-direct                                                 | Relay proxy                   |
+| --------------------- | ------------------------------------------------------------- | ----------------------------- |
+| Linear API key in APK | Exposed via reverse engineering                               | Stays in server env           |
 | Support email address | Visible in APK (acceptable) but no send without user mail app | Server sends on user's behalf |
-| Rate limiting / abuse | Hard on device | Centralized per `user_id` |
-| PII scrubbing | Client can try; server enforces | Server is source of truth |
+| Rate limiting / abuse | Hard on device                                                | Centralized per `user_id`     |
+| PII scrubbing         | Client can try; server enforces                               | Server is source of truth     |
 
 **Decision:** All outbound integrations go through `server:relay`. The Android app only talks to existing relay HTTPS endpoints.
 
@@ -98,11 +98,11 @@ flowchart LR
 
 ### Workspace facts (as of 2026-06-07)
 
-| Item | Value |
-|------|-------|
-| Team | **Awtools** (`f8ccd0a2-9135-4a5b-85ec-713449a479ae`) |
-| Project | **AWChat** — not created yet; create before implementation |
-| Existing labels on Awtools | `Bug`, `Feature`, `Improvement` |
+| Item                       | Value                                                      |
+| -------------------------- | ---------------------------------------------------------- |
+| Team                       | **Awtools** (`f8ccd0a2-9135-4a5b-85ec-713449a479ae`)       |
+| Project                    | **AWChat** — not created yet; create before implementation |
+| Existing labels on Awtools | `Bug`, `Feature`, `Improvement`                            |
 
 ### One-time setup
 
@@ -151,21 +151,24 @@ Endpoint: `POST https://api.linear.app/graphql` with header `Authorization: <LIN
 
 ```markdown
 ## Report
+
 <user free text>
 
 ## Diagnostics
-| Field | Value |
-|-------|-------|
-| app_version | … |
-| build_number | … |
-| flavor | debug / release |
-| os_version | … |
-| device_model | … |
-| locale | … |
-| user_id | relay opaque id |
-| client_time_utc | ISO-8601 |
+
+| Field           | Value           |
+| --------------- | --------------- |
+| app_version     | …               |
+| build_number    | …               |
+| flavor          | debug / release |
+| os_version      | …               |
+| device_model    | …               |
+| locale          | …               |
+| user_id         | relay opaque id |
+| client_time_utc | ISO-8601        |
 
 ## Optional
+
 - steps_to_reproduce (if provided)
 - expected_vs_actual (if provided)
 ```
@@ -184,12 +187,12 @@ No message bodies, safety numbers, prekeys, or SQLCipher paths.
 
 Relay exposes `POST /v1/feedback/support`. On success, relay sends email via transactional SMTP (e.g. Resend, Postmark, or Railway-compatible provider):
 
-| Header | Value |
-|--------|-------|
-| `To` | `save-b8dA1iGELfV7@app.basecamp.com` |
-| `From` | `AWChat Support <noreply@awfixer.me>` (or dedicated subdomain) |
-| `Reply-To` | User-supplied email if provided, else omit |
-| `Subject` | `[AWChat Support] <category> — <first 60 chars of message>` |
+| Header     | Value                                                          |
+| ---------- | -------------------------------------------------------------- |
+| `To`       | `save-b8dA1iGELfV7@app.basecamp.com`                           |
+| `From`     | `AWChat Support <noreply@awfixer.me>` (or dedicated subdomain) |
+| `Reply-To` | User-supplied email if provided, else omit                     |
+| `Subject`  | `[AWChat Support] <category> — <first 60 chars of message>`    |
 
 Body mirrors bug-report diagnostics table plus user message.
 
@@ -260,10 +263,10 @@ Both endpoints require the same authenticated session as other relay REST calls 
 
 ### Rate limits
 
-| Endpoint | Limit |
-|----------|-------|
-| Bug | 5 / user / hour |
-| Support | 3 / user / hour |
+| Endpoint | Limit           |
+| -------- | --------------- |
+| Bug      | 5 / user / hour |
+| Support  | 3 / user / hour |
 
 Persist counters in Postgres (`feedback_submissions`) for audit and abuse review.
 
@@ -288,11 +291,11 @@ Use cases: `SubmitBugReportUseCase`, `SubmitSupportRequestUseCase`.
 
 ### UI entry points
 
-| Location | Control |
-|----------|---------|
-| `AccountDrawerSheet` (PR 16) | Rows: **Report a bug**, **Contact support** |
-| Pinning failure screen (design doc) | "Contact support" link → same support flow |
-| Optional | Long-press version label in About → hidden bug report with extra diagnostics |
+| Location                            | Control                                                                      |
+| ----------------------------------- | ---------------------------------------------------------------------------- |
+| `AccountDrawerSheet` (PR 16)        | Rows: **Report a bug**, **Contact support**                                  |
+| Pinning failure screen (design doc) | "Contact support" link → same support flow                                   |
+| Optional                            | Long-press version label in About → hidden bug report with extra diagnostics |
 
 ### Screens
 
@@ -309,15 +312,15 @@ Material 3 Expressive: use same motion/shape as drawer; inline error states; no 
 
 ## Secrets & configuration
 
-| Secret / config | Where | Notes |
-|-----------------|-------|-------|
-| `LINEAR_API_KEY` | Relay env (Railway / Fly secrets) | Create issues scope, Awtools team only |
-| `LINEAR_AWCHAT_PROJECT_ID` | Relay env | From Linear project settings |
-| `LINEAR_TEAM_ID` | Relay env or constant | `f8ccd0a2-9135-4a5b-85ec-713449a479ae` |
-| `LINEAR_BUG_LABEL_ID` | Relay env or constant | `4089d123-a465-4cfd-86aa-2a7a72e283d0` |
-| `SMTP_*` or `RESEND_API_KEY` | Relay env | For support email |
-| `SUPPORT_EMAIL_TO` | Relay env | Default `save-b8dA1iGELfV7@app.basecamp.com` |
-| Support email in client | `BuildConfig` or resource | Only needed for mailto fallback |
+| Secret / config              | Where                             | Notes                                        |
+| ---------------------------- | --------------------------------- | -------------------------------------------- |
+| `LINEAR_API_KEY`             | Relay env (Railway / Fly secrets) | Create issues scope, Awtools team only       |
+| `LINEAR_AWCHAT_PROJECT_ID`   | Relay env                         | From Linear project settings                 |
+| `LINEAR_TEAM_ID`             | Relay env or constant             | `f8ccd0a2-9135-4a5b-85ec-713449a479ae`       |
+| `LINEAR_BUG_LABEL_ID`        | Relay env or constant             | `4089d123-a465-4cfd-86aa-2a7a72e283d0`       |
+| `SMTP_*` or `RESEND_API_KEY` | Relay env                         | For support email                            |
+| `SUPPORT_EMAIL_TO`           | Relay env                         | Default `save-b8dA1iGELfV7@app.basecamp.com` |
+| Support email in client      | `BuildConfig` or resource         | Only needed for mailto fallback              |
 
 CI: mock Linear and SMTP in relay unit tests; Android uses fake `FeedbackRepository` in screenshot tests.
 
@@ -387,13 +390,13 @@ CI: mock Linear and SMTP in relay unit tests; Android uses fake `FeedbackReposit
 
 ## Open questions
 
-| # | Question | Default if unanswered |
-|---|----------|----------------------|
+| #   | Question                                               | Default if unanswered             |
+| --- | ------------------------------------------------------ | --------------------------------- |
 | OQ1 | Insert as formal **PR 16b** vs fold into PR 24 polish? | Ship as **Plan PR A** after PR 16 |
-| OQ2 | Require user email on bug reports? | Optional on both forms |
-| OQ3 | SMTP provider (Resend vs Postmark vs self-host)? | Resend for Railway simplicity |
-| OQ4 | Should bug reports auto-attach relay `user_id`? | Yes — opaque id only |
-| OQ5 | Triage state for new Linear issues? | `Backlog` or team default |
+| OQ2 | Require user email on bug reports?                     | Optional on both forms            |
+| OQ3 | SMTP provider (Resend vs Postmark vs self-host)?       | Resend for Railway simplicity     |
+| OQ4 | Should bug reports auto-attach relay `user_id`?        | Yes — opaque id only              |
+| OQ5 | Triage state for new Linear issues?                    | `Backlog` or team default         |
 
 ---
 

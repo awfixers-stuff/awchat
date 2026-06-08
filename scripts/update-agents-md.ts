@@ -274,9 +274,7 @@ function renderSessionState(state: RoadmapState): string {
   const nextUp = state.next_up.map((item) => `- ${item}`).join("\n");
 
   const blockers =
-    state.blockers.length > 0
-      ? state.blockers.map((item) => `- ${item}`).join("\n")
-      : "- _(none)_";
+    state.blockers.length > 0 ? state.blockers.map((item) => `- ${item}`).join("\n") : "- _(none)_";
 
   const recentFiles =
     state.recent_files.length > 0
@@ -309,7 +307,7 @@ function renderSessionState(state: RoadmapState): string {
     "### Recently touched",
     recentFiles,
     "",
-    "_Auto-synced by \`scripts/update-agents-md.ts\` (Grok Stop/SessionEnd hooks + \`bun run agents:handoff\`)._",
+    "_Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._",
   ].join("\n");
 }
 
@@ -324,13 +322,6 @@ function replaceSessionBlock(agentsMd: string, sessionBlock: string): string {
   const before = agentsMd.slice(0, start + SESSION_START.length);
   const after = agentsMd.slice(end);
   return `${before}\n\n${sessionBlock}\n\n${after}`;
-}
-
-async function syncAgentsMd(repoRoot: string, state: RoadmapState): Promise<void> {
-  const agentsPath = join(repoRoot, "AGENTS.md");
-  const agentsMd = await readFile(agentsPath, "utf8");
-  const updated = replaceSessionBlock(agentsMd, renderSessionState(state));
-  await writeFile(agentsPath, updated);
 }
 
 async function readHookInput(): Promise<HookInput | null> {
@@ -383,21 +374,41 @@ async function main(): Promise<void> {
     };
   }
 
-  await writeRoadmapState(repoRoot, state);
-  await syncAgentsMd(repoRoot, state);
+  const statePath = join(repoRoot, "ledgers", "roadmap-state.json");
+  const agentsPath = join(repoRoot, "AGENTS.md");
 
-  const addState = Bun.spawnSync(["git", "add", join(repoRoot, "ledgers", "roadmap-state.json")], {
-    cwd: repoRoot,
-  });
-  if (addState.exitCode !== 0) {
-    console.error(addState.stderr.toString());
-    process.exit(addState.exitCode ?? 1);
+  const previousStateRaw = existsSync(statePath) ? await readFile(statePath, "utf8") : null;
+  const nextStateRaw = `${JSON.stringify(state, null, 2)}\n`;
+  const stateChanged = previousStateRaw !== nextStateRaw;
+
+  const previousAgents = await readFile(agentsPath, "utf8");
+  const nextAgents = replaceSessionBlock(previousAgents, renderSessionState(state));
+  const agentsChanged = previousAgents !== nextAgents;
+
+  if (!stateChanged && !agentsChanged) {
+    return;
   }
 
-  const addAgents = Bun.spawnSync(["git", "add", join(repoRoot, "AGENTS.md")], { cwd: repoRoot });
-  if (addAgents.exitCode !== 0) {
-    console.error(addAgents.stderr.toString());
-    process.exit(addAgents.exitCode ?? 1);
+  if (stateChanged) {
+    await writeRoadmapState(repoRoot, state);
+  }
+
+  if (agentsChanged) {
+    await writeFile(agentsPath, nextAgents);
+  }
+
+  const pathsToStage = [stateChanged ? statePath : null, agentsChanged ? agentsPath : null].filter(
+    (path): path is string => path !== null,
+  );
+
+  if (pathsToStage.length === 0) {
+    return;
+  }
+
+  const add = Bun.spawnSync(["git", "add", ...pathsToStage], { cwd: repoRoot });
+  if (add.exitCode !== 0) {
+    console.error(add.stderr.toString());
+    process.exit(add.exitCode ?? 1);
   }
 }
 

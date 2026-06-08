@@ -1,32 +1,33 @@
 {
-  "updated_at": "2026-06-08T00:03:57.983Z",
+  "updated_at": "2026-06-08T00:36:34.067Z",
   "branch": "master",
-  "head": "b84a8912e0af3f5899b169ed26e6ea81c6f238b0",
-  "completed": [],
-  "in_progress": "PR 1: build-logic + catalog + repo hygiene",
-  "next_up": [
+  "head": "e9ef11fd1607bf542aec2843b393dbddbf99d240",
+  "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
-    "PR 2: Android Compose shell + minimal CI",
+    "PR 2: Android Compose shell + minimal CI"
+  ],
+  "in_progress": "PR 3: libsignal-android packaging spike",
+  "next_up": [
     "PR 3: libsignal-android packaging spike"
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T00:03:57.983Z",
+    "at": "2026-06-08T00:36:34.067Z",
     "reason": "roadmap-phase",
-    "summary": "Initial hook infrastructure: lefthook changelog, Grok hooks, AGENTS.md session continuity"
+    "summary": "Foundation phase complete: build-logic convention plugins, Android Compose shell (me.awfixer.awchat), Blacksmith CI workflow; fixed Grok hook bun PATH + no-op sync"
   },
   "recent_files": [
-    ".gitignore",
-    ".grok/hooks/agents-continuity.json",
-    ".grok/skills/session-handoff/SKILL.md",
+    "grok/hooks/agents-continuity.json",
+    "grok/skills/session-handoff/SKILL.md",
+    "oxlintrc.json",
     "AGENTS.md",
-    "bun.lock",
-    "flake.lock",
-    "ledgers/roadmap-state.json",
-    "lefthook.yml",
-    "package.json",
-    "scripts/changelog.ts",
-    "scripts/hooks/pre-commit",
-    "scripts/hooks/update-agents-md"
+    "ICENSE.md",
+    "pp/build.gradle.kts",
+    "pp/src/main/kotlin/org/example/App.kt",
+    "pp/src/test/kotlin/org/example/AppTest.kt",
+    "unfig.toml",
+    "ocs/DESIGN.md",
+    "lake.nix",
+    "radle.properties"
   ]
 }
