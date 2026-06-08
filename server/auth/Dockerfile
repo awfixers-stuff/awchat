@@ -37,8 +37,6 @@ ENV PORT=8081
 
 COPY --from=build /app/_build/prod/rel/auth ./
 
-RUN chmod +x bin/server
-
 EXPOSE 8081
 
-CMD ["bin/server"]
+CMD ["/bin/sh", "-c", "./bin/auth eval 'Gateway.Release.migrate()' && exec ./bin/auth start"]
