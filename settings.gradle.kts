@@ -21,3 +21,8 @@ plugins {
 
 rootProject.name = "awchat"
 include("app")
+include(":core:common")
+include(":core:model")
+include(":core:proto")
+include(":core:designsystem")
+include(":core:crypto")

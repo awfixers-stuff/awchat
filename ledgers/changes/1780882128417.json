@@ -1,0 +1,172 @@
+{
+  "recorded_at": "2026-06-08T01:28:48.417Z",
+  "head": "a657b698f2338fe1b0bb1ec88d8dcc5fabb2aec2",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".gitignore",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "AGENTS.md",
+      "added": 17,
+      "removed": 15
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "added": 19,
+      "removed": 0
+    },
+    {
+      "path": "app/src/main/kotlin/me/awfixer/awchat/MainActivity.kt",
+      "added": 20,
+      "removed": 6
+    },
+    {
+      "path": "build-logic/convention/build.gradle.kts",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "build-logic/convention/src/main/kotlin/AwchatKotlinLibraryConventionPlugin.kt",
+      "added": 30,
+      "removed": 0
+    },
+    {
+      "path": "build.gradle.kts",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "core/common/build.gradle.kts",
+      "added": 8,
+      "removed": 0
+    },
+    {
+      "path": "core/common/src/main/kotlin/me/awfixer/awchat/core/common/dispatcher/AwChatDispatchers.kt",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "core/common/src/main/kotlin/me/awfixer/awchat/core/common/result/Result.kt",
+      "added": 19,
+      "removed": 0
+    },
+    {
+      "path": "core/common/src/test/kotlin/me/awfixer/awchat/core/common/result/ResultTest.kt",
+      "added": 27,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/build.gradle.kts",
+      "added": 29,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/LibSignalLoadTest.kt",
+      "added": 30,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/AndroidManifest.xml",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "core/designsystem/build.gradle.kts",
+      "added": 16,
+      "removed": 0
+    },
+    {
+      "path": "core/designsystem/src/main/AndroidManifest.xml",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "core/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/ComposerBar.kt",
+      "added": 52,
+      "removed": 0
+    },
+    {
+      "path": "core/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/ConversationRow.kt",
+      "added": 76,
+      "removed": 0
+    },
+    {
+      "path": "core/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/MessageBubble.kt",
+      "added": 48,
+      "removed": 0
+    },
+    {
+      "path": "core/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/theme/AwChatTheme.kt",
+      "added": 27,
+      "removed": 0
+    },
+    {
+      "path": "core/model/build.gradle.kts",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "core/model/src/main/kotlin/me/awfixer/awchat/core/model/ChatId.kt",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "core/model/src/main/kotlin/me/awfixer/awchat/core/model/MessageId.kt",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "core/model/src/main/kotlin/me/awfixer/awchat/core/model/UserId.kt",
+      "added": 15,
+      "removed": 0
+    },
+    {
+      "path": "core/model/src/test/kotlin/me/awfixer/awchat/core/model/UserIdTest.kt",
+      "added": 22,
+      "removed": 0
+    },
+    {
+      "path": "core/proto/build.gradle.kts",
+      "added": 24,
+      "removed": 0
+    },
+    {
+      "path": "core/proto/src/main/proto/inner_message.proto",
+      "added": 45,
+      "removed": 0
+    },
+    {
+      "path": "core/proto/src/test/kotlin/me/awfixer/awchat/core/proto/InnerMessageProtoTest.kt",
+      "added": 92,
+      "removed": 0
+    },
+    {
+      "path": "gradle.properties",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "gradle/libs.versions.toml",
+      "added": 17,
+      "removed": 1
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 19,
+      "removed": 17
+    },
+    {
+      "path": "settings.gradle.kts",
+      "added": 6,
+      "removed": 1
+    }
+  ],
+  "totals": {
+    "files": 32,
+    "added": 707,
+    "removed": 40
+  }
+}

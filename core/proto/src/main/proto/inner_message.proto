@@ -1,0 +1,45 @@
+// core/proto/inner_message.proto — v1 text-only CHAT body; structured non-chat types
+syntax = "proto3";
+
+package awchat.v1;
+
+option java_multiple_files = true;
+option java_package = "awchat.v1";
+
+enum InnerMessageType {
+  INNER_MESSAGE_TYPE_UNSPECIFIED = 0;
+  CHAT = 1;
+  READ_RECEIPT = 2;
+  SENDER_KEY_DIST = 3;
+  PURGE_ACK = 4;
+}
+
+message ChatPayload {
+  string body = 1;
+  int64 client_timestamp = 2;
+}
+
+message ReadReceiptPayload {
+  string message_id = 1;
+  string reader_id = 2;
+  int64 seen_at = 3;
+}
+
+message SenderKeyDistPayload {
+  string group_id = 1;
+  bytes distribution_bytes = 2;
+}
+
+message PurgeAckPayload {
+  string message_id = 1;
+}
+
+message InnerMessage {
+  InnerMessageType type = 1;
+  oneof payload {
+    ChatPayload chat = 2;
+    ReadReceiptPayload read_receipt = 3;
+    SenderKeyDistPayload sender_key_dist = 4;
+    PurgeAckPayload purge_ack = 5;
+  }
+}

@@ -1,33 +1,35 @@
 {
-  "updated_at": "2026-06-08T00:36:34.067Z",
+  "updated_at": "2026-06-08T01:23:53.668Z",
   "branch": "master",
-  "head": "e9ef11fd1607bf542aec2843b393dbddbf99d240",
+  "head": "a657b698f2338fe1b0bb1ec88d8dcc5fabb2aec2",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
-    "PR 2: Android Compose shell + minimal CI"
+    "PR 2: Android Compose shell + minimal CI",
+    "PR 3: libsignal-android packaging spike",
+    "PR 4: core:common, core:model, core:designsystem, core:proto"
   ],
-  "in_progress": "PR 3: libsignal-android packaging spike",
+  "in_progress": "PR 5: server:relay skeleton (parallel) / PR 6: core:crypto SessionManager",
   "next_up": [
-    "PR 3: libsignal-android packaging spike"
+    "PR 5: server:relay skeleton (parallel) / PR 6: core:crypto SessionManager"
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T00:36:34.067Z",
+    "at": "2026-06-08T01:23:53.668Z",
     "reason": "roadmap-phase",
-    "summary": "Foundation phase complete: build-logic convention plugins, Android Compose shell (me.awfixer.awchat), Blacksmith CI workflow; fixed Grok hook bun PATH + no-op sync"
+    "summary": "Added JVM common/model/proto modules, designsystem with AwChatTheme + X-Lite primitives, inner_message.proto with round-trip tests; MaterialExpressiveTheme APIs still internal in current M3"
   },
   "recent_files": [
-    "grok/hooks/agents-continuity.json",
-    "grok/skills/session-handoff/SKILL.md",
-    "oxlintrc.json",
     "AGENTS.md",
-    "ICENSE.md",
     "pp/build.gradle.kts",
-    "pp/src/main/kotlin/org/example/App.kt",
-    "pp/src/test/kotlin/org/example/AppTest.kt",
-    "unfig.toml",
-    "ocs/DESIGN.md",
-    "lake.nix",
-    "radle.properties"
+    "pp/src/main/kotlin/me/awfixer/awchat/MainActivity.kt",
+    "uild-logic/convention/build.gradle.kts",
+    "uild.gradle.kts",
+    "radle.properties",
+    "radle/libs.versions.toml",
+    "ledgers/roadmap-state.json",
+    "ettings.gradle.kts",
+    "build-logic/convention/src/main/kotlin/AwchatKotlinLibraryConventionPlugin.kt",
+    "core/",
+    "java_pid29877.hprof"
   ]
 }

@@ -3,10 +3,16 @@ agp = "8.9.2"
 kotlin = "2.1.20"
 compose-bom = "2025.05.00"
 detekt = "1.23.8"
-libsignal = "0.86.7"
+libsignal = "0.86.5"
 androidx-activity = "1.10.1"
 androidx-core = "1.16.0"
 junit4 = "4.13.2"
+androidx-test-ext-junit = "1.2.1"
+androidx-test-runner = "1.6.2"
+desugar-jdk-libs = "2.1.5"
+protobuf = "4.29.3"
+protobuf-plugin = "0.9.4"
+kotlinx-coroutines = "1.10.2"
 
 [libraries]
 libsignal-android = { module = "org.signal:libsignal-android", version.ref = "libsignal" }
@@ -21,6 +27,14 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
 junit4 = { module = "junit:junit", version.ref = "junit4" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidx-test-runner" }
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar-jdk-libs" }
+protobuf-javalite = { module = "com.google.protobuf:protobuf-javalite", version.ref = "protobuf" }
+protoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -28,3 +42,5 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobuf-plugin" }
