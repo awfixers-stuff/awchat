@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-06-08T00:04:14.930Z",
+  "head": "30ed6b07328e87c8339c39b830541b6398947e29",
+  "branch": "master",
+  "files": [
+    {
+      "path": "scripts/hooks/update-agents-md",
+      "added": 1,
+      "removed": 1
+    }
+  ],
+  "totals": {
+    "files": 1,
+    "added": 1,
+    "removed": 1
+  }
+}
