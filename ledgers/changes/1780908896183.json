@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-06-08T08:54:56.183Z",
+  "head": "cd2996547a4e77bd2f2d2af31f201864211387a3",
+  "branch": "master",
+  "files": [
+    {
+      "path": "bun.lock",
+      "added": 1716,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 1,
+    "added": 1716,
+    "removed": 0
+  }
+}
