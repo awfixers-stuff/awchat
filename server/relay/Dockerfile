@@ -34,9 +34,12 @@ WORKDIR /app
 
 ENV MIX_ENV=prod
 ENV PORT=8080
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV ELIXIR_ERL_OPTIONS="+fnu"
 
 COPY --from=build /app/_build/prod/rel/relay ./
 
 EXPOSE 8080
 
-CMD ["/bin/sh", "-c", "./bin/relay eval 'Gateway.Release.migrate()' && exec ./bin/relay foreground"]
+CMD ["/bin/sh", "-c", "./bin/relay eval 'Gateway.Release.migrate()' && exec ./bin/relay start"]

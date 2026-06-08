@@ -4,15 +4,12 @@ set -e
 root="$(git rev-parse --show-toplevel)"
 cd "$root"
 
-if command -v bun >/dev/null 2>&1; then
-  exec bun "$root/scripts/changelog.ts"
+export AWCHAT_REPO_ROOT="$root"
+. "$root/scripts/hooks/lib/resolve-bun.sh"
+
+if ! awchat_resolve_bun; then
+  echo "pre-commit changelog: bun not found in PATH" >&2
+  exit 1
 fi
 
-for candidate in "$HOME/.bun/bin/bun" /usr/local/bin/bun /nix/var/nix/profiles/default/bin/bun; do
-  if [ -x "$candidate" ]; then
-    exec "$candidate" "$root/scripts/changelog.ts"
-  fi
-done
-
-echo "pre-commit changelog: bun not found in PATH" >&2
-exit 1
+exec "$AWCHAT_BUN" "$root/scripts/changelog.ts"

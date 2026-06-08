@@ -21,17 +21,6 @@
           }
         ]
       }
-    ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "scripts/hooks/update-agents-md",
-            "timeout": 30
-          }
-        ]
-      }
     ]
   }
 }

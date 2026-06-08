@@ -450,7 +450,7 @@ async function readHookInput(): Promise<HookInput | null> {
     return null;
   }
 
-  const text = await Bun.stdin.text();
+  const text = await readStdinWithTimeout(250);
   if (!text.trim()) {
     return null;
   }
@@ -460,6 +460,38 @@ async function readHookInput(): Promise<HookInput | null> {
   } catch {
     return null;
   }
+}
+
+/** Avoid hanging when a hook runner leaves stdin open without payload (common on Stop hooks). */
+function readStdinWithTimeout(ms: number): Promise<string> {
+  return new Promise((resolve) => {
+    const chunks: Buffer[] = [];
+    let settled = false;
+
+    const finish = (value: string) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      process.stdin.removeAllListeners("data");
+      process.stdin.removeAllListeners("end");
+      process.stdin.removeAllListeners("error");
+      try {
+        process.stdin.pause();
+      } catch {
+        // ignore
+      }
+      resolve(value);
+    };
+
+    const timer = setTimeout(() => finish(""), ms);
+
+    process.stdin.on("data", (chunk: Buffer | string) => {
+      chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+    });
+    process.stdin.on("end", () => finish(Buffer.concat(chunks).toString("utf8")));
+    process.stdin.on("error", () => finish(""));
+    process.stdin.resume();
+  });
 }
 
 async function main(): Promise<void> {

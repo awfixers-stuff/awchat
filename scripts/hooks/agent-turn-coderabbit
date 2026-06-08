@@ -1,27 +1,24 @@
 #!/usr/bin/env sh
+# Agent turn gate: CodeRabbit review (bounded) + optional prompt markers for pi/omp.
 set -e
 
-root="$(git rev-parse --show-toplevel)"
-cd "$root"
+if [ "${AWCHAT_SKIP_CODERABBIT:-}" = "1" ]; then
+  exit 0
+fi
+
+root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+cd "$root" || exit 0
+
+export AWCHAT_REPO_ROOT="$root"
+. "$root/scripts/hooks/lib/resolve-bun.sh"
 
 export AWCHAT_HOOK_PHASE=uncommitted
 export AWCHAT_CODERABBIT_QUEUE=1
 
-if command -v bun >/dev/null 2>&1; then
-  bun="$HOME/.bun/bin/bun"
-  command -v bun >/dev/null 2>&1 && bun=$(command -v bun)
-  "$bun" "$root/scripts/hooks/coderabbit-run.ts"
-  "$bun" "$root/scripts/hooks/emit-coderabbit-prompt.ts"
+if ! awchat_resolve_bun; then
+  echo "agent-turn-coderabbit: bun not found — skipped" >&2
   exit 0
 fi
 
-for candidate in "$HOME/.bun/bin/bun" /usr/local/bin/bun /nix/var/nix/profiles/default/bin/bun; do
-  if [ -x "$candidate" ]; then
-    "$candidate" "$root/scripts/hooks/coderabbit-run.ts"
-    "$candidate" "$root/scripts/hooks/emit-coderabbit-prompt.ts"
-    exit 0
-  fi
-done
-
-echo "agent-turn-coderabbit: bun not found" >&2
-exit 1
+"$AWCHAT_BUN" "$root/scripts/hooks/coderabbit-run.ts" || true
+"$AWCHAT_BUN" "$root/scripts/hooks/emit-coderabbit-prompt.ts" || true

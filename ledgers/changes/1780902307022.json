@@ -1,0 +1,382 @@
+{
+  "recorded_at": "2026-06-08T07:05:07.022Z",
+  "head": "04e5a01dd83179300eae9fed05e56d288e05648f",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".gitignore",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "RAILWAY.md",
+      "added": 6,
+      "removed": 0
+    },
+    {
+      "path": "desktop/Cargo.toml",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "desktop/src/main.rs",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "gradlew.bat",
+      "added": 0,
+      "removed": 94
+    },
+    {
+      "path": "plans/README.md",
+      "added": 4,
+      "removed": 3
+    },
+    {
+      "path": "plans/server/002-redis-durable-encrypted-pipeline.md",
+      "added": 149,
+      "removed": 0
+    },
+    {
+      "path": "plans/server/current-baseline.md",
+      "added": 3,
+      "removed": 2
+    },
+    {
+      "path": "scripts/ops/railway-monorepo-bootstrap.sh",
+      "added": 16,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/README.md",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/config/config.exs",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/docker-compose.yml",
+      "added": 20,
+      "removed": 2
+    },
+    {
+      "path": "server/broker/lib/broker/application.ex",
+      "added": 10,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/lib/broker/rate_limiter.ex",
+      "added": 41,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/lib/broker/redis.ex",
+      "added": 40,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/mix.exs",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/mix.lock",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/README.md",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/application.ex",
+      "added": 8,
+      "removed": 6
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/controllers/health_controller.ex",
+      "added": 29,
+      "removed": 11
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/delivery.ex",
+      "added": 39,
+      "removed": 6
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/envelope_hot_queue.ex",
+      "added": 71,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/redis.ex",
+      "added": 55,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/mix.exs",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/config/config.exs",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/mix.lock",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "tui/Cargo.toml",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "tui/src/main.rs",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "web/.eslintrc.js",
+      "added": 13,
+      "removed": 0
+    },
+    {
+      "path": "web/.gitignore",
+      "added": 45,
+      "removed": 0
+    },
+    {
+      "path": "web/.npmrc",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/.prettierignore",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "web/.prettierrc",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "web/AGENTS.md",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "web/README.md",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/app/favicon.ico",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/app/layout.tsx",
+      "added": 30,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/app/page.tsx",
+      "added": 19,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components.json",
+      "added": 23,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/.gitkeep",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/theme-provider.tsx",
+      "added": 71,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/eslint.config.js",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/hooks/.gitkeep",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/lib/.gitkeep",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/next.config.ts",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/package.json",
+      "added": 32,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/postcss.config.mjs",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/tsconfig.json",
+      "added": 24,
+      "removed": 0
+    },
+    {
+      "path": "web/bun.lock",
+      "added": 1656,
+      "removed": 0
+    },
+    {
+      "path": "web/package.json",
+      "added": 28,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/eslint-config/README.md",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/eslint-config/base.js",
+      "added": 32,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/eslint-config/next.js",
+      "added": 51,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/eslint-config/package.json",
+      "added": 26,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/eslint-config/react-internal.js",
+      "added": 41,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/typescript-config/README.md",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/typescript-config/base.json",
+      "added": 20,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/typescript-config/nextjs.json",
+      "added": 13,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/typescript-config/package.json",
+      "added": 9,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/typescript-config/react-library.json",
+      "added": 8,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/components.json",
+      "added": 23,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/eslint.config.js",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/package.json",
+      "added": 43,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/postcss.config.mjs",
+      "added": 6,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/src/components/.gitkeep",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/src/components/button.tsx",
+      "added": 67,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/src/hooks/.gitkeep",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/src/lib/.gitkeep",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/src/lib/utils.ts",
+      "added": 6,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/src/styles/globals.css",
+      "added": 129,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/tsconfig.json",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/tsconfig.lint.json",
+      "added": 8,
+      "removed": 0
+    },
+    {
+      "path": "web/tsconfig.json",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "web/turbo.json",
+      "added": 24,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 74,
+    "added": 3051,
+    "removed": 128
+  }
+}

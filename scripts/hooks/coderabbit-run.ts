@@ -184,7 +184,16 @@ async function shouldRunReview(): Promise<boolean> {
   return true;
 }
 
-async function runReview(): Promise<{ stdout: string; code: number }> {
+function reviewTimeoutMs(): number {
+  const raw = process.env.AWCHAT_CODERABBIT_TIMEOUT_MS;
+  if (raw) {
+    const n = Number.parseInt(raw, 10);
+    if (Number.isFinite(n) && n > 0) return n;
+  }
+  return 90_000;
+}
+
+async function runReview(): Promise<{ stdout: string; code: number; timedOut: boolean }> {
   const args = ["review", "--agent", "--config", "AGENTS.md", "--config", ".coderabbit.yaml"];
   if (phase === "uncommitted") {
     args.push("-t", "uncommitted");
@@ -194,14 +203,32 @@ async function runReview(): Promise<{ stdout: string; code: number }> {
     args.push("--base", await upstreamBase());
   }
 
+  const timeoutMs = reviewTimeoutMs();
   const proc = Bun.spawn(["coderabbit", ...args], {
     cwd: root,
     stdout: "pipe",
     stderr: "inherit",
   });
-  const stdout = await new Response(proc.stdout).text();
+
+  let timedOut = false;
+  const timeout = setTimeout(() => {
+    timedOut = true;
+    try {
+      proc.kill();
+    } catch {
+      // ignore
+    }
+  }, timeoutMs);
+
+  let stdout = "";
+  try {
+    stdout = await new Response(proc.stdout).text();
+  } catch {
+    stdout = "";
+  }
   const code = await proc.exited;
-  return { stdout, code };
+  clearTimeout(timeout);
+  return { stdout, code, timedOut };
 }
 
 async function upstreamBase(): Promise<string> {
@@ -222,12 +249,35 @@ if (!(await isAuthed())) {
   process.exit(0);
 }
 
+async function clearAgentQueue(): Promise<void> {
+  if (!writeQueue) return;
+  const ledgerDir = join(root, "ledgers/coderabbit");
+  await mkdir(ledgerDir, { recursive: true });
+  const queue: AgentQueue = {
+    version: 1,
+    pending: false,
+    createdAt: new Date().toISOString(),
+    phase,
+    agentPrompt: "",
+    findingCount: 0,
+    criticalCount: 0,
+    majorCount: 0,
+  };
+  await writeFile(join(ledgerDir, "agent-queue.json"), `${JSON.stringify(queue, null, 2)}\n`);
+}
+
 if (!(await shouldRunReview())) {
   console.log(`coderabbit-run: nothing to review for phase=${phase}`);
+  await clearAgentQueue();
   process.exit(0);
 }
 
-const { stdout, code } = await runReview();
+const { stdout, code, timedOut } = await runReview();
+if (timedOut) {
+  console.error(`coderabbit-run: timed out after ${reviewTimeoutMs()}ms — skipping queue`);
+  await clearAgentQueue();
+  process.exit(0);
+}
 const findings = parseAgentOutput(stdout);
 const counts = countBySeverity(findings);
 const branch = await gitBranch();

@@ -26,19 +26,23 @@ Implements the v1 contract from [`docs/DESIGN.md`](../../docs/DESIGN.md):
 
 ## Deploy (Railway)
 
-Production runs on **Railway** with **CI-gated deploys** from `master` on `awfixers-stuff/awchat`.
+Monorepo setup: [`RAILWAY.md`](../../RAILWAY.md). This service is named **awchat** on Railway; root `/server/relay`, config [`railway.toml`](railway.toml).
 
-| Railway service | Root directory | What runs |
-| --------------- | -------------- | --------- |
-| **awchat** (relay) | `server/relay` | Elixir OTP release (`Dockerfile`) — HTTP + WebSocket |
-| **Postgres** | — | Railway Postgres plugin; reference as `${{Postgres.DATABASE_URL}}` |
+| Railway service | Root directory | Exposure |
+| --------------- | -------------- | -------- |
+| **broker** | `/server/broker` | Public domain only |
+| **awchat** (relay) | `/server/relay` | `*.railway.internal` only |
+| **auth** | `/server/auth` | `*.railway.internal` only |
+| **Postgres** | — | Relay DB (`${{Postgres.DATABASE_URL}}`) |
+| **Postgres-Auth** | — | Auth DB (`${{Postgres-Auth.DATABASE_URL}}`) |
 
-Railway waits for GitHub Actions (`relay` workflow) to pass before deploying. Migrations run automatically on boot via `bin/server`.
+Migrations run automatically on container boot.
 
 **Required env on relay service:**
 
 - `DATABASE_URL=${{Postgres.DATABASE_URL}}`
+- `REDIS_URL=${{Redis.REDIS_URL}}` (hosted stack; hot pending envelope index — see [Plan 002](../../plans/server/002-redis-durable-encrypted-pipeline.md))
 
-**Public URL:** `https://awchat-production.up.railway.app` (health: `GET /v1/health`, ready: `GET /v1/ready`).
+**Health:** `GET /v1/health` (liveness), `GET /v1/ready` (DB + migrations). Reachable via broker at the public URL.
 
 Do **not** split relay and Postgres across providers in v1 — the design assumes a single-node in-memory WebSocket map with no cross-region fan-out.

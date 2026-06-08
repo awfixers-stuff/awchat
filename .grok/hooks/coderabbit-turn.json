@@ -5,8 +5,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "scripts/hooks/agent-turn-coderabbit",
-            "timeout": 600
+            "command": "sh scripts/hooks/agent-turn-coderabbit",
+            "timeout": 120,
+            "env": {
+              "PATH": "${HOME}/.bun/bin:${HOME}/.local/bin:/usr/local/bin:/nix/var/nix/profiles/default/bin:${PATH}"
+            }
           }
         ]
       }
@@ -16,19 +19,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "scripts/hooks/agent-turn-coderabbit",
-            "timeout": 600
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "scripts/hooks/agent-turn-coderabbit",
-            "timeout": 600
+            "command": "sh scripts/hooks/agent-turn-coderabbit",
+            "timeout": 120,
+            "env": {
+              "PATH": "${HOME}/.bun/bin:${HOME}/.local/bin:/usr/local/bin:/nix/var/nix/profiles/default/bin:${PATH}"
+            }
           }
         ]
       }

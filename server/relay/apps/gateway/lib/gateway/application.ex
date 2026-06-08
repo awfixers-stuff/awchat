@@ -6,12 +6,14 @@ defmodule Gateway.Application do
   def start(_type, _args) do
     prepend_gleam_code_path()
 
-    children = [
-      Gateway.Repo,
-      Gateway.ConnectionRegistry,
-      Gateway.Scheduler,
-      Gateway.Endpoint
-    ]
+    children =
+      [
+        Gateway.Repo,
+        Gateway.Redis,
+        Gateway.ConnectionRegistry,
+        Gateway.Scheduler,
+        Gateway.Endpoint
+      ]
 
     opts = [strategy: :one_for_one, name: Gateway.Supervisor]
     Supervisor.start_link(children, opts)

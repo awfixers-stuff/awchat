@@ -1,0 +1,7282 @@
+{
+  "recorded_at": "2026-06-08T06:47:21.651Z",
+  "head": "455ecbd838c8f36be67f71a182f1640f325939b8",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".gitignore",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Adapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Clock.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Compression.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.DelegatingHandler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Extractor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP1.Handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP1.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Connection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Errors.ConnectionError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Errors.StreamError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Errors.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.FlowControl.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Continuation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Data.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Flags.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Goaway.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Headers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Ping.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Priority.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.PushPromise.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.RstStream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Continuation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Data.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Goaway.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Headers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Ping.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Priority.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.RstStream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Settings.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.WindowUpdate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Settings.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Unknown.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.WindowUpdate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Settings.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.Stream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.StreamCollection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTP2.StreamProcess.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTPError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTPTransport.Bandit.HTTP1.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTPTransport.Bandit.HTTP2.Stream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.HTTPTransport.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Headers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.InitialHandler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Logger.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.PhoenixAdapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Pipeline.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.PrimitiveOps.WebSocket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.SocketHelpers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.Trace.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.TransportError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Connection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Binary.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.ConnectionClose.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Continuation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Ping.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Pong.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Binary.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.ConnectionClose.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Continuation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Ping.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Pong.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Text.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Text.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Handshake.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.PerMessageDeflate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Socket.ThousandIsland.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.WebSocket.UpgradeValidation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/Elixir.Bandit.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/bandit/ebin/bandit.app",
+      "added": 0,
+      "removed": 81
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/.mix/compile.app_cache",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/.mix/compile.protocols",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Bandit.HTTP2.Frame.Serializable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Bandit.HTTPTransport.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Bandit.WebSocket.Frame.Serializable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Bandit.WebSocket.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Collectable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Enumerable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.IEx.Info.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Inspect.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.JSON.Encoder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Jason.Encoder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.List.Chars.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.Plug.Exception.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/consolidated/Elixir.String.Chars.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/Elixir.Broker.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/Elixir.Broker.Config.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/Elixir.Broker.Ops.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/Elixir.Broker.Proxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/Elixir.Broker.RateLimit.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/Elixir.Broker.Route.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/Elixir.Broker.Router.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/Elixir.Broker.Security.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/broker/ebin/broker.app",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_base64url.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_capsule.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_cookie.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_date.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_deflate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_hpack.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http1.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http2.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http2_machine.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http3.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http3_machine.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http_hd.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http_struct_hd.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_http_te.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_iolists.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_link.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_mimetypes.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_multipart.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_qpack.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_qs.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_sse.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_uri.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_uri_template.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cow_ws.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/ebin/cowlib.app",
+      "added": 0,
+      "removed": 9
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/include",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/mix.rebar.config",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/dev/lib/cowlib/src",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Error.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.HTTP1.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.HTTP1.Pool.State.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.HTTP1.Pool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.HTTP1.PoolMetrics.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.HTTP2.Pool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.HTTP2.PoolMetrics.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.HTTP2.RequestStream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.HTTPError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Pool.Manager.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Pool.Strategy.Hash.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Pool.Strategy.Random.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Pool.Strategy.RoundRobin.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Pool.Strategy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Pool.Supervisor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Pool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.PoolMetrics.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Response.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.SSL.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.Telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.TransportError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/Elixir.Finch.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/finch/ebin/finch.app",
+      "added": 0,
+      "removed": 25
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun.app",
+      "added": 0,
+      "removed": 10
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_app.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_conns_sup.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_content_handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_cookies.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_cookies_list.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_data_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_default_event_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_event.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_http.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_http2.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_http3.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_pool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_pool_events_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_pools_sup.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_protocols.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_public_suffix.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_quicer.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_raw.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_socks.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_sse_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_sup.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_tcp.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_tcp_proxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_tls.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_tls_proxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_tls_proxy_cb.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_tls_proxy_http2_connect.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_tunnel.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_ws.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_ws_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/ebin/gun_ws_protocol.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/mix.rebar.config",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/_build/dev/lib/gun/src",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.Atomic.FixWindow.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.Atomic.FixWindowPerKey.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.Atomic.LeakyBucket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.Atomic.TokenBucket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.Atomic.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.CleanUtils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.ETS.FixWindow.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.ETS.FixWindowPerKey.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.ETS.LeakyBucket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.ETS.SlidingWindow.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.ETS.TokenBucket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.ETS.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/Elixir.Hammer.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hammer/ebin/hammer.app",
+      "added": 0,
+      "removed": 17
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hpax/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hpax/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hpax/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hpax/ebin/Elixir.HPAX.Huffman.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hpax/ebin/Elixir.HPAX.Table.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hpax/ebin/Elixir.HPAX.Types.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hpax/ebin/Elixir.HPAX.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/hpax/ebin/hpax.app",
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Enumerable.Jason.OrderedObject.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Codegen.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.DecodeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Decoder.Unescape.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Decoder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encode.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.EncodeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Any.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Atom.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.BitString.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Date.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.DateTime.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Float.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Integer.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Jason.Fragment.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Jason.OrderedObject.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.List.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Map.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.NaiveDateTime.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.Time.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Encoder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Formatter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Fragment.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Helpers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.OrderedObject.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.Sigil.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/Elixir.Jason.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/jason/ebin/jason.app",
+      "added": 0,
+      "removed": 26
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mime/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mime/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mime/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mime/ebin/Elixir.MIME.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mime/ebin/mime.app",
+      "added": 0,
+      "removed": 11
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/.mix/compile.erlang",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.Core.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.Core.Headers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.Core.Transport.SSL.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.Core.Transport.TCP.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.Core.Transport.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.Core.Util.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.HTTP.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.HTTP1.Parse.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.HTTP1.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.HTTP1.Response.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.HTTP1.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.HTTP2.Frame.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.HTTP2.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.HTTPError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.Negotiate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.TransportError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.TunnelProxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.Types.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/Elixir.Mint.UnsafeProxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/mint.app",
+      "added": 0,
+      "removed": 18
+    },
+    {
+      "path": "server/broker/_build/dev/lib/mint/ebin/mint_shims.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_options/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_options/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_options/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_options/ebin/Elixir.NimbleOptions.Docs.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_options/ebin/Elixir.NimbleOptions.ValidationError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_options/ebin/Elixir.NimbleOptions.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_options/ebin/nimble_options.app",
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_pool/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_pool/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_pool/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_pool/ebin/Elixir.NimblePool.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_pool/ebin/Elixir.NimblePool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/nimble_pool/ebin/nimble_pool.app",
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/.mix/compile.erlang",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Inspect.Plug.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Adapters.Test.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.BadRequestError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.BasicAuth.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Builder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCSRFTokenError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCrossOriginRequestError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.CSRFProtection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Adapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.AlreadySentError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.CookieOverflowError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Cookies.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.InvalidHeaderError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.InvalidQueryError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.NotSentError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Query.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Status.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Unfetched.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.Utils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.WrapperError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Debugger.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.ErrorHandler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Exception.Any.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Exception.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.HTML.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Head.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Logger.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.MIME.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.MethodOverride.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.BadEncodingError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.JSON.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.MULTIPART.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.ParseError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.RequestTooLargeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.URLENCODED.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.UnsupportedMediaTypeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Parsers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.RequestId.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.RewriteOn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.InvalidSpecError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.MalformedURIError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.Utils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Router.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.SSL.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.COOKIE.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.ETS.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.Store.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Session.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Static.InvalidPathError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Static.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Test.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.TimeoutError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Upload.Supervisor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Upload.Terminator.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.Upload.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.UploadError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/Elixir.Plug.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/plug.app",
+      "added": 0,
+      "removed": 54
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug/ebin/plug_multipart.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/ebin/Elixir.Plug.Crypto.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/ebin/Elixir.Plug.Crypto.KeyGenerator.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/ebin/Elixir.Plug.Crypto.MessageEncryptor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/ebin/Elixir.Plug.Crypto.MessageVerifier.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/ebin/Elixir.Plug.Crypto.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/plug_crypto/ebin/plug_crypto.app",
+      "added": 0,
+      "removed": 11
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Collectable.Req.Utils.CollectWithHash.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Enumerable.Req.Response.Async.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Inspect.Req.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Inspect.Req.Response.Async.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.ArchiveError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.ChecksumMismatchError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.DecompressError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Fields.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Finch.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.HTTPError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Response.Async.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Response.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Steps.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Test.Adapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Test.Ownership.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Test.OwnershipError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Test.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.TooManyRedirectsError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.TransportError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Utils.CollectWithHash.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.Utils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/Elixir.Req.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/req/ebin/req.app",
+      "added": 0,
+      "removed": 24
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Adapters.Finch.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Adapters.Req.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Error.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.MaybeRedirect.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Response.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug/ebin/reverse_proxy_plug.app",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.Adapters.Gun.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.Adapters.WebSockex.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.Adapters.WebSockexClient.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.Config.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.ProxyProcess.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.WebSocketClient.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.WebSocketHandler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/reverse_proxy_plug_websocket/ebin/reverse_proxy_plug_websocket.app",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/ebin/telemetry.app",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/ebin/telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/ebin/telemetry_app.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/ebin/telemetry_ets.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/ebin/telemetry_handler_table.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/ebin/telemetry_pt.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/ebin/telemetry_sup.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/ebin/telemetry_test.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/mix.rebar.config",
+      "added": 0,
+      "removed": 17
+    },
+    {
+      "path": "server/broker/_build/dev/lib/telemetry/src",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Acceptor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.AcceptorPoolSupervisor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.AcceptorSupervisor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Connection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.HandlerConfig.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Listener.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Logger.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.ProcessLabel.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Server.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.ServerConfig.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.ShutdownListener.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Transport.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Transports.SSL.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.Transports.TCP.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/Elixir.ThousandIsland.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/thousand_island/ebin/thousand_island.app",
+      "added": 0,
+      "removed": 24
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock/ebin/Elixir.WebSock.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock/ebin/websock.app",
+      "added": 0,
+      "removed": 7
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock_adapter/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock_adapter/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock_adapter/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock_adapter/ebin/Elixir.WebSockAdapter.UpgradeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock_adapter/ebin/Elixir.WebSockAdapter.UpgradeValidation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock_adapter/ebin/Elixir.WebSockAdapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websock_adapter/ebin/websock_adapter.app",
+      "added": 0,
+      "removed": 10
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.ApplicationError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.BadResponseError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.CallingSelfError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.ConnError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.FragmentParseError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.Frame.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.FrameEncodeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.FrameError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.HandshakeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.InvalidFrameError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.NotConnectedError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.RequestError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.URLError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.Utils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/Elixir.WebSockex.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/dev/lib/websockex/ebin/websockex.app",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Adapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Clock.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Compression.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.DelegatingHandler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Extractor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP1.Handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP1.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Connection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Errors.ConnectionError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Errors.StreamError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Errors.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.FlowControl.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Continuation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Data.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Flags.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Goaway.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Headers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Ping.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Priority.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.PushPromise.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.RstStream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Continuation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Data.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Goaway.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Headers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Ping.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Priority.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.RstStream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.Settings.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.Bandit.HTTP2.Frame.WindowUpdate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Serializable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Settings.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.Unknown.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.WindowUpdate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Frame.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Settings.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.Stream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.StreamCollection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTP2.StreamProcess.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTPError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTPTransport.Bandit.HTTP1.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTPTransport.Bandit.HTTP2.Stream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.HTTPTransport.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Headers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.InitialHandler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Logger.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.PhoenixAdapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Pipeline.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.PrimitiveOps.WebSocket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.SocketHelpers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.Trace.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.TransportError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Connection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Binary.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.ConnectionClose.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Continuation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Ping.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Pong.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Binary.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.ConnectionClose.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Continuation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Ping.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Pong.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.Bandit.WebSocket.Frame.Text.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Serializable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.Text.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Frame.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Handshake.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.PerMessageDeflate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Socket.ThousandIsland.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.WebSocket.UpgradeValidation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/Elixir.Bandit.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/bandit/ebin/bandit.app",
+      "added": 0,
+      "removed": 81
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/.mix/.mix_test_failures",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/.mix/compile.app_cache",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/.mix/compile.protocols",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Bandit.HTTP2.Frame.Serializable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Bandit.HTTPTransport.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Bandit.WebSocket.Frame.Serializable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Bandit.WebSocket.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Collectable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Enumerable.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.IEx.Info.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Inspect.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.JSON.Encoder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Jason.Encoder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.List.Chars.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.Plug.Exception.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/consolidated/Elixir.String.Chars.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.Config.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.Ops.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.Proxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.RateLimit.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.RateLimiter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.Route.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.Router.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/Elixir.Broker.Security.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/broker/ebin/broker.app",
+      "added": 0,
+      "removed": 14
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_base64url.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_capsule.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_cookie.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_date.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_deflate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_hpack.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http1.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http2.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http2_machine.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http3.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http3_machine.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http_hd.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http_struct_hd.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_http_te.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_iolists.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_link.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_mimetypes.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_multipart.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_qpack.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_qs.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_sse.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_uri.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_uri_template.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cow_ws.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/ebin/cowlib.app",
+      "added": 0,
+      "removed": 9
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/include",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/mix.rebar.config",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/test/lib/cowlib/src",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Error.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.HTTP1.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.HTTP1.Pool.State.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.HTTP1.Pool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.HTTP1.PoolMetrics.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.HTTP2.Pool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.HTTP2.PoolMetrics.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.HTTP2.RequestStream.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.HTTPError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Pool.Manager.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Pool.Strategy.Hash.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Pool.Strategy.Random.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Pool.Strategy.RoundRobin.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Pool.Strategy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Pool.Supervisor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Pool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.PoolMetrics.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Response.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.SSL.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.Telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.TransportError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/Elixir.Finch.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/finch/ebin/finch.app",
+      "added": 0,
+      "removed": 25
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun.app",
+      "added": 0,
+      "removed": 10
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_app.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_conns_sup.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_content_handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_cookies.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_cookies_list.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_data_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_default_event_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_event.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_http.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_http2.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_http3.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_pool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_pool_events_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_pools_sup.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_protocols.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_public_suffix.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_quicer.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_raw.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_socks.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_sse_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_sup.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_tcp.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_tcp_proxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_tls.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_tls_proxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_tls_proxy_cb.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_tls_proxy_http2_connect.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_tunnel.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_ws.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_ws_h.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/ebin/gun_ws_protocol.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/mix.rebar.config",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/_build/test/lib/gun/src",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.Atomic.FixWindow.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.Atomic.FixWindowPerKey.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.Atomic.LeakyBucket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.Atomic.TokenBucket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.Atomic.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.CleanUtils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.ETS.FixWindow.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.ETS.FixWindowPerKey.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.ETS.LeakyBucket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.ETS.SlidingWindow.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.ETS.TokenBucket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.ETS.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/Elixir.Hammer.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hammer/ebin/hammer.app",
+      "added": 0,
+      "removed": 17
+    },
+    {
+      "path": "server/broker/_build/test/lib/hpax/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hpax/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hpax/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hpax/ebin/Elixir.HPAX.Huffman.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hpax/ebin/Elixir.HPAX.Table.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hpax/ebin/Elixir.HPAX.Types.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hpax/ebin/Elixir.HPAX.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/hpax/ebin/hpax.app",
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Enumerable.Jason.OrderedObject.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Codegen.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.DecodeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Decoder.Unescape.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Decoder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encode.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.EncodeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Any.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Atom.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.BitString.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Date.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.DateTime.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Float.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Integer.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Jason.Fragment.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Jason.OrderedObject.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.List.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Map.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.NaiveDateTime.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.Time.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Encoder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Formatter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Fragment.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Helpers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.OrderedObject.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.Sigil.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/Elixir.Jason.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/jason/ebin/jason.app",
+      "added": 0,
+      "removed": 26
+    },
+    {
+      "path": "server/broker/_build/test/lib/mime/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mime/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mime/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mime/ebin/Elixir.MIME.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mime/ebin/mime.app",
+      "added": 0,
+      "removed": 11
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/.mix/compile.erlang",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.Core.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.Core.Headers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.Core.Transport.SSL.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.Core.Transport.TCP.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.Core.Transport.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.Core.Util.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.HTTP.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.HTTP1.Parse.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.HTTP1.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.HTTP1.Response.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.HTTP1.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.HTTP2.Frame.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.HTTP2.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.HTTPError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.Negotiate.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.TransportError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.TunnelProxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.Types.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/Elixir.Mint.UnsafeProxy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/mint.app",
+      "added": 0,
+      "removed": 18
+    },
+    {
+      "path": "server/broker/_build/test/lib/mint/ebin/mint_shims.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_options/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_options/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_options/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_options/ebin/Elixir.NimbleOptions.Docs.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_options/ebin/Elixir.NimbleOptions.ValidationError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_options/ebin/Elixir.NimbleOptions.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_options/ebin/nimble_options.app",
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_pool/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_pool/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_pool/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_pool/ebin/Elixir.NimblePool.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_pool/ebin/Elixir.NimblePool.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/nimble_pool/ebin/nimble_pool.app",
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/.mix/compile.erlang",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Inspect.Plug.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Adapters.Cowboy.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Adapters.Test.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.BadRequestError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.BasicAuth.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Builder.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCSRFTokenError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCrossOriginRequestError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.CSRFProtection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.Adapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.AlreadySentError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.CookieOverflowError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.Cookies.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.InvalidHeaderError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.InvalidQueryError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.NotSentError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.Query.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.Status.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.Unfetched.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.Utils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.WrapperError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Debugger.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.ErrorHandler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Exception.Any.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Exception.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.HTML.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Head.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Logger.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.MIME.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.MethodOverride.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Parsers.BadEncodingError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Parsers.JSON.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Parsers.MULTIPART.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Parsers.ParseError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Parsers.RequestTooLargeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Parsers.URLENCODED.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Parsers.UnsupportedMediaTypeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Parsers.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.RequestId.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.RewriteOn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Router.InvalidSpecError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Router.MalformedURIError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Router.Utils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Router.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.SSL.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Session.COOKIE.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Session.ETS.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Session.Store.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Session.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Static.InvalidPathError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Static.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Test.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.TimeoutError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Upload.Supervisor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Upload.Terminator.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.Upload.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.UploadError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/Elixir.Plug.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/plug.app",
+      "added": 0,
+      "removed": 54
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug/ebin/plug_multipart.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/ebin/Elixir.Plug.Crypto.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/ebin/Elixir.Plug.Crypto.KeyGenerator.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/ebin/Elixir.Plug.Crypto.MessageEncryptor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/ebin/Elixir.Plug.Crypto.MessageVerifier.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/ebin/Elixir.Plug.Crypto.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/plug_crypto/ebin/plug_crypto.app",
+      "added": 0,
+      "removed": 11
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Collectable.Req.Utils.CollectWithHash.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Enumerable.Req.Response.Async.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Inspect.Req.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Inspect.Req.Response.Async.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.ArchiveError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.ChecksumMismatchError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.DecompressError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Fields.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Finch.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.HTTPError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Response.Async.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Response.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Steps.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Test.Adapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Test.Ownership.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Test.OwnershipError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Test.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.TooManyRedirectsError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.TransportError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Utils.CollectWithHash.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.Utils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/Elixir.Req.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/req/ebin/req.app",
+      "added": 0,
+      "removed": 24
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Adapters.Finch.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Adapters.Req.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Error.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.MaybeRedirect.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Request.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.Response.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.HTTPClient.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/Elixir.ReverseProxyPlug.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug/ebin/reverse_proxy_plug.app",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.Adapters.Gun.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.Adapters.WebSockex.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.Adapters.WebSockexClient.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.Config.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.ProxyProcess.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.WebSocketClient.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.WebSocketHandler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/Elixir.ReverseProxyPlugWebsocket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/reverse_proxy_plug_websocket/ebin/reverse_proxy_plug_websocket.app",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/ebin/telemetry.app",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/ebin/telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/ebin/telemetry_app.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/ebin/telemetry_ets.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/ebin/telemetry_handler_table.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/ebin/telemetry_pt.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/ebin/telemetry_sup.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/ebin/telemetry_test.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/mix.rebar.config",
+      "added": 0,
+      "removed": 17
+    },
+    {
+      "path": "server/broker/_build/test/lib/telemetry/src",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Acceptor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.AcceptorPoolSupervisor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.AcceptorSupervisor.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Connection.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Handler.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.HandlerConfig.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Listener.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Logger.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.ProcessLabel.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Server.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.ServerConfig.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.ShutdownListener.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Socket.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Telemetry.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Transport.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Transports.SSL.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.Transports.TCP.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/Elixir.ThousandIsland.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/thousand_island/ebin/thousand_island.app",
+      "added": 0,
+      "removed": 24
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock/ebin/Elixir.WebSock.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock/ebin/websock.app",
+      "added": 0,
+      "removed": 7
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock_adapter/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock_adapter/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock_adapter/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock_adapter/ebin/Elixir.WebSockAdapter.UpgradeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock_adapter/ebin/Elixir.WebSockAdapter.UpgradeValidation.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock_adapter/ebin/Elixir.WebSockAdapter.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websock_adapter/ebin/websock_adapter.app",
+      "added": 0,
+      "removed": 10
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/.mix/compile.elixir",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/.mix/compile.elixir_scm",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/.mix/compile.fetch",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.Application.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.ApplicationError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.BadResponseError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.CallingSelfError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.Conn.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.ConnError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.FragmentParseError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.Frame.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.FrameEncodeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.FrameError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.HandshakeError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.InvalidFrameError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.NotConnectedError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.RequestError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.URLError.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.Utils.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/Elixir.WebSockex.beam",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/_build/test/lib/websockex/ebin/websockex.app",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/bandit/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/bandit/CHANGELOG.md",
+      "added": 0,
+      "removed": 890
+    },
+    {
+      "path": "server/broker/deps/bandit/LICENSE",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/bandit/README.md",
+      "added": 0,
+      "removed": 245
+    },
+    {
+      "path": "server/broker/deps/bandit/hex_metadata.config",
+      "added": 0,
+      "removed": 82
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit.ex",
+      "added": 0,
+      "removed": 444
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/adapter.ex",
+      "added": 0,
+      "removed": 297
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/application.ex",
+      "added": 0,
+      "removed": 14
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/clock.ex",
+      "added": 0,
+      "removed": 56
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/compression.ex",
+      "added": 0,
+      "removed": 168
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/delegating_handler.ex",
+      "added": 0,
+      "removed": 78
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/extractor.ex",
+      "added": 0,
+      "removed": 113
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/headers.ex",
+      "added": 0,
+      "removed": 125
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http1/README.md",
+      "added": 0,
+      "removed": 30
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http1/handler.ex",
+      "added": 0,
+      "removed": 89
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http1/socket.ex",
+      "added": 0,
+      "removed": 544
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/README.md",
+      "added": 0,
+      "removed": 108
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/connection.ex",
+      "added": 0,
+      "removed": 473
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/errors.ex",
+      "added": 0,
+      "removed": 59
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/flow_control.ex",
+      "added": 0,
+      "removed": 43
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame.ex",
+      "added": 0,
+      "removed": 105
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/continuation.ex",
+      "added": 0,
+      "removed": 57
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/data.ex",
+      "added": 0,
+      "removed": 78
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/goaway.ex",
+      "added": 0,
+      "removed": 42
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/headers.ex",
+      "added": 0,
+      "removed": 140
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/ping.ex",
+      "added": 0,
+      "removed": 45
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/priority.ex",
+      "added": 0,
+      "removed": 35
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/push_promise.ex",
+      "added": 0,
+      "removed": 9
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/rst_stream.ex",
+      "added": 0,
+      "removed": 33
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/settings.ex",
+      "added": 0,
+      "removed": 117
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/unknown.ex",
+      "added": 0,
+      "removed": 27
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/frame/window_update.ex",
+      "added": 0,
+      "removed": 33
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/handler.ex",
+      "added": 0,
+      "removed": 186
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/settings.ex",
+      "added": 0,
+      "removed": 20
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/stream.ex",
+      "added": 0,
+      "removed": 591
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/stream_collection.ex",
+      "added": 0,
+      "removed": 78
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http2/stream_process.ex",
+      "added": 0,
+      "removed": 31
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http_error.ex",
+      "added": 0,
+      "removed": 6
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/http_transport.ex",
+      "added": 0,
+      "removed": 47
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/initial_handler.ex",
+      "added": 0,
+      "removed": 86
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/logger.ex",
+      "added": 0,
+      "removed": 46
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/phoenix_adapter.ex",
+      "added": 0,
+      "removed": 116
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/pipeline.ex",
+      "added": 0,
+      "removed": 243
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/primitive_ops/websocket.ex",
+      "added": 0,
+      "removed": 34
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/socket_helpers.ex",
+      "added": 0,
+      "removed": 74
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/telemetry.ex",
+      "added": 0,
+      "removed": 250
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/trace.ex",
+      "added": 0,
+      "removed": 150
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/transport_error.ex",
+      "added": 0,
+      "removed": 6
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/README.md",
+      "added": 0,
+      "removed": 58
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/connection.ex",
+      "added": 0,
+      "removed": 338
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/frame.ex",
+      "added": 0,
+      "removed": 205
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/frame/binary.ex",
+      "added": 0,
+      "removed": 20
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/frame/connection_close.ex",
+      "added": 0,
+      "removed": 49
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/frame/continuation.ex",
+      "added": 0,
+      "removed": 24
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/frame/ping.ex",
+      "added": 0,
+      "removed": 32
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/frame/pong.ex",
+      "added": 0,
+      "removed": 32
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/frame/text.ex",
+      "added": 0,
+      "removed": 20
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/handler.ex",
+      "added": 0,
+      "removed": 96
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/handshake.ex",
+      "added": 0,
+      "removed": 105
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/permessage_deflate.ex",
+      "added": 0,
+      "removed": 187
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/socket.ex",
+      "added": 0,
+      "removed": 75
+    },
+    {
+      "path": "server/broker/deps/bandit/lib/bandit/websocket/upgrade_validation.ex",
+      "added": 0,
+      "removed": 65
+    },
+    {
+      "path": "server/broker/deps/bandit/mix.exs",
+      "added": 0,
+      "removed": 97
+    },
+    {
+      "path": "server/broker/deps/cowlib/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/cowlib/LICENSE",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/cowlib/Makefile",
+      "added": 0,
+      "removed": 114
+    },
+    {
+      "path": "server/broker/deps/cowlib/README.asciidoc",
+      "added": 0,
+      "removed": 18
+    },
+    {
+      "path": "server/broker/deps/cowlib/_build/prod/lib/.rebar3/rebar_compiler_erl/source.dag",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/cowlib/ebin/cowlib.app",
+      "added": 0,
+      "removed": 9
+    },
+    {
+      "path": "server/broker/deps/cowlib/erlang.mk",
+      "added": 0,
+      "removed": 4973
+    },
+    {
+      "path": "server/broker/deps/cowlib/hex_metadata.config",
+      "added": 0,
+      "removed": 28
+    },
+    {
+      "path": "server/broker/deps/cowlib/include/cow_inline.hrl",
+      "added": 0,
+      "removed": 447
+    },
+    {
+      "path": "server/broker/deps/cowlib/include/cow_parse.hrl",
+      "added": 0,
+      "removed": 83
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_base64url.erl",
+      "added": 0,
+      "removed": 81
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_capsule.erl",
+      "added": 0,
+      "removed": 98
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_cookie.erl",
+      "added": 0,
+      "removed": 456
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_date.erl",
+      "added": 0,
+      "removed": 434
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_deflate.erl",
+      "added": 0,
+      "removed": 39
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_hpack.erl",
+      "added": 0,
+      "removed": 1105
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_hpack_common.hrl",
+      "added": 0,
+      "removed": 376
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_hpack_dec_huffman_lookup.hrl",
+      "added": 0,
+      "removed": 4132
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http.erl",
+      "added": 0,
+      "removed": 371
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http1.erl",
+      "added": 0,
+      "removed": 421
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http2.erl",
+      "added": 0,
+      "removed": 491
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http2_machine.erl",
+      "added": 0,
+      "removed": 1551
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http3.erl",
+      "added": 0,
+      "removed": 597
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http3_machine.erl",
+      "added": 0,
+      "removed": 791
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http_hd.erl",
+      "added": 0,
+      "removed": 3697
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http_struct_hd.erl",
+      "added": 0,
+      "removed": 522
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_http_te.erl",
+      "added": 0,
+      "removed": 375
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_iolists.erl",
+      "added": 0,
+      "removed": 95
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_link.erl",
+      "added": 0,
+      "removed": 445
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_mimetypes.erl",
+      "added": 0,
+      "removed": 1055
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_mimetypes.erl.src",
+      "added": 0,
+      "removed": 62
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_multipart.erl",
+      "added": 0,
+      "removed": 775
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_qpack.erl",
+      "added": 0,
+      "removed": 1581
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_qs.erl",
+      "added": 0,
+      "removed": 593
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_sse.erl",
+      "added": 0,
+      "removed": 407
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_uri.erl",
+      "added": 0,
+      "removed": 290
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_uri_template.erl",
+      "added": 0,
+      "removed": 360
+    },
+    {
+      "path": "server/broker/deps/cowlib/src/cow_ws.erl",
+      "added": 0,
+      "removed": 913
+    },
+    {
+      "path": "server/broker/deps/finch/.formatter.exs",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/deps/finch/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/finch/CHANGELOG.md",
+      "added": 0,
+      "removed": 312
+    },
+    {
+      "path": "server/broker/deps/finch/LICENSE.md",
+      "added": 0,
+      "removed": 9
+    },
+    {
+      "path": "server/broker/deps/finch/README.md",
+      "added": 0,
+      "removed": 211
+    },
+    {
+      "path": "server/broker/deps/finch/hex_metadata.config",
+      "added": 0,
+      "removed": 53
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch.ex",
+      "added": 0,
+      "removed": 1213
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/error.ex",
+      "added": 0,
+      "removed": 42
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/http1/conn.ex",
+      "added": 0,
+      "removed": 424
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/http1/pool.ex",
+      "added": 0,
+      "removed": 357
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/http1/pool_metrics.ex",
+      "added": 0,
+      "removed": 68
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/http2/pool.ex",
+      "added": 0,
+      "removed": 1046
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/http2/pool_metrics.ex",
+      "added": 0,
+      "removed": 76
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/http2/request_stream.ex",
+      "added": 0,
+      "removed": 83
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/http_error.ex",
+      "added": 0,
+      "removed": 32
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/pool.ex",
+      "added": 0,
+      "removed": 181
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/pool/manager.ex",
+      "added": 0,
+      "removed": 265
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/pool/strategy.ex",
+      "added": 0,
+      "removed": 70
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/pool/strategy/hash.ex",
+      "added": 0,
+      "removed": 40
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/pool/strategy/random.ex",
+      "added": 0,
+      "removed": 20
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/pool/strategy/round_robin.ex",
+      "added": 0,
+      "removed": 30
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/pool/supervisor.ex",
+      "added": 0,
+      "removed": 71
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/pool_metrics.ex",
+      "added": 0,
+      "removed": 88
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/request.ex",
+      "added": 0,
+      "removed": 171
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/response.ex",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/ssl.ex",
+      "added": 0,
+      "removed": 26
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/telemetry.ex",
+      "added": 0,
+      "removed": 302
+    },
+    {
+      "path": "server/broker/deps/finch/lib/finch/transport_error.ex",
+      "added": 0,
+      "removed": 27
+    },
+    {
+      "path": "server/broker/deps/finch/mix.exs",
+      "added": 0,
+      "removed": 73
+    },
+    {
+      "path": "server/broker/deps/gun/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/gun/LICENSE",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/gun/Makefile",
+      "added": 0,
+      "removed": 184
+    },
+    {
+      "path": "server/broker/deps/gun/README.asciidoc",
+      "added": 0,
+      "removed": 43
+    },
+    {
+      "path": "server/broker/deps/gun/_build/prod/lib/.rebar3/rebar_compiler_erl/source.dag",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/gun/ebin/gun.app",
+      "added": 0,
+      "removed": 10
+    },
+    {
+      "path": "server/broker/deps/gun/erlang.mk",
+      "added": 0,
+      "removed": 4973
+    },
+    {
+      "path": "server/broker/deps/gun/hex_metadata.config",
+      "added": 0,
+      "removed": 35
+    },
+    {
+      "path": "server/broker/deps/gun/rebar.config",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun.erl",
+      "added": 0,
+      "removed": 2074
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_app.erl",
+      "added": 0,
+      "removed": 30
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_conns_sup.erl",
+      "added": 0,
+      "removed": 36
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_content_handler.erl",
+      "added": 0,
+      "removed": 76
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_cookies.erl",
+      "added": 0,
+      "removed": 668
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_cookies_list.erl",
+      "added": 0,
+      "removed": 144
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_data_h.erl",
+      "added": 0,
+      "removed": 33
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_default_event_h.erl",
+      "added": 0,
+      "removed": 129
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_event.erl",
+      "added": 0,
+      "removed": 316
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_http.erl",
+      "added": 0,
+      "removed": 1067
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_http2.erl",
+      "added": 0,
+      "removed": 1715
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_http3.erl",
+      "added": 0,
+      "removed": 752
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_pool.erl",
+      "added": 0,
+      "removed": 719
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_pool_events_h.erl",
+      "added": 0,
+      "removed": 157
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_pools_sup.erl",
+      "added": 0,
+      "removed": 37
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_protocols.erl",
+      "added": 0,
+      "removed": 74
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_public_suffix.erl",
+      "added": 0,
+      "removed": 9520
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_public_suffix.erl.src",
+      "added": 0,
+      "removed": 29
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_quicer.erl",
+      "added": 0,
+      "removed": 283
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_raw.erl",
+      "added": 0,
+      "removed": 97
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_socks.erl",
+      "added": 0,
+      "removed": 207
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_sse_h.erl",
+      "added": 0,
+      "removed": 63
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_sup.erl",
+      "added": 0,
+      "removed": 37
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_tcp.erl",
+      "added": 0,
+      "removed": 112
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_tcp_proxy.erl",
+      "added": 0,
+      "removed": 70
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_tls.erl",
+      "added": 0,
+      "removed": 49
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_tls_proxy.erl",
+      "added": 0,
+      "removed": 513
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_tls_proxy_cb.erl",
+      "added": 0,
+      "removed": 41
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_tls_proxy_http2_connect.erl",
+      "added": 0,
+      "removed": 69
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_tunnel.erl",
+      "added": 0,
+      "removed": 651
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_ws.erl",
+      "added": 0,
+      "removed": 374
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_ws_h.erl",
+      "added": 0,
+      "removed": 44
+    },
+    {
+      "path": "server/broker/deps/gun/src/gun_ws_protocol.erl",
+      "added": 0,
+      "removed": 25
+    },
+    {
+      "path": "server/broker/deps/hammer/.formatter.exs",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/deps/hammer/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/hammer/CHANGELOG.md",
+      "added": 0,
+      "removed": 168
+    },
+    {
+      "path": "server/broker/deps/hammer/LICENSE.md",
+      "added": 0,
+      "removed": 11
+    },
+    {
+      "path": "server/broker/deps/hammer/README.md",
+      "added": 0,
+      "removed": 149
+    },
+    {
+      "path": "server/broker/deps/hammer/hex_metadata.config",
+      "added": 0,
+      "removed": 25
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer.ex",
+      "added": 0,
+      "removed": 113
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/atomic.ex",
+      "added": 0,
+      "removed": 300
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/atomic/fix_window.ex",
+      "added": 0,
+      "removed": 212
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/atomic/fix_window_per_key.ex",
+      "added": 0,
+      "removed": 253
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/atomic/leaky_bucket.ex",
+      "added": 0,
+      "removed": 203
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/atomic/token_bucket.ex",
+      "added": 0,
+      "removed": 204
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/clean_utils.ex",
+      "added": 0,
+      "removed": 28
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/ets.ex",
+      "added": 0,
+      "removed": 267
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/ets/fix_window.ex",
+      "added": 0,
+      "removed": 197
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/ets/fix_window_per_key.ex",
+      "added": 0,
+      "removed": 243
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/ets/leaky_bucket.ex",
+      "added": 0,
+      "removed": 192
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/ets/sliding_window.ex",
+      "added": 0,
+      "removed": 197
+    },
+    {
+      "path": "server/broker/deps/hammer/lib/hammer/ets/token_bucket.ex",
+      "added": 0,
+      "removed": 192
+    },
+    {
+      "path": "server/broker/deps/hammer/mix.exs",
+      "added": 0,
+      "removed": 67
+    },
+    {
+      "path": "server/broker/deps/hpax/.formatter.exs",
+      "added": 0,
+      "removed": 5
+    },
+    {
+      "path": "server/broker/deps/hpax/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/hpax/CHANGELOG.md",
+      "added": 0,
+      "removed": 34
+    },
+    {
+      "path": "server/broker/deps/hpax/LICENSE.txt",
+      "added": 0,
+      "removed": 176
+    },
+    {
+      "path": "server/broker/deps/hpax/README.md",
+      "added": 0,
+      "removed": 74
+    },
+    {
+      "path": "server/broker/deps/hpax/hex_metadata.config",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "server/broker/deps/hpax/lib/hpax.ex",
+      "added": 0,
+      "removed": 360
+    },
+    {
+      "path": "server/broker/deps/hpax/lib/hpax/huffman.ex",
+      "added": 0,
+      "removed": 94
+    },
+    {
+      "path": "server/broker/deps/hpax/lib/hpax/huffman_table",
+      "added": 0,
+      "removed": 257
+    },
+    {
+      "path": "server/broker/deps/hpax/lib/hpax/table.ex",
+      "added": 0,
+      "removed": 348
+    },
+    {
+      "path": "server/broker/deps/hpax/lib/hpax/types.ex",
+      "added": 0,
+      "removed": 89
+    },
+    {
+      "path": "server/broker/deps/hpax/mix.exs",
+      "added": 0,
+      "removed": 54
+    },
+    {
+      "path": "server/broker/deps/jason/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/jason/CHANGELOG.md",
+      "added": 0,
+      "removed": 136
+    },
+    {
+      "path": "server/broker/deps/jason/LICENSE",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/jason/README.md",
+      "added": 0,
+      "removed": 157
+    },
+    {
+      "path": "server/broker/deps/jason/hex_metadata.config",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/jason/lib/codegen.ex",
+      "added": 0,
+      "removed": 139
+    },
+    {
+      "path": "server/broker/deps/jason/lib/decoder.ex",
+      "added": 0,
+      "removed": 708
+    },
+    {
+      "path": "server/broker/deps/jason/lib/encode.ex",
+      "added": 0,
+      "removed": 657
+    },
+    {
+      "path": "server/broker/deps/jason/lib/encoder.ex",
+      "added": 0,
+      "removed": 239
+    },
+    {
+      "path": "server/broker/deps/jason/lib/formatter.ex",
+      "added": 0,
+      "removed": 255
+    },
+    {
+      "path": "server/broker/deps/jason/lib/fragment.ex",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/jason/lib/helpers.ex",
+      "added": 0,
+      "removed": 98
+    },
+    {
+      "path": "server/broker/deps/jason/lib/jason.ex",
+      "added": 0,
+      "removed": 242
+    },
+    {
+      "path": "server/broker/deps/jason/lib/ordered_object.ex",
+      "added": 0,
+      "removed": 106
+    },
+    {
+      "path": "server/broker/deps/jason/lib/sigil.ex",
+      "added": 0,
+      "removed": 84
+    },
+    {
+      "path": "server/broker/deps/jason/mix.exs",
+      "added": 0,
+      "removed": 75
+    },
+    {
+      "path": "server/broker/deps/mime/.formatter.exs",
+      "added": 0,
+      "removed": 3
+    },
+    {
+      "path": "server/broker/deps/mime/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/mime/CHANGELOG.md",
+      "added": 0,
+      "removed": 51
+    },
+    {
+      "path": "server/broker/deps/mime/LICENSE",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/mime/README.md",
+      "added": 0,
+      "removed": 32
+    },
+    {
+      "path": "server/broker/deps/mime/hex_metadata.config",
+      "added": 0,
+      "removed": 12
+    },
+    {
+      "path": "server/broker/deps/mime/lib/mime.ex",
+      "added": 0,
+      "removed": 330
+    },
+    {
+      "path": "server/broker/deps/mime/mix.exs",
+      "added": 0,
+      "removed": 42
+    },
+    {
+      "path": "server/broker/deps/mint/.formatter.exs",
+      "added": 0,
+      "removed": 11
+    },
+    {
+      "path": "server/broker/deps/mint/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/mint/CHANGELOG.md",
+      "added": 0,
+      "removed": 255
+    },
+    {
+      "path": "server/broker/deps/mint/LICENSE.txt",
+      "added": 0,
+      "removed": 176
+    },
+    {
+      "path": "server/broker/deps/mint/README.md",
+      "added": 0,
+      "removed": 165
+    },
+    {
+      "path": "server/broker/deps/mint/hex_metadata.config",
+      "added": 0,
+      "removed": 34
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/core/conn.ex",
+      "added": 0,
+      "removed": 67
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/core/headers.ex",
+      "added": 0,
+      "removed": 136
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/core/transport.ex",
+      "added": 0,
+      "removed": 36
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/core/transport/ssl.ex",
+      "added": 0,
+      "removed": 750
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/core/transport/tcp.ex",
+      "added": 0,
+      "removed": 92
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/core/util.ex",
+      "added": 0,
+      "removed": 71
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/http.ex",
+      "added": 0,
+      "removed": 1160
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/http1.ex",
+      "added": 0,
+      "removed": 1233
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/http1/parse.ex",
+      "added": 0,
+      "removed": 79
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/http1/request.ex",
+      "added": 0,
+      "removed": 82
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/http1/response.ex",
+      "added": 0,
+      "removed": 43
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/http2.ex",
+      "added": 0,
+      "removed": 2679
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/http2/frame.ex",
+      "added": 0,
+      "removed": 478
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/http_error.ex",
+      "added": 0,
+      "removed": 73
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/negotiate.ex",
+      "added": 0,
+      "removed": 146
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/transport_error.ex",
+      "added": 0,
+      "removed": 102
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/tunnel_proxy.ex",
+      "added": 0,
+      "removed": 148
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/types.ex",
+      "added": 0,
+      "removed": 74
+    },
+    {
+      "path": "server/broker/deps/mint/lib/mint/unsafe_proxy.ex",
+      "added": 0,
+      "removed": 207
+    },
+    {
+      "path": "server/broker/deps/mint/mix.exs",
+      "added": 0,
+      "removed": 90
+    },
+    {
+      "path": "server/broker/deps/mint/src/mint_shims.erl",
+      "added": 0,
+      "removed": 236
+    },
+    {
+      "path": "server/broker/deps/nimble_options/.formatter.exs",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/deps/nimble_options/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/nimble_options/CHANGELOG.md",
+      "added": 0,
+      "removed": 98
+    },
+    {
+      "path": "server/broker/deps/nimble_options/LICENSE.md",
+      "added": 0,
+      "removed": 177
+    },
+    {
+      "path": "server/broker/deps/nimble_options/README.md",
+      "added": 0,
+      "removed": 93
+    },
+    {
+      "path": "server/broker/deps/nimble_options/hex_metadata.config",
+      "added": 0,
+      "removed": 16
+    },
+    {
+      "path": "server/broker/deps/nimble_options/lib/nimble_options.ex",
+      "added": 0,
+      "removed": 1095
+    },
+    {
+      "path": "server/broker/deps/nimble_options/lib/nimble_options/docs.ex",
+      "added": 0,
+      "removed": 301
+    },
+    {
+      "path": "server/broker/deps/nimble_options/lib/nimble_options/validation_error.ex",
+      "added": 0,
+      "removed": 43
+    },
+    {
+      "path": "server/broker/deps/nimble_options/mix.exs",
+      "added": 0,
+      "removed": 66
+    },
+    {
+      "path": "server/broker/deps/nimble_pool/.formatter.exs",
+      "added": 0,
+      "removed": 5
+    },
+    {
+      "path": "server/broker/deps/nimble_pool/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/nimble_pool/CHANGELOG.md",
+      "added": 0,
+      "removed": 39
+    },
+    {
+      "path": "server/broker/deps/nimble_pool/README.md",
+      "added": 0,
+      "removed": 284
+    },
+    {
+      "path": "server/broker/deps/nimble_pool/hex_metadata.config",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/nimble_pool/lib/nimble_pool.ex",
+      "added": 0,
+      "removed": 1120
+    },
+    {
+      "path": "server/broker/deps/nimble_pool/lib/nimble_pool/application.ex",
+      "added": 0,
+      "removed": 12
+    },
+    {
+      "path": "server/broker/deps/nimble_pool/mix.exs",
+      "added": 0,
+      "removed": 56
+    },
+    {
+      "path": "server/broker/deps/plug/.formatter.exs",
+      "added": 0,
+      "removed": 30
+    },
+    {
+      "path": "server/broker/deps/plug/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/plug/CHANGELOG.md",
+      "added": 0,
+      "removed": 411
+    },
+    {
+      "path": "server/broker/deps/plug/LICENSE",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/plug/README.md",
+      "added": 0,
+      "removed": 372
+    },
+    {
+      "path": "server/broker/deps/plug/hex_metadata.config",
+      "added": 0,
+      "removed": 55
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug.ex",
+      "added": 0,
+      "removed": 179
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/adapters/cowboy.ex",
+      "added": 0,
+      "removed": 55
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/adapters/test/conn.ex",
+      "added": 0,
+      "removed": 243
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/application.ex",
+      "added": 0,
+      "removed": 16
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/basic_auth.ex",
+      "added": 0,
+      "removed": 170
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/builder.ex",
+      "added": 0,
+      "removed": 440
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/conn.ex",
+      "added": 0,
+      "removed": 2038
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/conn/adapter.ex",
+      "added": 0,
+      "removed": 209
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/conn/cookies.ex",
+      "added": 0,
+      "removed": 153
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/conn/query.ex",
+      "added": 0,
+      "removed": 457
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/conn/status.ex",
+      "added": 0,
+      "removed": 183
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/conn/unfetched.ex",
+      "added": 0,
+      "removed": 47
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/conn/utils.ex",
+      "added": 0,
+      "removed": 341
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/conn/wrapper_error.ex",
+      "added": 0,
+      "removed": 38
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/csrf_protection.ex",
+      "added": 0,
+      "removed": 448
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/debugger.ex",
+      "added": 0,
+      "removed": 589
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/error_handler.ex",
+      "added": 0,
+      "removed": 122
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/exceptions.ex",
+      "added": 0,
+      "removed": 70
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/head.ex",
+      "added": 0,
+      "removed": 20
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/html.ex",
+      "added": 0,
+      "removed": 81
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/logger.ex",
+      "added": 0,
+      "removed": 56
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/method_override.ex",
+      "added": 0,
+      "removed": 69
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/mime.ex",
+      "added": 0,
+      "removed": 67
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/parsers.ex",
+      "added": 0,
+      "removed": 388
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/parsers/json.ex",
+      "added": 0,
+      "removed": 116
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/parsers/multipart.ex",
+      "added": 0,
+      "removed": 333
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/parsers/urlencoded.ex",
+      "added": 0,
+      "removed": 57
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/request_id.ex",
+      "added": 0,
+      "removed": 99
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/rewrite_on.ex",
+      "added": 0,
+      "removed": 135
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/router.ex",
+      "added": 0,
+      "removed": 665
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/router/utils.ex",
+      "added": 0,
+      "removed": 286
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/session.ex",
+      "added": 0,
+      "removed": 140
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/session/cookie.ex",
+      "added": 0,
+      "removed": 246
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/session/ets.ex",
+      "added": 0,
+      "removed": 98
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/session/store.ex",
+      "added": 0,
+      "removed": 71
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/ssl.ex",
+      "added": 0,
+      "removed": 480
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/static.ex",
+      "added": 0,
+      "removed": 473
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/telemetry.ex",
+      "added": 0,
+      "removed": 89
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/templates/debugger.html.eex",
+      "added": 0,
+      "removed": 1151
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/templates/debugger.md.eex",
+      "added": 0,
+      "removed": 24
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/test.ex",
+      "added": 0,
+      "removed": 300
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/upload.ex",
+      "added": 0,
+      "removed": 270
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/upload/supervisor.ex",
+      "added": 0,
+      "removed": 34
+    },
+    {
+      "path": "server/broker/deps/plug/lib/plug/upload/terminator.ex",
+      "added": 0,
+      "removed": 27
+    },
+    {
+      "path": "server/broker/deps/plug/mix.exs",
+      "added": 0,
+      "removed": 132
+    },
+    {
+      "path": "server/broker/deps/plug/src/plug_multipart.erl",
+      "added": 0,
+      "removed": 471
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/CHANGELOG.md",
+      "added": 0,
+      "removed": 57
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/LICENSE",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/README.md",
+      "added": 0,
+      "removed": 30
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/hex_metadata.config",
+      "added": 0,
+      "removed": 17
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/lib/plug/crypto.ex",
+      "added": 0,
+      "removed": 359
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/lib/plug/crypto/application.ex",
+      "added": 0,
+      "removed": 16
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/lib/plug/crypto/key_generator.ex",
+      "added": 0,
+      "removed": 115
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/lib/plug/crypto/message_encryptor.ex",
+      "added": 0,
+      "removed": 197
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/lib/plug/crypto/message_verifier.ex",
+      "added": 0,
+      "removed": 73
+    },
+    {
+      "path": "server/broker/deps/plug_crypto/mix.exs",
+      "added": 0,
+      "removed": 52
+    },
+    {
+      "path": "server/broker/deps/req/.formatter.exs",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/deps/req/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/req/CHANGELOG.md",
+      "added": 0,
+      "removed": 1398
+    },
+    {
+      "path": "server/broker/deps/req/LICENSE.md",
+      "added": 0,
+      "removed": 201
+    },
+    {
+      "path": "server/broker/deps/req/README.md",
+      "added": 0,
+      "removed": 297
+    },
+    {
+      "path": "server/broker/deps/req/hex_metadata.config",
+      "added": 0,
+      "removed": 58
+    },
+    {
+      "path": "server/broker/deps/req/lib/req.ex",
+      "added": 0,
+      "removed": 1392
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/application.ex",
+      "added": 0,
+      "removed": 20
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/archive_error.ex",
+      "added": 0,
+      "removed": 22
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/checksum_mismatch_error.ex",
+      "added": 0,
+      "removed": 16
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/decompress_error.ex",
+      "added": 0,
+      "removed": 17
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/fields.ex",
+      "added": 0,
+      "removed": 233
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/finch.ex",
+      "added": 0,
+      "removed": 449
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/http_error.ex",
+      "added": 0,
+      "removed": 27
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/request.ex",
+      "added": 0,
+      "removed": 1312
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/response.ex",
+      "added": 0,
+      "removed": 269
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/response_async.ex",
+      "added": 0,
+      "removed": 90
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/steps.ex",
+      "added": 0,
+      "removed": 2410
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/test.ex",
+      "added": 0,
+      "removed": 795
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/test/adapter.ex",
+      "added": 0,
+      "removed": 49
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/test/ownership.ex",
+      "added": 0,
+      "removed": 368
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/test/ownership_error.ex",
+      "added": 0,
+      "removed": 31
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/too_many_redirects_error.ex",
+      "added": 0,
+      "removed": 12
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/transport_error.ex",
+      "added": 0,
+      "removed": 17
+    },
+    {
+      "path": "server/broker/deps/req/lib/req/utils.ex",
+      "added": 0,
+      "removed": 843
+    },
+    {
+      "path": "server/broker/deps/req/mix.exs",
+      "added": 0,
+      "removed": 134
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/.formatter.exs",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/CHANGELOG.md",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/LICENSE.md",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/README.md",
+      "added": 0,
+      "removed": 285
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/hex_metadata.config",
+      "added": 0,
+      "removed": 50
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug.ex",
+      "added": 0,
+      "removed": 408
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client.ex",
+      "added": 0,
+      "removed": 16
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client/adapters/finch.ex",
+      "added": 0,
+      "removed": 50
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client/adapters/httpoison.ex",
+      "added": 0,
+      "removed": 98
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client/adapters/req.ex",
+      "added": 0,
+      "removed": 128
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client/adapters/tesla.ex",
+      "added": 0,
+      "removed": 80
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client/error.ex",
+      "added": 0,
+      "removed": 7
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client/maybe_redirect.ex",
+      "added": 0,
+      "removed": 25
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client/request.ex",
+      "added": 0,
+      "removed": 41
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/lib/reverse_proxy_plug/http_client/response.ex",
+      "added": 0,
+      "removed": 18
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug/mix.exs",
+      "added": 0,
+      "removed": 84
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/.formatter.exs",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/LICENSE",
+      "added": 0,
+      "removed": 201
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/README.md",
+      "added": 0,
+      "removed": 413
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/hex_metadata.config",
+      "added": 0,
+      "removed": 49
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/lib/reverse_proxy_plug_websocket.ex",
+      "added": 0,
+      "removed": 185
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/lib/reverse_proxy_plug_websocket/adapters/gun.ex",
+      "added": 0,
+      "removed": 215
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/lib/reverse_proxy_plug_websocket/adapters/websockex.ex",
+      "added": 0,
+      "removed": 124
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/lib/reverse_proxy_plug_websocket/adapters/websockex_client.ex",
+      "added": 0,
+      "removed": 170
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/lib/reverse_proxy_plug_websocket/config.ex",
+      "added": 0,
+      "removed": 230
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/lib/reverse_proxy_plug_websocket/proxy_process.ex",
+      "added": 0,
+      "removed": 177
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/lib/reverse_proxy_plug_websocket/websocket_client.ex",
+      "added": 0,
+      "removed": 82
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/lib/reverse_proxy_plug_websocket/websocket_handler.ex",
+      "added": 0,
+      "removed": 123
+    },
+    {
+      "path": "server/broker/deps/reverse_proxy_plug_websocket/mix.exs",
+      "added": 0,
+      "removed": 58
+    },
+    {
+      "path": "server/broker/deps/telemetry/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/telemetry/CHANGELOG.md",
+      "added": 0,
+      "removed": 151
+    },
+    {
+      "path": "server/broker/deps/telemetry/LICENSE",
+      "added": 0,
+      "removed": 177
+    },
+    {
+      "path": "server/broker/deps/telemetry/NOTICE",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/telemetry/README.md",
+      "added": 0,
+      "removed": 260
+    },
+    {
+      "path": "server/broker/deps/telemetry/_build/prod/lib/.rebar3/rebar_compiler_erl/source.dag",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/telemetry/hex_metadata.config",
+      "added": 0,
+      "removed": 17
+    },
+    {
+      "path": "server/broker/deps/telemetry/mix.exs",
+      "added": 0,
+      "removed": 20
+    },
+    {
+      "path": "server/broker/deps/telemetry/rebar.config",
+      "added": 0,
+      "removed": 32
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry.app.src",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry.erl",
+      "added": 0,
+      "removed": 464
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry.hrl",
+      "added": 0,
+      "removed": 32
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry_app.erl",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry_ets.erl",
+      "added": 0,
+      "removed": 69
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry_handler_table.erl",
+      "added": 0,
+      "removed": 118
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry_pt.erl",
+      "added": 0,
+      "removed": 63
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry_sup.erl",
+      "added": 0,
+      "removed": 24
+    },
+    {
+      "path": "server/broker/deps/telemetry/src/telemetry_test.erl",
+      "added": 0,
+      "removed": 86
+    },
+    {
+      "path": "server/broker/deps/thousand_island/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/thousand_island/CHANGELOG.md",
+      "added": 0,
+      "removed": 339
+    },
+    {
+      "path": "server/broker/deps/thousand_island/LICENSE",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/thousand_island/README.md",
+      "added": 0,
+      "removed": 166
+    },
+    {
+      "path": "server/broker/deps/thousand_island/hex_metadata.config",
+      "added": 0,
+      "removed": 34
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island.ex",
+      "added": 0,
+      "removed": 286
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/acceptor.ex",
+      "added": 0,
+      "removed": 77
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/acceptor_pool_supervisor.ex",
+      "added": 0,
+      "removed": 54
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/acceptor_supervisor.ex",
+      "added": 0,
+      "removed": 59
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/connection.ex",
+      "added": 0,
+      "removed": 102
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/handler.ex",
+      "added": 0,
+      "removed": 642
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/handler_config.ex",
+      "added": 0,
+      "removed": 31
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/listener.ex",
+      "added": 0,
+      "removed": 109
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/logger.ex",
+      "added": 0,
+      "removed": 149
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/process_label.ex",
+      "added": 0,
+      "removed": 52
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/server.ex",
+      "added": 0,
+      "removed": 88
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/server_config.ex",
+      "added": 0,
+      "removed": 77
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/shutdown_listener.ex",
+      "added": 0,
+      "removed": 47
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/socket.ex",
+      "added": 0,
+      "removed": 237
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/telemetry.ex",
+      "added": 0,
+      "removed": 400
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/transport.ex",
+      "added": 0,
+      "removed": 220
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/transports/ssl.ex",
+      "added": 0,
+      "removed": 221
+    },
+    {
+      "path": "server/broker/deps/thousand_island/lib/thousand_island/transports/tcp.ex",
+      "added": 0,
+      "removed": 169
+    },
+    {
+      "path": "server/broker/deps/thousand_island/mix.exs",
+      "added": 0,
+      "removed": 80
+    },
+    {
+      "path": "server/broker/deps/websock/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/websock/LICENSE",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/websock/README.md",
+      "added": 0,
+      "removed": 74
+    },
+    {
+      "path": "server/broker/deps/websock/hex_metadata.config",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "server/broker/deps/websock/lib/websock.ex",
+      "added": 0,
+      "removed": 128
+    },
+    {
+      "path": "server/broker/deps/websock/mix.exs",
+      "added": 0,
+      "removed": 46
+    },
+    {
+      "path": "server/broker/deps/websock/test/test_helper.exs",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/CHANGELOG.md",
+      "added": 0,
+      "removed": 74
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/LICENSE",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/README.md",
+      "added": 0,
+      "removed": 102
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/hex_metadata.config",
+      "added": 0,
+      "removed": 36
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/lib/websock_adapter.ex",
+      "added": 0,
+      "removed": 106
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/lib/websock_adapter/cowboy_adapter.ex",
+      "added": 0,
+      "removed": 109
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/lib/websock_adapter/upgrade_error.ex",
+      "added": 0,
+      "removed": 3
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/lib/websock_adapter/upgrade_validation.ex",
+      "added": 0,
+      "removed": 102
+    },
+    {
+      "path": "server/broker/deps/websock_adapter/mix.exs",
+      "added": 0,
+      "removed": 47
+    },
+    {
+      "path": "server/broker/deps/websockex/.formatter.exs",
+      "added": 0,
+      "removed": 3
+    },
+    {
+      "path": "server/broker/deps/websockex/.hex",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "server/broker/deps/websockex/CHANGELOG.md",
+      "added": 0,
+      "removed": 137
+    },
+    {
+      "path": "server/broker/deps/websockex/LICENSE",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "server/broker/deps/websockex/README.md",
+      "added": 0,
+      "removed": 164
+    },
+    {
+      "path": "server/broker/deps/websockex/hex_metadata.config",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "server/broker/deps/websockex/lib/websockex.ex",
+      "added": 0,
+      "removed": 1164
+    },
+    {
+      "path": "server/broker/deps/websockex/lib/websockex/application.ex",
+      "added": 0,
+      "removed": 16
+    },
+    {
+      "path": "server/broker/deps/websockex/lib/websockex/conn.ex",
+      "added": 0,
+      "removed": 349
+    },
+    {
+      "path": "server/broker/deps/websockex/lib/websockex/errors.ex",
+      "added": 0,
+      "removed": 155
+    },
+    {
+      "path": "server/broker/deps/websockex/lib/websockex/frame.ex",
+      "added": 0,
+      "removed": 403
+    },
+    {
+      "path": "server/broker/deps/websockex/lib/websockex/utils.ex",
+      "added": 0,
+      "removed": 175
+    },
+    {
+      "path": "server/broker/deps/websockex/mix.exs",
+      "added": 0,
+      "removed": 50
+    }
+  ],
+  "totals": {
+    "files": 1454,
+    "added": 3,
+    "removed": 124020
+  }
+}

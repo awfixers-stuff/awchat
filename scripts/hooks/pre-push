@@ -4,21 +4,17 @@ set -e
 root="$(git rev-parse --show-toplevel)"
 cd "$root"
 
+export AWCHAT_REPO_ROOT="$root"
+. "$root/scripts/hooks/lib/resolve-bun.sh"
+
 export AWCHAT_HOOK_PHASE=pre-push
 export AWCHAT_CODERABBIT_QUEUE=1
 export AWCHAT_CODERABBIT_FAIL_CRITICAL=1
 
-if command -v bun >/dev/null 2>&1; then
-  bun "$root/scripts/hooks/coderabbit-run.ts"
-  exit $?
+if ! awchat_resolve_bun; then
+  echo "pre-push coderabbit: bun not found — skipped" >&2
+  exit 0
 fi
 
-for candidate in "$HOME/.bun/bin/bun" /usr/local/bin/bun /nix/var/nix/profiles/default/bin/bun; do
-  if [ -x "$candidate" ]; then
-    "$candidate" "$root/scripts/hooks/coderabbit-run.ts"
-    exit $?
-  fi
-done
-
-echo "pre-push coderabbit: bun not found — skipped" >&2
-exit 0
+"$AWCHAT_BUN" "$root/scripts/hooks/coderabbit-run.ts"
+exit $?

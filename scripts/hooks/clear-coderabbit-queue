@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+set -e
+root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+cd "$root" || exit 0
+export AWCHAT_REPO_ROOT="$root"
+. "$root/scripts/hooks/lib/resolve-bun.sh"
+if ! awchat_resolve_bun; then
+  exit 0
+fi
+exec "$AWCHAT_BUN" "$root/scripts/hooks/clear-coderabbit-queue.ts"

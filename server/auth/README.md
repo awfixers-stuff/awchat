@@ -45,7 +45,9 @@ Identity registration proof signs `register|{userId}|{identityKeyB64}` with the 
 
 ## Deploy (Railway)
 
-1. Create a Railway project with **PostgreSQL**.
-2. Add a service from `server/auth` using the Dockerfile.
-3. Set `DATABASE_URL` from the Postgres service.
-4. Deploy — migrations run automatically via `bin/server`.
+Monorepo setup: [`RAILWAY.md`](../../RAILWAY.md). Service root `/server/auth`, config [`railway.toml`](railway.toml).
+
+Auth is **internal-only**; public traffic goes through **broker**.
+
+1. **Postgres-Auth** plugin → `DATABASE_URL=${{Postgres-Auth.DATABASE_URL}}`, `PORT=8081`.
+2. Do **not** assign a public domain — broker routes auth paths to `auth.railway.internal`.

@@ -15,7 +15,7 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 3. **Clean Architecture.** `core:domain` interfaces before Room implementations. No framework imports in domain.
 4. **Crypto is libsignal-native.** No custom protocols. Server never decrypts message bodies.
 5. **Default branch is `master`.** Blacksmith runners (`blacksmith-8vcpu-ubuntu-2404`) for CI.
-6. **Dev tooling:** Nix shell + Gradle + Bun (oxlint/oxfmt only). Run `just build` / `just test` once `Justfile` exists (PR 1).
+6. **Dev tooling:** Nix shell + Gradle + Bun (oxlint/oxfmt/TS hooks) + **uv** for Python. Run `just build` / `just test` once `Justfile` exists (PR 1). For Python on this machine, use **`uv run`** (or `uv sync` first) — do not call bare `python`/`python3` unless uv is unavailable.
 7. **Session handoff is mandatory.** After completing a roadmap phase, todo, or bugfix, run the handoff command (see [Session Handoff](#session-handoff)). This syncs `ledgers/roadmap-state.json`, `ROADMAP.md`, and the Session Continuity block below.
 8. **CodeRabbit every turn.** After every agent turn, run the CodeRabbit gate and fix critical/major findings before you stop (see [CodeRabbit gate](#coderabbit-gate-turn--git)).
 9. **Never commit secrets.** See [Security & secrets](#security--secrets). If you find credentials in the tree or history, remove them and purge git history before stopping.
@@ -26,8 +26,8 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T05:13:48.991Z
-**Branch:** `master` @ `52136f798697`
+**Last updated:** 2026-06-08T07:12:09.859Z
+**Branch:** `master` @ `847982cbb51f`
 
 ### In progress
 - PR 12: CI expansion — detekt, oxlint, emulator
@@ -59,9 +59,8 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing
 
 ### Recently touched
-- `AGENTS.md`
-- `ROADMAP.md`
-- `ledgers/roadmap-state.json`
+- `README.md`
+- `docs/DESIGN.md`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
@@ -169,7 +168,7 @@ Hooks automate review; **you still own fixes** using the repo skills (never run 
 
 | When | Mechanism | Script / path |
 | ---- | --------- | ------------- |
-| **End of every agent turn** | Grok `Stop` / `SessionEnd` / `SubagentStop`; oh-my-pi `agent_end`; Pi `agent_end` | `scripts/hooks/agent-turn-coderabbit` |
+| **End of every agent turn** | Grok `Stop` / `SessionEnd`; Cursor `stop` (not follow-up loops); oh-my-pi / Pi `agent_end` | `scripts/hooks/agent-turn-coderabbit` |
 | **After each commit** | lefthook `post-commit` | `scripts/hooks/post-commit` |
 | **Before push** | lefthook `pre-push` (blocks on **critical** findings in unpushed commits) | `scripts/hooks/pre-push` |
 
@@ -191,11 +190,16 @@ AWCHAT_HOOK_PHASE=pre-push bun scripts/hooks/coderabbit-run.ts      # ahead of u
 **Harness wiring (committed in repo):**
 
 - Grok: `.grok/hooks/coderabbit-turn.json` (+ existing `agents-continuity.json`)
+- Cursor: `.cursor/hooks.json` → `.cursor/hooks/agent-turn-coderabbit.sh` (`followup_message` on critical/major)
 - oh-my-pi: `.omp/hooks/post/agent-turn-coderabbit.ts`
 - Pi: `.pi/extensions/coderabbit-turn-gate.ts`
 - Git: `lefthook.yml` → `post-commit` / `pre-push` (run `bun run prepare` or `lefthook install` after clone)
 
+Hook subprocesses resolve Bun via `scripts/hooks/lib/resolve-bun.sh` (`~/.bun/bin`, `BUN_INSTALL`, direnv, nix). Override with `AWCHAT_BUN=/path/to/bun` when needed.
+
 **Prerequisites:** CodeRabbit CLI installed and `coderabbit auth login`. Skip locally with `AWCHAT_SKIP_CODERABBIT=1`.
+
+**Timeouts (avoid hanging the harness):** Grok/Cursor hook `timeout` is **120s**. `coderabbit review` inside `coderabbit-run.ts` is capped at **90s** (`AWCHAT_CODERABBIT_TIMEOUT_MS`). Pi/omp use `pi.exec` with **120s** (`AWCHAT_PI_HOOK_TIMEOUT_MS`). Cursor `loop_limit` is **3** for CodeRabbit follow-ups.
 
 **Artifacts:** `ledgers/coderabbit/latest.json`, `ledgers/coderabbit/agent-queue.json`
 
@@ -213,6 +217,19 @@ bun run fmt:fix
 # Changelog ledger (also runs via lefthook pre-commit)
 bun run changelog
 ```
+
+### Python (uv-managed)
+
+This repo pins Python in `.python-version` / `pyproject.toml`. **Always prefer uv** over system Python:
+
+```bash
+uv sync                              # create/update .venv from pyproject.toml
+uv run python -m module              # run a module in the project venv
+uv run python script.py              # run a script with project deps
+uv add package-name                  # add a dependency
+```
+
+Do **not** use bare `python`, `python3`, or `pip` for project work unless uv is missing. Cursor hooks that need Python (e.g. JSON encoding) use `uv run python` for the same reason.
 
 ---
 

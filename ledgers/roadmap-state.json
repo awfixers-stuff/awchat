@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-08T05:13:48.991Z",
+  "updated_at": "2026-06-08T07:12:09.859Z",
   "branch": "master",
-  "head": "52136f7986972dd8eb2068a06ebbcf28a2d89e26",
+  "head": "847982cbb51f4ad77557a61e1a81ea49b9e02d9d",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
@@ -28,8 +28,7 @@
     "summary": "Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing"
   },
   "recent_files": [
-    "AGENTS.md",
-    "ROADMAP.md",
-    "ledgers/roadmap-state.json"
+    "README.md",
+    "docs/DESIGN.md"
   ]
 }

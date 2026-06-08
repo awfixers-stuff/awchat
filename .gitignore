@@ -4,6 +4,8 @@ java*
 .direnv
 .kotlin
 
+.venv
+
 # Ignore Gradle build output directory
 build
 
@@ -20,3 +22,6 @@ target
 !bun.lock
 !flake.lock
 !**/mix.lock
+
+deps
+_build
