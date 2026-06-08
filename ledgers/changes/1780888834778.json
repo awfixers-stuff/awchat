@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-06-08T03:20:34.778Z",
+  "head": "6b4be4dad9500630218e4ebd39dd002bb981be21",
+  "branch": "master",
+  "files": [
+    {
+      "path": "server/relay/Dockerfile",
+      "added": 0,
+      "removed": 7
+    },
+    {
+      "path": "server/relay/apps/gateway/mix.exs",
+      "added": 6,
+      "removed": 1
+    }
+  ],
+  "totals": {
+    "files": 2,
+    "added": 6,
+    "removed": 8
+  }
+}
