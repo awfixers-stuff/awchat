@@ -1,0 +1,217 @@
+{
+  "recorded_at": "2026-06-08T04:12:43.076Z",
+  "head": "90690242f169283a0bcd7dad386b41666d8e41e4",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".gitignore",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": ".grok/hooks/coderabbit-turn.json",
+      "added": 37,
+      "removed": 0
+    },
+    {
+      "path": ".grok/skills/session-handoff/SKILL.md",
+      "added": 5,
+      "removed": 1
+    },
+    {
+      "path": ".omp/hooks/post/agent-turn-coderabbit.ts",
+      "added": 49,
+      "removed": 0
+    },
+    {
+      "path": ".pi/extensions/coderabbit-turn-gate.ts",
+      "added": 42,
+      "removed": 0
+    },
+    {
+      "path": "AGENTS.md",
+      "added": 11,
+      "removed": 10
+    },
+    {
+      "path": "core/database/build.gradle.kts",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/di/RepositoryModule.kt",
+      "added": 26,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ChatMapper.kt",
+      "added": 31,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ContactMapper.kt",
+      "added": 28,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/MessageMapper.kt",
+      "added": 35,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ChatRepositoryImpl.kt",
+      "added": 55,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ContactRepositoryImpl.kt",
+      "added": 43,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/MessageRepositoryImpl.kt",
+      "added": 61,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/build.gradle.kts",
+      "added": 33,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/model/Chat.kt",
+      "added": 18,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/model/Contact.kt",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/model/Message.kt",
+      "added": 23,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/repository/ChatRepository.kt",
+      "added": 17,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/repository/ContactRepository.kt",
+      "added": 14,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/repository/MessageRepository.kt",
+      "added": 17,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/CreateDirectChatUseCase.kt",
+      "added": 15,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/GetChatsUseCase.kt",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/GetContactsUseCase.kt",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/GetMessagesUseCase.kt",
+      "added": 13,
+      "removed": 0
+    },
+    {
+      "path": "core/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/SendMessageUseCase.kt",
+      "added": 15,
+      "removed": 0
+    },
+    {
+      "path": "core/network/build.gradle.kts",
+      "added": 43,
+      "removed": 0
+    },
+    {
+      "path": "core/network/src/main/kotlin/me/awfixer/awchat/core/network/auth/RestAuthSigner.kt",
+      "added": 26,
+      "removed": 0
+    },
+    {
+      "path": "core/network/src/main/kotlin/me/awfixer/awchat/core/network/di/NetworkModule.kt",
+      "added": 34,
+      "removed": 0
+    },
+    {
+      "path": "core/network/src/main/kotlin/me/awfixer/awchat/core/network/model/WsFrame.kt",
+      "added": 87,
+      "removed": 0
+    },
+    {
+      "path": "core/network/src/main/kotlin/me/awfixer/awchat/core/network/websocket/AwChatWebSocketClient.kt",
+      "added": 59,
+      "removed": 0
+    },
+    {
+      "path": "gradle/libs.versions.toml",
+      "added": 10,
+      "removed": 1
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 12,
+      "removed": 11
+    },
+    {
+      "path": "lefthook.yml",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "package.json",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/agent-turn-coderabbit",
+      "added": 27,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/coderabbit-run.ts",
+      "added": 275,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/emit-coderabbit-prompt.ts",
+      "added": 29,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/post-commit",
+      "added": 24,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/pre-push",
+      "added": 24,
+      "removed": 0
+    },
+    {
+      "path": "settings.gradle.kts",
+      "added": 2,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 41,
+    "added": 1289,
+    "removed": 23
+  }
+}

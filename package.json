@@ -18,6 +18,8 @@
     "typecheck": "tsgo --noEmit",
     "changelog": "bun scripts/changelog.ts",
     "agents:handoff": "bun scripts/update-agents-md.ts",
+    "review:coderabbit": "bun scripts/hooks/coderabbit-run.ts",
+    "review:coderabbit:turn": "AWCHAT_HOOK_PHASE=uncommitted AWCHAT_CODERABBIT_QUEUE=1 bun scripts/hooks/coderabbit-run.ts && bun scripts/hooks/emit-coderabbit-prompt.ts",
     "prepare": "lefthook install"
   },
   "devDependencies": {

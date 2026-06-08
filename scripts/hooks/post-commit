@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+set -e
+
+root="$(git rev-parse --show-toplevel)"
+cd "$root"
+
+export AWCHAT_HOOK_PHASE=committed
+export AWCHAT_CODERABBIT_QUEUE=1
+export AWCHAT_CODERABBIT_FAIL_CRITICAL=0
+
+if command -v bun >/dev/null 2>&1; then
+  bun "$root/scripts/hooks/coderabbit-run.ts" || true
+  exit 0
+fi
+
+for candidate in "$HOME/.bun/bin/bun" /usr/local/bin/bun /nix/var/nix/profiles/default/bin/bun; do
+  if [ -x "$candidate" ]; then
+    "$candidate" "$root/scripts/hooks/coderabbit-run.ts" || true
+    exit 0
+  fi
+done
+
+echo "post-commit coderabbit: bun not found — skipped" >&2
+exit 0

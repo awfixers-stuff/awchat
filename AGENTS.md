@@ -25,11 +25,11 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T03:57:46.938Z
-**Branch:** `master` @ `d477a7e4940c`
+**Last updated:** 2026-06-08T04:03:14.439Z
+**Branch:** `master` @ `90690242f169`
 
 ### In progress
-- PR 10: core:database — repository implementations
+- PR 11: core:network — Ktor client + WS + auth handshake
 
 ### Completed
 - PR 1: build-logic + catalog + repo hygiene
@@ -41,31 +41,32 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - PR 7: core:security — Keystore sealing
 - PR 8: core:database — Room + SQLCipher (entities + DAOs only)
 - PR 9: core:domain — repository interfaces + use case stubs
+- PR 10: core:database — repository implementations
 
 ### Next up
-- PR 10: core:database — repository implementations
+- PR 11: core:network — Ktor client + WS + auth handshake
 
 ### Blockers
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T03:57:46.938Z
+**roadmap-phase** at 2026-06-08T04:03:14.439Z
 
-Completed: PR 9: core:domain — repository interfaces + use case stubs
+Completed: PR 10: core:database — repository implementations
 
 ### Recently touched
 - `gitignore`
 - `grok/skills/session-handoff/SKILL.md`
-- `AGENTS.md`
-- `ledgers/roadmap-state.json`
+- `ore/database/build.gradle.kts`
 - `efthook.yml`
 - `ackage.json`
 - `ettings.gradle.kts`
 - `.grok/hooks/coderabbit-turn.json`
 - `.omp/`
 - `.pi/`
-- `core/domain/`
-- `scripts/hooks/agent-turn-coderabbit`
+- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/di/RepositoryModule.kt`
+- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/`
+- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 

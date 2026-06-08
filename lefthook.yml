@@ -2,3 +2,13 @@ pre-commit:
   commands:
     changelog:
       run: ./scripts/hooks/pre-commit
+
+post-commit:
+  commands:
+    coderabbit:
+      run: ./scripts/hooks/post-commit
+
+pre-push:
+  commands:
+    coderabbit:
+      run: ./scripts/hooks/pre-push

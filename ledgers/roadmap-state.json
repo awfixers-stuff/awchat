@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-08T03:57:46.938Z",
+  "updated_at": "2026-06-08T04:03:14.439Z",
   "branch": "master",
-  "head": "d477a7e4940c6eca52e40ff001d225847f4c2647",
+  "head": "90690242f169283a0bcd7dad386b41666d8e41e4",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
@@ -11,30 +11,31 @@
     "PR 5: server:relay Gleam/Elixir/Rust skeleton",
     "PR 7: core:security — Keystore sealing",
     "PR 8: core:database — Room + SQLCipher (entities + DAOs only)",
-    "PR 9: core:domain — repository interfaces + use case stubs"
-  ],
-  "in_progress": "PR 10: core:database — repository implementations",
-  "next_up": [
+    "PR 9: core:domain — repository interfaces + use case stubs",
     "PR 10: core:database — repository implementations"
+  ],
+  "in_progress": "PR 11: core:network — Ktor client + WS + auth handshake",
+  "next_up": [
+    "PR 11: core:network — Ktor client + WS + auth handshake"
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T03:57:46.938Z",
+    "at": "2026-06-08T04:03:14.439Z",
     "reason": "roadmap-phase",
-    "summary": "Completed: PR 9: core:domain — repository interfaces + use case stubs"
+    "summary": "Completed: PR 10: core:database — repository implementations"
   },
   "recent_files": [
     "gitignore",
     "grok/skills/session-handoff/SKILL.md",
-    "AGENTS.md",
-    "ledgers/roadmap-state.json",
+    "ore/database/build.gradle.kts",
     "efthook.yml",
     "ackage.json",
     "ettings.gradle.kts",
     ".grok/hooks/coderabbit-turn.json",
     ".omp/",
     ".pi/",
-    "core/domain/",
-    "scripts/hooks/agent-turn-coderabbit"
+    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/di/RepositoryModule.kt",
+    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/",
+    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/"
   ]
 }
