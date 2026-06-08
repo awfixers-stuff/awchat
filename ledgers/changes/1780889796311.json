@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-06-08T03:36:36.311Z",
+  "head": "c334d7072b414d6361898ad3a53c3245bff29c27",
+  "branch": "master",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "added": 16,
+      "removed": 10
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 17,
+      "removed": 11
+    },
+    {
+      "path": "server/auth/Dockerfile",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/relay/Dockerfile",
+      "added": 1,
+      "removed": 1
+    }
+  ],
+  "totals": {
+    "files": 4,
+    "added": 35,
+    "removed": 23
+  }
+}

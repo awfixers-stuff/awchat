@@ -3,7 +3,7 @@
 FROM hexpm/elixir:1.18.4-erlang-27.3.4.9-ubuntu-noble-20260509.1 AS build
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential curl git pkg-config \
+    build-essential ca-certificates curl git pkg-config \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

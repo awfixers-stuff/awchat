@@ -1,29 +1,35 @@
 {
-  "updated_at": "2026-06-08T02:35:25.261Z",
+  "updated_at": "2026-06-08T03:29:45.239Z",
   "branch": "master",
-  "head": "11da9d1a01eb67cfc88e066f936038160496539c",
+  "head": "c334d7072b414d6361898ad3a53c3245bff29c27",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
     "PR 3: libsignal-android packaging spike",
     "PR 4: core:common, core:model, core:designsystem, core:proto",
     "PR 6: core:crypto SessionManager + identity sealing",
-    "PR 5: server:relay Gleam/Elixir/Rust skeleton"
+    "PR 5: server:relay Gleam/Elixir/Rust skeleton",
+    "PR 7: core:security — Keystore sealing"
   ],
-  "in_progress": "PR 7: core:security Keystore sealing",
+  "in_progress": "PR 8: core:database — Room + SQLCipher (entities + DAOs only)",
   "next_up": [
-    "PR 7: core:security Keystore sealing"
+    "PR 8: core:database — Room + SQLCipher (entities + DAOs only)"
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T02:35:25.261Z",
+    "at": "2026-06-08T03:29:45.239Z",
     "reason": "roadmap-phase",
-    "summary": "Elixir/Bandit relay with Gleam protocol package, Rust libsignal XEdDSA NIF, Ecto schema, WS+REST v1 API, ack-driven delete, Fly/Railway deploy files"
+    "summary": "Completed: PR 7: core:security — Keystore sealing"
   },
   "recent_files": [
-    "ocs/DESIGN.md",
-    "lans/server/current-baseline.md",
-    ".github/workflows/relay.yml",
-    "server/"
+    "gitignore",
+    "ore/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt",
+    "ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/AesGcmSealer.kt",
+    "ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/InMemoryMasterKeyProvider.kt",
+    "ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/MasterKeyProvider.kt",
+    "ettings.gradle.kts",
+    "core/common/src/main/kotlin/me/awfixer/awchat/core/common/security/",
+    "core/security/",
+    "server/relay/apps/gateway/native/awchat_crypto/examples/"
   ]
 }
