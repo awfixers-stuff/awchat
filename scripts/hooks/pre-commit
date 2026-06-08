@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+set -e
+
+root="$(git rev-parse --show-toplevel)"
+exec bun "$root/scripts/changelog.ts"
