@@ -22,7 +22,7 @@ RUN mix deps.get --only prod
 RUN mix compile
 RUN mix release
 
-FROM alpine:3.21.7 AS runtime
+FROM alpine:3.23.4 AS runtime
 
 RUN apk add --no-cache libstdc++ openssl ncurses-libs
 
