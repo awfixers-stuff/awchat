@@ -90,6 +90,7 @@ minimumReleaseAgeExcludes = [
   "@radix-ui/number",
   "@radix-ui/react-use-previous",
   "@radix-ui/react-use-rect",
+  "radix-ui/rect",
 ]
 optional = false
 exact = true
