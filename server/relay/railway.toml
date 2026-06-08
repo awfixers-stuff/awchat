@@ -1,6 +1,11 @@
+# AWChat relay / awchat service (internal). Monorepo service root: /server/relay
+# Railway settings → Root Directory: /server/relay
+# Railway settings → Config file: /server/relay/railway.toml
+
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
+watchPatterns = ["/server/relay/**"]
 
 [deploy]
 healthcheckPath = "/v1/health"

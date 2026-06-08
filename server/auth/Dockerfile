@@ -34,9 +34,12 @@ WORKDIR /app
 
 ENV MIX_ENV=prod
 ENV PORT=8081
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV ELIXIR_ERL_OPTIONS="+fnu"
 
 COPY --from=build /app/_build/prod/rel/auth ./
 
 EXPOSE 8081
 
-CMD ["/bin/sh", "-c", "./bin/auth eval 'Gateway.Release.migrate()' && exec ./bin/auth foreground"]
+CMD ["/bin/sh", "-c", "./bin/auth eval 'Gateway.Release.migrate()' && exec ./bin/auth start"]

@@ -3,6 +3,7 @@
  *
  * Auto-discovered from `.omp/hooks/post/*.ts` when cwd is this repo.
  */
+import { spawn } from "node:child_process";
 import { join } from "node:path";
 import type { HookAPI } from "@agent/coding-agent";
 
@@ -16,19 +17,27 @@ function extractPrompt(stdout: string): string | null {
   return stdout.slice(start + PROMPT_START.length, end).trim();
 }
 
+function runTurnHook(root: string): Promise<{ stdout: string; code: number | null }> {
+  const hook = join(root, "scripts/hooks/agent-turn-coderabbit");
+  return new Promise((resolve, reject) => {
+    const proc = spawn("sh", [hook], {
+      cwd: root,
+      stdio: ["ignore", "pipe", "inherit"],
+    });
+    let stdout = "";
+    proc.stdout?.on("data", (chunk: Buffer | string) => {
+      stdout += chunk.toString();
+    });
+    proc.on("error", reject);
+    proc.on("close", (code) => resolve({ stdout, code }));
+  });
+}
+
 export default function (pi: HookAPI) {
   pi.on("agent_end", async (_event, ctx) => {
     const root = ctx.cwd;
-    const hook = join(root, "scripts/hooks/agent-turn-coderabbit");
     try {
-      const proc = Bun.spawn(["sh", hook], {
-        cwd: root,
-        stdout: "pipe",
-        stderr: "inherit",
-      });
-      const stdout = await new Response(proc.stdout).text();
-      await proc.exited;
-
+      const { stdout } = await runTurnHook(root);
       const prompt = extractPrompt(stdout);
       if (!prompt) return;
 

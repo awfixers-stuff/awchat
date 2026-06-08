@@ -1,0 +1,58 @@
+services:
+  broker:
+    build: .
+    ports:
+      - "8082:8080"
+    environment:
+      RELAY_UPSTREAM: awchat:8080
+      AUTH_UPSTREAM: auth:8081
+      BROKER_OPS_TOKEN: dev-ops-token
+    depends_on:
+      - awchat
+      - auth
+
+  auth:
+    build: ../auth
+    expose:
+      - "8081"
+    environment:
+      DATABASE_URL: postgresql://awchat:awchat@postgres-auth:5432/awchat_auth
+      PORT: "8081"
+    depends_on:
+      postgres-auth:
+        condition: service_healthy
+
+  awchat:
+    build: ../relay
+    expose:
+      - "8080"
+    environment:
+      DATABASE_URL: postgresql://awchat:awchat@postgres-relay:5432/awchat_relay
+      PORT: "8080"
+    depends_on:
+      postgres-relay:
+        condition: service_healthy
+
+  postgres-auth:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: awchat
+      POSTGRES_PASSWORD: awchat
+      POSTGRES_DB: awchat_auth
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U awchat -d awchat_auth"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  postgres-relay:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: awchat
+      POSTGRES_PASSWORD: awchat
+      POSTGRES_DB: awchat_relay
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U awchat -d awchat_relay"]
+      interval: 5s
+      timeout: 5s
+      retries: 10

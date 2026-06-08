@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "hooks": {
+    "stop": [
+      {
+        "command": ".cursor/hooks/agent-turn-coderabbit.sh",
+        "timeout": 600,
+        "loop_limit": 8
+      }
+    ],
+    "subagentStop": [
+      {
+        "command": ".cursor/hooks/agent-turn-coderabbit.sh",
+        "timeout": 600,
+        "loop_limit": 8
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+# AWChat broker (public edge). Monorepo service root: /server/broker
+# Railway settings → Root Directory: /server/broker
+# Railway settings → Config file: /server/broker/railway.toml
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+watchPatterns = ["/server/broker/**"]
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 30
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5

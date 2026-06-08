@@ -1,0 +1,13 @@
+{application,broker,
+             [{modules,['Elixir.Broker.Application','Elixir.Broker.Config',
+                        'Elixir.Broker.Ops','Elixir.Broker.Proxy',
+                        'Elixir.Broker.RateLimit','Elixir.Broker.Route',
+                        'Elixir.Broker.Router','Elixir.Broker.Security']},
+              {optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger,runtime_tools,bandit,
+                             gun,hammer,jason,plug,req,reverse_proxy_plug,
+                             reverse_proxy_plug_websocket,websockex]},
+              {description,"broker"},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.Broker.Application',[]}}]}.

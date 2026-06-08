@@ -52,6 +52,21 @@ defmodule Gateway.Chats do
     end
   end
 
+  @spec get_for_member(String.t(), String.t()) :: {:ok, map()} | {:error, atom()}
+  def get_for_member(chat_id, caller_id) do
+    case Repo.get(Chat, chat_id) do
+      nil ->
+        {:error, :not_found}
+
+      %Chat{} ->
+        if member?(chat_id, caller_id) do
+          get(chat_id)
+        else
+          {:error, :forbidden}
+        end
+    end
+  end
+
   @spec update_members(String.t(), String.t(), map()) :: {:ok, map()} | {:error, atom()}
   def update_members(caller_id, chat_id, params) do
     with %Chat{type: "group"} <- Repo.get(Chat, chat_id),

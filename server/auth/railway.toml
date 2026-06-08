@@ -1,6 +1,11 @@
+# AWChat auth (internal). Monorepo service root: /server/auth
+# Railway settings → Root Directory: /server/auth
+# Railway settings → Config file: /server/auth/railway.toml
+
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
+watchPatterns = ["/server/auth/**"]
 
 [deploy]
 healthcheckPath = "/v1/health"

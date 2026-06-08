@@ -4,24 +4,16 @@ set -e
 root="$(git rev-parse --show-toplevel)"
 cd "$root"
 
+export AWCHAT_REPO_ROOT="$root"
+. "$root/scripts/hooks/lib/resolve-bun.sh"
+
 export AWCHAT_HOOK_PHASE=uncommitted
 export AWCHAT_CODERABBIT_QUEUE=1
 
-if command -v bun >/dev/null 2>&1; then
-  bun="$HOME/.bun/bin/bun"
-  command -v bun >/dev/null 2>&1 && bun=$(command -v bun)
-  "$bun" "$root/scripts/hooks/coderabbit-run.ts"
-  "$bun" "$root/scripts/hooks/emit-coderabbit-prompt.ts"
-  exit 0
+if ! awchat_resolve_bun; then
+  echo "agent-turn-coderabbit: bun not found (install bun or set AWCHAT_BUN)" >&2
+  exit 1
 fi
 
-for candidate in "$HOME/.bun/bin/bun" /usr/local/bin/bun /nix/var/nix/profiles/default/bin/bun; do
-  if [ -x "$candidate" ]; then
-    "$candidate" "$root/scripts/hooks/coderabbit-run.ts"
-    "$candidate" "$root/scripts/hooks/emit-coderabbit-prompt.ts"
-    exit 0
-  fi
-done
-
-echo "agent-turn-coderabbit: bun not found" >&2
-exit 1
+"$AWCHAT_BUN" "$root/scripts/hooks/coderabbit-run.ts"
+"$AWCHAT_BUN" "$root/scripts/hooks/emit-coderabbit-prompt.ts"

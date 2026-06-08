@@ -1,0 +1,36 @@
+name: broker
+
+on:
+  push:
+    paths:
+      - "server/broker/**"
+      - ".github/workflows/broker.yml"
+  pull_request:
+    paths:
+      - "server/broker/**"
+      - ".github/workflows/broker.yml"
+
+defaults:
+  run:
+    working-directory: server/broker
+
+jobs:
+  test:
+    runs-on: blacksmith-8vcpu-ubuntu-2404
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: "27"
+          elixir-version: "1.18"
+
+      - name: Mix deps
+        run: mix deps.get
+
+      - name: Compile
+        run: mix compile
+
+      - name: Unit tests
+        run: mix test

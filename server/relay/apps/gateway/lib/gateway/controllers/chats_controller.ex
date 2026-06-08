@@ -16,8 +16,14 @@ defmodule Gateway.Controllers.ChatsController do
   end
 
   def show(conn, %{"chat_id" => chat_id}) do
-    case Gateway.Chats.get(chat_id) do
-      {:ok, body} -> json(conn, 200, body)
+    path = "/v1/chats/#{chat_id}"
+
+    with {:ok, caller_id} <- auth(conn, "GET", path),
+         {:ok, body} <- Gateway.Chats.get_for_member(chat_id, caller_id) do
+      json(conn, 200, body)
+    else
+      {:error, :unauthorized} -> error(conn, 401, "unauthorized")
+      {:error, :forbidden} -> error(conn, 403, "forbidden")
       {:error, :not_found} -> error(conn, 404, "not_found")
     end
   end
