@@ -38,18 +38,18 @@ defmodule Gateway.MixProject do
   end
 
   defp aliases do
-    compile_steps =
-      if Mix.env() == :prod,
-        do: ["compile"],
-        else: ["compile.gleam", "compile"]
-
-    [
+    base = [
       "compile.gleam": "cmd --cd ../../packages/core gleam build",
-      compile: compile_steps,
       test: ["compile.gleam", "test"],
       "ecto.setup": ["ecto.create", "ecto.migrate"],
       "ecto.reset": ["ecto.drop", "ecto.setup"]
     ]
+
+    if Mix.env() == :prod do
+      base
+    else
+      Keyword.merge(base, compile: ["compile.gleam", "compile"])
+    end
   end
 
   defp deps do
