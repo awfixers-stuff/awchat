@@ -25,11 +25,11 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T04:03:14.439Z
-**Branch:** `master` @ `90690242f169`
+**Last updated:** 2026-06-08T04:13:28.473Z
+**Branch:** `master` @ `10e4cc06f95a`
 
 ### In progress
-- PR 11: core:network — Ktor client + WS + auth handshake
+- PR 12: CI expansion — detekt, oxlint, emulator
 
 ### Completed
 - PR 1: build-logic + catalog + repo hygiene
@@ -42,31 +42,32 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - PR 8: core:database — Room + SQLCipher (entities + DAOs only)
 - PR 9: core:domain — repository interfaces + use case stubs
 - PR 10: core:database — repository implementations
+- PR 11: core:network — Ktor client + WS + auth handshake
 
 ### Next up
-- PR 11: core:network — Ktor client + WS + auth handshake
+- PR 12: CI expansion — detekt, oxlint, emulator
 
 ### Blockers
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T04:03:14.439Z
+**roadmap-phase** at 2026-06-08T04:13:28.473Z
 
-Completed: PR 10: core:database — repository implementations
+Completed: PR 11: core:network — Ktor client + WS + auth handshake
 
 ### Recently touched
-- `gitignore`
-- `grok/skills/session-handoff/SKILL.md`
-- `ore/database/build.gradle.kts`
-- `efthook.yml`
-- `ackage.json`
-- `ettings.gradle.kts`
+- `.gitignore`
 - `.grok/hooks/coderabbit-turn.json`
-- `.omp/`
-- `.pi/`
+- `.grok/skills/session-handoff/SKILL.md`
+- `.omp/hooks/post/agent-turn-coderabbit.ts`
+- `.pi/extensions/coderabbit-turn-gate.ts`
+- `AGENTS.md`
+- `core/database/build.gradle.kts`
 - `core/database/src/main/kotlin/me/awfixer/awchat/core/database/di/RepositoryModule.kt`
-- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/`
-- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/`
+- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ChatMapper.kt`
+- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ContactMapper.kt`
+- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/MessageMapper.kt`
+- `core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ChatRepositoryImpl.kt`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 

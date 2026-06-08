@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-08T04:03:14.439Z",
+  "updated_at": "2026-06-08T04:13:28.473Z",
   "branch": "master",
-  "head": "90690242f169283a0bcd7dad386b41666d8e41e4",
+  "head": "10e4cc06f95aac87ba104f55dcd65f112e8b335b",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
@@ -12,30 +12,31 @@
     "PR 7: core:security — Keystore sealing",
     "PR 8: core:database — Room + SQLCipher (entities + DAOs only)",
     "PR 9: core:domain — repository interfaces + use case stubs",
-    "PR 10: core:database — repository implementations"
-  ],
-  "in_progress": "PR 11: core:network — Ktor client + WS + auth handshake",
-  "next_up": [
+    "PR 10: core:database — repository implementations",
     "PR 11: core:network — Ktor client + WS + auth handshake"
+  ],
+  "in_progress": "PR 12: CI expansion — detekt, oxlint, emulator",
+  "next_up": [
+    "PR 12: CI expansion — detekt, oxlint, emulator"
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T04:03:14.439Z",
+    "at": "2026-06-08T04:13:28.473Z",
     "reason": "roadmap-phase",
-    "summary": "Completed: PR 10: core:database — repository implementations"
+    "summary": "Completed: PR 11: core:network — Ktor client + WS + auth handshake"
   },
   "recent_files": [
-    "gitignore",
-    "grok/skills/session-handoff/SKILL.md",
-    "ore/database/build.gradle.kts",
-    "efthook.yml",
-    "ackage.json",
-    "ettings.gradle.kts",
+    ".gitignore",
     ".grok/hooks/coderabbit-turn.json",
-    ".omp/",
-    ".pi/",
+    ".grok/skills/session-handoff/SKILL.md",
+    ".omp/hooks/post/agent-turn-coderabbit.ts",
+    ".pi/extensions/coderabbit-turn-gate.ts",
+    "AGENTS.md",
+    "core/database/build.gradle.kts",
     "core/database/src/main/kotlin/me/awfixer/awchat/core/database/di/RepositoryModule.kt",
-    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/",
-    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/"
+    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ChatMapper.kt",
+    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ContactMapper.kt",
+    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/MessageMapper.kt",
+    "core/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ChatRepositoryImpl.kt"
   ]
 }
