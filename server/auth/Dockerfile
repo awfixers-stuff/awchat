@@ -39,4 +39,4 @@ COPY --from=build /app/_build/prod/rel/auth ./
 
 EXPOSE 8081
 
-CMD ["/bin/sh", "-c", "./bin/auth eval 'Gateway.Release.migrate()' && exec ./bin/auth start"]
+CMD ["/bin/sh", "-c", "./bin/auth eval 'Gateway.Release.migrate()' && exec ./bin/auth foreground"]

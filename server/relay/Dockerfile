@@ -39,4 +39,4 @@ COPY --from=build /app/_build/prod/rel/relay ./
 
 EXPOSE 8080
 
-CMD ["/bin/sh", "-c", "./bin/relay eval 'Gateway.Release.migrate()' && exec ./bin/relay start"]
+CMD ["/bin/sh", "-c", "./bin/relay eval 'Gateway.Release.migrate()' && exec ./bin/relay foreground"]
