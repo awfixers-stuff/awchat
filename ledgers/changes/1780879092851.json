@@ -1,0 +1,222 @@
+{
+  "recorded_at": "2026-06-08T00:38:12.851Z",
+  "head": "e9ef11fd1607bf542aec2843b393dbddbf99d240",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".github/workflows/android.yml",
+      "added": 19,
+      "removed": 0
+    },
+    {
+      "path": ".grok/hooks/agents-continuity.json",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".grok/skills/session-handoff/SKILL.md",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".oxlintrc.json",
+      "added": 2,
+      "removed": 6
+    },
+    {
+      "path": "AGENTS.md",
+      "added": 47,
+      "removed": 48
+    },
+    {
+      "path": "Justfile",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "LICENSE.md",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "added": 14,
+      "removed": 40
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "app/src/main/kotlin/me/awfixer/awchat/MainActivity.kt",
+      "added": 29,
+      "removed": 0
+    },
+    {
+      "path": "app/src/main/kotlin/org/example/App.kt",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "app/src/main/res/values/themes.xml",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "app/src/test/kotlin/me/awfixer/awchat/PlaceholderTest.kt",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "app/src/test/kotlin/org/example/AppTest.kt",
+      "added": 0,
+      "removed": 15
+    },
+    {
+      "path": "build-logic/build.gradle.kts",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "build-logic/convention/build.gradle.kts",
+      "added": 45,
+      "removed": 0
+    },
+    {
+      "path": "build-logic/convention/src/main/kotlin/AndroidSdk.kt",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "build-logic/convention/src/main/kotlin/AwchatAndroidApplicationConventionPlugin.kt",
+      "added": 48,
+      "removed": 0
+    },
+    {
+      "path": "build-logic/convention/src/main/kotlin/AwchatAndroidComposeConventionPlugin.kt",
+      "added": 36,
+      "removed": 0
+    },
+    {
+      "path": "build-logic/convention/src/main/kotlin/AwchatAndroidLibraryConventionPlugin.kt",
+      "added": 47,
+      "removed": 0
+    },
+    {
+      "path": "build-logic/convention/src/main/kotlin/AwchatDetektConventionPlugin.kt",
+      "added": 24,
+      "removed": 0
+    },
+    {
+      "path": "build-logic/settings.gradle.kts",
+      "added": 15,
+      "removed": 0
+    },
+    {
+      "path": "build.gradle.kts",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "bunfig.toml",
+      "added": 24,
+      "removed": 1
+    },
+    {
+      "path": "detekt.yml",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "added": 291,
+      "removed": 278
+    },
+    {
+      "path": "flake.nix",
+      "added": 3,
+      "removed": 5
+    },
+    {
+      "path": "gradle.properties",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "gradle/libs.versions.toml",
+      "added": 25,
+      "removed": 6
+    },
+    {
+      "path": "ledgers/changes/1780877980427.json",
+      "added": 22,
+      "removed": 0
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 20,
+      "removed": 19
+    },
+    {
+      "path": "lefthook.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "package.json",
+      "added": 8,
+      "removed": 6
+    },
+    {
+      "path": "plans/001-support-and-bug-reporting.md",
+      "added": 75,
+      "removed": 72
+    },
+    {
+      "path": "plans/README.md",
+      "added": 4,
+      "removed": 4
+    },
+    {
+      "path": "renovate.json",
+      "added": 1,
+      "removed": 3
+    },
+    {
+      "path": "scripts/changelog.ts",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "scripts/hooks/pre-commit",
+      "added": 14,
+      "removed": 1
+    },
+    {
+      "path": "scripts/hooks/update-agents-md",
+      "added": 14,
+      "removed": 1
+    },
+    {
+      "path": "scripts/update-agents-md.ts",
+      "added": 35,
+      "removed": 24
+    },
+    {
+      "path": "settings.gradle.kts",
+      "added": 17,
+      "removed": 9
+    }
+  ],
+  "totals": {
+    "files": 42,
+    "added": 960,
+    "removed": 557
+  }
+}

@@ -2,4 +2,17 @@
 set -e
 
 root="$(git rev-parse --show-toplevel)"
-exec bun "$root/scripts/update-agents-md.ts" --reason "grok-hook"
+cd "$root"
+
+if command -v bun >/dev/null 2>&1; then
+  exec bun "$root/scripts/update-agents-md.ts"
+fi
+
+for candidate in "$HOME/.bun/bin/bun" /usr/local/bin/bun /nix/var/nix/profiles/default/bin/bun; do
+  if [ -x "$candidate" ]; then
+    exec "$candidate" "$root/scripts/update-agents-md.ts"
+  fi
+done
+
+echo "update-agents-md: bun not found in PATH" >&2
+exit 1

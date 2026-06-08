@@ -1,11 +1,11 @@
 # AWChat — Encrypted Ephemeral Chat: System Design
 
-| Field | Value |
-|-------|-------|
-| **Author** | TBD |
-| **Date** | 2026-06-07 |
-| **Status** | Draft (rev 4 — re-review addressed) |
-| **Repo** | `/home/awfixer/Projects/awchat` |
+| Field        | Value                                |
+| ------------ | ------------------------------------ |
+| **Author**   | TBD                                  |
+| **Date**     | 2026-06-07                           |
+| **Status**   | Draft (rev 4 — re-review addressed)  |
+| **Repo**     | `/home/awfixer/Projects/awchat`      |
 | **Audience** | Senior engineers implementing AWChat |
 
 ---
@@ -22,19 +22,19 @@ The server is intentionally minimal: a **dumb encrypted relay** that never holds
 
 ### Current State (as of 2026-06-07)
 
-| Artifact | State |
-|----------|-------|
-| `settings.gradle.kts` | Single `app` module, root name `awchat` |
-| Root `build.gradle.kts` | **Missing** (added in PR 1) |
-| `app/build.gradle.kts` | Kotlin JVM CLI, Java 26 toolchain, `application` plugin |
-| `gradle/libs.versions.toml` | `kotlin-jvm` 2.1.20, Guava only |
-| `gradle/wrapper/gradle-wrapper.properties` | Gradle **8.14.4** |
-| `flake.nix` | Android SDK API 36, Temurin JDK 21, Gradle, `just` |
-| `Justfile` | **Missing** (flake shell hook references `just build`; added in PR 1) |
-| `flake.nix` shell hook | Says "Android 17 / API 37" but SDK pins **API 36** — messaging drift (fix in PR 1) |
-| `package.json` | Bun tooling: oxlint, oxfmt; **no `scripts` block** |
-| Android | No manifest, no Compose, no modules, no workflows |
-| Git | Fresh repo, no commits on **`master`** (not `main`) |
+| Artifact                                   | State                                                                              |
+| ------------------------------------------ | ---------------------------------------------------------------------------------- |
+| `settings.gradle.kts`                      | Single `app` module, root name `awchat`                                            |
+| Root `build.gradle.kts`                    | **Missing** (added in PR 1)                                                        |
+| `app/build.gradle.kts`                     | Kotlin JVM CLI, Java 26 toolchain, `application` plugin                            |
+| `gradle/libs.versions.toml`                | `kotlin-jvm` 2.1.20, Guava only                                                    |
+| `gradle/wrapper/gradle-wrapper.properties` | Gradle **8.14.4**                                                                  |
+| `flake.nix`                                | Android SDK API 36, Temurin JDK 21, Gradle, `just`                                 |
+| `Justfile`                                 | **Missing** (flake shell hook references `just build`; added in PR 1)              |
+| `flake.nix` shell hook                     | Says "Android 17 / API 37" but SDK pins **API 36** — messaging drift (fix in PR 1) |
+| `package.json`                             | Bun tooling: oxlint, oxfmt; **no `scripts` block**                                 |
+| Android                                    | No manifest, no Compose, no modules, no workflows                                  |
+| Git                                        | Fresh repo, no commits on **`master`** (not `main`)                                |
 
 ### Pain Points / Requirements Driving Design
 
@@ -50,53 +50,53 @@ The server is intentionally minimal: a **dumb encrypted relay** that never holds
 
 ### Goals
 
-| ID | Goal |
-|----|------|
-| G1 | E2EE 1:1 messaging using audited primitives (libsignal) |
-| G2 | E2EE group messaging for 2–5 participants |
-| G3 | Seen-by-all read receipts triggering deletion within 24h (client + server) |
-| G4 | X-Lite-inspired chat UI with M3 Expressive (Compose) |
-| G5 | App lock (PIN/biometric), duress PIN silent wipe |
-| G6 | Encrypted local persistence (SQLCipher + Room), Keystore/StrongBox sealing |
-| G7 | Remote CI/CD on Blacksmith producing debug + signed release APK/AAB |
-| G8 | Clean Architecture multi-module structure, testable crypto/network layers |
+| ID  | Goal                                                                       |
+| --- | -------------------------------------------------------------------------- |
+| G1  | E2EE 1:1 messaging using audited primitives (libsignal)                    |
+| G2  | E2EE group messaging for 2–5 participants                                  |
+| G3  | Seen-by-all read receipts triggering deletion within 24h (client + server) |
+| G4  | X-Lite-inspired chat UI with M3 Expressive (Compose)                       |
+| G5  | App lock (PIN/biometric), duress PIN silent wipe                           |
+| G6  | Encrypted local persistence (SQLCipher + Room), Keystore/StrongBox sealing |
+| G7  | Remote CI/CD on Blacksmith producing debug + signed release APK/AAB        |
+| G8  | Clean Architecture multi-module structure, testable crypto/network layers  |
 
 ### Non-Goals (v1)
 
-| ID | Non-Goal |
-|----|----------|
-| NG1 | Message history backup / multi-device sync |
-| NG2 | Groups >5, channels, public discovery |
-| NG3 | Media messages / attachments (text-only v1; see v1.1 appendix) |
-| NG4 | iOS client |
-| NG5 | Federated servers / P2P transport |
-| NG6 | Server-side searchable encryption |
-| NG7 | Custom crypto protocol |
+| ID  | Non-Goal                                                                                                         |
+| --- | ---------------------------------------------------------------------------------------------------------------- |
+| NG1 | Message history backup / multi-device sync                                                                       |
+| NG2 | Groups >5, channels, public discovery                                                                            |
+| NG3 | Media messages / attachments (text-only v1; see v1.1 appendix)                                                   |
+| NG4 | iOS client                                                                                                       |
+| NG5 | Federated servers / P2P transport                                                                                |
+| NG6 | Server-side searchable encryption                                                                                |
+| NG7 | Custom crypto protocol                                                                                           |
 | NG8 | **Reliable background message delivery** — v1 requires foreground app or active WebSocket; no FCM wake-up in MVP |
 
 ### v1 MVP Limitation: Foreground Delivery
 
-Because NG8 defers FCM (OQ1 default), v1 chat is **not realtime when the app is killed or swiped away**. Undelivered envelopes queue on the server for up to **48h** (see Retention Policy). UX copy: *"Messages deliver when AWChat is open."* This directly affects seen-by-all purge latency when readers stay offline — mitigated by server hard TTL and in-app "pending purge" indicators.
+Because NG8 defers FCM (OQ1 default), v1 chat is **not realtime when the app is killed or swiped away**. Undelivered envelopes queue on the server for up to **48h** (see Retention Policy). UX copy: _"Messages deliver when AWChat is open."_ This directly affects seen-by-all purge latency when readers stay offline — mitigated by server hard TTL and in-app "pending purge" indicators.
 
 ---
 
 ## Key Decisions
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| **1:1 crypto** | Signal Protocol (X3DH + Double Ratchet) via **`libsignal-android`** | Battle-tested; correct Android AAR with bundled JNI |
-| **Group crypto (≤5)** | Signal **Sender Keys** (not MLS) | Simpler ops for ≤5 members; libsignal-native; MLS adds complexity without benefit at this scale |
-| **Relay server stack** | Kotlin **Ktor** + **PostgreSQL only** (v1) | Shares Kotlin ecosystem; no Redis in v1 — offline queue in Postgres, online routing via in-memory WS map |
-| **Transport** | WebSocket primary, HTTP for registration/prekeys | Low latency when foreground; no push in v1 (NG8) |
-| **Local DB** | Room + **SQLCipher 4** | Full-DB encryption; plaintext message bodies inside SQLCipher (see Local Storage Threat Boundary) |
-| **Key storage** | libsignal keys in **encrypted local files** sealed by Keystore-derived AES keys; Keystore/StrongBox for DB passphrase + unlock gates | libsignal requires in-process private key access; cannot use non-exportable EC keys in Keystore as ratchet backend (Signal-Android `KeyStoreHelper` pattern) |
-| **Retention authority** | **Client-computed** seen-by-all → signed `PurgeMessage` → server broadcasts `PURGE_NOTIFY` | Server never decrypts receipts; coordinated deletion across all clients |
-| **Server retention safety net** | `DELETE WHERE created_at < now() - 48h OR (purge_after IS NOT NULL AND purge_after < now())` — **no `last_receipt_at`** | Avoids server-side read metadata; 48h absolute ceiling regardless of client state |
-| **UI framework** | Jetpack Compose + `MaterialExpressiveTheme` | Matches M3 Expressive motion/shape/typography requirements |
-| **Architecture** | Clean Architecture + **`core:domain`** + MVI per feature, Hilt DI | Explicit domain layer; repository interfaces in `core:domain`, impls in data modules |
-| **CI runners** | `blacksmith-8vcpu-ubuntu-2404` | KVM for emulator tests, faster cache |
-| **Target SDK** | API **36** (per `flake.nix`) | Matches SDK pinning; forward-compatible to API 37 |
-| **Default branch** | **`master`** until renamed in PR 1 | Matches current repo state |
+| Decision                        | Choice                                                                                                                               | Rationale                                                                                                                                                    |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **1:1 crypto**                  | Signal Protocol (X3DH + Double Ratchet) via **`libsignal-android`**                                                                  | Battle-tested; correct Android AAR with bundled JNI                                                                                                          |
+| **Group crypto (≤5)**           | Signal **Sender Keys** (not MLS)                                                                                                     | Simpler ops for ≤5 members; libsignal-native; MLS adds complexity without benefit at this scale                                                              |
+| **Relay server stack**          | Kotlin **Ktor** + **PostgreSQL only** (v1)                                                                                           | Shares Kotlin ecosystem; no Redis in v1 — offline queue in Postgres, online routing via in-memory WS map                                                     |
+| **Transport**                   | WebSocket primary, HTTP for registration/prekeys                                                                                     | Low latency when foreground; no push in v1 (NG8)                                                                                                             |
+| **Local DB**                    | Room + **SQLCipher 4**                                                                                                               | Full-DB encryption; plaintext message bodies inside SQLCipher (see Local Storage Threat Boundary)                                                            |
+| **Key storage**                 | libsignal keys in **encrypted local files** sealed by Keystore-derived AES keys; Keystore/StrongBox for DB passphrase + unlock gates | libsignal requires in-process private key access; cannot use non-exportable EC keys in Keystore as ratchet backend (Signal-Android `KeyStoreHelper` pattern) |
+| **Retention authority**         | **Client-computed** seen-by-all → signed `PurgeMessage` → server broadcasts `PURGE_NOTIFY`                                           | Server never decrypts receipts; coordinated deletion across all clients                                                                                      |
+| **Server retention safety net** | `DELETE WHERE created_at < now() - 48h OR (purge_after IS NOT NULL AND purge_after < now())` — **no `last_receipt_at`**              | Avoids server-side read metadata; 48h absolute ceiling regardless of client state                                                                            |
+| **UI framework**                | Jetpack Compose + `MaterialExpressiveTheme`                                                                                          | Matches M3 Expressive motion/shape/typography requirements                                                                                                   |
+| **Architecture**                | Clean Architecture + **`core:domain`** + MVI per feature, Hilt DI                                                                    | Explicit domain layer; repository interfaces in `core:domain`, impls in data modules                                                                         |
+| **CI runners**                  | `blacksmith-8vcpu-ubuntu-2404`                                                                                                       | KVM for emulator tests, faster cache                                                                                                                         |
+| **Target SDK**                  | API **36** (per `flake.nix`)                                                                                                         | Matches SDK pinning; forward-compatible to API 37                                                                                                            |
+| **Default branch**              | **`master`** until renamed in PR 1                                                                                                   | Matches current repo state                                                                                                                                   |
 
 ---
 
@@ -221,9 +221,9 @@ protobuf = { id = "com.google.protobuf", version = "0.9.4" }
 
 ### Legal / License Compliance
 
-| Dependency | License | Implication |
-|------------|---------|-------------|
-| `libsignal-android` (app) | **AGPLv3** | Linking in a distributed app may require offering corresponding source to users who request it, depending on jurisdiction and whether the app is considered a "modified" work |
+| Dependency                  | License    | Implication                                                                                                                                                                                                                  |
+| --------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `libsignal-android` (app)   | **AGPLv3** | Linking in a distributed app may require offering corresponding source to users who request it, depending on jurisdiction and whether the app is considered a "modified" work                                                |
 | `libsignal-client` (server) | **AGPLv3** | Relay Docker image ships libsignal JVM/JNI for XEdDSA verification; may trigger corresponding-source obligations for **network users** of the relay service — confirm with counsel (distinct from app distribution analysis) |
 
 **Actions before GA**:
@@ -344,13 +344,13 @@ sequenceDiagram
     B->>S: GET /v1/chats/{chatId} — lazy membership sync
 ```
 
-| Rule | Detail |
-|------|--------|
-| **When created** | On first send attempt to a verified contact (not on contact add alone) |
-| **Consent** | Receiving first message implies participation; no accept/reject in v1 |
-| **`chat_id` (DM)** | `dm_` + base32(SHA-256(sort([idA, idB]))) — both clients derive identically |
-| **Membership** | Exactly 2 rows in `chat_members`; server rejects duplicates |
-| **Client learns `chatId`** | Derives locally before first send; confirmed by server on `POST /v1/chats` |
+| Rule                       | Detail                                                                      |
+| -------------------------- | --------------------------------------------------------------------------- |
+| **When created**           | On first send attempt to a verified contact (not on contact add alone)      |
+| **Consent**                | Receiving first message implies participation; no accept/reject in v1       |
+| **`chat_id` (DM)**         | `dm_` + base32(SHA-256(sort([idA, idB]))) — both clients derive identically |
+| **Membership**             | Exactly 2 rows in `chat_members`; server rejects duplicates                 |
+| **Client learns `chatId`** | Derives locally before first send; confirmed by server on `POST /v1/chats`  |
 
 ##### Group Chat
 
@@ -367,26 +367,27 @@ sequenceDiagram
     M->>M: Store chat; begin sender-key exchange (see Group Messaging)
 ```
 
-| Rule | Detail |
-|------|--------|
-| **When created** | Explicit creator action; min 2 members |
-| **`chat_id` (group)** | `grp_` + ULID (server-assigned) |
-| **Consent** | Members notified via `chat_created`; no invite accept flow in v1 |
-| **Member sync** | `GET /v1/chats/{chatId}` + `PATCH /v1/chats/{chatId}/members` + `membership_changed` WS events |
+| Rule                  | Detail                                                                                         |
+| --------------------- | ---------------------------------------------------------------------------------------------- |
+| **When created**      | Explicit creator action; min 2 members                                                         |
+| **`chat_id` (group)** | `grp_` + ULID (server-assigned)                                                                |
+| **Consent**           | Members notified via `chat_created`; no invite accept flow in v1                               |
+| **Member sync**       | `GET /v1/chats/{chatId}` + `PATCH /v1/chats/{chatId}/members` + `membership_changed` WS events |
 
 ##### Group Membership Changes
 
-| Rule | Detail |
-|------|--------|
-| **Who may change** | Any current group member may add/remove (v1 simplification); server validates caller ∈ `chat_members` |
-| **Add** | `PATCH` with `{ "add": ["awchat:..."] }`; server rejects if resulting count > 5 |
-| **Remove** | `PATCH` with `{ "remove": ["awchat:..."] }`; server rejects if resulting count < 2 |
-| **Direct chats** | Membership changes forbidden (`409`); DMs are immutable pairs |
-| **Side effects** | Server updates `chat_members`, broadcasts `membership_changed`, clients run sender-key rotation matrix |
+| Rule               | Detail                                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------ |
+| **Who may change** | Any current group member may add/remove (v1 simplification); server validates caller ∈ `chat_members`  |
+| **Add**            | `PATCH` with `{ "add": ["awchat:..."] }`; server rejects if resulting count > 5                        |
+| **Remove**         | `PATCH` with `{ "remove": ["awchat:..."] }`; server rejects if resulting count < 2                     |
+| **Direct chats**   | Membership changes forbidden (`409`); DMs are immutable pairs                                          |
+| **Side effects**   | Server updates `chat_members`, broadcasts `membership_changed`, clients run sender-key rotation matrix |
 
 **`PATCH /v1/chats/{chatId}/members`** (requires **REST Request Authentication** headers)
 
 Request body:
+
 ```json
 {
   "add": ["awchat:DEF..."],
@@ -395,6 +396,7 @@ Request body:
 ```
 
 Response `200`:
+
 ```json
 {
   "chatId": "grp_01H...",
@@ -431,31 +433,31 @@ sequenceDiagram
 
 **Per-member sender key table** (local):
 
-| Group | Sender | Key state |
-|-------|--------|-----------|
-| G | Alice | `received` / `pending_dist` |
-| G | Bob | `received` / `pending_dist` |
-| G | Carol | `received` / `pending_dist` |
+| Group | Sender | Key state                   |
+| ----- | ------ | --------------------------- |
+| G     | Alice  | `received` / `pending_dist` |
+| G     | Bob    | `received` / `pending_dist` |
+| G     | Carol  | `received` / `pending_dist` |
 
 **Membership change rotation matrix**:
 
-| Event | Action |
-|-------|--------|
-| **Member added** | All existing members (including new) generate **new** sender keys and re-distribute to entire group; old keys discarded |
-| **Member removed** | Remaining members rotate keys; removed member's keys deleted locally |
-| **Distribution failure** | Retry with exponential backoff; block sending until all `pending_dist` resolved for own key |
-| **Ordering** | Server relays FIFO per chat; clients buffer out-of-order sender-key dist messages up to 60s |
+| Event                    | Action                                                                                                                  |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| **Member added**         | All existing members (including new) generate **new** sender keys and re-distribute to entire group; old keys discarded |
+| **Member removed**       | Remaining members rotate keys; removed member's keys deleted locally                                                    |
+| **Distribution failure** | Retry with exponential backoff; block sending until all `pending_dist` resolved for own key                             |
+| **Ordering**             | Server relays FIFO per chat; clients buffer out-of-order sender-key dist messages up to 60s                             |
 
 #### Read Receipts & Ephemeral Deletion
 
 **Message types** (inside encrypted protobuf):
 
-| Type | Purpose |
-|------|---------|
-| `CHAT` | User-visible text |
-| `READ_RECEIPT` | `{ message_id, reader_id, seen_at }` |
-| `SENDER_KEY_DIST` | Group key distribution |
-| `PURGE_ACK` | Client confirms local deletion |
+| Type              | Purpose                              |
+| ----------------- | ------------------------------------ |
+| `CHAT`            | User-visible text                    |
+| `READ_RECEIPT`    | `{ message_id, reader_id, seen_at }` |
+| `SENDER_KEY_DIST` | Group key distribution               |
+| `PURGE_ACK`       | Client confirms local deletion       |
 
 **Seen-by-all algorithm**:
 
@@ -524,13 +526,13 @@ sequenceDiagram
 
 #### Retention Policy (Authoritative)
 
-| Layer | Rule | Trigger |
-|-------|------|---------|
-| **Client purge deadline** | Delete locally within **24h after seen-by-all** | Encrypted receipts aggregated locally |
-| **Client-initiated server purge** | Any participant may call `POST /v1/purge` once seen-by-all | Signed request |
-| **Server `purge_after`** | Client sets on send: default `sent_at + 48h` (upper bound) | Outbound envelope metadata |
-| **Server hard TTL** | Delete if `created_at < now() - 48h` **OR** `purge_after < now()` | Cron every 15 min |
-| **Offline undelivered queue** | Same **48h** ceiling as hard TTL — not 7 days | `created_at` on envelope |
+| Layer                             | Rule                                                              | Trigger                               |
+| --------------------------------- | ----------------------------------------------------------------- | ------------------------------------- |
+| **Client purge deadline**         | Delete locally within **24h after seen-by-all**                   | Encrypted receipts aggregated locally |
+| **Client-initiated server purge** | Any participant may call `POST /v1/purge` once seen-by-all        | Signed request                        |
+| **Server `purge_after`**          | Client sets on send: default `sent_at + 48h` (upper bound)        | Outbound envelope metadata            |
+| **Server hard TTL**               | Delete if `created_at < now() - 48h` **OR** `purge_after < now()` | Cron every 15 min                     |
+| **Offline undelivered queue**     | Same **48h** ceiling as hard TTL — not 7 days                     | `created_at` on envelope              |
 
 ```sql
 -- Authoritative server TTL cron (every 15 min)
@@ -546,12 +548,12 @@ WHERE created_at < NOW() - INTERVAL '48 hours'
 
 **Semantics**: At-least-once delivery; client deduplicates by `id` (ULID).
 
-| WS frame `type` | Direction | Purpose |
-|-----------------|-----------|---------|
-| `envelope` | Server → Client | Deliver ciphertext |
-| `ack` | Client → Server | `{ envelopeId, receivedAt }` — processed + persisted locally |
-| `nack` | Client → Server | `{ envelopeId, reason }` — server schedules redelivery |
-| `envelope` | Client → Server | Outbound send |
+| WS frame `type` | Direction       | Purpose                                                      |
+| --------------- | --------------- | ------------------------------------------------------------ |
+| `envelope`      | Server → Client | Deliver ciphertext                                           |
+| `ack`           | Client → Server | `{ envelopeId, receivedAt }` — processed + persisted locally |
+| `nack`          | Client → Server | `{ envelopeId, reason }` — server schedules redelivery       |
+| `envelope`      | Client → Server | Outbound send                                                |
 
 **Server rules**:
 
@@ -565,6 +567,7 @@ WHERE created_at < NOW() - INTERVAL '48 hours'
 All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 11** (client) for implementation.
 
 **Server → Client: `auth_challenge`** (first frame after connect)
+
 ```json
 {
   "type": "auth_challenge",
@@ -575,6 +578,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Client → Server: `auth_response`**
+
 ```json
 {
   "type": "auth_response",
@@ -586,6 +590,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Server → Client: `auth_ok`**
+
 ```json
 {
   "type": "auth_ok",
@@ -594,6 +599,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Server → Client: `auth_failed`**
+
 ```json
 {
   "type": "auth_failed",
@@ -603,6 +609,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Bidirectional: `envelope`** (ciphertext relay)
+
 ```json
 {
   "type": "envelope",
@@ -615,6 +622,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Client → Server: `ack`**
+
 ```json
 {
   "type": "ack",
@@ -624,6 +632,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Client → Server: `nack`**
+
 ```json
 {
   "type": "nack",
@@ -633,6 +642,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Server → Client: `chat_created`**
+
 ```json
 {
   "type": "chat_created",
@@ -645,6 +655,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Server → Client: `membership_changed`**
+
 ```json
 {
   "type": "membership_changed",
@@ -658,6 +669,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Server → Client: `purge_notify`**
+
 ```json
 {
   "type": "purge_notify",
@@ -668,6 +680,7 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 ```
 
 **Server → Client: `error`** (non-fatal)
+
 ```json
 {
   "type": "error",
@@ -680,15 +693,15 @@ All frames are JSON objects with a `type` field. See **PR 5** (server) and **PR 
 
 #### Responsibilities
 
-| Responsibility | Server Knowledge |
-|----------------|------------------|
-| Store ciphertext envelopes | Ciphertext + routing metadata only |
-| Fan-out to online clients | In-memory WS map; Postgres queue if offline |
-| Offline queue | **Max 48h** (same as hard TTL) |
-| Pre-key bundle hosting | Public keys only |
-| Enforce group size ≤5 | Member IDs |
-| TTL deletion | Timestamps, envelope IDs |
-| Presence | `users.last_seen_at` updated on WS heartbeat (optional) |
+| Responsibility             | Server Knowledge                                        |
+| -------------------------- | ------------------------------------------------------- |
+| Store ciphertext envelopes | Ciphertext + routing metadata only                      |
+| Fan-out to online clients  | In-memory WS map; Postgres queue if offline             |
+| Offline queue              | **Max 48h** (same as hard TTL)                          |
+| Pre-key bundle hosting     | Public keys only                                        |
+| Enforce group size ≤5      | Member IDs                                              |
+| TTL deletion               | Timestamps, envelope IDs                                |
+| Presence                   | `users.last_seen_at` updated on WS heartbeat (optional) |
 
 #### Data Model (PostgreSQL)
 
@@ -754,17 +767,17 @@ CREATE TABLE purge_audit (
 
 #### API Surface
 
-| Method | Path | Auth | Description |
-|--------|------|------|-------------|
-| `POST` | `/v1/register` | None | Upload identity + pre-keys |
-| `GET` | `/v1/prekeys/{userId}` | None | Fetch pre-key bundle |
-| `POST` | `/v1/chats` | **REST sig** | Create/upsert chat (member list ≤5); caller must be in `memberIds` |
-| `GET` | `/v1/chats/{chatId}` | None | Membership sync |
-| `PATCH` | `/v1/chats/{chatId}/members` | **REST sig** | Add/remove group members (≤5); caller must be current member |
-| `WS` | `/v1/ws` | WS handshake | Bidirectional frames (see below) |
-| `POST` | `/v1/purge` | **REST sig** | Idempotent message deletion |
-| `GET` | `/v1/health` | None | Liveness |
-| `GET` | `/v1/ready` | None | Readiness (DB reachable) |
+| Method  | Path                         | Auth         | Description                                                        |
+| ------- | ---------------------------- | ------------ | ------------------------------------------------------------------ |
+| `POST`  | `/v1/register`               | None         | Upload identity + pre-keys                                         |
+| `GET`   | `/v1/prekeys/{userId}`       | None         | Fetch pre-key bundle                                               |
+| `POST`  | `/v1/chats`                  | **REST sig** | Create/upsert chat (member list ≤5); caller must be in `memberIds` |
+| `GET`   | `/v1/chats/{chatId}`         | None         | Membership sync                                                    |
+| `PATCH` | `/v1/chats/{chatId}/members` | **REST sig** | Add/remove group members (≤5); caller must be current member       |
+| `WS`    | `/v1/ws`                     | WS handshake | Bidirectional frames (see below)                                   |
+| `POST`  | `/v1/purge`                  | **REST sig** | Idempotent message deletion                                        |
+| `GET`   | `/v1/health`                 | None         | Liveness                                                           |
+| `GET`   | `/v1/ready`                  | None         | Readiness (DB reachable)                                           |
 
 #### REST Request Authentication
 
@@ -772,11 +785,11 @@ All **mutating REST** endpoints except `POST /v1/register` require request signi
 
 **Required headers**:
 
-| Header | Value |
-|--------|-------|
-| `X-AWChat-User-Id` | `awchat:...` identity fingerprint |
+| Header               | Value                                       |
+| -------------------- | ------------------------------------------- |
+| `X-AWChat-User-Id`   | `awchat:...` identity fingerprint           |
 | `X-AWChat-Timestamp` | ISO-8601 UTC (e.g., `2026-06-07T12:00:00Z`) |
-| `X-AWChat-Signature` | Base64 XEdDSA signature |
+| `X-AWChat-Signature` | Base64 XEdDSA signature                     |
 
 **Signed input** (UTF-8 string, pipe-delimited):
 
@@ -784,24 +797,24 @@ All **mutating REST** endpoints except `POST /v1/register` require request signi
 signInput = method + "|" + path + "|" + base64(SHA-256(bodyBytes)) + "|" + timestamp + "|" + userId
 ```
 
-| Field | Rule |
-|-------|------|
-| `method` | Uppercase HTTP verb (`POST`, `PATCH`) |
-| `path` | Request path only (e.g., `/v1/chats/dm_abc/members`); no host or query string |
-| `bodyBytes` | Raw request body; empty body → SHA-256 of zero-length input |
-| `timestamp` | Same string as `X-AWChat-Timestamp` header |
-| `userId` | Same string as `X-AWChat-User-Id` header |
-| Signature | XEdDSA via libsignal `PrivateKey.sign(signInputUTF8)`; server uses `PublicKey.verify()` |
-| Replay window | Reject if `abs(serverNow - timestamp) > 120s` |
-| Identity lookup | Server loads `users.identity_key` for `X-AWChat-User-Id` and verifies |
+| Field           | Rule                                                                                    |
+| --------------- | --------------------------------------------------------------------------------------- |
+| `method`        | Uppercase HTTP verb (`POST`, `PATCH`)                                                   |
+| `path`          | Request path only (e.g., `/v1/chats/dm_abc/members`); no host or query string           |
+| `bodyBytes`     | Raw request body; empty body → SHA-256 of zero-length input                             |
+| `timestamp`     | Same string as `X-AWChat-Timestamp` header                                              |
+| `userId`        | Same string as `X-AWChat-User-Id` header                                                |
+| Signature       | XEdDSA via libsignal `PrivateKey.sign(signInputUTF8)`; server uses `PublicKey.verify()` |
+| Replay window   | Reject if `abs(serverNow - timestamp) > 120s`                                           |
+| Identity lookup | Server loads `users.identity_key` for `X-AWChat-User-Id` and verifies                   |
 
 **Per-endpoint authorization** (after signature valid):
 
-| Endpoint | Rule |
-|----------|------|
-| `POST /v1/chats` | `X-AWChat-User-Id` must appear in request `memberIds` |
+| Endpoint                           | Rule                                                                 |
+| ---------------------------------- | -------------------------------------------------------------------- |
+| `POST /v1/chats`                   | `X-AWChat-User-Id` must appear in request `memberIds`                |
 | `PATCH /v1/chats/{chatId}/members` | Caller must be row in `chat_members`; reject on direct chats (`409`) |
-| `POST /v1/purge` | Caller must be row in `chat_members` for `chatId` |
+| `POST /v1/purge`                   | Caller must be row in `chat_members` for `chatId`                    |
 
 **Example — `PATCH /v1/chats/grp_01H.../members`**:
 
@@ -848,29 +861,29 @@ sequenceDiagram
     Note over C,S: On reconnect: new nonce; auth required before any frame
 ```
 
-| Field | Rule |
-|-------|------|
-| `nonce` (wire) | Base64 encoding of 32 random raw bytes in JSON |
-| `nonce` (storage) | 32 raw bytes in `auth_nonces.nonce` (BYTEA); single-use; `expires_at = now() + 2 min` |
-| **Signed input** | `signInputBytes = nonceRaw[32 bytes] ‖ utf8("\|") ‖ utf8(userId) ‖ utf8("\|") ‖ utf8(serverTime)` — decoded raw nonce, **not** the base64 JSON wire string |
-| Signature | **XEdDSA** via libsignal `PrivateKey.sign(signInputBytes)` |
-| Server verify | Decode JSON `nonce` to 32 bytes, reconstruct `signInputBytes`, verify with `org.signal:libsignal-client` (JVM) `PublicKey.verify()` |
-| Replay | Reject duplicate `nonce` bytes; reject if `abs(serverNow - serverTime) > 120s` |
-| Nonce cleanup | Delete expired rows on verify path + cron every 5 min: `DELETE FROM auth_nonces WHERE expires_at < NOW()` |
-| Errors | `auth_failed` → close WS 4001; `nonce_expired` → close 4002 |
-| REST linkage | Same `userId` / identity key as REST Request Authentication; no separate password |
+| Field             | Rule                                                                                                                                                       |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nonce` (wire)    | Base64 encoding of 32 random raw bytes in JSON                                                                                                             |
+| `nonce` (storage) | 32 raw bytes in `auth_nonces.nonce` (BYTEA); single-use; `expires_at = now() + 2 min`                                                                      |
+| **Signed input**  | `signInputBytes = nonceRaw[32 bytes] ‖ utf8("\|") ‖ utf8(userId) ‖ utf8("\|") ‖ utf8(serverTime)` — decoded raw nonce, **not** the base64 JSON wire string |
+| Signature         | **XEdDSA** via libsignal `PrivateKey.sign(signInputBytes)`                                                                                                 |
+| Server verify     | Decode JSON `nonce` to 32 bytes, reconstruct `signInputBytes`, verify with `org.signal:libsignal-client` (JVM) `PublicKey.verify()`                        |
+| Replay            | Reject duplicate `nonce` bytes; reject if `abs(serverNow - serverTime) > 120s`                                                                             |
+| Nonce cleanup     | Delete expired rows on verify path + cron every 5 min: `DELETE FROM auth_nonces WHERE expires_at < NOW()`                                                  |
+| Errors            | `auth_failed` → close WS 4001; `nonce_expired` → close 4002                                                                                                |
+| REST linkage      | Same `userId` / identity key as REST Request Authentication; no separate password                                                                          |
 
 #### Relay Operability (v1)
 
-| Topic | v1 MVP |
-|-------|--------|
-| **Deployment** | Single Fly.io machine (OQ4 default) + Fly Postgres |
-| **Secrets** | Fly secrets: `DATABASE_URL`, `TLS_CERT`; no keystore on server |
-| **Migrations** | Flyway on container start (blocking readiness until complete) |
-| **Health** | `/v1/health` liveness; `/v1/ready` checks DB + migration version |
+| Topic                 | v1 MVP                                                                           |
+| --------------------- | -------------------------------------------------------------------------------- |
+| **Deployment**        | Single Fly.io machine (OQ4 default) + Fly Postgres                               |
+| **Secrets**           | Fly secrets: `DATABASE_URL`, `TLS_CERT`; no keystore on server                   |
+| **Migrations**        | Flyway on container start (blocking readiness until complete)                    |
+| **Health**            | `/v1/health` liveness; `/v1/ready` checks DB + migration version                 |
 | **Graceful shutdown** | SIGTERM → stop accepting WS; drain 10s; close connections; finish in-flight acks |
-| **Scaling** | Single-node only v1; multi-node needs sticky sessions + shared pub/sub (v2) |
-| **Observability** | Prometheus sidecar; JSON logs to stdout |
+| **Scaling**           | Single-node only v1; multi-node needs sticky sessions + shared pub/sub (v2)      |
+| **Observability**     | Prometheus sidecar; JSON logs to stdout                                          |
 
 ### Android Client Architecture
 
@@ -907,11 +920,11 @@ flowchart LR
 
 **v1 model**: Message bodies are stored as **plaintext UTF-8 inside SQLCipher-encrypted Room tables**. SQLCipher encrypts the full database file at rest. The DB passphrase is sealed by Android Keystore and gated by PIN/biometric unlock.
 
-| Threat | Defense |
-|--------|---------|
-| File exfiltration (device locked) | SQLCipher + Keystore-sealed passphrase |
-| File exfiltration (device unlocked) | App lock timeout; duress wipe |
-| Memory dump while unlocked | Out of scope for v1; minimize plaintext lifetime in RAM |
+| Threat                              | Defense                                                 |
+| ----------------------------------- | ------------------------------------------------------- |
+| File exfiltration (device locked)   | SQLCipher + Keystore-sealed passphrase                  |
+| File exfiltration (device unlocked) | App lock timeout; duress wipe                           |
+| Memory dump while unlocked          | Out of scope for v1; minimize plaintext lifetime in RAM |
 
 **Not used in v1**: Additional per-message AEAD inside SQLCipher (unnecessary if DB key is adequately gated). **v1.1 attachments** will use per-file AES-GCM keys wrapped in `MessagePayload`.
 
@@ -934,13 +947,13 @@ object DatabaseModule {
 
 **Entities** (v1 text-only):
 
-| Table | Contents | Retention |
-|-------|----------|-----------|
-| `messages` | Plaintext body + metadata inside SQLCipher | Deleted on purge |
-| `read_receipts` | Per-message per-reader timestamps | Deleted with message |
-| `sessions` | libsignal session blobs (sealed on disk separately) | Until reset |
-| `sender_keys` | Group sender key material | Until rotation |
-| `contacts` | UserId, safety number, display name | Until duress wipe |
+| Table           | Contents                                            | Retention            |
+| --------------- | --------------------------------------------------- | -------------------- |
+| `messages`      | Plaintext body + metadata inside SQLCipher          | Deleted on purge     |
+| `read_receipts` | Per-message per-reader timestamps                   | Deleted with message |
+| `sessions`      | libsignal session blobs (sealed on disk separately) | Until reset          |
+| `sender_keys`   | Group sender key material                           | Until rotation       |
+| `contacts`      | UserId, safety number, display name                 | Until duress wipe    |
 
 **Duress wipe**: `crypto.wipeKeys()` → `db.clearAllTables()` → overwrite sealed key files → show empty inbox. No attachment dir in v1.
 
@@ -955,28 +968,28 @@ stateDiagram-v2
     Wiped --> [*]
 ```
 
-| Control | Implementation |
-|---------|----------------|
-| PIN lock | 6-digit; gates Keystore unlock of SQLCipher passphrase |
-| Biometric | `BiometricPrompt` + `CryptoObject` |
-| Duress PIN | Silent wipe; benign empty state |
-| Keystore | AES master key for sealing libsignal blobs + DB passphrase; StrongBox when available |
-| Screenshot block | `FLAG_SECURE` per-screen toggle |
-| Recents blur | `setRecentsScreenshotEnabled(false)` (API 33+) |
-| Root detection | Warn or block per settings |
-| Telemetry | Opt-in crash counts only; no message metadata |
+| Control          | Implementation                                                                       |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| PIN lock         | 6-digit; gates Keystore unlock of SQLCipher passphrase                               |
+| Biometric        | `BiometricPrompt` + `CryptoObject`                                                   |
+| Duress PIN       | Silent wipe; benign empty state                                                      |
+| Keystore         | AES master key for sealing libsignal blobs + DB passphrase; StrongBox when available |
+| Screenshot block | `FLAG_SECURE` per-screen toggle                                                      |
+| Recents blur     | `setRecentsScreenshotEnabled(false)` (API 33+)                                       |
+| Root detection   | Warn or block per settings                                                           |
+| Telemetry        | Opt-in crash counts only; no message metadata                                        |
 
 #### Certificate Pinning (Operational)
 
-| Topic | Policy |
-|-------|--------|
-| **Pin type** | SPKI SHA-256 of relay leaf or intermediate |
-| **Storage** | `res/raw/relay_pins.json` only (bundled pins; **no remote config in v1**) |
-| **Backup pin** | Always ship **two** pins (current + next) |
-| **Rotation** | New pin in app update N; old pin removed in N+1 |
+| Topic          | Policy                                                                                       |
+| -------------- | -------------------------------------------------------------------------------------------- |
+| **Pin type**   | SPKI SHA-256 of relay leaf or intermediate                                                   |
+| **Storage**    | `res/raw/relay_pins.json` only (bundled pins; **no remote config in v1**)                    |
+| **Backup pin** | Always ship **two** pins (current + next)                                                    |
+| **Rotation**   | New pin in app update N; old pin removed in N+1                                              |
 | **Failure UX** | Block with "Can't reach AWChat servers securely" + support link; no silent bypass in release |
-| **Debug / CI** | `debug` flavor disables pinning via `BuildConfig.PINNING_ENABLED = false` |
-| **Emergency** | Requires app update (no remote kill-switch without update — intentional) |
+| **Debug / CI** | `debug` flavor disables pinning via `BuildConfig.PINNING_ENABLED = false`                    |
+| **Emergency**  | Requires app update (no remote kill-switch without update — intentional)                     |
 
 ### UI/UX — X-Lite Chat Aesthetic (Material 3 Expressive)
 
@@ -986,34 +999,34 @@ stateDiagram-v2
 
 ### Observability
 
-| Layer | Signal |
-|-------|--------|
-| Client | `kotlin-logging`, tag `AWChat`; no plaintext/ciphertext |
-| Relay | Prometheus: `envelopes_stored`, `purge_lag_seconds`, `ws_connections`, `ack_latency_ms` |
-| Alerts | Envelope count growth; purge cron failures; WS error rate >5% |
+| Layer  | Signal                                                                                  |
+| ------ | --------------------------------------------------------------------------------------- |
+| Client | `kotlin-logging`, tag `AWChat`; no plaintext/ciphertext                                 |
+| Relay  | Prometheus: `envelopes_stored`, `purge_lag_seconds`, `ws_connections`, `ack_latency_ms` |
+| Alerts | Envelope count growth; purge cron failures; WS error rate >5%                           |
 
 ### Rollout Plan
 
-| Phase | Scope |
-|-------|-------|
-| **α** | Internal dogfood, debug CI artifacts |
-| **β** | Play **Internal Testing** track, signed release CI |
-| **GA** | Play Production |
+| Phase  | Scope                                              |
+| ------ | -------------------------------------------------- |
+| **α**  | Internal dogfood, debug CI artifacts               |
+| **β**  | Play **Internal Testing** track, signed release CI |
+| **GA** | Play Production                                    |
 
 - **Feature flags** (`DataStore`): `enable_root_block`, `enable_screenshot_block`.
 - **Rollback**: Forward-only Room migrations; ship N-1 app binary compatible with current relay `/v1`; relay contract frozen per major version; **no reversible SQLCipher migrations** — downgrade = reinstall (data loss acceptable for ephemeral app).
 
 ### Risks & Mitigations
 
-| Risk | Severity | Mitigation |
-|------|----------|------------|
-| libsignal JNI on API 36 | High | PR 3 packaging spike; CI emulator from PR 12 |
-| Seen-by-all race (offline member) | High | 48h hard TTL; `PURGE_NOTIFY`; pending purge UI |
-| AGPL compliance | High | Legal review + source offer before GA |
-| Clock skew / duplicate purge | Medium | Idempotent purge; max receipt timestamps |
-| Duress forensic recovery | Medium | SQLCipher wipe + sealed file overwrite |
-| Single-node relay limits | Medium | Document v1 scale; plan v2 HA |
-| No background delivery (NG8) | Medium | Explicit UX; FCM in v1.1 if OQ1 changes |
+| Risk                              | Severity | Mitigation                                     |
+| --------------------------------- | -------- | ---------------------------------------------- |
+| libsignal JNI on API 36           | High     | PR 3 packaging spike; CI emulator from PR 12   |
+| Seen-by-all race (offline member) | High     | 48h hard TTL; `PURGE_NOTIFY`; pending purge UI |
+| AGPL compliance                   | High     | Legal review + source offer before GA          |
+| Clock skew / duplicate purge      | Medium   | Idempotent purge; max receipt timestamps       |
+| Duress forensic recovery          | Medium   | SQLCipher wipe + sealed file overwrite         |
+| Single-node relay limits          | Medium   | Document v1 scale; plan v2 HA                  |
+| No background delivery (NG8)      | Medium   | Explicit UX; FCM in v1.1 if OQ1 changes        |
 
 ---
 
@@ -1055,45 +1068,45 @@ As above; Flyway in `server/relay`.
 
 ### 1. MLS (RFC 9420) for Group Encryption
 
-| Pros | Cons |
-|------|------|
+| Pros                                             | Cons                                                   |
+| ------------------------------------------------ | ------------------------------------------------------ |
 | Modern IETF standard; forward secrecy for groups | Heavier library (`openmls`/native); more complex state |
-| Better for larger groups | Overkill for ≤5 members |
+| Better for larger groups                         | Overkill for ≤5 members                                |
 
 **Rejected for v1**: Operational complexity exceeds benefit at max 5 participants.
 
 ### 2. Matrix Protocol (Olm/Megolm)
 
-| Pros | Cons |
-|------|------|
+| Pros                                | Cons                                          |
+| ----------------------------------- | --------------------------------------------- |
 | Federated; mature Megolm for groups | Server sees room metadata; heavier sync model |
-| Element clients exist | Doesn't fit "minimal relay" goal |
+| Element clients exist               | Doesn't fit "minimal relay" goal              |
 
 **Rejected**: Federation and room state complexity conflict with minimal server design.
 
 ### 3. Custom Double Ratchet per Group Member (pairwise)
 
-| Pros | Cons |
-|------|------|
-| No sender keys | O(N) encryption per message; bandwidth ×5 at max size |
-| Simpler conceptually | Poor performance vs sender keys |
+| Pros                 | Cons                                                  |
+| -------------------- | ----------------------------------------------------- |
+| No sender keys       | O(N) encryption per message; bandwidth ×5 at max size |
+| Simpler conceptually | Poor performance vs sender keys                       |
 
 **Rejected**: Sender keys strictly better for group broadcast.
 
 ### 4. Server-Side Read Receipt Aggregation (plaintext)
 
-| Pros | Cons |
-|------|------|
+| Pros                      | Cons                                 |
+| ------------------------- | ------------------------------------ |
 | Easier purge coordination | Server learns who read what and when |
 
 **Rejected**: Metadata leakage; clients chosen as authority with signed purge.
 
 ### 5. Redis for Ephemeral Queues (v1)
 
-| Pros | Cons |
-|------|------|
+| Pros                           | Cons                                            |
+| ------------------------------ | ----------------------------------------------- |
 | Fast fan-out; natural TTL keys | Extra infra; failure modes unspecified in rev 1 |
-| Enables multi-node HA | Unnecessary at MVP scale |
+| Enables multi-node HA          | Unnecessary at MVP scale                        |
 
 **Rejected for v1**: PostgreSQL offline queue + in-memory WS map sufficient for ≤1k users.
 
@@ -1103,13 +1116,13 @@ As above; Flyway in `server/relay`.
 
 ### Threat Model
 
-| Adversary | Capability | Defense |
-|-----------|------------|---------|
-| Network MITM | TLS intercept | SPKI pinning + E2EE |
+| Adversary       | Capability          | Defense                     |
+| --------------- | ------------------- | --------------------------- |
+| Network MITM    | TLS intercept       | SPKI pinning + E2EE         |
 | Malicious relay | Drop/delay messages | Client `ack`/`nack` + retry |
-| Device thief | Physical access | App lock + SQLCipher |
-| Coerced unlock | Forced PIN | Duress wipe |
-| Rooted device | Memory hooks | Optional block |
+| Device thief    | Physical access     | App lock + SQLCipher        |
+| Coerced unlock  | Forced PIN          | Duress wipe                 |
+| Rooted device   | Memory hooks        | Optional block              |
 
 ### Auth
 
@@ -1131,11 +1144,11 @@ As above; Flyway in `server/relay`.
 
 ### PR → CI Mapping
 
-| PR | CI milestone |
-|----|----------------|
-| PR 2 | Minimal `android.yml`: `assembleDebug` + `testDebugUnitTest` |
-| PR 12 | Expanded: oxlint, detekt, emulator instrumented tests |
-| PR 23 | Release: `assemble-release` + signed AAB/APK on `master` |
+| PR    | CI milestone                                                 |
+| ----- | ------------------------------------------------------------ |
+| PR 2  | Minimal `android.yml`: `assembleDebug` + `testDebugUnitTest` |
+| PR 12 | Expanded: oxlint, detekt, emulator instrumented tests        |
+| PR 23 | Release: `assemble-release` + signed AAB/APK on `master`     |
 
 ### Workflow Layout (phased)
 
@@ -1158,36 +1171,36 @@ jobs:
 **PR 12 — expanded** (adds detekt, oxlint, emulator):
 
 ```yaml
-  static-analysis:
-    runs-on: blacksmith-8vcpu-ubuntu-2404
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with: { distribution: temurin, java-version: 21 }
-      - uses: oven-sh/setup-bun@v2
-      - run: bun install && bun run lint    # scripts added PR 1
-      - run: ./gradlew detekt
+static-analysis:
+  runs-on: blacksmith-8vcpu-ubuntu-2404
+  steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with: { distribution: temurin, java-version: 21 }
+    - uses: oven-sh/setup-bun@v2
+    - run: bun install && bun run lint # scripts added PR 1
+    - run: ./gradlew detekt
 
-  instrumented-test:
-    runs-on: blacksmith-8vcpu-ubuntu-2404
-    steps:
-      - uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 36
-          arch: x86_64
-          script: ./gradlew connectedDebugAndroidTest
+instrumented-test:
+  runs-on: blacksmith-8vcpu-ubuntu-2404
+  steps:
+    - uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 36
+        arch: x86_64
+        script: ./gradlew connectedDebugAndroidTest
 ```
 
 **PR 23 — release** (master only):
 
 ```yaml
-  assemble-release:
-    runs-on: blacksmith-8vcpu-ubuntu-2404
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - run: ./scripts/ci-decode-keystore.sh
-      - run: ./gradlew bundleRelease assembleRelease
-      - uses: actions/upload-artifact@v4
+assemble-release:
+  runs-on: blacksmith-8vcpu-ubuntu-2404
+  if: github.ref == 'refs/heads/master'
+  steps:
+    - run: ./scripts/ci-decode-keystore.sh
+    - run: ./gradlew bundleRelease assembleRelease
+    - uses: actions/upload-artifact@v4
 ```
 
 ### PR 1 `package.json` scripts (to be added)
@@ -1204,25 +1217,25 @@ jobs:
 
 ### Signing Strategy
 
-| Secret | Purpose |
-|--------|---------|
-| `AWCHAT_KEYSTORE_BASE64` | Release keystore |
+| Secret                     | Purpose           |
+| -------------------------- | ----------------- |
+| `AWCHAT_KEYSTORE_BASE64`   | Release keystore  |
 | `AWCHAT_KEYSTORE_PASSWORD` | Keystore password |
-| `AWCHAT_KEY_ALIAS` | Key alias |
-| `AWCHAT_KEY_PASSWORD` | Key password |
+| `AWCHAT_KEY_ALIAS`         | Key alias         |
+| `AWCHAT_KEY_PASSWORD`      | Key password      |
 
 ---
 
 ## Open Questions
 
-| # | Question | Owner | Default |
-|---|----------|-------|---------|
-| OQ1 | FCM for background delivery? | Product | **Defer** — NG8 documents limitation |
-| OQ2 | Contact discovery (QR only vs username)? | Product | QR + manual safety number |
-| OQ3 | Play Store vs sideload? | Product / Legal | Play Internal → Production; AGPL review |
-| OQ4 | Relay hosting? | Infra | Fly.io + Fly Postgres |
-| OQ5 | Root block vs warn? | Security | Warn-only |
-| OQ6 | Attachments in v1? | Product | **Text-only** — frozen schema; v1.1 appendix |
+| #   | Question                                 | Owner           | Default                                      |
+| --- | ---------------------------------------- | --------------- | -------------------------------------------- |
+| OQ1 | FCM for background delivery?             | Product         | **Defer** — NG8 documents limitation         |
+| OQ2 | Contact discovery (QR only vs username)? | Product         | QR + manual safety number                    |
+| OQ3 | Play Store vs sideload?                  | Product / Legal | Play Internal → Production; AGPL review      |
+| OQ4 | Relay hosting?                           | Infra           | Fly.io + Fly Postgres                        |
+| OQ5 | Root block vs warn?                      | Security        | Warn-only                                    |
+| OQ6 | Attachments in v1?                       | Product         | **Text-only** — frozen schema; v1.1 appendix |
 
 ---
 

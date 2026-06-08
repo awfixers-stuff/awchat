@@ -30,6 +30,7 @@ Subject to Your continuous compliance with this License, Licensor grants You a l
 **in each case** only as permitted by this License and only if such Use does not fall within Restricted Uses in Section 3 or Prohibited AI Use in Section 4.
 
 #### 2.1 Personal, Small Entity, and Growth Grace Period
+
 Notwithstanding any other provision, natural persons (individuals) and small entities (≤10 employees or <$2M USD annual revenue) may use, modify, and run the Software for personal, educational, or internal business purposes, including limited production use, provided they do not create or operate a Competitive Offering and comply with Sections 3, 4, and 6. This includes personal projects, self-hosted instances, and non-public tools.
 
 If a small entity grows beyond the thresholds above, it shall have a grace period of one hundred eighty (180) days from the date it first exceeds either threshold to either (a) obtain a separate commercial license from Licensor or (b) cease any Use that would otherwise violate this License. Licensor will not pursue enforcement actions against such entities solely for crossing the threshold during this grace period, provided they act in good faith.
@@ -45,6 +46,7 @@ Unless Licensor grants You a separate written commercial license, You must **not
 **Note**: Independent development of similar functionality (including good-faith clean-room implementations) that does not rely on the Software, knowledge directly derived from it, or Prohibited AI Use is not prohibited by this License.
 
 **Examples (non-exhaustive)** of prohibited conduct:
+
 - Reading the codebase, then implementing a “new” library/API that matches the same endpoints, schemas, or behaviors using the Software as reference.
 - Using the Software as reference to recreate identical workflows, UI flows, or system behavior, even with different naming.
 - Using the Software to generate, index, or distill interfaces for competing code-generation agents, RAG systems, autonomous tooling, or similar AI Systems.
@@ -83,6 +85,7 @@ To provide enforceable compliance hooks, You agree to:
 - **Audit (limited).** If Licensor has a reasonable basis to suspect material non-compliance, You will cooperate with a limited compliance review by an independent auditor under NDA, limited to verifying compliance with Sections 3–5 and focused only on records reasonably suspected of containing Software-derived material. Licensor may exercise this right through counsel or retained experts. Licensee shall bear its own costs unless the audit reveals no material breach, in which case Licensor reimburses reasonable audit costs.
 
 #### 5.1 Logging and Tampering
+
 The Software maintains local, on-device logs of usage, access, modifications, and AI interactions solely for compliance verification. These logs are not transmitted to Licensor except for minimal tamper-detection events (e.g., alerts that logging has been disabled, circumvented, or deleted). Licensor does not collect, store, or access substantive usage data, source code, or any other private information from Licensee’s systems.
 
 You must not disable, circumvent, delete, or cause the deletion of these logs. Any attempt to do so, or failure to preserve logs upon reasonable request, constitutes a material breach and evidence spoliation. Licensee agrees that destruction or alteration of such logs creates a rebuttable presumption of willful violation of Sections 3 and 4.
@@ -134,4 +137,5 @@ This License and any dispute arising out of or related to it (including any non-
 You waive any objection to such courts based on forum non conveniens or any similar doctrine.
 
 ### 13. No Waiver; Cumulative Remedies
+
 Failure by Licensor to enforce any provision of this License does not constitute a waiver of its rights. All remedies provided herein are cumulative and in addition to any other remedies available at law or in equity.

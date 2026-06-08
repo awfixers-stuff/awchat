@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-06-08T00:19:40.427Z",
+  "head": "e9ef11fd1607bf542aec2843b393dbddbf99d240",
+  "branch": "master",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "added": 4,
+      "removed": 14
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 6,
+      "removed": 16
+    }
+  ],
+  "totals": {
+    "files": 2,
+    "added": 10,
+    "removed": 30
+  }
+}

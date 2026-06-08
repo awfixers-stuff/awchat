@@ -14,4 +14,27 @@ auto = "disable"
 prefer = "offline"
 linkWorkspacePackages = true
 minimumReleaseAge = 259200
-minimumReleaseAgeExcludes = ["vitest","@types/bun", "typescript", "@socketsecurity/bun-security-scanner", "@oh-my-pi/pi-natives-linux-x64", "@oh-my-pi/pi-natives", "@oh-my-pi/pi-coding-agent", "@oh-my-pi/pi-tui", "@oh-my-pi/pi-utils", "@oh-my-pi/pi-ai", "@oh-my-pi/pi-agent-core", "@oh-my-pi/hashline", "@oh-my-pi/pi-mnemopi", "@oh-my-pi/omp-stats", "@typescript/native-preview", "@typescript/native-preview-linux-x64", "@typescript/native-preview-darwin-arm64", "@typescript/native-preview-win32-arm64", "@typescript/native-preview-linux-arm64", "@typescript/native-preview-darwin-x64", "@typescript/native-preview-win32-x64", "@typescript/native-preview-linux-arm"]
+minimumReleaseAgeExcludes = [
+  "vitest",
+  "@types/bun",
+  "typescript",
+  "@socketsecurity/bun-security-scanner",
+  "@oh-my-pi/pi-natives-linux-x64",
+  "@oh-my-pi/pi-natives",
+  "@oh-my-pi/pi-coding-agent",
+  "@oh-my-pi/pi-tui",
+  "@oh-my-pi/pi-utils",
+  "@oh-my-pi/pi-ai",
+  "@oh-my-pi/pi-agent-core",
+  "@oh-my-pi/hashline",
+  "@oh-my-pi/pi-mnemopi",
+  "@oh-my-pi/omp-stats",
+  "@typescript/native-preview",
+  "@typescript/native-preview-linux-x64",
+  "@typescript/native-preview-darwin-arm64",
+  "@typescript/native-preview-win32-arm64",
+  "@typescript/native-preview-linux-arm64",
+  "@typescript/native-preview-darwin-x64",
+  "@typescript/native-preview-win32-x64",
+  "@typescript/native-preview-linux-arm",
+]

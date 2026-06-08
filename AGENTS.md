@@ -24,41 +24,40 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T00:03:57.983Z
-**Branch:** `master` @ `b84a8912e0af`
+**Last updated:** 2026-06-08T00:36:34.067Z
+**Branch:** `master` @ `e9ef11fd1607`
 
 ### In progress
-- PR 1: build-logic + catalog + repo hygiene
+- PR 3: libsignal-android packaging spike
 
 ### Completed
-- _(none yet)_
-
-### Next up
 - PR 1: build-logic + catalog + repo hygiene
 - PR 2: Android Compose shell + minimal CI
+
+### Next up
 - PR 3: libsignal-android packaging spike
 
 ### Blockers
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T00:03:57.983Z
+**roadmap-phase** at 2026-06-08T00:36:34.067Z
 
-Initial hook infrastructure: lefthook changelog, Grok hooks, AGENTS.md session continuity
+Foundation phase complete: build-logic convention plugins, Android Compose shell (me.awfixer.awchat), Blacksmith CI workflow; fixed Grok hook bun PATH + no-op sync
 
 ### Recently touched
-- `.gitignore`
-- `.grok/hooks/agents-continuity.json`
-- `.grok/skills/session-handoff/SKILL.md`
+- `grok/hooks/agents-continuity.json`
+- `grok/skills/session-handoff/SKILL.md`
+- `oxlintrc.json`
 - `AGENTS.md`
-- `bun.lock`
-- `flake.lock`
-- `ledgers/roadmap-state.json`
-- `lefthook.yml`
-- `package.json`
-- `scripts/changelog.ts`
-- `scripts/hooks/pre-commit`
-- `scripts/hooks/update-agents-md`
+- `ICENSE.md`
+- `pp/build.gradle.kts`
+- `pp/src/main/kotlin/org/example/App.kt`
+- `pp/src/test/kotlin/org/example/AppTest.kt`
+- `unfig.toml`
+- `ocs/DESIGN.md`
+- `lake.nix`
+- `radle.properties`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
@@ -68,16 +67,16 @@ _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun
 
 ## Current Repo State (2026-06-07)
 
-| Artifact | State |
-|----------|-------|
-| `docs/DESIGN.md` | Authoritative system design (rev 4) |
-| `app/` | Kotlin JVM CLI scaffold — not yet Android |
-| `build-logic/` | Missing (PR 1) |
-| `Justfile` | Missing (PR 1) |
-| `.github/workflows/` | Missing (PR 2) |
-| `AGENTS.md` | This file |
-| `ledgers/changes/` | Per-commit JSON changelog (lefthook pre-commit) |
-| `ledgers/roadmap-state.json` | Machine-readable roadmap progress |
+| Artifact                     | State                                           |
+| ---------------------------- | ----------------------------------------------- |
+| `docs/DESIGN.md`             | Authoritative system design (rev 4)             |
+| `app/`                       | Kotlin JVM CLI scaffold — not yet Android       |
+| `build-logic/`               | Missing (PR 1)                                  |
+| `Justfile`                   | Missing (PR 1)                                  |
+| `.github/workflows/`         | Missing (PR 2)                                  |
+| `AGENTS.md`                  | This file                                       |
+| `ledgers/changes/`           | Per-commit JSON changelog (lefthook pre-commit) |
+| `ledgers/roadmap-state.json` | Machine-readable roadmap progress               |
 
 ---
 
@@ -85,16 +84,16 @@ _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun
 
 Full detail: `docs/DESIGN.md` § PR Plan.
 
-| Phase | PRs | Focus |
-|-------|-----|-------|
-| Foundation | 1–2 | build-logic, catalog, Justfile, Android shell, minimal CI |
-| Crypto spike | 3–6 | libsignal packaging, core modules, SessionManager |
-| Data layer | 7–10 | Keystore, SQLCipher/Room, domain interfaces |
-| Network | 5, 11 | Ktor relay server + Android WS client |
-| CI expansion | 12 | detekt, oxlint, emulator tests |
-| Features | 13–17 | onboarding, lock, chat list, settings, contacts |
-| Messaging | 18–22 | conversation lifecycle, E2EE, receipts, purge, groups |
-| Ship | 23–24 | hardening, release CI, observability, docs |
+| Phase        | PRs   | Focus                                                     |
+| ------------ | ----- | --------------------------------------------------------- |
+| Foundation   | 1–2   | build-logic, catalog, Justfile, Android shell, minimal CI |
+| Crypto spike | 3–6   | libsignal packaging, core modules, SessionManager         |
+| Data layer   | 7–10  | Keystore, SQLCipher/Room, domain interfaces               |
+| Network      | 5, 11 | Ktor relay server + Android WS client                     |
+| CI expansion | 12    | detekt, oxlint, emulator tests                            |
+| Features     | 13–17 | onboarding, lock, chat list, settings, contacts           |
+| Messaging    | 18–22 | conversation lifecycle, E2EE, receipts, purge, groups     |
+| Ship         | 23–24 | hardening, release CI, observability, docs                |
 
 ---
 
@@ -108,14 +107,14 @@ bun run agents:handoff --completed "PR 1: build-logic + catalog + repo hygiene" 
 
 Flags:
 
-| Flag | Purpose |
-|------|---------|
-| `--completed` | Mark a PR/phase/todo done (repeatable) |
-| `--next` | Override the next-up queue |
-| `--in-progress` | Set current focus |
-| `--blocker` | Record a blocker |
-| `--summary` | One-line handoff note for the next session |
-| `--reason` | Handoff category (`roadmap-phase`, `bugfix`, `todo`) |
+| Flag            | Purpose                                              |
+| --------------- | ---------------------------------------------------- |
+| `--completed`   | Mark a PR/phase/todo done (repeatable)               |
+| `--next`        | Override the next-up queue                           |
+| `--in-progress` | Set current focus                                    |
+| `--blocker`     | Record a blocker                                     |
+| `--summary`     | One-line handoff note for the next session           |
+| `--reason`      | Handoff category (`roadmap-phase`, `bugfix`, `todo`) |
 
 Grok Build hooks also sync AGENTS.md automatically on `Stop` and `SessionEnd` when there are local changes.
 
