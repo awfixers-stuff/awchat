@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-06-08T04:18:02.622Z",
+  "updated_at": "2026-06-08T05:13:48.991Z",
   "branch": "master",
-  "head": "15179bcc3201a6199c85f4fa04f7a5f21279646c",
+  "head": "52136f7986972dd8eb2068a06ebbcf28a2d89e26",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
     "PR 3: libsignal-android packaging spike",
     "PR 4: core:common, core:model, core:designsystem, core:proto",
-    "PR 6: core:crypto SessionManager + identity sealing",
     "PR 5: server:relay Gleam/Elixir/Rust skeleton",
+    "PR 6: core:crypto SessionManager + identity sealing",
     "PR 7: core:security — Keystore sealing",
     "PR 8: core:database — Room + SQLCipher (entities + DAOs only)",
     "PR 9: core:domain — repository interfaces + use case stubs",
@@ -23,17 +23,13 @@
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T04:17:53.176Z",
+    "at": "2026-06-08T05:13:48.991Z",
     "reason": "session-handoff",
-    "summary": "Pre-public audit: secrets purged, README + ROADMAP added"
+    "summary": "Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing"
   },
   "recent_files": [
-    "grok/skills/session-handoff/SKILL.md",
     "AGENTS.md",
     "ROADMAP.md",
-    "ledgers/roadmap-state.json",
-    "cripts/update-agents-md.ts",
-    ".mcp.json.example",
-    "README.md"
+    "ledgers/roadmap-state.json"
   ]
 }

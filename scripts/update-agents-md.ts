@@ -156,6 +156,14 @@ function defaultRoadmapState(branch: string, head: string): RoadmapState {
   };
 }
 
+function sortByPrNumber(items: string[]): string[] {
+  return [...items].sort((left, right) => {
+    const leftNumber = Number(prNumber(left) ?? 0);
+    const rightNumber = Number(prNumber(right) ?? 0);
+    return leftNumber - rightNumber;
+  });
+}
+
 function inferNextUp(completed: string[]): string[] {
   const completedSet = new Set(completed.map((item) => item.split(":")[0]?.trim()));
   const pending = ROADMAP_ITEMS.filter((item) => {
@@ -197,7 +205,7 @@ function mergeRoadmapState(
     updated_at: new Date().toISOString(),
     branch,
     head,
-    completed,
+    completed: sortByPrNumber(completed),
     in_progress: inProgress,
     next_up: nextUp,
     blockers,
@@ -227,13 +235,36 @@ async function writeRoadmapState(repoRoot: string, state: RoadmapState): Promise
   await writeFile(statePath, `${JSON.stringify(state, null, 2)}\n`);
 }
 
+function parsePorcelainPath(line: string): string | null {
+  const trimmed = line.trim();
+  if (!trimmed) {
+    return null;
+  }
+
+  // Porcelain v1: XY<space>path (rename lines use "old -> new")
+  const match = trimmed.match(/^.. (.+)$/);
+  if (!match) {
+    return null;
+  }
+
+  let path = match[1]!.trim();
+  const renameArrow = path.lastIndexOf(" -> ");
+  if (renameArrow !== -1) {
+    path = path.slice(renameArrow + 4).trim();
+  }
+  if (path.startsWith('"') && path.endsWith('"')) {
+    path = path.slice(1, -1);
+  }
+
+  return path;
+}
+
 async function recentChangedFiles(repoRoot: string): Promise<string[]> {
   const status = await Bun.$`git status --porcelain`.cwd(repoRoot).text();
   const files = status
     .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .map((line) => line.slice(3).trim())
+    .map((line) => parsePorcelainPath(line))
+    .filter((path): path is string => Boolean(path))
     .filter((path) => !path.startsWith("ledgers/changes/"));
 
   if (files.length > 0) {
@@ -342,7 +373,9 @@ function renderRoadmapState(state: RoadmapState): string {
 function renderSessionState(state: RoadmapState): string {
   const completed =
     state.completed.length > 0
-      ? state.completed.map((item) => `- ${item}`).join("\n")
+      ? sortByPrNumber(state.completed)
+          .map((item) => `- ${item}`)
+          .join("\n")
       : "- _(none yet)_";
 
   const nextUp = state.next_up.map((item) => `- ${item}`).join("\n");

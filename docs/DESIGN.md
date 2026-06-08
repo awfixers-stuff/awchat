@@ -96,7 +96,7 @@ Because NG8 defers FCM (OQ1 default), v1 chat is **not realtime when the app is 
 | **Architecture**                | Clean Architecture + **`core:domain`** + MVI per feature, Hilt DI                                                                    | Explicit domain layer; repository interfaces in `core:domain`, impls in data modules                                                                         |
 | **CI runners**                  | `blacksmith-8vcpu-ubuntu-2404`                                                                                                       | KVM for emulator tests, faster cache                                                                                                                         |
 | **Target SDK**                  | API **36** (per `flake.nix`)                                                                                                         | Matches SDK pinning; forward-compatible to API 37                                                                                                            |
-| **Default branch**              | **`master`** until renamed in PR 1                                                                                                   | Matches current repo state                                                                                                                                   |
+| **Default branch**              | **`master`**                                                                                                                         | Matches current repo state                                                                                                                                   |
 
 ---
 
@@ -119,13 +119,16 @@ flowchart TB
         CR --> KS
     end
 
-    subgraph relay [Relay Server - Ktor - single node v1]
-        WS[WebSocket Gateway + in-memory session map]
-        API[REST API]
+    subgraph relay [Relay Server - Elixir/Bandit - single node v1]
+        WS[Bandit WebSocket + in-memory session map]
+        API[REST API - Phoenix/Bandit]
+        NIF[Rust NIF - libsignal-core XEdDSA verify]
         DEL[Delivery Service]
         TTL[TTL Enforcer Cron]
         WS --> DEL
         API --> DEL
+        API --> NIF
+        WS --> NIF
         DEL --> PG[(PostgreSQL - blobs, offline queue, presence)]
         TTL --> PG
     end
@@ -134,7 +137,7 @@ flowchart TB
     UC <-->|HTTPS| API
 ```
 
-**v1 scale limit (no Redis)**: Single Ktor process; in-memory `userId → WebSocket` map. Offline envelopes in PostgreSQL. Suitable for MVP (~1k users). HA / multi-node fan-out deferred to v2 (would require Redis or sticky sessions).
+**v1 scale limit (no Redis)**: Single Elixir OTP node (Bandit); in-memory `userId → WebSocket` map. Offline envelopes in PostgreSQL. Suitable for MVP (~1k users). HA / multi-node fan-out deferred to v2 (would require Redis or sticky sessions).
 
 ### Module Structure
 
@@ -194,8 +197,7 @@ compose-bom = "2025.05.00"
 hilt = "2.56.2"
 room = "2.7.1"
 sqlcipher = "4.6.1"
-libsignal = "0.86.7"          # libsignal-android (app) + libsignal-client (server JVM)
-libsignal-client = "0.86.7"   # org.signal:libsignal-client — XEdDSA verify on relay
+libsignal = "0.86.7"          # libsignal-android (Android client)
 ktor = "3.1.2"
 detekt = "1.23.8"
 protobuf = "4.29.3"
@@ -205,7 +207,7 @@ compileSdk = "36"
 
 [libraries]
 libsignal-android = { module = "org.signal:libsignal-android", version.ref = "libsignal" }
-libsignal-client = { module = "org.signal:libsignal-client", version.ref = "libsignal-client" }
+# Server relay uses libsignal-core (Rust crate) via awchat_crypto NIF — not Gradle
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 
 [plugins]
@@ -224,12 +226,12 @@ protobuf = { id = "com.google.protobuf", version = "0.9.4" }
 | Dependency                  | License    | Implication                                                                                                                                                                                                                  |
 | --------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `libsignal-android` (app)   | **AGPLv3** | Linking in a distributed app may require offering corresponding source to users who request it, depending on jurisdiction and whether the app is considered a "modified" work                                                |
-| `libsignal-client` (server) | **AGPLv3** | Relay Docker image ships libsignal JVM/JNI for XEdDSA verification; may trigger corresponding-source obligations for **network users** of the relay service — confirm with counsel (distinct from app distribution analysis) |
+| `libsignal-core` (server NIF) | **AGPLv3** | Relay Docker image links `libsignal-core` (Rust) for XEdDSA verification; may trigger corresponding-source obligations for **network users** of the relay service — confirm with counsel (distinct from app distribution analysis) |
 
 **Actions before GA**:
 
 1. **Legal review** of AGPL obligations for Play Store vs sideload distribution (OQ3) **and** server container distribution on Fly.io.
-2. Publish a **source-offer** page (e.g., GitHub public repo or tarball URL) in app "About" **and** relay deployment docs if counsel confirms obligation — must cover both `libsignal-android` and `libsignal-client` pins.
+2. Publish a **source-offer** page (e.g., GitHub public repo or tarball URL) in app "About" **and** relay deployment docs if counsel confirms obligation — must cover both `libsignal-android` and `libsignal-core` (server NIF) pins.
 3. Track libsignal version pins in `NOTICE` file (app + server modules).
 4. If AGPL is unacceptable: evaluate **OpenMLS** (Apache 2.0) or a server-mediated pairwise-only MVP — both are major pivots; default is comply via source offer.
 
@@ -781,7 +783,7 @@ CREATE TABLE purge_audit (
 
 #### REST Request Authentication
 
-All **mutating REST** endpoints except `POST /v1/register` require request signing. Uses the same XEdDSA identity key and `libsignal-client` JVM verification path as WS auth and purge.
+All **mutating REST** endpoints except `POST /v1/register` require request signing. Uses the same XEdDSA identity key and Rust `awchat_crypto` NIF (`libsignal-core`) verification path as WS auth and purge.
 
 **Required headers**:
 
@@ -856,7 +858,7 @@ sequenceDiagram
     C->>C: signInput = nonceRaw(32B) + "|" + userId + "|" + serverTime (UTF-8)
     C->>C: sig = XEdDSA_sign(identityKey, signInput)
     C->>S: {type:auth_response, userId, nonce:base64(nonceRaw), serverTime, signature}
-    S->>S: Verify nonce unused, |now - serverTime| < 120s, XEdDSA valid (libsignal JVM)
+    S->>S: Verify nonce unused, |now - serverTime| < 120s, XEdDSA valid (Rust NIF)
     S-->>C: {type:auth_ok, connectionId}
     Note over C,S: On reconnect: new nonce; auth required before any frame
 ```
@@ -867,7 +869,7 @@ sequenceDiagram
 | `nonce` (storage) | 32 raw bytes in `auth_nonces.nonce` (BYTEA); single-use; `expires_at = now() + 2 min`                                                                      |
 | **Signed input**  | `signInputBytes = nonceRaw[32 bytes] ‖ utf8("\|") ‖ utf8(userId) ‖ utf8("\|") ‖ utf8(serverTime)` — decoded raw nonce, **not** the base64 JSON wire string |
 | Signature         | **XEdDSA** via libsignal `PrivateKey.sign(signInputBytes)`                                                                                                 |
-| Server verify     | Decode JSON `nonce` to 32 bytes, reconstruct `signInputBytes`, verify with `org.signal:libsignal-client` (JVM) `PublicKey.verify()`                        |
+| Server verify     | Decode JSON `nonce` to 32 bytes, reconstruct `signInputBytes`, verify with `awchat_crypto` NIF (`verify_ws_signature/5`; REST uses `verify_rest_signature/7`) |
 | Replay            | Reject duplicate `nonce` bytes; reject if `abs(serverNow - serverTime) > 120s`                                                                             |
 | Nonce cleanup     | Delete expired rows on verify path + cron every 5 min: `DELETE FROM auth_nonces WHERE expires_at < NOW()`                                                  |
 | Errors            | `auth_failed` → close WS 4001; `nonce_expired` → close 4002                                                                                                |
@@ -1129,7 +1131,7 @@ As above; Flyway in `server/relay`.
 - Identity = Curve25519 key pair; signatures use **XEdDSA** (libsignal), not standalone Ed25519.
 - **Mutating REST** (`POST /v1/chats`, `PATCH .../members`, `POST /v1/purge`): `X-AWChat-*` header signing per **REST Request Authentication**.
 - **WebSocket**: separate handshake signing per **WebSocket Authentication Handshake** (raw nonce bytes in sign input).
-- Server (`server:relay`) depends on `libsignal-client` JVM for `PublicKey.verify()` on all signed requests.
+- Server (`server:relay`) uses the `awchat_crypto` Rust NIF (`libsignal-core`) for XEdDSA verification on all signed REST and WS requests.
 - PIN gates local Keystore/SQLCipher unlock only.
 
 ---
@@ -1502,7 +1504,7 @@ Reordered for early CI, parallel server work, crypto spike before Room, split pu
 
 1. PR 8/9/10 reorder: entities/DAOs → domain interfaces → repository impls
 2. `InnerMessage` protobuf oneof for all encrypted payload types
-3. XEdDSA (libsignal) replaces Ed25519 for WS auth and purge signatures; server uses `libsignal-client` JVM
+3. XEdDSA (libsignal) replaces Ed25519 for WS auth and purge signatures; server uses `libsignal-core` via Rust NIF
 4. `purge_audit` as purge idempotency source of truth; hard-delete envelopes
 5. WebSocket Frame Catalog with JSON examples for all v1 frame types
 6. `PATCH /v1/chats/{chatId}/members` + `membership_changed` frame; scoped in PR 18
@@ -1516,4 +1518,4 @@ Reordered for early CI, parallel server work, crypto spike before Room, split pu
 2. CI/CD PR references corrected (release → PR 23); added PR→CI mapping table; PR 12 for expanded CI
 3. WS auth signed-input format aligned: raw 32-byte nonce + pipe-delimited UTF-8 in diagram and table
 4. `envelope_recipients` FK `ON DELETE CASCADE` for hard-delete purge + TTL cron
-5. `libsignal-client` (server) added to AGPL license table and source-offer scope
+5. `libsignal-core` (server NIF) added to AGPL license table and source-offer scope

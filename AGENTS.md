@@ -26,8 +26,8 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T04:18:02.622Z
-**Branch:** `master` @ `15179bcc3201`
+**Last updated:** 2026-06-08T05:13:48.991Z
+**Branch:** `master` @ `52136f798697`
 
 ### In progress
 - PR 12: CI expansion — detekt, oxlint, emulator
@@ -37,8 +37,8 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - PR 2: Android Compose shell + minimal CI
 - PR 3: libsignal-android packaging spike
 - PR 4: core:common, core:model, core:designsystem, core:proto
-- PR 6: core:crypto SessionManager + identity sealing
 - PR 5: server:relay Gleam/Elixir/Rust skeleton
+- PR 6: core:crypto SessionManager + identity sealing
 - PR 7: core:security — Keystore sealing
 - PR 8: core:database — Room + SQLCipher (entities + DAOs only)
 - PR 9: core:domain — repository interfaces + use case stubs
@@ -54,18 +54,14 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - _(none)_
 
 ### Last handoff
-**session-handoff** at 2026-06-08T04:17:53.176Z
+**session-handoff** at 2026-06-08T05:13:48.991Z
 
-Pre-public audit: secrets purged, README + ROADMAP added
+Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing
 
 ### Recently touched
-- `grok/skills/session-handoff/SKILL.md`
 - `AGENTS.md`
 - `ROADMAP.md`
 - `ledgers/roadmap-state.json`
-- `cripts/update-agents-md.ts`
-- `.mcp.json.example`
-- `README.md`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
@@ -99,7 +95,7 @@ Live progress: [`ROADMAP.md`](ROADMAP.md). Full specification: `docs/DESIGN.md` 
 | Foundation   | 1–2   | build-logic, catalog, Justfile, Android shell, minimal CI |
 | Crypto spike | 3–6   | libsignal packaging, core modules, SessionManager         |
 | Data layer   | 7–10  | Keystore, SQLCipher/Room, domain interfaces               |
-| Network      | 5, 11 | Ktor relay server + Android WS client                     |
+| Network      | 5, 11 | Elixir relay server + Android Ktor WS client                |
 | CI expansion | 12    | detekt, oxlint, emulator tests                            |
 | Features     | 13–17 | onboarding, lock, chat list, settings, contacts           |
 | Messaging    | 18–22 | conversation lifecycle, E2EE, receipts, purge, groups     |
@@ -212,7 +208,7 @@ AWCHAT_HOOK_PHASE=pre-push bun scripts/hooks/coderabbit-run.ts      # ahead of u
 just build
 just test
 bun run lint
-bun run fmt
+bun run fmt:fix
 
 # Changelog ledger (also runs via lefthook pre-commit)
 bun run changelog
@@ -223,7 +219,7 @@ bun run changelog
 ## Architecture Pointers
 
 - **Design doc:** `docs/DESIGN.md` — crypto, retention, WS frame catalog, REST auth, DB schema
-- **Server:** Kotlin Ktor relay, PostgreSQL, libsignal-client JVM — dumb encrypted relay
+- **Server:** Elixir (Bandit/OTP) + Gleam + Rust NIF relay, PostgreSQL — dumb encrypted relay (XEdDSA verify only)
 - **Client:** Compose + M3 Expressive, Room + SQLCipher, Hilt, MVI per feature
 - **Retention:** Client-computed seen-by-all → signed `PurgeMessage` → server `PURGE_NOTIFY`
 

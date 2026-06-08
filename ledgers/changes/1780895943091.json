@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-06-08T05:19:03.091Z",
+  "head": "52136f7986972dd8eb2068a06ebbcf28a2d89e26",
+  "branch": "master",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "added": 8,
+      "removed": 12
+    },
+    {
+      "path": "ROADMAP.md",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "added": 18,
+      "removed": 16
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 6,
+      "removed": 10
+    },
+    {
+      "path": "plans/server/current-baseline.md",
+      "added": 23,
+      "removed": 20
+    },
+    {
+      "path": "scripts/update-agents-md.ts",
+      "added": 38,
+      "removed": 5
+    }
+  ],
+  "totals": {
+    "files": 6,
+    "added": 94,
+    "removed": 64
+  }
+}
