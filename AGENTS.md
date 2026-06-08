@@ -24,11 +24,11 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T02:35:25.261Z
-**Branch:** `master` @ `11da9d1a01eb`
+**Last updated:** 2026-06-08T03:29:45.239Z
+**Branch:** `master` @ `c334d7072b41`
 
 ### In progress
-- PR 7: core:security Keystore sealing
+- PR 8: core:database — Room + SQLCipher (entities + DAOs only)
 
 ### Completed
 - PR 1: build-logic + catalog + repo hygiene
@@ -37,23 +37,29 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - PR 4: core:common, core:model, core:designsystem, core:proto
 - PR 6: core:crypto SessionManager + identity sealing
 - PR 5: server:relay Gleam/Elixir/Rust skeleton
+- PR 7: core:security — Keystore sealing
 
 ### Next up
-- PR 7: core:security Keystore sealing
+- PR 8: core:database — Room + SQLCipher (entities + DAOs only)
 
 ### Blockers
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T02:35:25.261Z
+**roadmap-phase** at 2026-06-08T03:29:45.239Z
 
-Elixir/Bandit relay with Gleam protocol package, Rust libsignal XEdDSA NIF, Ecto schema, WS+REST v1 API, ack-driven delete, Fly/Railway deploy files
+Completed: PR 7: core:security — Keystore sealing
 
 ### Recently touched
-- `ocs/DESIGN.md`
-- `lans/server/current-baseline.md`
-- `.github/workflows/relay.yml`
-- `server/`
+- `gitignore`
+- `ore/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt`
+- `ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/AesGcmSealer.kt`
+- `ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/InMemoryMasterKeyProvider.kt`
+- `ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/MasterKeyProvider.kt`
+- `ettings.gradle.kts`
+- `core/common/src/main/kotlin/me/awfixer/awchat/core/common/security/`
+- `core/security/`
+- `server/relay/apps/gateway/native/awchat_crypto/examples/`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
