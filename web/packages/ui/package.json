@@ -38,7 +38,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript/native-preview": "7.0.0-dev.20260606.1",
+    "@typescript/native-preview": "7.0.0-dev.20260608.1",
     "@typescript/native-preview-linux-x64": "7.0.0-dev.20260606.1",
     "@workspace/typescript-config": "workspace:*",
     "eslint": "^9",
