@@ -1,11 +1,11 @@
 # Client — Apple (macOS desktop + iOS mobile)
 
-| Field | Value |
-| ----- | ----- |
-| **Status** | Planned (Phase 3) |
-| **Created** | 2026-06-08 |
-| **Phase gate** | Phase 1 GA **and** Phase 2 clients in beta; **Apple developer hardware available** |
-| **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4) |
+| Field                    | Value                                                                              |
+| ------------------------ | ---------------------------------------------------------------------------------- |
+| **Status**               | Planned (Phase 3)                                                                  |
+| **Created**              | 2026-06-08                                                                         |
+| **Phase gate**           | Phase 1 GA **and** Phase 2 clients in beta; **Apple developer hardware available** |
+| **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4)                                   |
 
 ---
 
@@ -19,13 +19,13 @@ Single `clients/apple/` subtree with shared Swift/SwiftUI (or Rust FFI core) acr
 
 ## Goals
 
-| ID | Goal |
-| --- | ---- |
-| G1 | iOS App Store + macOS notarized desktop distribution |
-| G2 | E2EE parity with Android against `/v1` relay |
-| G3 | Keychain + Secure Enclave for DB passphrase and unlock gates |
-| G4 | Plan 001 feedback — `client_platform: ios` / `macos` |
-| G5 | Shared UI code via SwiftUI multiplatform (iOS 17+, macOS 14+) |
+| ID  | Goal                                                          |
+| --- | ------------------------------------------------------------- |
+| G1  | iOS App Store + macOS notarized desktop distribution          |
+| G2  | E2EE parity with Android against `/v1` relay                  |
+| G3  | Keychain + Secure Enclave for DB passphrase and unlock gates  |
+| G4  | Plan 001 feedback — `client_platform: ios` / `macos`          |
+| G5  | Shared UI code via SwiftUI multiplatform (iOS 17+, macOS 14+) |
 
 ## Non-goals (initial Apple v1)
 
@@ -37,11 +37,11 @@ Single `clients/apple/` subtree with shared Swift/SwiftUI (or Rust FFI core) acr
 
 ## Hardware gate
 
-| Requirement | Why |
-| ----------- | --- |
-| Apple Developer Program membership | Signing, TestFlight |
-| Physical iPhone + Mac | Device testing, Keychain, biometric flows |
-| CI macOS runner | Xcode build (`blacksmith` or MacStadium / GitHub macOS) |
+| Requirement                        | Why                                                     |
+| ---------------------------------- | ------------------------------------------------------- |
+| Apple Developer Program membership | Signing, TestFlight                                     |
+| Physical iPhone + Mac              | Device testing, Keychain, biometric flows               |
+| CI macOS runner                    | Xcode build (`blacksmith` or MacStadium / GitHub macOS) |
 
 **Do not start implementation** until gate is met — planning only.
 
@@ -49,12 +49,12 @@ Single `clients/apple/` subtree with shared Swift/SwiftUI (or Rust FFI core) acr
 
 ## Stack (proposed — TBD at kickoff)
 
-| Layer | Leading option | Alternative |
-| ----- | -------------- | ----------- |
-| UI | SwiftUI | — |
-| Crypto | Rust `libsignal` via FFI bridge | libsignal Swift if mature enough |
-| Local DB | GRDB + SQLCipher | Core Data + encryption wrapper |
-| Network | URLSession + WebSocket | Shared Rust tokio crate via FFI |
+| Layer    | Leading option                  | Alternative                      |
+| -------- | ------------------------------- | -------------------------------- |
+| UI       | SwiftUI                         | —                                |
+| Crypto   | Rust `libsignal` via FFI bridge | libsignal Swift if mature enough |
+| Local DB | GRDB + SQLCipher                | Core Data + encryption wrapper   |
+| Network  | URLSession + WebSocket          | Shared Rust tokio crate via FFI  |
 
 Decision recorded in ADR at Phase 3 kickoff.
 
@@ -75,37 +75,37 @@ clients/apple/
 
 ## UX mapping
 
-| Android | Apple |
-| ------- | ----- |
-| Material 3 Expressive | SwiftUI + platform materials |
-| `AccountDrawerSheet` | Settings / sidebar (macOS) · sheet (iOS) |
-| Biometric lock | Face ID / Touch ID |
-| Pinning | TrustKit or custom SPKI pins |
+| Android               | Apple                                    |
+| --------------------- | ---------------------------------------- |
+| Material 3 Expressive | SwiftUI + platform materials             |
+| `AccountDrawerSheet`  | Settings / sidebar (macOS) · sheet (iOS) |
+| Biometric lock        | Face ID / Touch ID                       |
+| Pinning               | TrustKit or custom SPKI pins             |
 
 ---
 
 ## Dependencies
 
-| Dependency | Notes |
-| ---------- | ----- |
-| Phase 1 GA | Production relay |
-| Phase 2 | Lessons from Rust core extraction (GTK/TUI) |
-| Plan 001 | Feedback API stable |
-| Legal | AGPL + App Store compliance review (same as Android GA) |
+| Dependency | Notes                                                   |
+| ---------- | ------------------------------------------------------- |
+| Phase 1 GA | Production relay                                        |
+| Phase 2    | Lessons from Rust core extraction (GTK/TUI)             |
+| Plan 001   | Feedback API stable                                     |
+| Legal      | AGPL + App Store compliance review (same as Android GA) |
 
 ---
 
 ## Implementation phases (outline)
 
-| Phase | Scope |
-| ----- | ----- |
-| **0 — ADR** | Swift vs Rust FFI; monorepo layout |
-| **1 — Core FFI** | Port SessionManager; Keychain sealing |
-| **2 — iOS spike** | Onboarding + register against staging |
-| **3 — macOS spike** | Multiplatform SwiftUI shell |
-| **4 — E2EE** | Thread UI, send/receive, purge |
-| **5 — Hardening** | Pinning, duress, TestFlight β |
-| **6 — Store** | App Store + notarized macOS |
+| Phase               | Scope                                 |
+| ------------------- | ------------------------------------- |
+| **0 — ADR**         | Swift vs Rust FFI; monorepo layout    |
+| **1 — Core FFI**    | Port SessionManager; Keychain sealing |
+| **2 — iOS spike**   | Onboarding + register against staging |
+| **3 — macOS spike** | Multiplatform SwiftUI shell           |
+| **4 — E2EE**        | Thread UI, send/receive, purge        |
+| **5 — Hardening**   | Pinning, duress, TestFlight β         |
+| **6 — Store**       | App Store + notarized macOS           |
 
 ---
 
@@ -121,11 +121,11 @@ clients/apple/
 
 ## Open questions
 
-| ID | Question | Default |
-| -- | -------- | ------- |
+| ID  | Question                                     | Default                               |
+| --- | -------------------------------------------- | ------------------------------------- |
 | OQ1 | Single universal binary vs separate targets? | Separate targets, shared `AWChatCore` |
-| OQ2 | macOS menu bar mini client? | Defer post-GA |
-| OQ3 | APNS in Apple v1 or wait for design v1.1? | Wait — foreground delivery first |
+| OQ2 | macOS menu bar mini client?                  | Defer post-GA                         |
+| OQ3 | APNS in Apple v1 or wait for design v1.1?    | Wait — foreground delivery first      |
 
 ---
 

@@ -40,9 +40,7 @@
         ],
         "primaryKey": {
           "autoGenerate": false,
-          "columnNames": [
-            "chatId"
-          ]
+          "columnNames": ["chatId"]
         }
       },
       {
@@ -93,27 +91,20 @@
         ],
         "primaryKey": {
           "autoGenerate": false,
-          "columnNames": [
-            "messageId"
-          ]
+          "columnNames": ["messageId"]
         },
         "indices": [
           {
             "name": "index_messages_chatId",
             "unique": false,
-            "columnNames": [
-              "chatId"
-            ],
+            "columnNames": ["chatId"],
             "orders": [],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_messages_chatId` ON `${TABLE_NAME}` (`chatId`)"
           },
           {
             "name": "index_messages_chatId_clientTimestamp",
             "unique": false,
-            "columnNames": [
-              "chatId",
-              "clientTimestamp"
-            ],
+            "columnNames": ["chatId", "clientTimestamp"],
             "orders": [],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_messages_chatId_clientTimestamp` ON `${TABLE_NAME}` (`chatId`, `clientTimestamp`)"
           }
@@ -123,12 +114,8 @@
             "table": "chats",
             "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
-            "columns": [
-              "chatId"
-            ],
-            "referencedColumns": [
-              "chatId"
-            ]
+            "columns": ["chatId"],
+            "referencedColumns": ["chatId"]
           }
         ]
       },
@@ -157,18 +144,13 @@
         ],
         "primaryKey": {
           "autoGenerate": false,
-          "columnNames": [
-            "messageId",
-            "readerId"
-          ]
+          "columnNames": ["messageId", "readerId"]
         },
         "indices": [
           {
             "name": "index_read_receipts_messageId",
             "unique": false,
-            "columnNames": [
-              "messageId"
-            ],
+            "columnNames": ["messageId"],
             "orders": [],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_read_receipts_messageId` ON `${TABLE_NAME}` (`messageId`)"
           }
@@ -178,12 +160,8 @@
             "table": "messages",
             "onDelete": "CASCADE",
             "onUpdate": "NO ACTION",
-            "columns": [
-              "messageId"
-            ],
-            "referencedColumns": [
-              "messageId"
-            ]
+            "columns": ["messageId"],
+            "referencedColumns": ["messageId"]
           }
         ]
       },
@@ -212,9 +190,7 @@
         ],
         "primaryKey": {
           "autoGenerate": false,
-          "columnNames": [
-            "peerId"
-          ]
+          "columnNames": ["peerId"]
         }
       },
       {
@@ -259,18 +235,13 @@
         ],
         "primaryKey": {
           "autoGenerate": false,
-          "columnNames": [
-            "groupId",
-            "senderId"
-          ]
+          "columnNames": ["groupId", "senderId"]
         },
         "indices": [
           {
             "name": "index_sender_keys_groupId",
             "unique": false,
-            "columnNames": [
-              "groupId"
-            ],
+            "columnNames": ["groupId"],
             "orders": [],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_sender_keys_groupId` ON `${TABLE_NAME}` (`groupId`)"
           }
@@ -313,9 +284,7 @@
         ],
         "primaryKey": {
           "autoGenerate": false,
-          "columnNames": [
-            "userId"
-          ]
+          "columnNames": ["userId"]
         }
       }
     ],

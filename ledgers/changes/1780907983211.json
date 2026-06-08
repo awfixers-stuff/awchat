@@ -1,0 +1,462 @@
+{
+  "recorded_at": "2026-06-08T08:39:43.211Z",
+  "head": "36735d7a1425d102f5563746d8c844ed24c50e50",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".agents/skills/autofix/SKILL.md",
+      "added": 17,
+      "removed": 0
+    },
+    {
+      "path": ".agents/skills/code-review/SKILL.md",
+      "added": 9,
+      "removed": 9
+    },
+    {
+      "path": ".cursor/hooks.json",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".github/workflows/auth.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".github/workflows/broker.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".github/workflows/relay.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".grok/hooks/agents-continuity.json",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".grok/hooks/coderabbit-turn.json",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".omp/hooks/post/agent-turn-coderabbit.ts",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": ".pi/extensions/coderabbit-turn-gate.ts",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "AGENTS.md",
+      "added": 22,
+      "removed": 16
+    },
+    {
+      "path": "RAILWAY.md",
+      "added": 6,
+      "removed": 6
+    },
+    {
+      "path": "README.md",
+      "added": 17,
+      "removed": 17
+    },
+    {
+      "path": "ROADMAP.md",
+      "added": 40,
+      "removed": 37
+    },
+    {
+      "path": "bun.lock",
+      "added": 1486,
+      "removed": 73
+    },
+    {
+      "path": "bunfig.toml",
+      "added": 8,
+      "removed": 8
+    },
+    {
+      "path": "core/database/schemas/me.awfixer.awchat.core.database.AwChatDatabase/1.json",
+      "added": 15,
+      "removed": 46
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "added": 25,
+      "removed": 25
+    },
+    {
+      "path": "gradle/libs.versions.toml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 1,
+      "removed": 4
+    },
+    {
+      "path": "package.json",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "plans/001-support-and-bug-reporting.md",
+      "added": 74,
+      "removed": 74
+    },
+    {
+      "path": "plans/README.md",
+      "added": 31,
+      "removed": 31
+    },
+    {
+      "path": "plans/android/current-baseline.md",
+      "added": 70,
+      "removed": 70
+    },
+    {
+      "path": "plans/android/feedback.md",
+      "added": 48,
+      "removed": 48
+    },
+    {
+      "path": "plans/clients/README.md",
+      "added": 31,
+      "removed": 31
+    },
+    {
+      "path": "plans/clients/apple-macos-ios.md",
+      "added": 50,
+      "removed": 50
+    },
+    {
+      "path": "plans/clients/desktop-linux-gtk.md",
+      "added": 43,
+      "removed": 43
+    },
+    {
+      "path": "plans/clients/tui-ratatui.md",
+      "added": 32,
+      "removed": 32
+    },
+    {
+      "path": "plans/server/002-redis-durable-encrypted-pipeline.md",
+      "added": 52,
+      "removed": 52
+    },
+    {
+      "path": "plans/server/003-feedback-linear-smtp.md",
+      "added": 98,
+      "removed": 94
+    },
+    {
+      "path": "plans/server/current-baseline.md",
+      "added": 138,
+      "removed": 138
+    },
+    {
+      "path": "scripts/hooks/clear-coderabbit-queue.ts",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/auth/README.md",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/auth/apps/gateway/native/awchat_crypto/Cargo.toml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/auth/docker-compose.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/auth/railway.toml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/README.md",
+      "added": 19,
+      "removed": 19
+    },
+    {
+      "path": "server/broker/docker-compose.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/broker/railway.toml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/relay/README.md",
+      "added": 8,
+      "removed": 8
+    },
+    {
+      "path": "server/relay/apps/gateway/README.md",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "server/relay/apps/gateway/native/awchat_crypto/Cargo.toml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/relay/docker-compose.yml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/relay/packages/core/README.md",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/packages/core/gleam.toml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "server/relay/packages/core/manifest.toml",
+      "added": 9,
+      "removed": 2
+    },
+    {
+      "path": "server/relay/railway.toml",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "web/.eslintrc.js",
+      "added": 0,
+      "removed": 13
+    },
+    {
+      "path": "web/.npmrc",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/.oxfmtrc.json",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "web/.oxlintrc.json",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "web/.prettierignore",
+      "added": 0,
+      "removed": 7
+    },
+    {
+      "path": "web/.prettierrc",
+      "added": 0,
+      "removed": 11
+    },
+    {
+      "path": "web/AGENTS.md",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "web/README.md",
+      "added": 0,
+      "removed": 21
+    },
+    {
+      "path": "web/apps/web/app/layout.tsx",
+      "added": 20,
+      "removed": 7
+    },
+    {
+      "path": "web/apps/web/app/page.tsx",
+      "added": 18,
+      "removed": 14
+    },
+    {
+      "path": "web/apps/web/components/.gitkeep",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/cta-section.tsx",
+      "added": 67,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/dev-banner.tsx",
+      "added": 15,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/features.tsx",
+      "added": 75,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/hero.tsx",
+      "added": 83,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/how-it-works.tsx",
+      "added": 50,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/site-footer.tsx",
+      "added": 37,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/site-header.tsx",
+      "added": 46,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/theme-provider.tsx",
+      "added": 19,
+      "removed": 22
+    },
+    {
+      "path": "web/apps/web/eslint.config.js",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "web/apps/web/next.config.ts",
+      "added": 3,
+      "removed": 3
+    },
+    {
+      "path": "web/apps/web/package.json",
+      "added": 30,
+      "removed": 8
+    },
+    {
+      "path": "web/apps/web/postcss.config.mjs",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "web/bun.lock",
+      "added": 0,
+      "removed": 1656
+    },
+    {
+      "path": "web/bunfig.toml",
+      "added": 40,
+      "removed": 0
+    },
+    {
+      "path": "web/package.json",
+      "added": 28,
+      "removed": 9
+    },
+    {
+      "path": "web/packages/eslint-config/README.md",
+      "added": 0,
+      "removed": 3
+    },
+    {
+      "path": "web/packages/eslint-config/base.js",
+      "added": 0,
+      "removed": 32
+    },
+    {
+      "path": "web/packages/eslint-config/next.js",
+      "added": 0,
+      "removed": 51
+    },
+    {
+      "path": "web/packages/eslint-config/package.json",
+      "added": 0,
+      "removed": 26
+    },
+    {
+      "path": "web/packages/eslint-config/react-internal.js",
+      "added": 0,
+      "removed": 41
+    },
+    {
+      "path": "web/packages/typescript-config/.oxfmtrc.json",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/typescript-config/.oxlintrc.json",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/typescript-config/package.json",
+      "added": 32,
+      "removed": 1
+    },
+    {
+      "path": "web/packages/ui/eslint.config.js",
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "path": "web/packages/ui/package.json",
+      "added": 36,
+      "removed": 13
+    },
+    {
+      "path": "web/packages/ui/postcss.config.mjs",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "web/packages/ui/src/components/button.tsx",
+      "added": 10,
+      "removed": 10
+    },
+    {
+      "path": "web/packages/ui/src/lib/utils.ts",
+      "added": 3,
+      "removed": 3
+    },
+    {
+      "path": "web/packages/ui/src/styles/globals.css",
+      "added": 106,
+      "removed": 106
+    },
+    {
+      "path": "web/tsconfig.json",
+      "added": 0,
+      "removed": 1
+    }
+  ],
+  "totals": {
+    "files": 90,
+    "added": 3130,
+    "removed": 3023
+  }
+}

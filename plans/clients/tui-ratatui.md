@@ -1,12 +1,12 @@
 # Client — TUI (Ratatui)
 
-| Field | Value |
-| ----- | ----- |
-| **Status** | Planned (Phase 2) |
-| **Created** | 2026-06-08 |
-| **Phase gate** | Android + server at production standard (PR 24 GA) |
-| **Platforms** | **macOS**, **Linux** |
-| **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4) |
+| Field                    | Value                                              |
+| ------------------------ | -------------------------------------------------- |
+| **Status**               | Planned (Phase 2)                                  |
+| **Created**              | 2026-06-08                                         |
+| **Phase gate**           | Android + server at production standard (PR 24 GA) |
+| **Platforms**            | **macOS**, **Linux**                               |
+| **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4)   |
 
 ---
 
@@ -18,13 +18,13 @@ Terminal UI client using **Ratatui** for developers and minimalists. Same relay 
 
 ## Goals
 
-| ID | Goal |
-| --- | ---- |
-| G1 | Usable 1:1 and group chat entirely in terminal |
-| G2 | E2EE via Rust `libsignal-protocol` |
-| G3 | Encrypted local DB (SQLCipher) |
-| G4 | Plan 001 feedback with `client_platform: tui` |
-| G5 | CI on macOS + Linux runners |
+| ID  | Goal                                           |
+| --- | ---------------------------------------------- |
+| G1  | Usable 1:1 and group chat entirely in terminal |
+| G2  | E2EE via Rust `libsignal-protocol`             |
+| G3  | Encrypted local DB (SQLCipher)                 |
+| G4  | Plan 001 feedback with `client_platform: tui`  |
+| G5  | CI on macOS + Linux runners                    |
 
 ## Non-goals (v1 TUI)
 
@@ -37,12 +37,12 @@ Terminal UI client using **Ratatui** for developers and minimalists. Same relay 
 
 ## Stack (proposed)
 
-| Layer | Choice |
-| ----- | ------ |
-| UI | Ratatui + Crossterm |
-| Runtime | Tokio |
+| Layer            | Choice                                               |
+| ---------------- | ---------------------------------------------------- |
+| UI               | Ratatui + Crossterm                                  |
+| Runtime          | Tokio                                                |
 | Crypto / network | Shared crate with `clients/linux-gtk` where possible |
-| Config | TOML in XDG config dir (`~/.config/awchat/`) |
+| Config           | TOML in XDG config dir (`~/.config/awchat/`)         |
 
 ---
 
@@ -80,11 +80,11 @@ Settings modal: theme, root warning, **Report bug**, **Contact support**.
 
 ## Platform notes
 
-| Platform | Notes |
-| -------- | ----- |
-| **Linux** | Primary dev target; Nix flake optional dep |
-| **macOS** | Terminal.app / iTerm2; Keychain for DB passphrase |
-| **SSH** | Out of scope — local terminal only (no mosh-over-chat) |
+| Platform  | Notes                                                  |
+| --------- | ------------------------------------------------------ |
+| **Linux** | Primary dev target; Nix flake optional dep             |
+| **macOS** | Terminal.app / iTerm2; Keychain for DB passphrase      |
+| **SSH**   | Out of scope — local terminal only (no mosh-over-chat) |
 
 ---
 
@@ -96,14 +96,14 @@ Same as [desktop-linux-gtk.md](./desktop-linux-gtk.md) Phase 2 gate. Prefer **sh
 
 ## Implementation phases (outline)
 
-| Phase | Scope |
-| ----- | ----- |
-| **0 — Spike** | Ratatui event loop + health check |
+| Phase               | Scope                                      |
+| ------------------- | ------------------------------------------ |
+| **0 — Spike**       | Ratatui event loop + health check          |
 | **1 — Shared core** | Extract `awchat-core` crate from GTK spike |
-| **2 — Panes** | List + thread + lock screen |
-| **3 — E2EE** | Wire send/receive + purge |
-| **4 — Feedback** | TUI forms → Plan 001 API |
-| **5 — Release** | `cargo install` + GitHub release artifacts |
+| **2 — Panes**       | List + thread + lock screen                |
+| **3 — E2EE**        | Wire send/receive + purge                  |
+| **4 — Feedback**    | TUI forms → Plan 001 API                   |
+| **5 — Release**     | `cargo install` + GitHub release artifacts |
 
 ---
 

@@ -28,13 +28,13 @@ Implements the v1 contract from [`docs/DESIGN.md`](../../docs/DESIGN.md):
 
 Monorepo setup: [`RAILWAY.md`](../../RAILWAY.md). This service is named **awchat** on Railway; root `/server/relay`, config [`railway.toml`](railway.toml).
 
-| Railway service | Root directory | Exposure |
-| --------------- | -------------- | -------- |
-| **broker** | `/server/broker` | Public domain only |
-| **awchat** (relay) | `/server/relay` | `*.railway.internal` only |
-| **auth** | `/server/auth` | `*.railway.internal` only |
-| **Postgres** | — | Relay DB (`${{Postgres.DATABASE_URL}}`) |
-| **Postgres-Auth** | — | Auth DB (`${{Postgres-Auth.DATABASE_URL}}`) |
+| Railway service    | Root directory   | Exposure                                    |
+| ------------------ | ---------------- | ------------------------------------------- |
+| **broker**         | `/server/broker` | Public domain only                          |
+| **awchat** (relay) | `/server/relay`  | `*.railway.internal` only                   |
+| **auth**           | `/server/auth`   | `*.railway.internal` only                   |
+| **Postgres**       | —                | Relay DB (`${{Postgres.DATABASE_URL}}`)     |
+| **Postgres-Auth**  | —                | Auth DB (`${{Postgres-Auth.DATABASE_URL}}`) |
 
 Migrations run automatically on container boot.
 

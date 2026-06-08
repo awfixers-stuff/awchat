@@ -27,8 +27,5 @@
     "reason": "session-handoff",
     "summary": "Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing"
   },
-  "recent_files": [
-    "README.md",
-    "docs/DESIGN.md"
-  ]
+  "recent_files": ["README.md", "docs/DESIGN.md"]
 }

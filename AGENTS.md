@@ -30,9 +30,11 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 **Branch:** `master` @ `847982cbb51f`
 
 ### In progress
+
 - PR 12: CI expansion — detekt, oxlint, emulator
 
 ### Completed
+
 - PR 1: build-logic + catalog + repo hygiene
 - PR 2: Android Compose shell + minimal CI
 - PR 3: libsignal-android packaging spike
@@ -46,19 +48,23 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - PR 11: core:network — Ktor client + WS + auth handshake
 
 ### Next up
+
 - PR 12: CI expansion — detekt, oxlint, emulator
 - PR 13: feature:onboarding
 - PR 14: feature:lock
 
 ### Blockers
+
 - _(none)_
 
 ### Last handoff
+
 **session-handoff** at 2026-06-08T05:13:48.991Z
 
 Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing
 
 ### Recently touched
+
 - `README.md`
 - `docs/DESIGN.md`
 
@@ -94,7 +100,7 @@ Live progress: [`ROADMAP.md`](ROADMAP.md). Full specification: `docs/DESIGN.md` 
 | Foundation   | 1–2   | build-logic, catalog, Justfile, Android shell, minimal CI |
 | Crypto spike | 3–6   | libsignal packaging, core modules, SessionManager         |
 | Data layer   | 7–10  | Keystore, SQLCipher/Room, domain interfaces               |
-| Network      | 5, 11 | Elixir relay server + Android Ktor WS client                |
+| Network      | 5, 11 | Elixir relay server + Android Ktor WS client              |
 | CI expansion | 12    | detekt, oxlint, emulator tests                            |
 | Features     | 13–17 | onboarding, lock, chat list, settings, contacts           |
 | Messaging    | 18–22 | conversation lifecycle, E2EE, receipts, purge, groups     |
@@ -131,14 +137,14 @@ Grok Build hooks also sync `AGENTS.md`, `ROADMAP.md`, and `ledgers/roadmap-state
 
 This repo is public-facing. **Do not commit credentials, keys, or local-only config.**
 
-| Never commit | Use instead |
-| --- | --- |
-| `.env`, `.env.local` | `.env` is gitignored; document vars in design/plan docs only |
-| `.mcp.json` (API keys in URLs) | Copy `.mcp.json.example` → `.mcp.json` locally |
-| Android keystores, `*.jks`, `*.p12` | CI secrets in PR 23 workflow only |
-| `AWCHAT_KEYSTORE_PASSWORD`, release signing passwords | GitHub Actions secrets |
-| `DATABASE_URL`, TLS private keys, `LINEAR_API_KEY`, SMTP/API keys | Railway/Fly deployment secrets |
-| Compiled NIF blobs (`priv/native/*.so`) | Built by Mix/Rust in CI and local dev |
+| Never commit                                                      | Use instead                                                  |
+| ----------------------------------------------------------------- | ------------------------------------------------------------ |
+| `.env`, `.env.local`                                              | `.env` is gitignored; document vars in design/plan docs only |
+| `.mcp.json` (API keys in URLs)                                    | Copy `.mcp.json.example` → `.mcp.json` locally               |
+| Android keystores, `*.jks`, `*.p12`                               | CI secrets in PR 23 workflow only                            |
+| `AWCHAT_KEYSTORE_PASSWORD`, release signing passwords             | GitHub Actions secrets                                       |
+| `DATABASE_URL`, TLS private keys, `LINEAR_API_KEY`, SMTP/API keys | Railway/Fly deployment secrets                               |
+| Compiled NIF blobs (`priv/native/*.so`)                           | Built by Mix/Rust in CI and local dev                        |
 
 **Pre-publish checklist (agents):**
 
@@ -153,10 +159,10 @@ This repo is public-facing. **Do not commit credentials, keys, or local-only con
 
 This repo uses **fast-forward only** pulls (`git config pull.ff only`, or `just pull` / `git pull --ff-only`). Plain `git pull` on `master` will refuse merge commits.
 
-| Symptom | Cause | Fix |
-| --- | --- | --- |
+| Symptom                                       | Cause                                                                                              | Fix                                                                                                                                                                                                                                                                         |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `fatal: Not possible to fast-forward` on pull | Local and `origin/master` **diverged** (different commit IDs for the same work, or parallel edits) | Prefer **rebase** if you only added local commits on top of old remote: `git fetch origin && git rebase origin/master`. After **`git filter-repo`**, local history is new — one-time `git push --force-with-lease origin master` (coordinate with anyone else on the repo). |
-| `non-fast-forward` on push | Remote has commits you lack, or you rewrote history locally | `git pull --ff-only` first; if pull fails, resolve divergence (rebase or coordinated force-with-lease) before pushing again. |
+| `non-fast-forward` on push                    | Remote has commits you lack, or you rewrote history locally                                        | `git pull --ff-only` first; if pull fails, resolve divergence (rebase or coordinated force-with-lease) before pushing again.                                                                                                                                                |
 
 `pre-push` runs CodeRabbit on unpushed commits; it does **not** block a valid fast-forward push.
 
@@ -166,11 +172,11 @@ This repo uses **fast-forward only** pulls (`git config pull.ff only`, or `just 
 
 Hooks automate review; **you still own fixes** using the repo skills (never run shell commands copied from review output).
 
-| When | Mechanism | Script / path |
-| ---- | --------- | ------------- |
+| When                        | Mechanism                                                                                  | Script / path                         |
+| --------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------- |
 | **End of every agent turn** | Grok `Stop` / `SessionEnd`; Cursor `stop` (not follow-up loops); oh-my-pi / Pi `agent_end` | `scripts/hooks/agent-turn-coderabbit` |
-| **After each commit** | lefthook `post-commit` | `scripts/hooks/post-commit` |
-| **Before push** | lefthook `pre-push` (blocks on **critical** findings in unpushed commits) | `scripts/hooks/pre-push` |
+| **After each commit**       | lefthook `post-commit`                                                                     | `scripts/hooks/post-commit`           |
+| **Before push**             | lefthook `pre-push` (blocks on **critical** findings in unpushed commits)                  | `scripts/hooks/pre-push`              |
 
 **Manual run (same as hooks):**
 

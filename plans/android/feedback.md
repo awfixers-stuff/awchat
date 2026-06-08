@@ -1,11 +1,11 @@
 # Android — Support & bug reporting
 
-| Field | Value |
-| ----- | ----- |
-| **Status** | Draft |
-| **Created** | 2026-06-08 |
-| **Depends on** | [`current-baseline.md`](./current-baseline.md); [Plan 001](../001-support-and-bug-reporting.md); [server/003](../server/003-feedback-linear-smtp.md) |
-| **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4) |
+| Field                    | Value                                                                                                                                                |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Status**               | Draft                                                                                                                                                |
+| **Created**              | 2026-06-08                                                                                                                                           |
+| **Depends on**           | [`current-baseline.md`](./current-baseline.md); [Plan 001](../001-support-and-bug-reporting.md); [server/003](../server/003-feedback-linear-smtp.md) |
+| **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4)                                                                                                     |
 
 ---
 
@@ -22,12 +22,12 @@ Non-goals: WebView forms, Linear API in APK, screenshot upload (v1).
 
 ## Dependencies
 
-| Dependency | State | Why |
-| ---------- | ----- | --- |
-| PR 11 `core:network` | **done** | `FeedbackApi` extends existing Ktor client + signer |
-| PR 16 `feature:settings` | pending | `AccountDrawerSheet` host rows |
-| PR 23 pinning | pending | Pinning failure → support deep link |
-| Server plan 003 | pending | `POST /v1/feedback/*` endpoints live in staging |
+| Dependency               | State    | Why                                                 |
+| ------------------------ | -------- | --------------------------------------------------- |
+| PR 11 `core:network`     | **done** | `FeedbackApi` extends existing Ktor client + signer |
+| PR 16 `feature:settings` | pending  | `AccountDrawerSheet` host rows                      |
+| PR 23 pinning            | pending  | Pinning failure → support deep link                 |
+| Server plan 003          | pending  | `POST /v1/feedback/*` endpoints live in staging     |
 
 ---
 
@@ -69,12 +69,12 @@ Models include `client_platform = "android"` in diagnostics (server may override
 
 Add to `core:network`:
 
-| Piece | Detail |
-| ----- | ------ |
-| `FeedbackApi` | `submitBugReport`, `submitSupportRequest` |
-| DTOs | Match [Plan 001](../001-support-and-bug-reporting.md) shared contract |
-| Auth | Existing `RestAuthSigner` on `POST` bodies |
-| Errors | Map `401`, `429`, `502`, `503` to user-facing `FeedbackError` |
+| Piece         | Detail                                                                |
+| ------------- | --------------------------------------------------------------------- |
+| `FeedbackApi` | `submitBugReport`, `submitSupportRequest`                             |
+| DTOs          | Match [Plan 001](../001-support-and-bug-reporting.md) shared contract |
+| Auth          | Existing `RestAuthSigner` on `POST` bodies                            |
+| Errors        | Map `401`, `429`, `502`, `503` to user-facing `FeedbackError`         |
 
 Repository impl: `FeedbackRepositoryImpl` in `core:network` or `core:database` per existing repo pattern — follow where other REST repos landed after PR 10.
 
@@ -84,19 +84,19 @@ Repository impl: `FeedbackRepositoryImpl` in `core:network` or `core:database` p
 
 `core:common` → `DeviceDiagnostics`:
 
-| Field | Source |
-| ----- | ------ |
-| `client_platform` | constant `"android"` |
-| `app_version` | `BuildConfig.VERSION_NAME` |
-| `build_number` | `BuildConfig.VERSION_CODE` |
-| `flavor` | `BuildConfig.BUILD_TYPE` mapped to `debug\|release` |
-| `os_version` | `Build.VERSION.RELEASE` + API level |
-| `device_model` | `Build.MODEL` |
-| `locale` | `Locale.getDefault().toLanguageTag()` |
+| Field             | Source                                              |
+| ----------------- | --------------------------------------------------- |
+| `client_platform` | constant `"android"`                                |
+| `app_version`     | `BuildConfig.VERSION_NAME`                          |
+| `build_number`    | `BuildConfig.VERSION_CODE`                          |
+| `flavor`          | `BuildConfig.BUILD_TYPE` mapped to `debug\|release` |
+| `os_version`      | `Build.VERSION.RELEASE` + API level                 |
+| `device_model`    | `Build.MODEL`                                       |
+| `locale`          | `Locale.getDefault().toLanguageTag()`               |
 
 **Forbidden keys** (unit test must assert never serialized): message bodies, contact IDs, safety numbers, prekeys, SQLCipher paths, identity private material, sealed blob paths.
 
-Aligned with design doc: *"Opt-in crash counts only; no message metadata"* for telemetry scope.
+Aligned with design doc: _"Opt-in crash counts only; no message metadata"_ for telemetry scope.
 
 ---
 
@@ -111,11 +111,11 @@ Material 3 Expressive: same motion/shape as drawer; inline validation errors; no
 
 ### Entry points
 
-| Location | Wiring |
-| -------- | ------ |
-| `AccountDrawerSheet` | Two list rows navigate to feedback nav graph |
-| Pinning failure (PR 23) | Full-screen block + "Contact support" → `SupportScreen` |
-| About (optional) | Long-press version → `BugReportScreen` with `pinning_enabled` in diagnostics |
+| Location                | Wiring                                                                       |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| `AccountDrawerSheet`    | Two list rows navigate to feedback nav graph                                 |
+| Pinning failure (PR 23) | Full-screen block + "Contact support" → `SupportScreen`                      |
+| About (optional)        | Long-press version → `BugReportScreen` with `pinning_enabled` in diagnostics |
 
 ### Degraded UX
 
@@ -127,26 +127,26 @@ When server returns `503` or network unreachable:
 
 ## Implementation phases
 
-| Phase | Scope |
-| ----- | ----- |
-| **A — Core** | Domain models, `FeedbackApi`, `FeedbackRepositoryImpl`, `DeviceDiagnostics` + unit tests |
-| **B — Feature module** | ViewModels, screens, navigation, fake repo screenshot tests |
-| **C — Integration** | Wire drawer (after PR 16); pinning link (after PR 23); staging E2E against relay 003 |
-| **D — Hardening** | ProGuard keep rules for DTOs; emulator test for forbidden diagnostics keys |
+| Phase                  | Scope                                                                                    |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| **A — Core**           | Domain models, `FeedbackApi`, `FeedbackRepositoryImpl`, `DeviceDiagnostics` + unit tests |
+| **B — Feature module** | ViewModels, screens, navigation, fake repo screenshot tests                              |
+| **C — Integration**    | Wire drawer (after PR 16); pinning link (after PR 23); staging E2E against relay 003     |
+| **D — Hardening**      | ProGuard keep rules for DTOs; emulator test for forbidden diagnostics keys               |
 
 ---
 
 ## Acceptance criteria
 
-| ID | Criterion |
-| -- | --------- |
-| AC-1 | Bug report from drawer returns Linear identifier on mocked/staging success |
-| AC-2 | Support request shows queued confirmation on `202` |
-| AC-3 | `401` shown when user not registered / signer fails |
-| AC-4 | `429` shows rate-limit message with retry guidance |
-| AC-5 | `DeviceDiagnostics` unit test fails if forbidden key added |
+| ID   | Criterion                                                                   |
+| ---- | --------------------------------------------------------------------------- |
+| AC-1 | Bug report from drawer returns Linear identifier on mocked/staging success  |
+| AC-2 | Support request shows queued confirmation on `202`                          |
+| AC-3 | `401` shown when user not registered / signer fails                         |
+| AC-4 | `429` shows rate-limit message with retry guidance                          |
+| AC-5 | `DeviceDiagnostics` unit test fails if forbidden key added                  |
 | AC-6 | Release APK `strings` / decompile grep finds no `LINEAR` / API key patterns |
-| AC-7 | Pinning failure navigates to support without disabling pinning |
+| AC-7 | Pinning failure navigates to support without disabling pinning              |
 
 ---
 
