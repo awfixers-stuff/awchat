@@ -1,0 +1,102 @@
+{
+  "recorded_at": "2026-06-08T09:09:51.267Z",
+  "head": "96c94340e292470ecdf8fdc9d4c74459500374ea",
+  "branch": "master",
+  "files": [
+    {
+      "path": "bun.lock",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/app/layout.tsx",
+      "added": 13,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/app/page.tsx",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "web/apps/web/components/cta-section.tsx",
+      "added": 35,
+      "removed": 25
+    },
+    {
+      "path": "web/apps/web/components/dev-banner.tsx",
+      "added": 23,
+      "removed": 4
+    },
+    {
+      "path": "web/apps/web/components/features.tsx",
+      "added": 35,
+      "removed": 18
+    },
+    {
+      "path": "web/apps/web/components/hero.tsx",
+      "added": 75,
+      "removed": 32
+    },
+    {
+      "path": "web/apps/web/components/how-it-works.tsx",
+      "added": 59,
+      "removed": 36
+    },
+    {
+      "path": "web/apps/web/components/mobile-nav.tsx",
+      "added": 94,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/section-heading.tsx",
+      "added": 31,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/components/site-footer.tsx",
+      "added": 79,
+      "removed": 28
+    },
+    {
+      "path": "web/apps/web/components/site-header.tsx",
+      "added": 25,
+      "removed": 19
+    },
+    {
+      "path": "web/apps/web/components/theme-toggle.tsx",
+      "added": 45,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/lib/constants.ts",
+      "added": 9,
+      "removed": 0
+    },
+    {
+      "path": "web/apps/web/package.json",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "web/bunfig.toml",
+      "added": 7,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/package.json",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "web/packages/ui/src/styles/globals.css",
+      "added": 54,
+      "removed": 30
+    }
+  ],
+  "totals": {
+    "files": 18,
+    "added": 595,
+    "removed": 193
+  }
+}

@@ -8,6 +8,13 @@ smol = true
 
 [install]
 minimumReleaseAgeExcludes = [
+  "lightningcss",
+  "lightningcss-linux-x64-gnu",
+  "@tailwindcss/oxide",
+  "@tailwindcss/oxide-linux-x64-gnu",
+  "@tailwindcss/postcss",
+  "tailwindcss",
+  "@next/swc-linux-x64-gnu",
   "vitest",
   "radix-ui",
   "@types/bun",

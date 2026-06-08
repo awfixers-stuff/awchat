@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     description:
       "Signal Protocol E2EE, X-Lite UX, and messages that purge after everyone has seen them.",
     type: "website",
+    siteName: "AWChat",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AWChat — Encrypted ephemeral chat",
+    description:
+      "Signal Protocol E2EE, X-Lite UX, and messages that purge after everyone has seen them.",
   },
 };
 
@@ -36,6 +43,12 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
     >
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

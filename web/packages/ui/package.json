@@ -31,7 +31,9 @@
   "devDependencies": {
     "@oxfmt/binding-linux-x64-gnu": "0.53.0",
     "@oxlint/binding-linux-x64-gnu": "1.68.0",
+    "@tailwindcss/oxide-linux-x64-gnu": "4.3.0",
     "@tailwindcss/postcss": "^4",
+    "lightningcss-linux-x64-gnu": "1.32.0",
     "@turbo/gen": "^2.9.15",
     "@types/node": "^20",
     "@types/react": "^19",
