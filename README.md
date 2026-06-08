@@ -20,14 +20,14 @@ Reach out via the usual project channels to discuss scope before starting. Nothi
 
 Early development. See the [roadmap](ROADMAP.md) for live progress (currently **PR 12 / 24**).
 
-| Area | Stack |
-| --- | --- |
-| Android client (official) | Kotlin, Jetpack Compose, Room + SQLCipher, libsignal-android, Hilt |
-| Linux desktop (experimental) | Rust, GTK (`desktop/`) |
-| TUI — Linux & macOS (experimental) | Rust (`tui/`) |
-| Relay server | Elixir (Bandit/OTP), Gleam protocol core, Rust libsignal NIF, PostgreSQL |
-| Auth server | Elixir gateway + Rust crypto NIF |
-| CI | GitHub Actions on Blacksmith runners |
+| Area                               | Stack                                                                    |
+| ---------------------------------- | ------------------------------------------------------------------------ |
+| Android client (official)          | Kotlin, Jetpack Compose, Room + SQLCipher, libsignal-android, Hilt       |
+| Linux desktop (experimental)       | Rust, GTK (`desktop/`)                                                   |
+| TUI — Linux & macOS (experimental) | Rust (`tui/`)                                                            |
+| Relay server                       | Elixir (Bandit/OTP), Gleam protocol core, Rust libsignal NIF, PostgreSQL |
+| Auth server                        | Elixir gateway + Rust crypto NIF                                         |
+| CI                                 | GitHub Actions on Blacksmith runners                                     |
 
 ## Quick start
 
@@ -47,14 +47,14 @@ Agent/MCP tooling is optional. Copy `.mcp.json.example` to `.mcp.json` locally a
 
 ## Documentation
 
-| Doc | Purpose |
-| --- | --- |
-| [ROADMAP.md](ROADMAP.md) | Central progress tracker (24-PR plan) |
-| [docs/DESIGN.md](docs/DESIGN.md) | Full system design, crypto, retention, API catalog |
-| [AGENTS.md](AGENTS.md) | AI agent charter and session handoff |
-| [server/relay/README.md](server/relay/README.md) | Relay server |
-| [server/auth/README.md](server/auth/README.md) | Auth/identity gateway |
-| [plans/](plans/) | Post-v1 feature plans |
+| Doc                                              | Purpose                                            |
+| ------------------------------------------------ | -------------------------------------------------- |
+| [ROADMAP.md](ROADMAP.md)                         | Central progress tracker (24-PR plan)              |
+| [docs/DESIGN.md](docs/DESIGN.md)                 | Full system design, crypto, retention, API catalog |
+| [AGENTS.md](AGENTS.md)                           | AI agent charter and session handoff               |
+| [server/relay/README.md](server/relay/README.md) | Relay server                                       |
+| [server/auth/README.md](server/auth/README.md)   | Auth/identity gateway                              |
+| [plans/](plans/)                                 | Post-v1 feature plans                              |
 
 ## Architecture (summary)
 

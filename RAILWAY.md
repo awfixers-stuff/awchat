@@ -2,11 +2,11 @@
 
 This repository is an **isolated monorepo**: three deployable server services under `server/`, each with its own `railway.toml`. Do **not** deploy from the repository root as a single service.
 
-| Railway service | Root directory | Config file | Exposure |
-| --------------- | -------------- | ----------- | -------- |
-| `broker` | `/server/broker` | `/server/broker/railway.toml` | Public (only service with a domain) |
-| `auth` | `/server/auth` | `/server/auth/railway.toml` | Internal (`auth.railway.internal`) |
-| `awchat` | `/server/relay` | `/server/relay/railway.toml` | Internal (`awchat.railway.internal`) |
+| Railway service | Root directory   | Config file                   | Exposure                             |
+| --------------- | ---------------- | ----------------------------- | ------------------------------------ |
+| `broker`        | `/server/broker` | `/server/broker/railway.toml` | Public (only service with a domain)  |
+| `auth`          | `/server/auth`   | `/server/auth/railway.toml`   | Internal (`auth.railway.internal`)   |
+| `awchat`        | `/server/relay`  | `/server/relay/railway.toml`  | Internal (`awchat.railway.internal`) |
 
 Postgres plugins (add in Railway): **Postgres** → relay, **Postgres-Auth** → auth.
 

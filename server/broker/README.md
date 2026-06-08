@@ -4,13 +4,13 @@ Public edge gateway for AWChat. **Elixir** (Bandit/Plug) terminates public traff
 
 ## Routing
 
-| Path prefix | Upstream | Service |
-| ----------- | -------- | ------- |
-| `/v1/identities`, `/v1/invites`, `/v1/addresses`, `/v1/connection-requests` | `AUTH_UPSTREAM` | Auth |
-| `/v1/ws` | `RELAY_UPSTREAM` | Relay (WebSocket) |
-| `/v1/*` | `RELAY_UPSTREAM` | Relay (REST) |
-| `/health` | — | Broker liveness (Railway healthcheck) |
-| `/ops/status` | — | Aggregated ops health (token-gated) |
+| Path prefix                                                                 | Upstream         | Service                               |
+| --------------------------------------------------------------------------- | ---------------- | ------------------------------------- |
+| `/v1/identities`, `/v1/invites`, `/v1/addresses`, `/v1/connection-requests` | `AUTH_UPSTREAM`  | Auth                                  |
+| `/v1/ws`                                                                    | `RELAY_UPSTREAM` | Relay (WebSocket)                     |
+| `/v1/*`                                                                     | `RELAY_UPSTREAM` | Relay (REST)                          |
+| `/health`                                                                   | —                | Broker liveness (Railway healthcheck) |
+| `/ops/status`                                                               | —                | Aggregated ops health (token-gated)   |
 
 Relay and auth are **not** exposed publicly — only the broker has a Railway public domain.
 
@@ -24,17 +24,17 @@ Relay and auth are **not** exposed publicly — only the broker has a Railway pu
 
 ## Environment
 
-| Variable | Required | Example |
-| -------- | -------- | ------- |
-| `PORT` | No (Railway sets) | `8080` |
-| `RELAY_UPSTREAM` | Yes (prod) | `awchat.railway.internal:8080` |
-| `AUTH_UPSTREAM` | Yes (prod) | `auth.railway.internal:8081` |
-| `BROKER_OPS_TOKEN` | Yes (prod) | random secret |
-| `IP_RATE_LIMIT` | No | `120` |
-| `USER_RATE_LIMIT` | No | `60` |
-| `RATE_LIMIT_WINDOW_MS` | No | `60000` |
-| `MAX_BODY_BYTES` | No | `1048576` |
-| `REDIS_URL` | Recommended (prod) | `redis://…` — shared rate limits across broker restarts; see [Plan 002](../../plans/server/002-redis-durable-encrypted-pipeline.md) |
+| Variable               | Required           | Example                                                                                                                             |
+| ---------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `PORT`                 | No (Railway sets)  | `8080`                                                                                                                              |
+| `RELAY_UPSTREAM`       | Yes (prod)         | `awchat.railway.internal:8080`                                                                                                      |
+| `AUTH_UPSTREAM`        | Yes (prod)         | `auth.railway.internal:8081`                                                                                                        |
+| `BROKER_OPS_TOKEN`     | Yes (prod)         | random secret                                                                                                                       |
+| `IP_RATE_LIMIT`        | No                 | `120`                                                                                                                               |
+| `USER_RATE_LIMIT`      | No                 | `60`                                                                                                                                |
+| `RATE_LIMIT_WINDOW_MS` | No                 | `60000`                                                                                                                             |
+| `MAX_BODY_BYTES`       | No                 | `1048576`                                                                                                                           |
+| `REDIS_URL`            | Recommended (prod) | `redis://…` — shared rate limits across broker restarts; see [Plan 002](../../plans/server/002-redis-durable-encrypted-pipeline.md) |
 
 ## Ops health
 

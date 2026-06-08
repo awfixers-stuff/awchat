@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-06-08T09:02:01.617Z",
+  "head": "531287c5df645343b4f4c5e99b684155a6627344",
+  "branch": "master",
+  "files": [
+    {
+      "path": "web/bunfig.toml",
+      "added": 1,
+      "removed": 1
+    }
+  ],
+  "totals": {
+    "files": 1,
+    "added": 1,
+    "removed": 1
+  }
+}

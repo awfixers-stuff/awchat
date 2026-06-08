@@ -1,0 +1,62 @@
+{
+  "recorded_at": "2026-06-08T08:05:59.609Z",
+  "head": "4a48075244cb16911beb9cabaf0f12a1c1ac19d2",
+  "branch": "master",
+  "files": [
+    {
+      "path": "plans/001-support-and-bug-reporting.md",
+      "added": 133,
+      "removed": 296
+    },
+    {
+      "path": "plans/README.md",
+      "added": 71,
+      "removed": 7
+    },
+    {
+      "path": "plans/android/current-baseline.md",
+      "added": 170,
+      "removed": 0
+    },
+    {
+      "path": "plans/android/feedback.md",
+      "added": 157,
+      "removed": 0
+    },
+    {
+      "path": "plans/clients/README.md",
+      "added": 102,
+      "removed": 0
+    },
+    {
+      "path": "plans/clients/apple-macos-ios.md",
+      "added": 136,
+      "removed": 0
+    },
+    {
+      "path": "plans/clients/desktop-linux-gtk.md",
+      "added": 115,
+      "removed": 0
+    },
+    {
+      "path": "plans/clients/tui-ratatui.md",
+      "added": 122,
+      "removed": 0
+    },
+    {
+      "path": "plans/server/003-feedback-linear-smtp.md",
+      "added": 285,
+      "removed": 0
+    },
+    {
+      "path": "plans/server/current-baseline.md",
+      "added": 10,
+      "removed": 4
+    }
+  ],
+  "totals": {
+    "files": 10,
+    "added": 1301,
+    "removed": 307
+  }
+}

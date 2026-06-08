@@ -63,17 +63,17 @@ The server is intentionally minimal: a **dumb encrypted relay** that never holds
 
 ### Non-Goals (v1)
 
-| ID  | Non-Goal                                                                                                         |
-| --- | ---------------------------------------------------------------------------------------------------------------- |
-| NG1 | Message history backup / multi-device sync                                                                       |
-| NG2 | Groups >5, channels, public discovery                                                                            |
-| NG3 | Media messages / attachments (text-only v1; see v1.1 appendix)                                                   |
-| NG4 | iOS client                                                                                                       |
+| ID   | Non-Goal                                                                                                               |
+| ---- | ---------------------------------------------------------------------------------------------------------------------- |
+| NG1  | Message history backup / multi-device sync                                                                             |
+| NG2  | Groups >5, channels, public discovery                                                                                  |
+| NG3  | Media messages / attachments (text-only v1; see v1.1 appendix)                                                         |
+| NG4  | iOS client                                                                                                             |
 | NG4b | **Official Windows client** — no production-grade Windows app from the core team; see **Community client ports** below |
-| NG5 | Federated servers / P2P transport                                                                                |
-| NG6 | Server-side searchable encryption                                                                                |
-| NG7 | Custom crypto protocol                                                                                           |
-| NG8 | **Reliable background message delivery** — v1 requires foreground app or active WebSocket; no FCM wake-up in MVP |
+| NG5  | Federated servers / P2P transport                                                                                      |
+| NG6  | Server-side searchable encryption                                                                                      |
+| NG7  | Custom crypto protocol                                                                                                 |
+| NG8  | **Reliable background message delivery** — v1 requires foreground app or active WebSocket; no FCM wake-up in MVP       |
 
 ### v1 MVP Limitation: Foreground Delivery
 
@@ -99,7 +99,7 @@ Signing and store credentials stay out of git; distribution details are agreed c
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **1:1 crypto**                  | Signal Protocol (X3DH + Double Ratchet) via **`libsignal-android`**                                                                  | Battle-tested; correct Android AAR with bundled JNI                                                                                                          |
 | **Group crypto (≤5)**           | Signal **Sender Keys** (not MLS)                                                                                                     | Simpler ops for ≤5 members; libsignal-native; MLS adds complexity without benefit at this scale                                                              |
-| **Relay server stack**          | **Elixir** (Bandit/OTP) + **Gleam** (protocol core) + **Rust** (libsignal verify NIF) + **PostgreSQL only** (v1)                   | Lightweight BEAM relay; no Redis in v1 — offline queue in Postgres, online routing via in-memory WS map                                                     |
+| **Relay server stack**          | **Elixir** (Bandit/OTP) + **Gleam** (protocol core) + **Rust** (libsignal verify NIF) + **PostgreSQL only** (v1)                     | Lightweight BEAM relay; no Redis in v1 — offline queue in Postgres, online routing via in-memory WS map                                                      |
 | **Transport**                   | WebSocket primary, HTTP for registration/prekeys                                                                                     | Low latency when foreground; no push in v1 (NG8)                                                                                                             |
 | **Local DB**                    | Room + **SQLCipher 4**                                                                                                               | Full-DB encryption; plaintext message bodies inside SQLCipher (see Local Storage Threat Boundary)                                                            |
 | **Key storage**                 | libsignal keys in **encrypted local files** sealed by Keystore-derived AES keys; Keystore/StrongBox for DB passphrase + unlock gates | libsignal requires in-process private key access; cannot use non-exportable EC keys in Keystore as ratchet backend (Signal-Android `KeyStoreHelper` pattern) |
@@ -236,9 +236,9 @@ protobuf = { id = "com.google.protobuf", version = "0.9.4" }
 
 ### Legal / License Compliance
 
-| Dependency                  | License    | Implication                                                                                                                                                                                                                  |
-| --------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `libsignal-android` (app)   | **AGPLv3** | Linking in a distributed app may require offering corresponding source to users who request it, depending on jurisdiction and whether the app is considered a "modified" work                                                |
+| Dependency                    | License    | Implication                                                                                                                                                                                                                        |
+| ----------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `libsignal-android` (app)     | **AGPLv3** | Linking in a distributed app may require offering corresponding source to users who request it, depending on jurisdiction and whether the app is considered a "modified" work                                                      |
 | `libsignal-core` (server NIF) | **AGPLv3** | Relay Docker image links `libsignal-core` (Rust) for XEdDSA verification; may trigger corresponding-source obligations for **network users** of the relay service — confirm with counsel (distinct from app distribution analysis) |
 
 **Actions before GA**:
@@ -876,23 +876,23 @@ sequenceDiagram
     Note over C,S: On reconnect: new nonce; auth required before any frame
 ```
 
-| Field             | Rule                                                                                                                                                       |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nonce` (wire)    | Base64 encoding of 32 random raw bytes in JSON                                                                                                             |
-| `nonce` (storage) | 32 raw bytes in `auth_nonces.nonce` (BYTEA); single-use; `expires_at = now() + 2 min`                                                                      |
-| **Signed input**  | `signInputBytes = nonceRaw[32 bytes] ‖ utf8("\|") ‖ utf8(userId) ‖ utf8("\|") ‖ utf8(serverTime)` — decoded raw nonce, **not** the base64 JSON wire string |
-| Signature         | **XEdDSA** via libsignal `PrivateKey.sign(signInputBytes)`                                                                                                 |
+| Field             | Rule                                                                                                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nonce` (wire)    | Base64 encoding of 32 random raw bytes in JSON                                                                                                                |
+| `nonce` (storage) | 32 raw bytes in `auth_nonces.nonce` (BYTEA); single-use; `expires_at = now() + 2 min`                                                                         |
+| **Signed input**  | `signInputBytes = nonceRaw[32 bytes] ‖ utf8("\|") ‖ utf8(userId) ‖ utf8("\|") ‖ utf8(serverTime)` — decoded raw nonce, **not** the base64 JSON wire string    |
+| Signature         | **XEdDSA** via libsignal `PrivateKey.sign(signInputBytes)`                                                                                                    |
 | Server verify     | Decode JSON `nonce` to 32 bytes, reconstruct `signInputBytes`, verify with `awchat_crypto` NIF (`verify_ws_signature/5`; REST uses `verify_rest_signature/7`) |
-| Replay            | Reject duplicate `nonce` bytes; reject if `abs(serverNow - serverTime) > 120s`                                                                             |
-| Nonce cleanup     | Delete expired rows on verify path + cron every 5 min: `DELETE FROM auth_nonces WHERE expires_at < NOW()`                                                  |
-| Errors            | `auth_failed` → close WS 4001; `nonce_expired` → close 4002                                                                                                |
-| REST linkage      | Same `userId` / identity key as REST Request Authentication; no separate password                                                                          |
+| Replay            | Reject duplicate `nonce` bytes; reject if `abs(serverNow - serverTime) > 120s`                                                                                |
+| Nonce cleanup     | Delete expired rows on verify path + cron every 5 min: `DELETE FROM auth_nonces WHERE expires_at < NOW()`                                                     |
+| Errors            | `auth_failed` → close WS 4001; `nonce_expired` → close 4002                                                                                                   |
+| REST linkage      | Same `userId` / identity key as REST Request Authentication; no separate password                                                                             |
 
 #### Relay Operability (v1)
 
 | Topic                 | v1 MVP                                                                           |
 | --------------------- | -------------------------------------------------------------------------------- |
-| **Deployment**        | Single Railway project: relay container + Railway Postgres (OQ4 default)       |
+| **Deployment**        | Single Railway project: relay container + Railway Postgres (OQ4 default)         |
 | **Secrets**           | Fly secrets: `DATABASE_URL`, `TLS_CERT`; no keystore on server                   |
 | **Migrations**        | Flyway on container start (blocking readiness until complete)                    |
 | **Health**            | `/v1/health` liveness; `/v1/ready` checks DB + migration version                 |

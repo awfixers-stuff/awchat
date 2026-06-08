@@ -1,10 +1,10 @@
 # Server — Redis, durable encrypted pipeline, serverless ops
 
-| Field | Value |
-| ----- | ----- |
-| **Status** | Draft (in progress) |
-| **Created** | 2026-06-08 |
-| **Depends on** | [`current-baseline.md`](./current-baseline.md); Railway monorepo (`broker`, `auth`, `awchat`) |
+| Field                    | Value                                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Status**               | Draft (in progress)                                                                                                                         |
+| **Created**              | 2026-06-08                                                                                                                                  |
+| **Depends on**           | [`current-baseline.md`](./current-baseline.md); Railway monorepo (`broker`, `auth`, `awchat`)                                               |
 | **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4); this plan **supersedes** the “no Redis in v1” deployment note for **hosted** environments |
 
 ---
@@ -23,14 +23,14 @@ Non-goals: decrypting message bodies; changing the v1 WS/REST frame contract; mu
 
 ## Railway topology
 
-| Service | Role | Serverless / teardown (bring-up) | Production note |
-| ------- | ---- | -------------------------------- | --------------- |
-| `broker` | Public edge | Enabled during dev | **Disable** when done — always-on public entry |
-| `auth` | Internal REST | Enabled | May stay serverless |
-| `awchat` (relay) | Internal REST + WS | Enabled | Cold starts OK if Redis + Postgres hold queue |
-| Postgres (relay) | Envelope + chat metadata | Plugin default | Durable |
-| Postgres-Auth | Identities / invites | Plugin default | Durable |
-| **Redis** | Hot queues + broker rate limits | Plugin | Durable plugin; not torn down with app containers |
+| Service          | Role                            | Serverless / teardown (bring-up) | Production note                                   |
+| ---------------- | ------------------------------- | -------------------------------- | ------------------------------------------------- |
+| `broker`         | Public edge                     | Enabled during dev               | **Disable** when done — always-on public entry    |
+| `auth`           | Internal REST                   | Enabled                          | May stay serverless                               |
+| `awchat` (relay) | Internal REST + WS              | Enabled                          | Cold starts OK if Redis + Postgres hold queue     |
+| Postgres (relay) | Envelope + chat metadata        | Plugin default                   | Durable                                           |
+| Postgres-Auth    | Identities / invites            | Plugin default                   | Durable                                           |
+| **Redis**        | Hot queues + broker rate limits | Plugin                           | Durable plugin; not torn down with app containers |
 
 **Plugins to add:** `Redis` (shared). Reference in services via `${{Redis.REDIS_URL}}` (exact reference name per Railway dashboard).
 
@@ -67,12 +67,12 @@ sequenceDiagram
 
 **Rules**
 
-| Rule | Detail |
-| ---- | ------ |
-| Dual write | Postgres **always**; Redis **only** for recipients not connected at accept time |
-| Source of truth | Postgres; Redis is an accelerator — loss of Redis must not lose ciphertext (replay from PG pending query) |
-| TTL | Redis keys expire with envelope `purge_after` (aligned to 48h ceiling) |
-| Bucket (phase 2) | After PG row, async or sync PUT ciphertext; row stores `storage = 'pg' \| 'bucket'` |
+| Rule             | Detail                                                                                                    |
+| ---------------- | --------------------------------------------------------------------------------------------------------- |
+| Dual write       | Postgres **always**; Redis **only** for recipients not connected at accept time                           |
+| Source of truth  | Postgres; Redis is an accelerator — loss of Redis must not lose ciphertext (replay from PG pending query) |
+| TTL              | Redis keys expire with envelope `purge_after` (aligned to 48h ceiling)                                    |
+| Bucket (phase 2) | After PG row, async or sync PUT ciphertext; row stores `storage = 'pg' \| 'bucket'`                       |
 
 ---
 
@@ -80,38 +80,38 @@ sequenceDiagram
 
 ### Relay (`server/relay`)
 
-| Piece | Change |
-| ----- | ------ |
-| `redix` | Connection pool; `REDIS_URL` required in prod when Redis plugin attached |
-| `Gateway.EnvelopeHotQueue` | `SADD` / `SMEMBERS` / `SREM` per recipient; key prefix `awchat:v1:pending:` |
-| `Gateway.Delivery` | After successful PG transaction, push envelope id to Redis for offline members; `redeliver_pending` merges Redis + PG |
-| `GET /v1/ready` | Extend readiness: Postgres **and** Redis `PING` when `REDIS_URL` set |
-| Rate limits | Unchanged at relay (broker handles edge limits) |
+| Piece                      | Change                                                                                                                |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `redix`                    | Connection pool; `REDIS_URL` required in prod when Redis plugin attached                                              |
+| `Gateway.EnvelopeHotQueue` | `SADD` / `SMEMBERS` / `SREM` per recipient; key prefix `awchat:v1:pending:`                                           |
+| `Gateway.Delivery`         | After successful PG transaction, push envelope id to Redis for offline members; `redeliver_pending` merges Redis + PG |
+| `GET /v1/ready`            | Extend readiness: Postgres **and** Redis `PING` when `REDIS_URL` set                                                  |
+| Rate limits                | Unchanged at relay (broker handles edge limits)                                                                       |
 
 ### Broker (`server/broker`)
 
-| Piece | Change |
-| ----- | ------ |
+| Piece                  | Change                                                                                          |
+| ---------------------- | ----------------------------------------------------------------------------------------------- |
 | `hammer_backend_redis` | When `REDIS_URL` set, rate limits use **Redis** (shared across broker replicas / cold restarts) |
-| Fallback | No `REDIS_URL` → existing ETS Hammer (local dev) |
-| Ops | `/ops/status` may include Redis reachability (optional follow-up) |
+| Fallback               | No `REDIS_URL` → existing ETS Hammer (local dev)                                                |
+| Ops                    | `/ops/status` may include Redis reachability (optional follow-up)                               |
 
 ### Auth (`server/auth`)
 
-| Piece | Change |
-| ----- | ------ |
-| v1 | No Redis required (Postgres-only identities) |
+| Piece          | Change                                          |
+| -------------- | ----------------------------------------------- |
+| v1             | No Redis required (Postgres-only identities)    |
 | Optional later | Short-lived challenge cache if auth WS is added |
 
 ---
 
 ## Environment variables
 
-| Variable | Service | Required | Purpose |
-| -------- | ------- | -------- | ------- |
-| `REDIS_URL` | `broker`, `awchat` | Prod with plugin | Shared Redis |
-| `DATABASE_URL` | `awchat`, `auth` | Yes | Unchanged |
-| `RELAY_UPSTREAM` / `AUTH_UPSTREAM` | `broker` | Yes | Unchanged |
+| Variable                           | Service            | Required         | Purpose      |
+| ---------------------------------- | ------------------ | ---------------- | ------------ |
+| `REDIS_URL`                        | `broker`, `awchat` | Prod with plugin | Shared Redis |
+| `DATABASE_URL`                     | `awchat`, `auth`   | Yes              | Unchanged    |
+| `RELAY_UPSTREAM` / `AUTH_UPSTREAM` | `broker`           | Yes              | Unchanged    |
 
 Do **not** commit `REDIS_URL` or bucket credentials.
 
@@ -119,26 +119,26 @@ Do **not** commit `REDIS_URL` or bucket credentials.
 
 ## Acceptance criteria
 
-| ID | Criterion |
-| -- | --------- |
-| AC-1 | Envelope accepted over WS is visible in Postgres before `200`/push completes to sender |
-| AC-2 | Offline recipient has envelope id in Redis **and** PG recipient row |
-| AC-3 | On WS auth_ok, client receives pending envelopes from Redis ∪ PG without duplicate delivery (client dedupes by id) |
-| AC-4 | `ack` clears PG delivery state and Redis pending id |
+| ID   | Criterion                                                                                                            |
+| ---- | -------------------------------------------------------------------------------------------------------------------- |
+| AC-1 | Envelope accepted over WS is visible in Postgres before `200`/push completes to sender                               |
+| AC-2 | Offline recipient has envelope id in Redis **and** PG recipient row                                                  |
+| AC-3 | On WS auth_ok, client receives pending envelopes from Redis ∪ PG without duplicate delivery (client dedupes by id)   |
+| AC-4 | `ack` clears PG delivery state and Redis pending id                                                                  |
 | AC-5 | With `REDIS_URL`, broker rate limits survive broker process restart (smoke: two hits, restart, limit still enforced) |
-| AC-6 | `GET /v1/ready` returns 503 if Redis configured but unreachable |
-| AC-7 | Plan + `RAILWAY.md` document serverless/teardown policy and Redis plugin |
-| AC-8 | Local `docker compose` can run optional `redis` service for integration dev |
+| AC-6 | `GET /v1/ready` returns 503 if Redis configured but unreachable                                                      |
+| AC-7 | Plan + `RAILWAY.md` document serverless/teardown policy and Redis plugin                                             |
+| AC-8 | Local `docker compose` can run optional `redis` service for integration dev                                          |
 
 ---
 
 ## Implementation phases
 
-| Phase | Scope |
-| ----- | ----- |
+| Phase            | Scope                                                                           |
+| ---------------- | ------------------------------------------------------------------------------- |
 | **2a** (this PR) | Plan, relay Redis hot queue, broker Redis rate limits, compose + bootstrap docs |
-| **2b** | Object bucket for `ciphertext`, `ciphertext_ref` migration |
-| **2c** | Broker ops Redis probe; attachment path per DESIGN v1.1 |
+| **2b**           | Object bucket for `ciphertext`, `ciphertext_ref` migration                      |
+| **2c**           | Broker ops Redis probe; attachment path per DESIGN v1.1                         |
 
 ---
 

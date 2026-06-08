@@ -1,0 +1,592 @@
+{
+  "recorded_at": "2026-06-08T19:06:30.156Z",
+  "head": "cca3ed5a8befe12e0d57a4aca380b970ccfa0446",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".gitignore",
+      "added": 10,
+      "removed": 3
+    },
+    {
+      "path": "{app => android/app}/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{app => android/app}/src/main/AndroidManifest.xml",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{app => android/app}/src/main/kotlin/me/awfixer/awchat/AwChatApplication.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{app => android/app}/src/main/kotlin/me/awfixer/awchat/MainActivity.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{app => android/app}/src/main/res/values/strings.xml",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{app => android/app}/src/main/res/values/themes.xml",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{app => android/app}/src/test/kotlin/me/awfixer/awchat/PlaceholderTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/convention/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/convention/src/main/kotlin/AndroidSdk.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/convention/src/main/kotlin/AwchatAndroidApplicationConventionPlugin.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/convention/src/main/kotlin/AwchatAndroidComposeConventionPlugin.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/convention/src/main/kotlin/AwchatAndroidLibraryConventionPlugin.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/convention/src/main/kotlin/AwchatDetektConventionPlugin.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/convention/src/main/kotlin/AwchatKotlinLibraryConventionPlugin.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{build-logic => android/build-logic}/settings.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "build.gradle.kts => android/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/common/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/common/src/main/kotlin/me/awfixer/awchat/core/common/dispatcher/AwChatDispatchers.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/common/src/main/kotlin/me/awfixer/awchat/core/common/result/Result.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/common/src/main/kotlin/me/awfixer/awchat/core/common/security/MasterKeyProvider.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/common/src/test/kotlin/me/awfixer/awchat/core/common/result/ResultTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/LibSignalLoadTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/SessionManagerRoundTripTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/AndroidManifest.xml",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/EncryptedEnvelope.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/LibSignalSessionManager.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/SessionManager.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/Base32.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/IdentityGenerator.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/IdentityMaterial.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/UserIdDeriver.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/PreKeyBundleFactory.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/ProtocolStoreFactory.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/SignalProtocolAddresses.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/AesGcmSealer.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/InMemoryMasterKeyProvider.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/SealedIdentityStore.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/schemas/me.awfixer.awchat.core.database.AwChatDatabase/1.json",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/AwChatDatabase.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/ChatDao.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/ContactDao.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/MessageDao.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/ReadReceiptDao.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/SenderKeyDao.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/SessionDao.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/di/DatabaseModule.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/di/RepositoryModule.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/ChatEntity.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/ContactEntity.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/MessageEntity.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/ReadReceiptEntity.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/SenderKeyEntity.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/SessionEntity.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ChatMapper.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/ContactMapper.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/mapper/MessageMapper.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ChatRepositoryImpl.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/ContactRepositoryImpl.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/database/src/main/kotlin/me/awfixer/awchat/core/database/repository/MessageRepositoryImpl.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/designsystem/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/designsystem/src/main/AndroidManifest.xml",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/ComposerBar.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/ConversationRow.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/component/MessageBubble.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/designsystem/src/main/kotlin/me/awfixer/awchat/core/designsystem/theme/AwChatTheme.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/model/Chat.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/model/Contact.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/model/Message.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/repository/ChatRepository.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/repository/ContactRepository.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/repository/MessageRepository.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/CreateDirectChatUseCase.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/GetChatsUseCase.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/GetContactsUseCase.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/GetMessagesUseCase.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/domain/src/main/kotlin/me/awfixer/awchat/core/domain/usecase/SendMessageUseCase.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/model/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/model/src/main/kotlin/me/awfixer/awchat/core/model/ChatId.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/model/src/main/kotlin/me/awfixer/awchat/core/model/MessageId.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/model/src/main/kotlin/me/awfixer/awchat/core/model/UserId.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/model/src/test/kotlin/me/awfixer/awchat/core/model/UserIdTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/network/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/network/src/main/kotlin/me/awfixer/awchat/core/network/auth/RestAuthSigner.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/network/src/main/kotlin/me/awfixer/awchat/core/network/di/NetworkModule.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/network/src/main/kotlin/me/awfixer/awchat/core/network/model/WsFrame.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/network/src/main/kotlin/me/awfixer/awchat/core/network/websocket/AwChatWebSocketClient.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/proto/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/proto/src/main/proto/inner_message.proto",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/proto/src/test/kotlin/me/awfixer/awchat/core/proto/InnerMessageProtoTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/build.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/src/androidTest/kotlin/me/awfixer/awchat/core/security/keystore/KeystoreMasterKeyProviderTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/src/androidTest/kotlin/me/awfixer/awchat/core/security/passphrase/KeystorePassphraseProviderTest.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/src/main/kotlin/me/awfixer/awchat/core/security/biometric/BiometricAuthenticator.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/src/main/kotlin/me/awfixer/awchat/core/security/di/SecurityModule.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/src/main/kotlin/me/awfixer/awchat/core/security/keystore/KeystoreException.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/src/main/kotlin/me/awfixer/awchat/core/security/keystore/KeystoreMasterKeyProvider.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/src/main/kotlin/me/awfixer/awchat/core/security/passphrase/KeystorePassphraseProvider.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{core => android/core}/security/src/main/kotlin/me/awfixer/awchat/core/security/passphrase/PassphraseProvider.kt",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "gradle.properties => android/gradle.properties",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{gradle => android/gradle}/libs.versions.toml",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{gradle => android/gradle}/wrapper/gradle-wrapper.jar",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "{gradle => android/gradle}/wrapper/gradle-wrapper.properties",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "gradlew => android/gradlew",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "settings.gradle.kts => android/settings.gradle.kts",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "desktop/Cargo.lock",
+      "added": 731,
+      "removed": 0
+    },
+    {
+      "path": "ledgers/changes/1780945490024.json",
+      "added": 587,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/apps/gateway/native/awchat_crypto/Cargo.lock",
+      "added": 650,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/native/awchat_crypto/Cargo.lock",
+      "added": 608,
+      "removed": 0
+    },
+    {
+      "path": "tui/Cargo.lock",
+      "added": 1845,
+      "removed": 0
+    },
+    {
+      "path": "uv.lock",
+      "added": 8,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 116,
+    "added": 4439,
+    "removed": 3
+  }
+}
