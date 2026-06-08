@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-06-08T03:12:37.310Z",
+  "head": "18ce7a524d461fef6694dcd7144aa7d2568d3453",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".gitignore",
+      "added": 2,
+      "removed": 1
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/envelope_recipient.ex",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/lib/gateway/schemas/message_envelope.ex",
+      "added": 12,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 3,
+    "added": 24,
+    "removed": 1
+  }
+}

@@ -5,7 +5,8 @@ java*
 # Ignore Gradle build output directory
 build
 
-*env*
+.env
+.env.*
 !.envrc
 !.env.vars
 node_modules
