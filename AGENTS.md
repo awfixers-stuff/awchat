@@ -24,42 +24,36 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T01:23:53.668Z
-**Branch:** `master` @ `a657b698f233`
+**Last updated:** 2026-06-08T01:40:59.551Z
+**Branch:** `master` @ `09c25fcd3434`
 
 ### In progress
-- PR 5: server:relay skeleton (parallel) / PR 6: core:crypto SessionManager
+- PR 7: core:security Keystore sealing
 
 ### Completed
 - PR 1: build-logic + catalog + repo hygiene
 - PR 2: Android Compose shell + minimal CI
 - PR 3: libsignal-android packaging spike
 - PR 4: core:common, core:model, core:designsystem, core:proto
+- PR 6: core:crypto SessionManager + identity sealing
 
 ### Next up
-- PR 5: server:relay skeleton (parallel) / PR 6: core:crypto SessionManager
+- PR 7: core:security Keystore sealing
 
 ### Blockers
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T01:23:53.668Z
+**roadmap-phase** at 2026-06-08T01:40:59.551Z
 
-Added JVM common/model/proto modules, designsystem with AwChatTheme + X-Lite primitives, inner_message.proto with round-trip tests; MaterialExpressiveTheme APIs still internal in current M3
+LibSignalSessionManager with PQXDH establish/encrypt/decrypt, IdentityGenerator + UserId derivation, AES-GCM SealedIdentityStore; androidTest round-trip + sealing tests
 
 ### Recently touched
-- `AGENTS.md`
-- `pp/build.gradle.kts`
-- `pp/src/main/kotlin/me/awfixer/awchat/MainActivity.kt`
-- `uild-logic/convention/build.gradle.kts`
-- `uild.gradle.kts`
-- `radle.properties`
+- `ore/crypto/build.gradle.kts`
 - `radle/libs.versions.toml`
-- `ledgers/roadmap-state.json`
-- `ettings.gradle.kts`
-- `build-logic/convention/src/main/kotlin/AwchatKotlinLibraryConventionPlugin.kt`
-- `core/`
-- `java_pid29877.hprof`
+- `core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt`
+- `core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/SessionManagerRoundTripTest.kt`
+- `core/crypto/src/main/kotlin/`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
