@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM hexpm/elixir:1.18.4-erlang-27.3.4.9-ubuntu-noble-20260509.1 AS build
+FROM hexpm/elixir:1.20.0-erlang-27.3.4.9-ubuntu-noble-20260509.1 AS build
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential ca-certificates curl git pkg-config \
