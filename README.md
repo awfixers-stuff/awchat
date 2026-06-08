@@ -21,6 +21,8 @@ Requires [Nix](https://nixos.org/download.html) (recommended), Java 21, Android 
 direnv allow          # optional: auto-enter Nix shell via .envrc
 just build            # assembleDebug
 just test             # unit tests
+just pull             # git pull --ff-only (master)
+just push             # git push (after commits)
 bun run lint          # oxlint
 bun run fmt:fix       # oxfmt
 ```

@@ -154,6 +154,17 @@ This repo is public-facing. **Do not commit credentials, keys, or local-only con
 
 **History note:** An Exa API key was removed from `.mcp.json` and purged from git history before public release. Rotate that key if it was ever used outside this machine.
 
+### Git sync (`master` / `origin`)
+
+This repo uses **fast-forward only** pulls (`git config pull.ff only`, or `just pull` / `git pull --ff-only`). Plain `git pull` on `master` will refuse merge commits.
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| `fatal: Not possible to fast-forward` on pull | Local and `origin/master` **diverged** (different commit IDs for the same work, or parallel edits) | Prefer **rebase** if you only added local commits on top of old remote: `git fetch origin && git rebase origin/master`. After **`git filter-repo`**, local history is new — one-time `git push --force-with-lease origin master` (coordinate with anyone else on the repo). |
+| `non-fast-forward` on push | Remote has commits you lack, or you rewrote history locally | `git pull --ff-only` first; if pull fails, resolve divergence (rebase or coordinated force-with-lease) before pushing again. |
+
+`pre-push` runs CodeRabbit on unpushed commits; it does **not** block a valid fast-forward push.
+
 ---
 
 ## CodeRabbit gate (turn + git)
