@@ -2,19 +2,20 @@
 
 | Field              | Value                                                          |
 | ------------------ | -------------------------------------------------------------- |
-| **Status**         | Baseline capture (pre-implementation)                          |
+| **Status**         | Baseline capture (post-PR 5 / PR 11)                           |
 | **Created**        | 2026-06-08                                                       |
-| **Purpose**        | Record what the relay does today (nothing shipped) and the v1 spec it is designed to fulfill before enhancement work |
+| **Updated**        | 2026-06-08                                                       |
+| **Purpose**        | Record what the relay ships today and the v1 contract it fulfills before enhancement work |
 | **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4)         |
-| **Module path**    | `server/relay/` (not present in repo yet)                      |
+| **Module path**    | `server/relay/`                                                |
 
 ---
 
 ## Summary
 
-AWChat has **no relay server code in the repository today**. The backend is fully specified in `docs/DESIGN.md` and scheduled as **PR 5** (`server:relay` skeleton). Until that lands, all server behavior described below is **design intent**, not running software.
+AWChat ships a **relay server skeleton** at `server/relay/` (PR 5) and an Android **network client** at `core/network/` (PR 11). The relay is a dumb encrypted relay — it stores and forwards ciphertext but never decrypts message bodies.
 
-This document is the handoff surface for server enhancement work: it states the **current baseline** (zero implementation + v1 contract) so follow-on plans can diff against it.
+This document is the handoff surface for server enhancement work: it states the **current baseline** (shipped skeleton + v1 contract) so follow-on plans can diff against it.
 
 ---
 
@@ -28,10 +29,11 @@ This document is the handoff surface for server enhancement work: it states the 
 | Elixir gateway application       | **Shipped** (`apps/gateway`)                       |
 | PostgreSQL schema                | **Implemented** (+ signed/kyber prekey tables)     |
 | Rust `libsignal-core` verify NIF | **Shipped** (XEdDSA REST + WS; no decrypt)         |
-| Client network layer             | **Missing** (`core:network` in PR 11)              |
+| Client network layer             | **Shipped** (`core/network` — PR 11)               |
 | CI for relay                     | **Shipped** (`.github/workflows/relay.yml`)        |
+| Feature UI / E2EE messaging      | **Pending** (PRs 13–22)                            |
 
-**Related client work already shipped:** `core:crypto` (SessionManager, identity sealing, `UserId` derivation) — the Android side can encrypt/decrypt; it has nothing to talk to yet.
+**Related client work already shipped:** `core:crypto` (SessionManager, identity sealing, `UserId` derivation) and `core:network` (REST signer, WS client, auth handshake frames). End-to-end messaging still requires feature modules (PRs 18–19).
 
 ---
 
@@ -42,10 +44,10 @@ The relay is a **dumb encrypted relay**. It is the entire AWChat backend in v1 �
 | Principle | Detail |
 | --------- | ------ |
 | No plaintext | Server never decrypts message bodies, receipts, or sender-key material |
-| No custom crypto | Uses `libsignal-client` (JVM) only for **XEdDSA signature verification** on REST and WebSocket auth |
+| No custom crypto | Uses `libsignal-core` (Rust NIF) only for **XEdDSA signature verification** on REST and WebSocket auth |
 | Client-owned retention logic | “Seen by all” and 24h-after-seen purge deadlines are computed on clients; server executes signed purge requests and hard TTL |
 | Minimal metadata | No `last_receipt_at` or server-side read-receipt aggregation |
-| Single node (v1) | One Ktor process; in-memory `userId → WebSocket` map; offline queue in Postgres |
+| Single node (v1) | One Elixir OTP node (Bandit); in-memory `userId → WebSocket` map; offline queue in Postgres |
 | No push (v1) | No FCM; delivery requires foreground app / active WebSocket (NG8) |
 | Scale target | ~1k users MVP; HA / multi-node deferred to v2 |
 
@@ -190,7 +192,7 @@ All frames are JSON with a `type` field.
 
 ## Data model (PostgreSQL)
 
-Planned Flyway schema (`server/relay`):
+Ecto schema (`server/relay/apps/gateway/priv/repo/migrations/`):
 
 | Table | Purpose |
 | ----- | ------- |
@@ -263,18 +265,18 @@ Server records `purge_received_at = now()` — does **not** trust client wall cl
 
 ## Roadmap: when each capability lands
 
-| PR | Server work |
-| -- | ----------- |
-| **PR 5** | Skeleton: Ktor, Postgres schema, register/prekeys, health/ready, REST auth middleware, WS frame parsing, Docker Compose, Testcontainers |
-| **PR 21** | Purge endpoint, TTL job, WS `purge_notify` broadcast (may overlap PR 5 scope per design) |
-| **PR 24** | Observability, relay deploy docs |
+| PR | Server work | Status |
+| -- | ----------- | ------ |
+| **PR 5** | Skeleton: Elixir/Bandit, Postgres schema, register/prekeys, health/ready, REST auth middleware, WS frame parsing, Docker Compose, relay CI | **done** |
+| **PR 21** | Purge endpoint hardening, TTL job, WS `purge_notify` broadcast (partially in PR 5) | pending |
+| **PR 24** | Observability, relay deploy docs | pending |
 
 **Client coupling:**
 
-| PR | Depends on relay |
-| -- | ---------------- |
-| PR 11 | `core:network` — REST signer, WS handshake, all frames |
-| PR 13+ | Onboarding registers with relay; messaging features assume PR 11 |
+| PR | Depends on relay | Status |
+| -- | ---------------- | ------ |
+| PR 11 | `core:network` — REST signer, WS handshake, all frames | **done** |
+| PR 13+ | Onboarding registers with relay; messaging features assume PR 11 | pending |
 
 ---
 
@@ -317,5 +319,6 @@ Use this section to track deltas from the baseline. *(Empty — fill in during e
 ## References
 
 - [`docs/DESIGN.md`](../../docs/DESIGN.md) — § Relay Server Design, WebSocket Frame Catalog, REST Request Authentication, Retention Policy, PR 5
-- [`AGENTS.md`](../../AGENTS.md) — roadmap state; PR 5 not started
+- [`AGENTS.md`](../../AGENTS.md) — roadmap state; PR 5 and PR 11 complete; PR 12 in progress
+- [`server/relay/README.md`](../../server/relay/README.md) — local dev and Railway deploy
 - [`plans/001-support-and-bug-reporting.md`](../001-support-and-bug-reporting.md) — relay extensions for feedback
