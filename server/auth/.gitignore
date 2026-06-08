@@ -1,0 +1,10 @@
+/_build/
+/cover/
+/deps/
+/doc/
+erl_crash.dump
+*.ez
+/tmp/
+
+apps/gateway/priv/native/
+apps/gateway/native/**/target/

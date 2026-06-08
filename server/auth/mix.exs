@@ -1,4 +1,4 @@
-defmodule Relay.MixProject do
+defmodule Auth.MixProject do
   use Mix.Project
 
   def project do
@@ -13,7 +13,7 @@ defmodule Relay.MixProject do
 
   defp releases do
     [
-      relay: [
+      auth: [
         applications: [gateway: :permanent],
         steps: [:assemble, :tar],
         overlay: "rel/overlays"

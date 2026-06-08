@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+cd -P -- "$(dirname -- "$0")/.."
+
+./bin/relay eval "Gateway.Release.migrate()"
+exec ./bin/relay start
