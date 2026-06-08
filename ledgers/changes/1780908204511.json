@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-06-08T08:43:24.511Z",
+  "head": "beb0d9fe57fb055cb324e13088ada4fcae8f1701",
+  "branch": "master",
+  "files": [
+    {
+      "path": "web/apps/web/vercel.json",
+      "added": 9,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 1,
+    "added": 9,
+    "removed": 0
+  }
+}
