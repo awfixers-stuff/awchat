@@ -14,7 +14,7 @@
   "devDependencies": {
     "@oxfmt/binding-linux-x64-gnu": "0.53.0",
     "@oxlint/binding-linux-x64-gnu": "1.68.0",
-    "@typescript/native-preview": "7.0.0-dev.20260606.1",
+    "@typescript/native-preview": "7.0.0-dev.20260608.1",
     "@typescript/native-preview-linux-x64": "7.0.0-dev.20260606.1",
     "oxfmt": "0.53.0",
     "oxlint": "1.68.0",
