@@ -24,7 +24,7 @@ RUN mix deps.get --only prod
 RUN mix compile
 RUN mix release
 
-FROM debian:bookworm-slim AS runtime
+FROM ubuntu:noble AS runtime
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libstdc++6 openssl ca-certificates \

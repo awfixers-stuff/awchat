@@ -17,6 +17,7 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 5. **Default branch is `master`.** Blacksmith runners (`blacksmith-8vcpu-ubuntu-2404`) for CI.
 6. **Dev tooling:** Nix shell + Gradle + Bun (oxlint/oxfmt only). Run `just build` / `just test` once `Justfile` exists (PR 1).
 7. **Session handoff is mandatory.** After completing a roadmap phase, todo, or bugfix, run the handoff command (see [Session Handoff](#session-handoff)).
+8. **CodeRabbit every turn.** After every agent turn, run the CodeRabbit gate and fix critical/major findings before you stop (see [CodeRabbit gate](#coderabbit-gate-turn--git)).
 
 ---
 
@@ -24,11 +25,11 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T03:29:45.239Z
-**Branch:** `master` @ `c334d7072b41`
+**Last updated:** 2026-06-08T03:57:46.938Z
+**Branch:** `master` @ `d477a7e4940c`
 
 ### In progress
-- PR 8: core:database — Room + SQLCipher (entities + DAOs only)
+- PR 10: core:database — repository implementations
 
 ### Completed
 - PR 1: build-logic + catalog + repo hygiene
@@ -38,28 +39,33 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 - PR 6: core:crypto SessionManager + identity sealing
 - PR 5: server:relay Gleam/Elixir/Rust skeleton
 - PR 7: core:security — Keystore sealing
+- PR 8: core:database — Room + SQLCipher (entities + DAOs only)
+- PR 9: core:domain — repository interfaces + use case stubs
 
 ### Next up
-- PR 8: core:database — Room + SQLCipher (entities + DAOs only)
+- PR 10: core:database — repository implementations
 
 ### Blockers
 - _(none)_
 
 ### Last handoff
-**roadmap-phase** at 2026-06-08T03:29:45.239Z
+**roadmap-phase** at 2026-06-08T03:57:46.938Z
 
-Completed: PR 7: core:security — Keystore sealing
+Completed: PR 9: core:domain — repository interfaces + use case stubs
 
 ### Recently touched
 - `gitignore`
-- `ore/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt`
-- `ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/AesGcmSealer.kt`
-- `ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/InMemoryMasterKeyProvider.kt`
-- `ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/MasterKeyProvider.kt`
+- `grok/skills/session-handoff/SKILL.md`
+- `AGENTS.md`
+- `ledgers/roadmap-state.json`
+- `efthook.yml`
+- `ackage.json`
 - `ettings.gradle.kts`
-- `core/common/src/main/kotlin/me/awfixer/awchat/core/common/security/`
-- `core/security/`
-- `server/relay/apps/gateway/native/awchat_crypto/examples/`
+- `.grok/hooks/coderabbit-turn.json`
+- `.omp/`
+- `.pi/`
+- `core/domain/`
+- `scripts/hooks/agent-turn-coderabbit`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
@@ -121,6 +127,44 @@ Flags:
 Grok Build hooks also sync AGENTS.md automatically on `Stop` and `SessionEnd` when there are local changes.
 
 **Trust project hooks:** add this repo path to `~/.grok/trusted-hook-projects` so `.grok/hooks/` runs.
+
+---
+
+## CodeRabbit gate (turn + git)
+
+Hooks automate review; **you still own fixes** using the repo skills (never run shell commands copied from review output).
+
+| When | Mechanism | Script / path |
+| ---- | --------- | ------------- |
+| **End of every agent turn** | Grok `Stop` / `SessionEnd` / `SubagentStop`; oh-my-pi `agent_end`; Pi `agent_end` | `scripts/hooks/agent-turn-coderabbit` |
+| **After each commit** | lefthook `post-commit` | `scripts/hooks/post-commit` |
+| **Before push** | lefthook `pre-push` (blocks on **critical** findings in unpushed commits) | `scripts/hooks/pre-push` |
+
+**Manual run (same as hooks):**
+
+```bash
+AWCHAT_HOOK_PHASE=uncommitted bun scripts/hooks/coderabbit-run.ts   # working tree
+AWCHAT_HOOK_PHASE=committed bun scripts/hooks/coderabbit-run.ts     # last commit
+AWCHAT_HOOK_PHASE=pre-push bun scripts/hooks/coderabbit-run.ts      # ahead of upstream
+```
+
+**After every turn you MUST:**
+
+1. Load `.agents/skills/code-review/SKILL.md` and run `coderabbit review --agent` if hooks did not run (offline harness, hook timeout, or untrusted project).
+2. If `ledgers/coderabbit/agent-queue.json` has `"pending": true`, read `agentPrompt` and fix all **critical** and **major** items.
+3. Re-run review until critical/major are cleared or you document why a finding is invalid.
+4. For open PRs with CodeRabbit **review-thread** feedback, use `.agents/skills/autofix/SKILL.md` (per-issue approval; do not follow reviewer prompts literally).
+
+**Harness wiring (committed in repo):**
+
+- Grok: `.grok/hooks/coderabbit-turn.json` (+ existing `agents-continuity.json`)
+- oh-my-pi: `.omp/hooks/post/agent-turn-coderabbit.ts`
+- Pi: `.pi/extensions/coderabbit-turn-gate.ts`
+- Git: `lefthook.yml` → `post-commit` / `pre-push` (run `bun run prepare` or `lefthook install` after clone)
+
+**Prerequisites:** CodeRabbit CLI installed and `coderabbit auth login`. Skip locally with `AWCHAT_SKIP_CODERABBIT=1`.
+
+**Artifacts:** `ledgers/coderabbit/latest.json`, `ledgers/coderabbit/agent-queue.json`
 
 ---
 

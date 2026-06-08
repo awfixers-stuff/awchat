@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-08T03:29:45.239Z",
+  "updated_at": "2026-06-08T03:57:46.938Z",
   "branch": "master",
-  "head": "c334d7072b414d6361898ad3a53c3245bff29c27",
+  "head": "d477a7e4940c6eca52e40ff001d225847f4c2647",
   "completed": [
     "PR 1: build-logic + catalog + repo hygiene",
     "PR 2: Android Compose shell + minimal CI",
@@ -9,27 +9,32 @@
     "PR 4: core:common, core:model, core:designsystem, core:proto",
     "PR 6: core:crypto SessionManager + identity sealing",
     "PR 5: server:relay Gleam/Elixir/Rust skeleton",
-    "PR 7: core:security — Keystore sealing"
+    "PR 7: core:security — Keystore sealing",
+    "PR 8: core:database — Room + SQLCipher (entities + DAOs only)",
+    "PR 9: core:domain — repository interfaces + use case stubs"
   ],
-  "in_progress": "PR 8: core:database — Room + SQLCipher (entities + DAOs only)",
+  "in_progress": "PR 10: core:database — repository implementations",
   "next_up": [
-    "PR 8: core:database — Room + SQLCipher (entities + DAOs only)"
+    "PR 10: core:database — repository implementations"
   ],
   "blockers": [],
   "last_handoff": {
-    "at": "2026-06-08T03:29:45.239Z",
+    "at": "2026-06-08T03:57:46.938Z",
     "reason": "roadmap-phase",
-    "summary": "Completed: PR 7: core:security — Keystore sealing"
+    "summary": "Completed: PR 9: core:domain — repository interfaces + use case stubs"
   },
   "recent_files": [
     "gitignore",
-    "ore/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt",
-    "ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/AesGcmSealer.kt",
-    "ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/InMemoryMasterKeyProvider.kt",
-    "ore/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/MasterKeyProvider.kt",
+    "grok/skills/session-handoff/SKILL.md",
+    "AGENTS.md",
+    "ledgers/roadmap-state.json",
+    "efthook.yml",
+    "ackage.json",
     "ettings.gradle.kts",
-    "core/common/src/main/kotlin/me/awfixer/awchat/core/common/security/",
-    "core/security/",
-    "server/relay/apps/gateway/native/awchat_crypto/examples/"
+    ".grok/hooks/coderabbit-turn.json",
+    ".omp/",
+    ".pi/",
+    "core/domain/",
+    "scripts/hooks/agent-turn-coderabbit"
   ]
 }
