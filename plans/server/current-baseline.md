@@ -4,7 +4,7 @@
 | ------------------ | -------------------------------------------------------------- |
 | **Status**         | Baseline capture (post-PR 5 / PR 11)                           |
 | **Created**        | 2026-06-08                                                       |
-| **Updated**        | 2026-06-08                                                       |
+| **Updated**        | 2026-06-08 (feedback plan 003 added)                             |
 | **Purpose**        | Record what the relay ships today and the v1 contract it fulfills before enhancement work |
 | **Authoritative design** | [`docs/DESIGN.md`](../../docs/DESIGN.md) (rev 4)         |
 | **Module path**    | `server/relay/`                                                |
@@ -286,9 +286,11 @@ These are **out of scope** for the current design baseline but appear in adjacen
 
 | Source | Extension |
 | ------ | --------- |
-| [Plan 001 — Support & bug reporting](../001-support-and-bug-reporting.md) | `POST /v1/feedback/bug`, `POST /v1/feedback/support` on relay; Linear + email; rate-limited |
+| [Plan 001 — Support & bug reporting](../001-support-and-bug-reporting.md) | Cross-cutting feedback goals; auth + privacy aligned with design doc |
+| [Plan 003 — Feedback Linear + SMTP](./003-feedback-linear-smtp.md) | `POST /v1/feedback/bug`, `POST /v1/feedback/support`; Linear GraphQL; Resend email; `feedback_submissions` |
 | `docs/DESIGN.md` v1.1 appendix | FCM wake-up, attachments |
 | [Plan 002](./002-redis-durable-encrypted-pipeline.md) | Redis hot pending index, broker Redis rate limits, aggressive PG durability, serverless/teardown ops |
+| [Phase 2+ clients](../clients/README.md) | Linux GTK, Ratatui TUI — same `/v1` contract, `client_platform` diagnostics |
 | v2 (deferred) | Multi-node HA, sticky sessions, shared pub/sub beyond Plan 002 |
 
 ---
@@ -307,7 +309,9 @@ Use this section to track deltas from the baseline. *(Empty — fill in during e
 
 | ID | Change | Rationale | Breaks v1 contract? |
 | -- | ------ | --------- | ------------------- |
-| — | — | — | — |
+| E1 | Feedback REST endpoints | Plan 001 / 003 — operational plaintext separate from E2EE path | No — additive |
+| E2 | `feedback_submissions` table | Rate limit audit per `user_id` | No — additive |
+| E3 | Linear + Resend integrations | Server-mediated bug/support | No — external only |
 
 ### Acceptance criteria for “baseline + enhancements”
 
@@ -322,4 +326,6 @@ Use this section to track deltas from the baseline. *(Empty — fill in during e
 - [`docs/DESIGN.md`](../../docs/DESIGN.md) — § Relay Server Design, WebSocket Frame Catalog, REST Request Authentication, Retention Policy, PR 5
 - [`AGENTS.md`](../../AGENTS.md) — roadmap state; PR 5 and PR 11 complete; PR 12 in progress
 - [`server/relay/README.md`](../../server/relay/README.md) — local dev and Railway deploy
-- [`plans/001-support-and-bug-reporting.md`](../001-support-and-bug-reporting.md) — relay extensions for feedback
+- [`plans/001-support-and-bug-reporting.md`](../001-support-and-bug-reporting.md) — cross-cutting feedback
+- [`plans/server/003-feedback-linear-smtp.md`](./003-feedback-linear-smtp.md) — relay implementation
+- [`plans/clients/README.md`](../clients/README.md) — future client surfaces
