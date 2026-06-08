@@ -11,3 +11,5 @@ node_modules
 dist
 target
 *.lock
+!bun.lock
+!flake.lock
