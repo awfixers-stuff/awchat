@@ -85,8 +85,9 @@ minimumReleaseAgeExcludes = [
   "@radix-ui/react-use-escape-keydown",
   "@radix-ui/react-password-toggle-field",
   "@radix-ui/react-use-controllable-state",
-  "@radix-ui/react-one-time-password-field"
-]optional = false
+  "@radix-ui/react-one-time-password-field",
+]
+optional = false
 exact = true
 ignoreScripts = true
 auto = "disable"
