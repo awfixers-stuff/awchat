@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-06-08T03:17:10.653Z",
+  "head": "344661bad7d15b4ccbfbe2a551b81e2f4048e41c",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".gitignore",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "server/auth/mix.lock",
+      "added": 17,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/mix.lock",
+      "added": 22,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 3,
+    "added": 40,
+    "removed": 0
+  }
+}

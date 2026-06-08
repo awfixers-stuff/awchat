@@ -15,3 +15,4 @@ target
 *.lock
 !bun.lock
 !flake.lock
+!**/mix.lock
