@@ -39,7 +39,7 @@ defmodule Broker.MixProject do
       {:req, "~> 0.5"},
       {:reverse_proxy_plug, "~> 3.0"},
       {:reverse_proxy_plug_websocket, "~> 0.2"},
-      {:websockex, "~> 0.4"}
+      {:websockex, "~> 0.5"}
     ]
   end
 end
