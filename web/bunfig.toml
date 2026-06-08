@@ -86,6 +86,10 @@ minimumReleaseAgeExcludes = [
   "@radix-ui/react-password-toggle-field",
   "@radix-ui/react-use-controllable-state",
   "@radix-ui/react-one-time-password-field",
+  "@radix-ui/react-id",
+  "@radix-ui/number",
+  "@radix-ui/react-use-previous",
+  "@radix-ui/react-use-rect",
 ]
 optional = false
 exact = true
