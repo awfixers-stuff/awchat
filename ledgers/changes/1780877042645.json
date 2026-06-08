@@ -1,0 +1,82 @@
+{
+  "recorded_at": "2026-06-08T00:04:02.645Z",
+  "head": "b84a8912e0af3f5899b169ed26e6ea81c6f238b0",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".gitignore",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": ".grok/hooks/agents-continuity.json",
+      "added": 37,
+      "removed": 0
+    },
+    {
+      "path": ".grok/skills/session-handoff/SKILL.md",
+      "added": 53,
+      "removed": 0
+    },
+    {
+      "path": "AGENTS.md",
+      "added": 154,
+      "removed": 0
+    },
+    {
+      "path": "bun.lock",
+      "added": 303,
+      "removed": 0
+    },
+    {
+      "path": "flake.lock",
+      "added": 104,
+      "removed": 0
+    },
+    {
+      "path": "ledgers/changes/.gitkeep",
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 32,
+      "removed": 0
+    },
+    {
+      "path": "lefthook.yml",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "package.json",
+      "added": 29,
+      "removed": 1
+    },
+    {
+      "path": "scripts/changelog.ts",
+      "added": 97,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/pre-commit",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/update-agents-md",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "scripts/update-agents-md.ts",
+      "added": 404,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 14,
+    "added": 1229,
+    "removed": 1
+  }
+}
