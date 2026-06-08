@@ -11,7 +11,7 @@ androidx-test-ext-junit = "1.2.1"
 androidx-test-runner = "1.6.2"
 desugar-jdk-libs = "2.1.5"
 protobuf = "4.29.3"
-protobuf-plugin = "0.9.4"
+protobuf-plugin = "0.10.0"
 kotlinx-coroutines = "1.10.2"
 
 [libraries]
