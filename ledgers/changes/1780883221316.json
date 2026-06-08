@@ -1,0 +1,112 @@
+{
+  "recorded_at": "2026-06-08T01:47:01.316Z",
+  "head": "09c25fcd34341a2608448400a586010e3222240a",
+  "branch": "master",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "added": 11,
+      "removed": 17
+    },
+    {
+      "path": "core/crypto/build.gradle.kts",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt",
+      "added": 44,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/SessionManagerRoundTripTest.kt",
+      "added": 54,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/EncryptedEnvelope.kt",
+      "added": 18,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/LibSignalSessionManager.kt",
+      "added": 68,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/SessionManager.kt",
+      "added": 22,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/Base32.kt",
+      "added": 30,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/IdentityGenerator.kt",
+      "added": 17,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/IdentityMaterial.kt",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/identity/UserIdDeriver.kt",
+      "added": 14,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/PreKeyBundleFactory.kt",
+      "added": 68,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/ProtocolStoreFactory.kt",
+      "added": 9,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/internal/SignalProtocolAddresses.kt",
+      "added": 11,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/AesGcmSealer.kt",
+      "added": 49,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/InMemoryMasterKeyProvider.kt",
+      "added": 16,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/MasterKeyProvider.kt",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/SealedIdentityStore.kt",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "gradle/libs.versions.toml",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 12,
+      "removed": 18
+    }
+  ],
+  "totals": {
+    "files": 20,
+    "added": 485,
+    "removed": 35
+  }
+}
