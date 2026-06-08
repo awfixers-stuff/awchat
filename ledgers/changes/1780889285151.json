@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-06-08T03:28:05.151Z",
+  "head": "fb763a3117c8975d55c1bf678625d8a07bc63623",
+  "branch": "master",
+  "files": [
+    {
+      "path": "server/auth/Dockerfile",
+      "added": 8,
+      "removed": 4
+    },
+    {
+      "path": "server/relay/Dockerfile",
+      "added": 8,
+      "removed": 5
+    }
+  ],
+  "totals": {
+    "files": 2,
+    "added": 16,
+    "removed": 9
+  }
+}
