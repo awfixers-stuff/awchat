@@ -13,16 +13,23 @@ java*
 # Ignore Gradle build output directory
 build
 
-.env
-.env.*
+*env*
 !.envrc
 !.env.vars
-.mcp.json
+!.env.example
+
+*mcp*
+!.mcp.example
 node_modules
+
+
 ledgers/coderabbit/
 dist
 target
+
 *.lock
+!**/Cargo.lock
+!uv.lock
 !bun.lock
 !flake.lock
 !**/mix.lock
