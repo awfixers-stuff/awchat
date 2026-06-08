@@ -55,7 +55,7 @@ defmodule Gateway.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:quantum, "~> 3.5"},
       {:rustler, "~> 0.36"},
-      {:websock_adapter, "~> 0.5"}
+      {:websock_adapter, "~> 0.6"}
     ]
   end
 end
