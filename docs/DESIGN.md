@@ -69,6 +69,7 @@ The server is intentionally minimal: a **dumb encrypted relay** that never holds
 | NG2 | Groups >5, channels, public discovery                                                                            |
 | NG3 | Media messages / attachments (text-only v1; see v1.1 appendix)                                                   |
 | NG4 | iOS client                                                                                                       |
+| NG4b | **Official Windows client** — no production-grade Windows app from the core team; see **Community client ports** below |
 | NG5 | Federated servers / P2P transport                                                                                |
 | NG6 | Server-side searchable encryption                                                                                |
 | NG7 | Custom crypto protocol                                                                                           |
@@ -77,6 +78,18 @@ The server is intentionally minimal: a **dumb encrypted relay** that never holds
 ### v1 MVP Limitation: Foreground Delivery
 
 Because NG8 defers FCM (OQ1 default), v1 chat is **not realtime when the app is killed or swiped away**. Undelivered envelopes queue on the server for up to **48h** (see Retention Policy). UX copy: _"Messages deliver when AWChat is open."_ This directly affects seen-by-all purge latency when readers stay offline — mitigated by server hard TTL and in-app "pending purge" indicators.
+
+### Community client ports (e.g. Windows)
+
+The core team does **not** plan to build or support an official **Windows** production client (NG4b). Experimental **Linux desktop** and **TUI** targets remain exploratory and are not a commitment to parity on every desktop OS.
+
+Volunteers may propose a **platform-specific client** maintained in-tree. Release signing keys may be offered when the volunteer:
+
+1. lands and keeps code in **this codebase** under an agreed path (e.g. `clients/windows/` or similar);
+2. becomes **code owner** for that subtree (reviews, merges, CI for that target);
+3. triages and fixes **bugs reported against that subtree** for a defined support window.
+
+Signing and store credentials stay out of git; distribution details are agreed case-by-case. This policy does not obligate the project to accept every volunteer proposal.
 
 ---
 
