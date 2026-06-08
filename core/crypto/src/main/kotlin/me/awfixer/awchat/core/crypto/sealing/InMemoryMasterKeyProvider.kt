@@ -1,7 +1,7 @@
 package me.awfixer.awchat.core.crypto.sealing
 
+import me.awfixer.awchat.core.common.security.MasterKeyProvider
 import java.security.SecureRandom
-
 class InMemoryMasterKeyProvider(
     seed: ByteArray? = null,
 ) : MasterKeyProvider {

@@ -1,5 +1,4 @@
 package me.awfixer.awchat.core.crypto
-
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import me.awfixer.awchat.core.crypto.identity.IdentityGenerator

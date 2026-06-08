@@ -1,0 +1,212 @@
+{
+  "recorded_at": "2026-06-08T03:50:53.820Z",
+  "head": "fb2a4c7c7a04c2c83a7bd70b04d2369b582bc2a7",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".agents/skills/autofix/SKILL.md",
+      "added": 339,
+      "removed": 0
+    },
+    {
+      "path": ".agents/skills/autofix/github.md",
+      "added": 145,
+      "removed": 0
+    },
+    {
+      "path": ".agents/skills/code-review/SKILL.md",
+      "added": 158,
+      "removed": 0
+    },
+    {
+      "path": ".gitignore",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "added": 4,
+      "removed": 0
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "added": 1,
+      "removed": 0
+    },
+    {
+      "path": "app/src/main/kotlin/me/awfixer/awchat/AwChatApplication.kt",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "core/{crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing => common/src/main/kotlin/me/awfixer/awchat/core/common/security}/MasterKeyProvider.kt",
+      "added": 2,
+      "removed": 2
+    },
+    {
+      "path": "core/crypto/src/androidTest/kotlin/me/awfixer/awchat/core/crypto/IdentitySealingTest.kt",
+      "added": 0,
+      "removed": 1
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/AesGcmSealer.kt",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "core/crypto/src/main/kotlin/me/awfixer/awchat/core/crypto/sealing/InMemoryMasterKeyProvider.kt",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "core/database/build.gradle.kts",
+      "added": 46,
+      "removed": 0
+    },
+    {
+      "path": "core/database/schemas/me.awfixer.awchat.core.database.AwChatDatabase/1.json",
+      "added": 327,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/AwChatDatabase.kt",
+      "added": 37,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/ChatDao.kt",
+      "added": 37,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/ContactDao.kt",
+      "added": 37,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/MessageDao.kt",
+      "added": 36,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/ReadReceiptDao.kt",
+      "added": 26,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/SenderKeyDao.kt",
+      "added": 32,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/dao/SessionDao.kt",
+      "added": 26,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/di/DatabaseModule.kt",
+      "added": 59,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/ChatEntity.kt",
+      "added": 14,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/ContactEntity.kt",
+      "added": 38,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/MessageEntity.kt",
+      "added": 32,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/ReadReceiptEntity.kt",
+      "added": 26,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/SenderKeyEntity.kt",
+      "added": 46,
+      "removed": 0
+    },
+    {
+      "path": "core/database/src/main/kotlin/me/awfixer/awchat/core/database/entity/SessionEntity.kt",
+      "added": 32,
+      "removed": 0
+    },
+    {
+      "path": "core/security/build.gradle.kts",
+      "added": 30,
+      "removed": 0
+    },
+    {
+      "path": "core/security/src/androidTest/kotlin/me/awfixer/awchat/core/security/keystore/KeystoreMasterKeyProviderTest.kt",
+      "added": 82,
+      "removed": 0
+    },
+    {
+      "path": "core/security/src/androidTest/kotlin/me/awfixer/awchat/core/security/passphrase/KeystorePassphraseProviderTest.kt",
+      "added": 73,
+      "removed": 0
+    },
+    {
+      "path": "core/security/src/main/kotlin/me/awfixer/awchat/core/security/biometric/BiometricAuthenticator.kt",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "core/security/src/main/kotlin/me/awfixer/awchat/core/security/di/SecurityModule.kt",
+      "added": 21,
+      "removed": 0
+    },
+    {
+      "path": "core/security/src/main/kotlin/me/awfixer/awchat/core/security/keystore/KeystoreException.kt",
+      "added": 3,
+      "removed": 0
+    },
+    {
+      "path": "core/security/src/main/kotlin/me/awfixer/awchat/core/security/keystore/KeystoreMasterKeyProvider.kt",
+      "added": 124,
+      "removed": 0
+    },
+    {
+      "path": "core/security/src/main/kotlin/me/awfixer/awchat/core/security/passphrase/KeystorePassphraseProvider.kt",
+      "added": 82,
+      "removed": 0
+    },
+    {
+      "path": "core/security/src/main/kotlin/me/awfixer/awchat/core/security/passphrase/PassphraseProvider.kt",
+      "added": 5,
+      "removed": 0
+    },
+    {
+      "path": "gradle/libs.versions.toml",
+      "added": 12,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/native/awchat_crypto/examples/gen_vectors.rs",
+      "added": 28,
+      "removed": 0
+    },
+    {
+      "path": "settings.gradle.kts",
+      "added": 2,
+      "removed": 0
+    },
+    {
+      "path": "skills-lock.json",
+      "added": 17,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 40,
+    "added": 2008,
+    "removed": 4
+  }
+}
