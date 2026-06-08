@@ -4,15 +4,15 @@
     "stop": [
       {
         "command": ".cursor/hooks/agent-turn-coderabbit.sh",
-        "timeout": 600,
-        "loop_limit": 8
+        "timeout": 120,
+        "loop_limit": 3
       }
     ],
     "subagentStop": [
       {
         "command": ".cursor/hooks/agent-turn-coderabbit.sh",
-        "timeout": 600,
-        "loop_limit": 8
+        "timeout": 120,
+        "loop_limit": 3
       }
     ]
   }

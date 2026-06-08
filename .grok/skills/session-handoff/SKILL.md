@@ -35,9 +35,9 @@ Old session detail is replaced, not appended. Static charter sections in `AGENTS
 
 ## Grok hooks
 
-`.grok/hooks/agents-continuity.json` syncs `AGENTS.md` on `Stop`, `SessionEnd`, and `SubagentStop` when there are local file changes.
+`.grok/hooks/agents-continuity.json` syncs `AGENTS.md` on `Stop` and `SessionEnd` when there are local file changes.
 
-`.grok/hooks/coderabbit-turn.json` runs CodeRabbit on the same events. If `ledgers/coderabbit/agent-queue.json` has `"pending": true`, load `.agents/skills/code-review/SKILL.md` and fix critical/major findings before ending the session.
+`.grok/hooks/coderabbit-turn.json` runs CodeRabbit on `Stop` and `SessionEnd` (bounded timeout; not on every subagent stop). If `ledgers/coderabbit/agent-queue.json` has `"pending": true`, load `.agents/skills/code-review/SKILL.md` and fix critical/major findings before ending the session.
 
 Trust this repo in `~/.grok/trusted-hook-projects`.
 

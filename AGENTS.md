@@ -26,8 +26,8 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 
 <!-- SESSION_STATE_START -->
 
-**Last updated:** 2026-06-08T05:13:48.991Z
-**Branch:** `master` @ `52136f798697`
+**Last updated:** 2026-06-08T07:12:09.859Z
+**Branch:** `master` @ `847982cbb51f`
 
 ### In progress
 - PR 12: CI expansion — detekt, oxlint, emulator
@@ -59,9 +59,8 @@ AWChat is a greenfield Android encrypted ephemeral chat app (X-Lite UX, Material
 Doc accuracy: Elixir relay stack, Rust NIF verify, handoff path parsing
 
 ### Recently touched
-- `AGENTS.md`
-- `ROADMAP.md`
-- `ledgers/roadmap-state.json`
+- `README.md`
+- `docs/DESIGN.md`
 
 _Auto-synced by `scripts/update-agents-md.ts` (Grok Stop/SessionEnd hooks + `bun run agents:handoff`)._
 
@@ -169,7 +168,7 @@ Hooks automate review; **you still own fixes** using the repo skills (never run 
 
 | When | Mechanism | Script / path |
 | ---- | --------- | ------------- |
-| **End of every agent turn** | Grok `Stop` / `SessionEnd` / `SubagentStop`; Cursor `stop` / `subagentStop`; oh-my-pi `agent_end`; Pi `agent_end` | `scripts/hooks/agent-turn-coderabbit` |
+| **End of every agent turn** | Grok `Stop` / `SessionEnd`; Cursor `stop` (not follow-up loops); oh-my-pi / Pi `agent_end` | `scripts/hooks/agent-turn-coderabbit` |
 | **After each commit** | lefthook `post-commit` | `scripts/hooks/post-commit` |
 | **Before push** | lefthook `pre-push` (blocks on **critical** findings in unpushed commits) | `scripts/hooks/pre-push` |
 
@@ -199,6 +198,8 @@ AWCHAT_HOOK_PHASE=pre-push bun scripts/hooks/coderabbit-run.ts      # ahead of u
 Hook subprocesses resolve Bun via `scripts/hooks/lib/resolve-bun.sh` (`~/.bun/bin`, `BUN_INSTALL`, direnv, nix). Override with `AWCHAT_BUN=/path/to/bun` when needed.
 
 **Prerequisites:** CodeRabbit CLI installed and `coderabbit auth login`. Skip locally with `AWCHAT_SKIP_CODERABBIT=1`.
+
+**Timeouts (avoid hanging the harness):** Grok/Cursor hook `timeout` is **120s**. `coderabbit review` inside `coderabbit-run.ts` is capped at **90s** (`AWCHAT_CODERABBIT_TIMEOUT_MS`). Pi/omp use `pi.exec` with **120s** (`AWCHAT_PI_HOOK_TIMEOUT_MS`). Cursor `loop_limit` is **3** for CodeRabbit follow-ups.
 
 **Artifacts:** `ledgers/coderabbit/latest.json`, `ledgers/coderabbit/agent-queue.json`
 

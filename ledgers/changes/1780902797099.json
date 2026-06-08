@@ -1,0 +1,92 @@
+{
+  "recorded_at": "2026-06-08T07:13:17.099Z",
+  "head": "847982cbb51f4ad77557a61e1a81ea49b9e02d9d",
+  "branch": "master",
+  "files": [
+    {
+      "path": ".cursor/hooks.json",
+      "added": 4,
+      "removed": 4
+    },
+    {
+      "path": ".cursor/hooks/agent-turn-coderabbit.sh",
+      "added": 6,
+      "removed": 1
+    },
+    {
+      "path": ".grok/hooks/agents-continuity.json",
+      "added": 1,
+      "removed": 12
+    },
+    {
+      "path": ".grok/hooks/coderabbit-turn.json",
+      "added": 2,
+      "removed": 16
+    },
+    {
+      "path": ".grok/skills/session-handoff/SKILL.md",
+      "added": 2,
+      "removed": 2
+    },
+    {
+      "path": ".omp/hooks/post/agent-turn-coderabbit.ts",
+      "added": 18,
+      "removed": 18
+    },
+    {
+      "path": ".pi/extensions/coderabbit-turn-gate.ts",
+      "added": 17,
+      "removed": 18
+    },
+    {
+      "path": "AGENTS.md",
+      "added": 7,
+      "removed": 6
+    },
+    {
+      "path": "ROADMAP.md",
+      "added": 1,
+      "removed": 1
+    },
+    {
+      "path": "ledgers/roadmap-state.json",
+      "added": 4,
+      "removed": 5
+    },
+    {
+      "path": "scripts/hooks/agent-turn-coderabbit",
+      "added": 11,
+      "removed": 6
+    },
+    {
+      "path": "scripts/hooks/clear-coderabbit-queue",
+      "added": 10,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/clear-coderabbit-queue.ts",
+      "added": 22,
+      "removed": 0
+    },
+    {
+      "path": "scripts/hooks/coderabbit-run.ts",
+      "added": 54,
+      "removed": 4
+    },
+    {
+      "path": "scripts/hooks/update-agents-md",
+      "added": 2,
+      "removed": 2
+    },
+    {
+      "path": "scripts/update-agents-md.ts",
+      "added": 33,
+      "removed": 1
+    }
+  ],
+  "totals": {
+    "files": 16,
+    "added": 194,
+    "removed": 96
+  }
+}

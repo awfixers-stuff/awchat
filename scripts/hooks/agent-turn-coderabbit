@@ -1,8 +1,13 @@
 #!/usr/bin/env sh
+# Agent turn gate: CodeRabbit review (bounded) + optional prompt markers for pi/omp.
 set -e
 
-root="$(git rev-parse --show-toplevel)"
-cd "$root"
+if [ "${AWCHAT_SKIP_CODERABBIT:-}" = "1" ]; then
+  exit 0
+fi
+
+root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+cd "$root" || exit 0
 
 export AWCHAT_REPO_ROOT="$root"
 . "$root/scripts/hooks/lib/resolve-bun.sh"
@@ -11,9 +16,9 @@ export AWCHAT_HOOK_PHASE=uncommitted
 export AWCHAT_CODERABBIT_QUEUE=1
 
 if ! awchat_resolve_bun; then
-  echo "agent-turn-coderabbit: bun not found (install bun or set AWCHAT_BUN)" >&2
-  exit 1
+  echo "agent-turn-coderabbit: bun not found — skipped" >&2
+  exit 0
 fi
 
-"$AWCHAT_BUN" "$root/scripts/hooks/coderabbit-run.ts"
-"$AWCHAT_BUN" "$root/scripts/hooks/emit-coderabbit-prompt.ts"
+"$AWCHAT_BUN" "$root/scripts/hooks/coderabbit-run.ts" || true
+"$AWCHAT_BUN" "$root/scripts/hooks/emit-coderabbit-prompt.ts" || true

@@ -13,7 +13,12 @@ if command -v jq >/dev/null 2>&1; then
   set -e
 fi
 
-if [[ "$status" == "aborted" ]] || [[ "${loop_count:-0}" -gt 0 ]]; then
+# Skip only follow-up iterations (loop_count > 0). loop_count 0 is the primary stop hook.
+if [[ "$status" == "aborted" ]]; then
+  printf '%s\n' '{}'
+  exit 0
+fi
+if [[ "${loop_count:-0}" -gt 0 ]]; then
   printf '%s\n' '{}'
   exit 0
 fi

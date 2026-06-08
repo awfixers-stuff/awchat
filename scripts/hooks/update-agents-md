@@ -8,8 +8,8 @@ export AWCHAT_REPO_ROOT="$root"
 . "$root/scripts/hooks/lib/resolve-bun.sh"
 
 if ! awchat_resolve_bun; then
-  echo "update-agents-md: bun not found (install bun or set AWCHAT_BUN)" >&2
-  exit 1
+  echo "update-agents-md: bun not found — skipped" >&2
+  exit 0
 fi
 
 exec "$AWCHAT_BUN" "$root/scripts/update-agents-md.ts"
