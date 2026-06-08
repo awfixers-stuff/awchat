@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-06-08T03:23:32.174Z",
+  "head": "a9effb9ddf96c0c89bd190529fafa518f69cbf94",
+  "branch": "master",
+  "files": [
+    {
+      "path": "server/auth/config/prod.exs",
+      "added": 1,
+      "removed": 10
+    },
+    {
+      "path": "server/auth/config/runtime.exs",
+      "added": 14,
+      "removed": 0
+    },
+    {
+      "path": "server/relay/apps/gateway/mix.exs",
+      "added": 7,
+      "removed": 7
+    },
+    {
+      "path": "server/relay/config/prod.exs",
+      "added": 1,
+      "removed": 10
+    },
+    {
+      "path": "server/relay/config/runtime.exs",
+      "added": 14,
+      "removed": 0
+    }
+  ],
+  "totals": {
+    "files": 5,
+    "added": 37,
+    "removed": 27
+  }
+}
