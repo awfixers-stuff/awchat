@@ -30,7 +30,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@typescript/native-preview": "7.0.0-dev.20260606.1",
-    "@typescript/native-preview-linux-x64": "7.0.0-dev.20260606.1",
+    "@typescript/native-preview-linux-x64": "7.0.0-dev.20260612.1",
     "@workspace/typescript-config": "workspace:*",
     "oxfmt": "0.53.0",
     "oxlint": "1.68.0",
